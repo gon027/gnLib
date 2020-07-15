@@ -1,22 +1,15 @@
 #include "App.h"
-#include "Console.h"
-#include "Window.h"
-using namespace window;
 
 #include <vector>
-
+#include "Console.h"
+#include "Window.h"
 #include "Texture.h"
 #include "Sprite.h"
-#include "SmartPtr.h"
+using namespace window;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine, int nCmdShow) {
-	console::Console c;
-	c.createConsole();
+	App app{ "WindowName" };
 
-	App app;
-	app.initWindow(640, 480, "aaa");
-
-	
 	Texture t, tt;
 	t.loadTexture(app.getGraphics(), "img/char.png");
 	tt.loadTexture(app.getGraphics(), "img/backscreen.jpg");
@@ -37,7 +30,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		sp3.draw(640 / 2, 480 / 2);
 
 		for (int i = 0; i < 10; ++i) {
-			sps[i].draw(50 + i * 150, 200);
+			sps[i].draw(50 + i * 45, 200);
 		}
 
 		app.end();

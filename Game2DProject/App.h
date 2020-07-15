@@ -14,10 +14,10 @@ using Window = window::Window;
 
 class App {
 public:
-	App();
+	App(std::string _title, int _width = 640, int _height = 480);
 	~App();
 
-	void initWindow(int _width, int _height, std::string _windowTitle);
+	void initWindow();
 
 	bool update();
 	void begin();

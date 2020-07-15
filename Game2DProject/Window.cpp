@@ -1,26 +1,11 @@
 #include "Window.h"
 
 namespace window {
-	Window::Window()
-		//: winc()
-		: hInstance(nullptr)
-		, title((LPSTR)("Window"))
-		, width(640)
-		, height(480)
-	{
-
-	}
-
-	Window::Window(HINSTANCE _hInstance, LONG _width = 640, LONG _height = 480)
-		: hInstance(nullptr)
-		, width(_width)
-		, height(_height)
-	{
-
-	}
-
-	Window::Window(LONG _width = 640, LONG _height = 480) 
-		: hInstance(nullptr)
+	Window::Window(string _title, int _width, int _height)
+		: winc()
+		, hInstance(nullptr)
+		, hwnd(nullptr)
+		, title(_title)
 		, width(_width)
 		, height(_height)
 	{
@@ -44,7 +29,7 @@ namespace window {
 	}
 
 
-	bool Window::createGraphics() noexcept {
+	bool Window::createWindow() {
 		winc.cbSize = sizeof(WNDCLASSEX);
 		winc.style = CS_HREDRAW | CS_VREDRAW;
 		winc.lpfnWndProc = WindowProc;
@@ -55,18 +40,18 @@ namespace window {
 		winc.hCursor = (HCURSOR)LoadImage(NULL, IDC_ARROW, IMAGE_CURSOR, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
 		winc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 		winc.lpszMenuName = NULL;
-		winc.lpszClassName = title;
+		winc.lpszClassName = title.c_str();
 		winc.hIconSm = NULL;
 
 		//ウインドウクラスを登録
 		if (!RegisterClassEx(&winc)) return false;
 
-		RECT rect{ 0, 0, width, height };
+		RECT rect{ 0, 0, (LONG)width, (LONG)height };
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
 		hwnd = CreateWindow(
-			title,
-			title,
+			title.c_str(),
+			title.c_str(),
 			WS_OVERLAPPEDWINDOW,
 			CW_USEDEFAULT,
 			CW_USEDEFAULT,
@@ -85,7 +70,7 @@ namespace window {
 		return true;
 	}
 
-	void Window::setTitle(LPSTR _title)
+	void Window::setTitle(const string& _title)
 	{
 		title = _title;
 	}

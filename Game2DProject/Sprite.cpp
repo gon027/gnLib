@@ -17,53 +17,6 @@ Sprite::~Sprite()
 	RELEASE(sprite);
 }
 
-/*
-bool Sprite::loadTexture(Graphics & _graphics, const char * _filePath)
-{
-	HRESULT hr;
-
-	// スプライトの作成
-	hr = D3DXCreateSprite(_graphics.device, &sprite);
-
-	if (FAILED(hr)) {
-		return false;
-	}
-
-	// テクスチャの読み込み
-	hr = D3DXCreateTextureFromFile(_graphics.device, _filePath, &texture);
-
-	if (FAILED(hr)) {
-		return false;
-	}
-
-	// テクスチャからサーフェイスを取得
-	IDirect3DSurface9* surface;
-	hr = texture->GetSurfaceLevel(0, &surface);
-
-	if (FAILED(hr)) {
-		RELEASE(surface);
-		return false;
-	}
-
-	// サーフェイス情報から画像サイズを取得
-	D3DSURFACE_DESC surfaceInfo;
-	hr = surface->GetDesc(&surfaceInfo);
-
-	if (FAILED(hr)) {
-		return false;
-	}
-
-	// 画像の縦幅と横幅を取得
-	int width = surfaceInfo.Width;
-	int height = surfaceInfo.Height;
-
-	center = { width / 2.0f, height / 2.0f, 0.0f };
-
-	RELEASE(surface);
-
-	return true;
-}*/
-
 bool Sprite::loadTexture(Graphics * _graphics, Texture & _texture)
 {
 	HRESULT hr;

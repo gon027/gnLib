@@ -15,7 +15,7 @@ RectAngle rect{};
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine, int nCmdShow) {
 	window::Window win{};
-	win.createGraphics();
+	win.createWindow();
 
 	Graphics graphics{};
 	graphics.createGraphics(win);

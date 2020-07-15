@@ -19,8 +19,6 @@ public:
 
 	D3DXVECTOR3 position;
 
-	//bool loadTexture(Graphics& _graphics, const char* _filePath);
-
 	bool loadTexture(Graphics* _graphics, Texture& _texture);
 
 	// •`‰æ

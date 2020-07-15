@@ -3,22 +3,23 @@
 
 #include <Windows.h>
 #include <tchar.h>
+#include <string>
+
+using string = std::string;
 
 namespace window {
 	static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp);
 
 	class Window {
 	public:
-		Window();
-		Window(HINSTANCE _hInstance, LONG _width, LONG _height);
-		Window(LONG _width, LONG _height);
+		Window(string _title, int _width = 640, int _height = 480);
 		~Window();
 
 		static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp);
 
-		bool createGraphics() noexcept;	//ウインドウの設定
+		bool createWindow();	//ウインドウの設定
 
-		void setTitle(LPSTR _title);
+		void setTitle(const string& _title);
 
 		bool update();
 
@@ -37,7 +38,7 @@ namespace window {
 		WNDCLASSEX winc;		//ウインドウの情報を格納する構造体
 		HINSTANCE hInstance;
 		HWND hwnd;				//ウインドウハンドル
-		LPSTR title;
+		string title;
 		int width;
 		int height;
 	};

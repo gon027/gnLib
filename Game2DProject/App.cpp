@@ -3,11 +3,12 @@
 #include "Window.h"
 #include "Graphics.h"
 
-App::App()
-	: window(new Window())
+App::App(std::string _title, int _width, int _height)
+	: window(new Window(_title, _width, _height))
 	, graphics(new Graphics())
 {
-
+	window.get()->createWindow();
+	graphics.get()->createGraphics(window.get());
 }
 
 App::~App()
@@ -15,9 +16,9 @@ App::~App()
 
 }
 
-void App::initWindow(int _width, int _height, std::string _windowTitle)
+void App::initWindow()
 {
-	window.get()->createGraphics();
+	window.get()->createWindow();
 	graphics.get()->createGraphics(window.get());
 }
 

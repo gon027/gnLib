@@ -26,7 +26,7 @@ void Main() {
 	}
 
 	window::Window win{};
-	win.createGraphics();
+	win.createWindow();
 
 	Graphics g;
 	g.createGraphics(win);
