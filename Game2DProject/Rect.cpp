@@ -1,6 +1,6 @@
 #include "Rect.h"
 #include "Graphics.h"
-#include "Vertex.h"
+#include "Vertex2D.h"
 #include "Macro.h"
 
 RectAngle::RectAngle()
@@ -21,7 +21,7 @@ void RectAngle::draw(Graphics& _graphics, float _x, float _y, float _xsize, floa
 	float sx = x + _xsize;
 	float sy = y + _ysize;
 
-	Vertex vertex[] = {
+	Vertex2D vertex[] = {
 		{ x, sy, 0.0f, 1.0f, _color},
 		{ x,  y, 0.0f, 1.0f, _color},
 		{sx, sy, 0.0f, 1.0f, _color},
@@ -29,5 +29,5 @@ void RectAngle::draw(Graphics& _graphics, float _x, float _y, float _xsize, floa
 	};
 
 	_graphics.device->SetFVF(FVF_CUSTOM2D);
-	_graphics.device->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex));
+	_graphics.device->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 }

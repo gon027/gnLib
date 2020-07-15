@@ -12,11 +12,10 @@
 class Graphics {
 public:
 	Graphics();
-	Graphics(window::Window* _window);
 	~Graphics();
 
 	// Graphicの作成
-	bool create(window::Window& _win) noexcept;
+	bool createGraphics(window::Window* _window) noexcept;
 
 	void begin() noexcept;		//描画開始
 	void end() noexcept;		//描画終了
@@ -24,9 +23,6 @@ public:
 public:
 	IDirect3D9*		pD3D9;		    // Direct3Dデバイス生成用オブジェクト
 	IDirect3DDevice9*	device;	    // Direct3Dのデバイス
-
-private:
-	window::Window *win;
 };
 
 #endif // !GRAPHICS_H

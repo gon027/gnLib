@@ -2,8 +2,8 @@
 
 namespace window {
 	Window::Window()
-		: winc()
-		, hInstance(nullptr)
+		//: winc()
+		: hInstance(nullptr)
 		, title((LPSTR)("Window"))
 		, width(640)
 		, height(480)
@@ -44,7 +44,7 @@ namespace window {
 	}
 
 
-	bool Window::create() noexcept {
+	bool Window::createGraphics() noexcept {
 		winc.cbSize = sizeof(WNDCLASSEX);
 		winc.style = CS_HREDRAW | CS_VREDRAW;
 		winc.lpfnWndProc = WindowProc;
@@ -118,5 +118,17 @@ namespace window {
 	const int Window::getHeight() const
 	{
 		return height;
+	}
+	bool Window::isClosed() const
+	{
+		return IsWindow(hwnd) == FALSE;
+	}
+	const HINSTANCE Window::getHInstance()
+	{
+		return hInstance;
+	}
+	const HWND Window::getHWnd()
+	{
+		return hwnd;
 	}
 }

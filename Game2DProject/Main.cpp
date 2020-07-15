@@ -15,10 +15,10 @@ RectAngle rect{};
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine, int nCmdShow) {
 	window::Window win{};
-	win.create();
+	win.createGraphics();
 
 	Graphics graphics{};
-	graphics.create(win);
+	graphics.createGraphics(win);
 
 	suraimu.loadTexture(graphics, "img/char.png");
 	s.loadTexture(graphics, "img/char.png");

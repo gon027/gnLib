@@ -16,6 +16,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 }
 */
 
+/*
 void Main() {
 	Console con;
 	con.createConsole();
@@ -25,10 +26,10 @@ void Main() {
 	}
 
 	window::Window win{};
-	win.create();
+	win.createGraphics();
 
 	Graphics g;
-	g.create(win);
+	g.createGraphics(win);
 
 	Sprite sp;
 	sp.loadTexture(g, "img/backscreen.jpg");
@@ -42,3 +43,4 @@ void Main() {
 		g.end();
 	}
 }
+*/

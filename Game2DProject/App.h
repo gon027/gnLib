@@ -3,11 +3,14 @@
 
 #include <string>
 #include <memory>
+#include "SmartPtr.h"
 
-#include "Window.h"
-using namespace window;
+namespace window {
+	class Window;
+}
 
 class Graphics;
+using Window = window::Window;
 
 class App {
 public:
@@ -17,10 +20,12 @@ public:
 	void initWindow(int _width, int _height, std::string _windowTitle);
 
 	bool update();
+	void begin();
+	void end();
 
 private:
-	Window window;
-	std::unique_ptr<Graphics> graphics;
+	UniquePtr<Window> window;
+	UniquePtr<Graphics> graphics;
 };
 
 #endif // !APP_H

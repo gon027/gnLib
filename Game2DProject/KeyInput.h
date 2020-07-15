@@ -1,12 +1,8 @@
-#pragma once
+#ifndef KEYINPUT_H
+#define KEYINPUT_H
 
-#define DIRECTINPUT_VERSION 0x0800
+#include "Input.h"
 
-
-#pragma comment(lib, "dinput8.lib")
-#pragma comment(lib, "dxguid.lib")
-
-#include <dinput.h>
 #include "Window.h"
 #include "Macro.h"
 
@@ -19,7 +15,7 @@ public:
 	~KeyInput();
 
 	bool createDInput();
-	bool create();
+	bool createGraphics();
 	void update();
 
 	bool keyDown(BYTE keycode);     //ÉLÅ[Ç™âüÇ≥ÇÍÇΩéû
@@ -36,3 +32,7 @@ private:
 
 	void relese() noexcept;
 };
+
+using KeyBorad = KeyInput;
+
+#endif // !KEYINPUT_H

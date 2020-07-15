@@ -3,13 +3,8 @@
 #include "Macro.h"
 
 Graphics::Graphics()
-{
-}
-
-Graphics::Graphics(window::Window* _window)
 	: pD3D9(nullptr)
 	, device(nullptr)
-	, win(_window)
 {
 
 }
@@ -20,7 +15,7 @@ Graphics::~Graphics()
 	RELEASE(device);
 }
 
-bool Graphics::create(window::Window& _win) noexcept
+bool Graphics::createGraphics(window::Window* _window) noexcept
 {
 	//Direct3D9のオブジェクトの作成
 	pD3D9 = Direct3DCreate9(D3D_SDK_VERSION);
@@ -41,14 +36,14 @@ bool Graphics::create(window::Window& _win) noexcept
 
 	//スワップチェインの設定
 	D3DPRESENT_PARAMETERS D3DParam = {
-		_win.width,
-		_win.height,
+		_window->getWidth(),
+		_window->getHeight(),
 		D3DDisplay.Format,
 		1,
 		D3DMULTISAMPLE_NONE,
 		0,
 		D3DSWAPEFFECT_DISCARD,
-		_win.hwnd,
+		_window->getHWnd(),
 		TRUE,
 		TRUE,
 		D3DFMT_D24S8,
@@ -80,6 +75,7 @@ bool Graphics::create(window::Window& _win) noexcept
 
 void Graphics::begin() noexcept {
 	device->BeginScene();
+	device->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0x00, 0xFF, 0xFF), 1.0, 0);
 }
 
 void Graphics::end() noexcept {

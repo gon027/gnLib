@@ -16,7 +16,7 @@ namespace window {
 
 		static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp);
 
-		bool create() noexcept;	//ウインドウの設定
+		bool createGraphics() noexcept;	//ウインドウの設定
 
 		void setTitle(LPSTR _title);
 
@@ -26,11 +26,17 @@ namespace window {
 
 		const int getHeight() const;
 
+		// ウインドウが閉じられているか
+		bool isClosed() const;
 
-	public:
-		WNDCLASSEX winc;    //ウインドウの情報を格納する構造体
+		const HINSTANCE getHInstance();
+
+		const HWND getHWnd();
+
+	private:
+		WNDCLASSEX winc;		//ウインドウの情報を格納する構造体
 		HINSTANCE hInstance;
-		HWND hwnd;          //ウインドウハンドル
+		HWND hwnd;				//ウインドウハンドル
 		LPSTR title;
 		int width;
 		int height;
