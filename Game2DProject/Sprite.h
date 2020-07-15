@@ -7,6 +7,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
+#include "SmartPtr.h"
 #include "Texture.h"
 
 class Graphics;
@@ -18,9 +19,9 @@ public:
 
 	D3DXVECTOR3 position;
 
-	bool loadTexture(Graphics& _graphics, const char* _filePath);
+	//bool loadTexture(Graphics& _graphics, const char* _filePath);
 
-	bool loadTexture(Graphics& _graphics, Texture& _texture);
+	bool loadTexture(Graphics* _graphics, Texture& _texture);
 
 	// ï`âÊ
 	void draw(float _x, float _y);
@@ -31,9 +32,10 @@ public:
 	// ägëÂÅEèkè¨ï`âÊ
 	void scaleDraw(float _x, float _y, float _sx = 1.0f, float _sy = 1.0f);
 
+	bool isSplite();
+
 private:
 	Texture tex;
-	LPDIRECT3DTEXTURE9 texture;
 	LPD3DXSPRITE sprite;
 	D3DXVECTOR3 center;
 

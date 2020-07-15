@@ -35,3 +35,8 @@ void App::end()
 {
 	graphics.get()->end();
 }
+
+Graphics * App::getGraphics() const
+{
+	return graphics.get();
+}

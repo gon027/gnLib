@@ -23,6 +23,8 @@ public:
 	void begin();
 	void end();
 
+	Graphics* getGraphics() const;
+
 private:
 	UniquePtr<Window> window;
 	UniquePtr<Graphics> graphics;

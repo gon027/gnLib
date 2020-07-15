@@ -4,21 +4,22 @@
 #include "Graphics.h"
 
 Texture::Texture()
+	: lpTexture(nullptr)
 {
 
 }
 
 Texture::~Texture()
 {
-	//RELEASE(texture);
+	RELEASE(lpTexture);
 }
 
-bool Texture::loadTexture(Graphics& _graphics, const char * _filePath)
+bool Texture::loadTexture(Graphics* _graphics, const string & _filePath)
 {
 	HRESULT hr;
 
 	// テクスチャの読み込み
-	hr = D3DXCreateTextureFromFile(_graphics.device, _filePath, &texture);
+	hr = D3DXCreateTextureFromFile(_graphics->device, _filePath.c_str(), &lpTexture);
 
 	if (FAILED(hr)) {
 		return false;
@@ -39,7 +40,8 @@ bool Texture::imageInfo()
 
 	// テクスチャからサーフェイスを取得
 	IDirect3DSurface9* surface;
-	hr = texture->GetSurfaceLevel(0, &surface);
+	hr = lpTexture->GetSurfaceLevel(0, &surface);
+	
 
 	if (FAILED(hr)) {
 		RELEASE(surface);
@@ -63,11 +65,6 @@ bool Texture::imageInfo()
 	return true;
 }
 
-const LPDIRECT3DTEXTURE9 Texture::getTexture()
-{
-	return texture;
-}
-
 const int Texture::getWidth()
 {
 	return width;
@@ -77,3 +74,14 @@ const int Texture::getHeight()
 {
 	return height;
 }
+
+const bool Texture::isLoading()
+{
+	return lpTexture != nullptr;
+}
+
+LPDIRECT3DTEXTURE9 Texture::getTexture() const
+{
+	return lpTexture;
+}
+

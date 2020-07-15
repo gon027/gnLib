@@ -7,29 +7,32 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
-#include <map>
 #include <string>
-#include <memory>
+#include "SmartPtr.h"
 
 class Graphics;
+using string = std::string;
 
 class Texture {
 public:
 	Texture();
 	~Texture();
 
-	bool loadTexture(Graphics& _graphics, const char* _filePath);
+	bool loadTexture(Graphics* _graphics, const string& _filePath);
 
 	bool imageInfo();
 
-	const LPDIRECT3DTEXTURE9 getTexture();
-
 	const int getWidth();
-
 	const int getHeight();
 
+	// âÊëúÇ™ì«Ç›çûÇﬂÇƒÇ¢ÇÈÇ©
+	const bool isLoading();
+
+	LPDIRECT3DTEXTURE9 getTexture() const;
+
 private:
-	LPDIRECT3DTEXTURE9 texture;
+	
+	LPDIRECT3DTEXTURE9 lpTexture;
 	int width;
 	int height;
 };

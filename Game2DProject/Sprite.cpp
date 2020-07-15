@@ -6,8 +6,7 @@
 
 
 Sprite::Sprite()
-	: texture()
-	, sprite()
+	: sprite()
 	, center()
 {
 
@@ -15,10 +14,10 @@ Sprite::Sprite()
 
 Sprite::~Sprite()
 {
-	RELEASE(texture);
 	RELEASE(sprite);
 }
 
+/*
 bool Sprite::loadTexture(Graphics & _graphics, const char * _filePath)
 {
 	HRESULT hr;
@@ -63,14 +62,14 @@ bool Sprite::loadTexture(Graphics & _graphics, const char * _filePath)
 	RELEASE(surface);
 
 	return true;
-}
+}*/
 
-bool Sprite::loadTexture(Graphics & _graphics, Texture & _texture)
+bool Sprite::loadTexture(Graphics * _graphics, Texture & _texture)
 {
 	HRESULT hr;
 
 	// スプライトの作成
-	hr = D3DXCreateSprite(_graphics.device, &sprite);
+	hr = D3DXCreateSprite(_graphics->device, &sprite);
 
 	if (FAILED(hr)) {
 		return false;
@@ -96,6 +95,11 @@ void Sprite::rotateDraw(float _x, float _y, float _angle)
 void Sprite::scaleDraw(float _x, float _y, float _sx, float _sy)
 {
 	drawEx(_x, _y, 0.0f, _sx, _sy);
+}
+
+bool Sprite::isSplite()
+{
+	return sprite != nullptr;
 }
 
 void Sprite::drawEx(float _x, float _y, float _angle, float _sx, float _sy)
@@ -127,7 +131,7 @@ void Sprite::drawEx(float _x, float _y, float _angle, float _sx, float _sy)
 	{
 		sprite->SetTransform(&matWorld);
 
-		sprite->Draw(texture, NULL, &center, NULL, 0xFFFFFFFF);
+		sprite->Draw(tex.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);
 	}
 
 	sprite->End();
