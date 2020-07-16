@@ -3,6 +3,7 @@
 
 #include "Input.h"
 #include "Window.h"
+#include "SmartPtr.h"
 
 enum {
 	MOUSE_LEFT,
@@ -10,9 +11,11 @@ enum {
 	MOUSE_MIDDLE,
 };
 
+using Window = window::Window;
+
 class MouseInput {
 public:
-	MouseInput(window::Window* _win);
+	MouseInput(Window* _win);
 	~MouseInput();
 
 	bool createDInput();

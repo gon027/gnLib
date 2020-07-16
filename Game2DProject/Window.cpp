@@ -3,7 +3,7 @@
 namespace window {
 	Window::Window(string _title, int _width, int _height)
 		: winc()
-		, hInstance(nullptr)
+		, hInstance(GetModuleHandle(NULL))
 		, hwnd(nullptr)
 		, title(_title)
 		, width(_width)

@@ -52,6 +52,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{dc12f0c6-92b9-4177-ba7a-bcc112503f75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{f9ca5a98-6cf5-41d0-a5df-8855062834d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">

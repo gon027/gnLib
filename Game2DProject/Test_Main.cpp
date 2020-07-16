@@ -15,13 +15,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 
 	App app{ "WindowName" };
 
-	//Mouse m{ app.getWindow() };
-	//m.createDInput();
-	//m.create();
-
 	if (app.getWindow()->isClosed()) {
 		console.print("aaaa\n");
 	}
+
+	Mouse m{ app.getWindow() };
+	m.createDInput();
+	m.create();
 
 	Texture t, tt;
 	t.loadTexture(app.getGraphics(), "img/char.png");
@@ -45,6 +45,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 	while (app.update())
 	{
 		app.begin();
+
+		m.update();
+
+		if (m.getLeftButton()) {
+			console.print("aaaaaaafdfe\n");
+		}
 
 		sp3.draw(640 / 2, 480 / 2);
 

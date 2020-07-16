@@ -3,7 +3,7 @@
 
 #define Failed(ret) if (FAILED(ret)) return false
 
-MouseInput::MouseInput(window::Window* _win)
+MouseInput::MouseInput(Window* _win)
 	: window(_win)
 	, directInput(nullptr)
 	, lpMouse(nullptr)
