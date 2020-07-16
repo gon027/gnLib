@@ -43,6 +43,15 @@
     <Filter Include="Vertex">
       <UniqueIdentifier>{9425cc78-8fce-40f1-92a0-d05bd73bb091}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rect">
+      <UniqueIdentifier>{c90667b4-ed17-4226-a0fa-550635465242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Color">
+      <UniqueIdentifier>{71977071-f97e-4d55-82d9-86e1f46fdb26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{dc12f0c6-92b9-4177-ba7a-bcc112503f75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -56,15 +65,6 @@
     </ClInclude>
     <ClInclude Include="Graphics.h">
       <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="General.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Macro.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Math.h">
       <Filter>ヘッダー ファイル</Filter>
@@ -80,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="TestScene.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Rect.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="KeyInput.h">
       <Filter>Input</Filter>
@@ -108,8 +105,17 @@
     <ClInclude Include="Input.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Common</Filter>
+    </ClInclude>
     <ClInclude Include="SmartPtr.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,9 +124,6 @@
     </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>Sprite</Filter>
@@ -133,12 +136,6 @@
     </ClCompile>
     <ClCompile Include="TestScene.cpp">
       <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Rect.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyInput.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Test_Console.cpp">
       <Filter>Test</Filter>
@@ -154,6 +151,15 @@
     </ClCompile>
     <ClCompile Include="MouseInput.cpp">
       <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Color</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

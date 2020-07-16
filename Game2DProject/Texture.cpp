@@ -77,7 +77,7 @@ const int Texture::getHeight()
 
 const bool Texture::isLoading()
 {
-	return lpTexture != nullptr;
+	return lpTexture;
 }
 
 LPDIRECT3DTEXTURE9 Texture::getTexture() const

@@ -12,11 +12,11 @@ enum {
 
 class MouseInput {
 public:
-	MouseInput(window::Window& _win);
+	MouseInput(window::Window* _win);
 	~MouseInput();
 
 	bool createDInput();
-	bool createGraphics();
+	bool create();
 	void release();
 	void update();
 
@@ -24,7 +24,7 @@ public:
 	bool getRightButton();
 
 private:
-	window::Window window;
+	window::Window* window;
 
 	LPDIRECTINPUT8 directInput;
 	LPDIRECTINPUTDEVICE8 lpMouse;

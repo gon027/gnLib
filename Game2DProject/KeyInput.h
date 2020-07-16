@@ -15,7 +15,7 @@ public:
 	~KeyInput();
 
 	bool createDInput();
-	bool createGraphics();
+	bool create();
 	void update();
 
 	bool keyDown(BYTE keycode);     //ƒL[‚ª‰Ÿ‚³‚ê‚½

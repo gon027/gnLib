@@ -150,7 +150,6 @@
     <ClInclude Include="Color.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CStream.h" />
-    <ClInclude Include="General.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="IDraw.h" />
     <ClInclude Include="Input.h" />

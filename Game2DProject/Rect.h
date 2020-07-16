@@ -14,11 +14,10 @@ public:
 	RectAngle();
 	~RectAngle();
 
-	void draw(Graphics& _graphics, float _x, float _y, float _xsize, float _ysize, DWORD _color);
+	void draw(Graphics* _graphics, float _x, float _y, float _xsize, float _ysize, DWORD _color);
 
 private:
 	D3DXVECTOR3 position;
-
 };
 
 #endif // !RECT_H

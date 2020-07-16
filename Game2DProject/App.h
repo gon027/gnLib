@@ -23,6 +23,8 @@ public:
 	void begin();
 	void end();
 
+	Window* getWindow() const;
+
 	Graphics* getGraphics() const;
 
 private:

@@ -3,7 +3,7 @@
 
 #define Failed(ret) if (FAILED(ret)) return false
 
-MouseInput::MouseInput(window::Window& _win)
+MouseInput::MouseInput(window::Window* _win)
 	: window(_win)
 	, directInput(nullptr)
 	, lpMouse(nullptr)
@@ -22,7 +22,7 @@ bool MouseInput::createDInput()
 	HRESULT ret{};
 
 	ret = DirectInput8Create(
-		window.getHInstance(),
+		window->getHInstance(),
 		DIRECTINPUT_VERSION,
 		IID_IDirectInput8,
 		(LPVOID*)&directInput,
@@ -36,7 +36,7 @@ bool MouseInput::createDInput()
 	return true;
 }
 
-bool MouseInput::createGraphics()
+bool MouseInput::create()
 {
 	HRESULT ret{};
 
@@ -49,7 +49,7 @@ bool MouseInput::createGraphics()
 	Failed(ret);
 
 	ret = lpMouse->SetCooperativeLevel(
-		window.getHWnd(),
+		window->getHWnd(),
 		DISCL_NONEXCLUSIVE | DISCL_FOREGROUND
 	);
 

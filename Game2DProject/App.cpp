@@ -37,6 +37,11 @@ void App::end()
 	graphics.get()->end();
 }
 
+Window * App::getWindow() const
+{
+	return window.get();
+}
+
 Graphics * App::getGraphics() const
 {
 	return graphics.get();

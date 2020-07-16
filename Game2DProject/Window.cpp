@@ -104,14 +104,17 @@ namespace window {
 	{
 		return height;
 	}
+
 	bool Window::isClosed() const
 	{
-		return IsWindow(hwnd) == FALSE;
+		return IsWindow(hwnd);
 	}
+
 	const HINSTANCE Window::getHInstance()
 	{
 		return hInstance;
 	}
+
 	const HWND Window::getHWnd()
 	{
 		return hwnd;
