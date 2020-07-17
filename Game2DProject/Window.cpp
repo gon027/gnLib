@@ -100,12 +100,12 @@ namespace window {
 		return IsWindow(hwnd);
 	}
 
-	const HINSTANCE Window::getHInstance()
+	const HINSTANCE Window::getHInstance() const
 	{
 		return hInstance;
 	}
 
-	const HWND Window::getHWnd()
+	const HWND Window::getHWnd() const 
 	{
 		return hwnd;
 	}

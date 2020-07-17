@@ -1,15 +1,16 @@
 #ifndef MOUSEINPUT_H
 #define MOUSEINPUT_H
 
-#include "Input.h"
-#include "Window.h"
-#include "SmartPtr.h"
+#define DIRECTINPUT_VERSION 0x0800
 
-enum {
-	MOUSE_LEFT,
-	MOUSE_RIGHT,
-	MOUSE_MIDDLE,
-};
+#pragma comment(lib, "dinput8.lib")
+#pragma comment(lib, "dxguid.lib")
+
+#include <dinput.h>
+
+namespace window {
+	class Window;
+}
 
 using Window = window::Window;
 
@@ -29,7 +30,7 @@ public:
 private:
 	window::Window* window;
 
-	LPDIRECTINPUT8 directInput;
+	LPDIRECTINPUT8 device;
 	LPDIRECTINPUTDEVICE8 lpMouse;
 	DIMOUSESTATE mouseState;
 };

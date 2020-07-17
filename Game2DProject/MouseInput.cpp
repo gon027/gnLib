@@ -1,11 +1,11 @@
 #include "MouseInput.h"
-#include "Macro.h"
 
-#define Failed(ret) if (FAILED(ret)) return false
+#include "Window.h"
+#include "Macro.h"
 
 MouseInput::MouseInput(Window* _win)
 	: window(_win)
-	, directInput(nullptr)
+	, device(nullptr)
 	, lpMouse(nullptr)
 	, mouseState()
 {
@@ -25,7 +25,7 @@ bool MouseInput::createDInput()
 		window->getHInstance(),
 		DIRECTINPUT_VERSION,
 		IID_IDirectInput8,
-		(LPVOID*)&directInput,
+		(LPVOID*)&device,
 		NULL
 	);
 
@@ -40,20 +40,26 @@ bool MouseInput::create()
 {
 	HRESULT ret{};
 
-	ret = directInput->CreateDevice(GUID_SysMouse, &lpMouse, NULL);
+	ret = device->CreateDevice(GUID_SysMouse, &lpMouse, NULL);
 
-	Failed(ret);
+	if (FAILED(ret)) {
+		return false;
+	}
 
 	ret = lpMouse->SetDataFormat(&c_dfDIMouse);
 
-	Failed(ret);
+	if (FAILED(ret)) {
+		return false;
+	}
 
 	ret = lpMouse->SetCooperativeLevel(
 		window->getHWnd(),
 		DISCL_NONEXCLUSIVE | DISCL_FOREGROUND
 	);
 
-	Failed(ret);
+	if (FAILED(ret)) {
+		return false;
+	}
 
 	DIPROPDWORD diprop;
 	diprop.diph.dwSize = sizeof(diprop);
@@ -64,14 +70,16 @@ bool MouseInput::create()
 
 	ret = lpMouse->SetProperty(DIPROP_AXISMODE, &diprop.diph);
 	
-	Failed(ret);
+	if (FAILED(ret)) {
+		return false;
+	}
 
 	return true;
 }
 
 void MouseInput::release()
 {
-	RELEASE(directInput);
+	RELEASE(device);
 	RELEASE(lpMouse);
 }
 

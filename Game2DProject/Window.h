@@ -26,9 +26,9 @@ namespace window {
 		// ウインドウが閉じられているか
 		bool isClosed() const;
 
-		const HINSTANCE getHInstance();
+		const HINSTANCE getHInstance() const;
 
-		const HWND getHWnd();
+		const HWND getHWnd() const;
 
 	private:
 		WNDCLASSEX winc;		//ウインドウの情報を格納する構造体

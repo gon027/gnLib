@@ -1,11 +1,10 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#define DIRECTINPUT_VERSION 0x0800
+// マウス
+#include "MouseInput.h"
 
-#pragma comment(lib, "dinput8.lib")
-#pragma comment(lib, "dxguid.lib")
-
-#include <dinput.h>
+// キーボード
+#include "KeyInput.h"
 
 #endif // !INPUT_H

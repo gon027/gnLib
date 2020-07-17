@@ -1,18 +1,20 @@
 #ifndef KEYINPUT_H
 #define KEYINPUT_H
 
-#include "Input.h"
+#define DIRECTINPUT_VERSION 0x0800
 
-#include <array>
-#include "Window.h"
-#include "Macro.h"
+#pragma comment(lib, "dinput8.lib")
+#pragma comment(lib, "dxguid.lib")
 
-enum class Key {
+#include <dinput.h>
+
+// キーコード
+enum class Key : BYTE {
 	A = DIK_A,
 	B = DIK_B,
 	C = DIK_C,
 	D = DIK_D,
-	F = DIK_E,
+	E = DIK_E,
 	F = DIK_F,
 	G = DIK_G,
 
@@ -49,16 +51,17 @@ enum class Key {
 	KEY_8 = DIK_8,
 	KEY_9 = DIK_9,
 
-	LEFT  = DIK_LEFT,
+	LEFT = DIK_LEFT,
 	RIGHT = DIK_RIGHT,
-	UP    = DIK_UP,
-	DOWN  = DIK_DOWN,
+	UP = DIK_UP,
+	DOWN = DIK_DOWN,
 
-	ESC    = DIK_ESCAPE,
-	SPACE  = DIK_SPACE,
+	ESC = DIK_ESCAPE,
+	SPACE = DIK_SPACE,
 	RETURN = DIK_RETURN,
 };
 
+#include "Window.h"
 using window::Window;
 
 class KeyInput {
@@ -70,20 +73,17 @@ public:
 	bool create();
 	void update();
 
-	bool keyDown(BYTE keycode);     //キーが押された時
-	bool keyUp(BYTE keycode);       //キーが離された時
-
 	bool keyDown(Key _keyCode);     //キーが押された時
 	bool keyUp(Key _keyCode);       //キーが離された時
 
 private:
 	Window* window;
 
-	LPDIRECTINPUT8 directInput;
+	LPDIRECTINPUT8 device;
 	LPDIRECTINPUTDEVICE8 keyBoard;
 
-	std::array<BYTE, 256> beforeKey;
-	std::array<BYTE, 256> afterKey;
+	BYTE beforeKey[256];
+	BYTE afterKey[256];
 
 	void relese() noexcept;
 };

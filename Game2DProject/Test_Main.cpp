@@ -4,9 +4,8 @@
 #include "Console.h"
 #include "Texture.h"
 #include "Sprite.h"
-#include "MouseInput.h"
 #include "Rect.h"
-#include "KeyInput.h"
+#include "Input.h"
 
 float time = 0;
 
@@ -23,6 +22,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 	Mouse m{ app.getWindow() };
 	m.createDInput();
 	m.create();
+
+	KeyBorad key{ app.getWindow() };
+	if (key.createDInput()) {
+		console.print("aaaaaaaaaaa\n");
+	}
+	if (key.create()) {
+		console.print("re");
+	}
+
 
 	Texture t, tt;
 	t.loadTexture(app.getGraphics(), "img/char.png");
@@ -49,8 +57,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		app.begin();
 
 		m.update();
+		key.update();
 
-		if (m.getLeftButton()) {
+
+		if (key.keyDown(Key::K)) {
 			time += 1.0f;
 			console.print("aaaaaaafdfe\n");
 		}
@@ -61,7 +71,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 			sps[i].draw(50 + i * 45, 200);
 		}
 
-		sp1.rotateDraw(350.0f, 350.0f, time);
+		sp1.rotateDraw((float)350.0f, (float)350.0f, time);
 
 		rect.draw(app.getGraphics(), 250, 250, 100, 100, 0xFF00FFFF);
 

@@ -36,8 +36,8 @@ bool Graphics::createGraphics(window::Window* _window) noexcept
 
 	//スワップチェインの設定
 	D3DPRESENT_PARAMETERS D3DParam = {
-		_window->getWidth(),
-		_window->getHeight(),
+		(UINT)_window->getWidth(),
+		(UINT)_window->getHeight(),
 		D3DDisplay.Format,
 		1,
 		D3DMULTISAMPLE_NONE,
