@@ -1,5 +1,7 @@
 #include "Window.h"
 
+#include "WinProc.h"
+
 namespace window {
 	Window::Window(string _title, int _width, int _height)
 		: winc()
@@ -17,22 +19,10 @@ namespace window {
 		UnregisterClass(winc.lpszClassName, hInstance);
 	}
 
-	LRESULT Window::WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp)
-	{
-		switch (msg) {
-		case WM_DESTROY:
-			PostQuitMessage(0);
-			return 0;
-		}
-
-		return DefWindowProc(hwnd, msg, wp, lp);
-	}
-
-
 	bool Window::createWindow() {
 		winc.cbSize = sizeof(WNDCLASSEX);
 		winc.style = CS_HREDRAW | CS_VREDRAW;
-		winc.lpfnWndProc = WindowProc;
+		winc.lpfnWndProc = window::WindowProc;
 		winc.cbClsExtra = 0;
 		winc.cbWndExtra = 0;
 		winc.hInstance = hInstance;

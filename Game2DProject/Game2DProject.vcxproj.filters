@@ -58,6 +58,9 @@
     <Filter Include="Math">
       <UniqueIdentifier>{dda7240a-4fe8-4708-a647-c540f4f458e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{94249fff-e1a6-491d-838e-f828bee4b938}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -77,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="IDraw.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="TestScene.h">
       <Filter>Scene</Filter>
@@ -120,7 +120,16 @@
     <ClInclude Include="SmartPtr.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Math.h">
+    <ClInclude Include="IRenderObject.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="WinProc.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math.h">
       <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>

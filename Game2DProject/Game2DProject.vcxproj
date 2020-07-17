@@ -151,14 +151,15 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="CStream.h" />
     <ClInclude Include="Graphics.h" />
-    <ClInclude Include="IDraw.h" />
+    <ClInclude Include="include\Math.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="IRenderObject.h" />
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Main.h" />
-    <ClInclude Include="Math.h" />
     <ClInclude Include="MouseInput.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="Render.h" />
     <ClInclude Include="SmartPtr.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TestScene.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Vertex2D.h" />
     <ClInclude Include="Vertex3D.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="WinProc.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />

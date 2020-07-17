@@ -2,12 +2,11 @@
 
 #include <vector>
 #include "Console.h"
-#include "Window.h"
 #include "Texture.h"
 #include "Sprite.h"
 #include "MouseInput.h"
 #include "Rect.h"
-using namespace window;
+#include "KeyInput.h"
 
 float time = 0;
 
@@ -55,9 +54,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 			time += 1.0f;
 			console.print("aaaaaaafdfe\n");
 		}
-
-		
-
 		
 		sp3.draw(640 / 2, 480 / 2);
 

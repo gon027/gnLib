@@ -4,9 +4,6 @@
 #pragma comment(lib, "d3dx9.lib")
 #include <d3dx9.h>
 
-#include "IDraw.h"
-
-
 class Graphics;
 
 class RectAngle {
