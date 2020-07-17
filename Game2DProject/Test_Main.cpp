@@ -9,6 +9,8 @@
 #include "Rect.h"
 using namespace window;
 
+float time = 0;
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine, int nCmdShow) {
 	console::Console console;
 	console.createConsole();
@@ -31,7 +33,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		console.print("bbbbb");
 	}
 
-	Sprite sp3;
+	Sprite sp1, sp3;
+	sp1.loadTexture(app.getGraphics(), t);
 	sp3.loadTexture(app.getGraphics(), tt);
 
 	std::vector<Sprite> sps(10);
@@ -49,14 +52,20 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		m.update();
 
 		if (m.getLeftButton()) {
+			time += 1.0f;
 			console.print("aaaaaaafdfe\n");
 		}
 
+		
+
+		
 		sp3.draw(640 / 2, 480 / 2);
 
 		for (int i = 0; i < 10; ++i) {
 			sps[i].draw(50 + i * 45, 200);
 		}
+
+		sp1.rotateDraw(350.0f, 350.0f, time);
 
 		rect.draw(app.getGraphics(), 250, 250, 100, 100, 0xFF00FFFF);
 
