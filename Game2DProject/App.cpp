@@ -22,9 +22,30 @@ void App::initWindow()
 	graphics.get()->createGraphics(window.get());
 }
 
+bool App::doEvent()
+{
+	MSG msg{};
+
+	while (true) {
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+
+			if (msg.message == WM_QUIT) {
+				return false;
+			}
+
+			::TranslateMessage(&msg);
+			::DispatchMessage(&msg);
+		}
+		else {
+			return true;
+		}
+	}
+}
+
 bool App::update()
 {
-	return window->update();
+
+	return false;
 }
 
 void App::begin()

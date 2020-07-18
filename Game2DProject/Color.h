@@ -1,21 +1,20 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#include <Windows.h>
+#pragma comment(lib, "d3d9.lib")
+#include <d3d9.h>
 
-extern DWORD RGBA(unsigned int _r, unsigned int _g, unsigned int _b, unsigned int _a = 255);
+class Color;
 
+class Color {
+public:
+	Color(int _r, int _g, int _b, int _alpha = 255);
+	~Color() = default;
 
-/*
-namespace Color {
-	unsigned int RED   = 0xFFFF0000;
-	unsigned int GREEN = 0xFF00FF00;
-	unsigned int BLUE  = 0xFF0000FF;
-	unsigned int WHITE = 0xFFFFFFFF;
-	unsigned int BLACK = 0xFF000000;
+	D3DCOLOR getColor() const;
 
-	unsigned int RGBA(unsigned int _r, unsigned int _g, unsigned int _b, unsigned int _a = 255);
-}
-*/
+private:
+	int r, g, b, alpha;
+};
 
 #endif // !COLOR_H

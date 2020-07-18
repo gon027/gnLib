@@ -19,7 +19,7 @@ bool Texture::loadTexture(Graphics* _graphics, const string & _filePath)
 	HRESULT hr;
 
 	// テクスチャの読み込み
-	hr = D3DXCreateTextureFromFile(_graphics->device, _filePath.c_str(), &lpTexture);
+	hr = D3DXCreateTextureFromFile(_graphics->getDevice(), _filePath.c_str(), &lpTexture);
 
 	if (FAILED(hr)) {
 		return false;

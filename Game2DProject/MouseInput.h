@@ -26,6 +26,7 @@ public:
 
 	bool getLeftButton();
 	bool getRightButton();
+	bool getMiddleButton();
 
 private:
 	window::Window* window;

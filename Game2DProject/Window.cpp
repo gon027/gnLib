@@ -65,26 +65,6 @@ namespace window {
 		title = _title;
 	}
 
-	bool Window::update()
-	{
-		MSG msg{};
-
-		while (true) {
-			if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
-
-				if (msg.message == WM_QUIT) {
-					return false;
-				}
-
-				::TranslateMessage(&msg);
-				::DispatchMessage(&msg);
-			}
-			else {
-				return true;
-			}
-		}
-	}
-
 	const int Window::getWidth() const
 	{
 		return width;

@@ -162,8 +162,11 @@
     <ClInclude Include="Render.h" />
     <ClInclude Include="SmartPtr.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StringRender.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
     <ClInclude Include="Vertex2D.h" />
     <ClInclude Include="Vertex3D.h" />
     <ClInclude Include="Window.h" />
@@ -179,9 +182,11 @@
     <ClCompile Include="MouseInput.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StringRender.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Test_Console.cpp" />
     <ClCompile Include="Test_Main.cpp" />
+    <ClCompile Include="Test_StringRender.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>

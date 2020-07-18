@@ -82,3 +82,15 @@ void Graphics::end() noexcept {
 	device->EndScene();
 	device->Present(NULL, NULL, NULL, NULL);
 }
+
+IDirect3D9 * Graphics::getInterface() const
+{
+	return pD3D9;
+}
+
+IDirect3DDevice9 * Graphics::getDevice() const
+{
+	return device;
+}
+
+

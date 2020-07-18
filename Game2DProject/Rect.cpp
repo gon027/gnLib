@@ -29,6 +29,6 @@ void RectAngle::draw(Graphics* _graphics, float _x, float _y, float _xsize, floa
 	};
 
 
-	_graphics->device->SetFVF(FVF_CUSTOM2D);
-	_graphics->device->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
+	_graphics->getDevice()->SetFVF(FVF_CUSTOM2D);
+	_graphics->getDevice()->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 }

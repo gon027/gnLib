@@ -20,7 +20,10 @@ public:
 	void begin() noexcept;		//描画開始
 	void end() noexcept;		//描画終了
 
-public:
+	IDirect3D9* getInterface() const;
+	IDirect3DDevice9* getDevice() const;
+
+private:
 	IDirect3D9*		pD3D9;		    // Direct3Dデバイス生成用オブジェクト
 	IDirect3DDevice9*	device;	    // Direct3Dのデバイス
 };

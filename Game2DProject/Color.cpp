@@ -1,22 +1,15 @@
 #include "Color.h"
 
-/*
-unsigned int Color::RGBA(unsigned int _r, unsigned int _g, unsigned int _b, unsigned int _a)
+Color::Color(int _r, int _g, int _b, int _alpha)
+	: r(_r)
+	, g(_g)
+	, b(_b)
+	, alpha(_alpha)
 {
-	unsigned int argb = 0;
-	argb |= 1 << 24;
-	argb |= _r << 16;
-	argb |= _g << 8;
-	argb |= _b;
-	return argb;
-}
-*/
 
-DWORD RGBA(unsigned int _r, unsigned int _g, unsigned int _b, unsigned int _a)
+}
+
+D3DCOLOR Color::getColor() const
 {
-	DWORD argb = 1 << 24;
-	argb |= (_r % 256) << 16;
-	argb |= (_g % 256) << 8;
-	argb |= (_b % 256);
-	return argb;
+	return D3DCOLOR_ARGB(alpha, r, g, b);
 }

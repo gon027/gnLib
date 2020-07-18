@@ -120,3 +120,12 @@ bool MouseInput::getRightButton()
 
 	return false;
 }
+
+bool MouseInput::getMiddleButton()
+{
+	if (mouseState.rgbButtons[2] & 0x80) {
+		return true;
+	}
+
+	return false;
+}

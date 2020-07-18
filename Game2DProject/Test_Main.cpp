@@ -1,5 +1,6 @@
 #include "App.h"
 
+/*
 #include <vector>
 #include "Console.h"
 #include "Texture.h"
@@ -52,7 +53,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		sps[i].loadTexture(app.getGraphics(), t);
 	}
 
-	while (app.update())
+	while (app.doEvent())
 	{
 		app.begin();
 
@@ -60,7 +61,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		key.update();
 
 
-		if (key.keyDown(Key::K)) {
+		if (m.getMiddleButton()) {
 			time += 1.0f;
 			console.print("aaaaaaafdfe\n");
 		}
@@ -68,13 +69,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 		sp3.draw(640 / 2, 480 / 2);
 
 		for (int i = 0; i < 10; ++i) {
-			sps[i].draw(50 + i * 45, 200);
+			sps[i].draw(50.0f + i * 45.0f, 200.0f);
 		}
 
 		sp1.rotateDraw((float)350.0f, (float)350.0f, time);
 
-		rect.draw(app.getGraphics(), 250, 250, 100, 100, 0xFF00FFFF);
+		rect.draw(app.getGraphics(), 250.0f, 250.0f, 100.0f, 100.0f, 0xFF00FFFF);
 
 		app.end();
 	}
-}
+}*/

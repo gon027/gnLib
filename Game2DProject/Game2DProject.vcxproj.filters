@@ -61,6 +61,9 @@
     <Filter Include="Render">
       <UniqueIdentifier>{94249fff-e1a6-491d-838e-f828bee4b938}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StringRender">
+      <UniqueIdentifier>{79ec5268-4a4c-4511-9cd0-c0c5a49e98f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -132,6 +135,15 @@
     <ClInclude Include="include\Math.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="StringRender.h">
+      <Filter>StringRender</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -175,6 +187,12 @@
     </ClCompile>
     <ClCompile Include="Color.cpp">
       <Filter>Color</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_StringRender.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="StringRender.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

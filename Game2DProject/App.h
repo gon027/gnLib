@@ -19,9 +19,8 @@ public:
 
 	void initWindow();
 
-	bool dumpMesagge();
+	bool doEvent();
 	bool update();
-	void update();
 	void begin();
 	void end();
 

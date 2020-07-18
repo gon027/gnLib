@@ -17,8 +17,6 @@ namespace window {
 
 		void setTitle(const string& _title);
 
-		bool update();
-
 		const int getWidth() const;
 
 		const int getHeight() const;
