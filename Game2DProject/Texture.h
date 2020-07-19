@@ -18,7 +18,7 @@ public:
 	Texture();
 	~Texture();
 
-	bool loadTexture(Graphics* _graphics, const string& _filePath);
+	bool loadTexture(const string& _filePath);
 
 	bool imageInfo();
 

@@ -2,6 +2,7 @@
 
 #include "Window.h"
 #include "Graphics.h"
+#include <memory>
 
 App::App(std::string _title, int _width, int _height)
 	: window(new Window(_title, _width, _height))
@@ -9,6 +10,7 @@ App::App(std::string _title, int _width, int _height)
 {
 	window.get()->createWindow();
 	graphics.get()->createGraphics(window.get());
+	RenderIns->setGraphics(graphics.get());
 }
 
 App::~App()

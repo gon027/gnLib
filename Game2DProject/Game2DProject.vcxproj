@@ -150,6 +150,7 @@
     <ClInclude Include="Color.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CStream.h" />
+    <ClInclude Include="GameLib.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="include\Math.h" />
     <ClInclude Include="Input.h" />
@@ -181,11 +182,13 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MouseInput.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="Render.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="StringRender.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Test_Console.cpp" />
     <ClCompile Include="Test_Main.cpp" />
+    <ClCompile Include="Test_Render.cpp" />
     <ClCompile Include="Test_StringRender.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Window.cpp" />

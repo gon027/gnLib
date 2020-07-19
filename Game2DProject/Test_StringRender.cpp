@@ -1,5 +1,8 @@
 #include "App.h"
 
+/*
+#include "Texture.h"
+#include "Sprite.h"
 #include "StringRender.h"
 #include "Color.h"
 
@@ -20,4 +23,4 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine
 
 		app.end();
 	}
-}
+}*/

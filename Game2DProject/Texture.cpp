@@ -2,6 +2,7 @@
 
 #include "Macro.h"
 #include "Graphics.h"
+#include "Render.h"
 
 Texture::Texture()
 	: lpTexture(nullptr)
@@ -14,12 +15,12 @@ Texture::~Texture()
 	RELEASE(lpTexture);
 }
 
-bool Texture::loadTexture(Graphics* _graphics, const string & _filePath)
+bool Texture::loadTexture(const string & _filePath)
 {
 	HRESULT hr;
 
 	// テクスチャの読み込み
-	hr = D3DXCreateTextureFromFile(_graphics->getDevice(), _filePath.c_str(), &lpTexture);
+	hr = D3DXCreateTextureFromFile(RenderIns->getGraphics()->getDevice(), _filePath.c_str(), &lpTexture);
 
 	if (FAILED(hr)) {
 		return false;

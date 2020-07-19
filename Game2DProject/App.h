@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "SmartPtr.h"
+#include "Render.h"
 
 namespace window {
 	class Window;
