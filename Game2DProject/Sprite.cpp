@@ -28,7 +28,7 @@ bool Sprite::loadTexture(Texture & _texture)
 	HRESULT hr;
 
 	// スプライトの作成
-	hr = D3DXCreateSprite(RenderIns->getGraphics()->getDevice(), &sprite);
+	hr = D3DXCreateSprite(RenderDevice, &sprite);
 
 	if (FAILED(hr)) {
 		return false;

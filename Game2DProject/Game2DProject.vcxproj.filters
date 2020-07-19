@@ -194,14 +194,17 @@
     <ClCompile Include="Test_StringRender.cpp">
       <Filter>Test</Filter>
     </ClCompile>
-    <ClCompile Include="StringRender.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Test_Render.cpp">
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Render.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="StringRender.cpp">
+      <Filter>StringRender</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_GameLib_Main.cpp">
+      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

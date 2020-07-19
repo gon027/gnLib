@@ -187,6 +187,7 @@
     <ClCompile Include="StringRender.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Test_Console.cpp" />
+    <ClCompile Include="Test_GameLib_Main.cpp" />
     <ClCompile Include="Test_Main.cpp" />
     <ClCompile Include="Test_Render.cpp" />
     <ClCompile Include="Test_StringRender.cpp" />

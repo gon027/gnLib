@@ -1,7 +1,8 @@
 #include "StringRender.h"
 
-#include "Macro.h"
+#include "Render.h"
 #include "Graphics.h"
+#include "Macro.h"
 
 StringRender::StringRender()
 {
@@ -12,12 +13,12 @@ StringRender::~StringRender()
 	RELEASE(font);
 }
 
-bool StringRender::create(Graphics * _graphics)
+bool StringRender::create()
 {
 	HRESULT ret;
 
 	ret = D3DXCreateFont(
-		_graphics->getDevice(),
+		RenderDevice,
 		height,
 		width,
 		0,

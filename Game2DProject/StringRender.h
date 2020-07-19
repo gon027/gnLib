@@ -19,7 +19,7 @@ public:
 
 	void setFont(string _fontName);
 	void setFontSize(int _fontSize);
-	bool create(Graphics* _graphics);
+	bool create();
 	void drawText(string _str, int _x, int _y, Color _color);
 
 private:

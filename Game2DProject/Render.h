@@ -2,6 +2,7 @@
 #define RENDER_H
 
 #define RenderIns Render::Instance
+#define RenderDevice Render::Instance->getGraphics()->getDevice()
 
 class Graphics;
 
