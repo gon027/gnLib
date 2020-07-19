@@ -10,6 +10,12 @@ Texture::Texture()
 
 }
 
+Texture::Texture(const string& _filePath)
+	: lpTexture(nullptr)
+{
+	loadTexture(_filePath);
+}
+
 Texture::~Texture()
 {
 	RELEASE(lpTexture);

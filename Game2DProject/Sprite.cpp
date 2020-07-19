@@ -3,6 +3,7 @@
 #include <winerror.h>
 #include "Macro.h"
 #include "Graphics.h"
+#include "Render.h"
 
 
 Sprite::Sprite()
@@ -12,17 +13,22 @@ Sprite::Sprite()
 
 }
 
+Sprite::Sprite(Texture & _texture)
+{
+	loadTexture(_texture);
+}
+
 Sprite::~Sprite()
 {
 	RELEASE(sprite);
 }
 
-bool Sprite::loadTexture(Graphics * _graphics, Texture & _texture)
+bool Sprite::loadTexture(Texture & _texture)
 {
 	HRESULT hr;
 
 	// スプライトの作成
-	hr = D3DXCreateSprite(_graphics->getDevice(), &sprite);
+	hr = D3DXCreateSprite(RenderIns->getGraphics()->getDevice(), &sprite);
 
 	if (FAILED(hr)) {
 		return false;

@@ -16,6 +16,7 @@ using string = std::string;
 class Texture {
 public:
 	Texture();
+	Texture(const string& _filePath);
 	~Texture();
 
 	bool loadTexture(const string& _filePath);

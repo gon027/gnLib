@@ -15,11 +15,12 @@ class Graphics;
 class Sprite {
 public:
 	Sprite();
+	Sprite(Texture& _texture);
 	~Sprite();
 
 	D3DXVECTOR3 position;
 
-	bool loadTexture(Graphics* _graphics, Texture& _texture);
+	bool loadTexture(Texture& _texture);
 
 	// •`‰æ
 	void draw(float _x, float _y);
