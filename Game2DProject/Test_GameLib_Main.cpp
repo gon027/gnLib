@@ -1,5 +1,6 @@
 #include "GameLib.h"
 
+/*
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	App app{ "GameLib Main" };
 
@@ -10,3 +11,4 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		app.end();
 	}
 }
+*/

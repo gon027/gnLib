@@ -2,6 +2,8 @@
 #define CONSOLE_H
 
 #include <Windows.h>
+#include <string>
+
 
 // CONSOLE_SCREEN_BUFFER_INFOのエイリアス宣言
 using CSBInfo = CONSOLE_SCREEN_BUFFER_INFO;

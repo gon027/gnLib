@@ -64,6 +64,9 @@
     <Filter Include="StringRender">
       <UniqueIdentifier>{79ec5268-4a4c-4511-9cd0-c0c5a49e98f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FPS">
+      <UniqueIdentifier>{fb1f79bc-2444-498a-bc1a-3b5e3e765d8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -147,6 +150,9 @@
     <ClInclude Include="GameLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="FpsManager.h">
+      <Filter>FPS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -204,6 +210,12 @@
       <Filter>StringRender</Filter>
     </ClCompile>
     <ClCompile Include="Test_GameLib_Main.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="FpsManager.cpp">
+      <Filter>FPS</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_Fps.cpp">
       <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>

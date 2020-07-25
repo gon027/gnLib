@@ -16,6 +16,7 @@ using Window = window::Window;
 
 class MouseInput {
 public:
+	MouseInput() = default;
 	MouseInput(Window* _win);
 	~MouseInput();
 

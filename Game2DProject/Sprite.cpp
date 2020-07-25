@@ -90,7 +90,14 @@ void Sprite::drawEx(float _x, float _y, float _angle, float _sx, float _sy)
 	{
 		sprite->SetTransform(&matWorld);
 
-		sprite->Draw(tex.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);
+
+		// テクスチャを読み込んでいた場合
+		if (tex.isLoading()) {
+			sprite->Draw(tex.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);
+		}
+		else {
+			sprite->Draw(nullptr, NULL, &center, NULL, 0xFFFF00FF);
+		}
 	}
 
 	sprite->End();

@@ -5,8 +5,6 @@
 
 using namespace console;
 
-void Main();
-
 /*
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine, int nCmdShow) {
 

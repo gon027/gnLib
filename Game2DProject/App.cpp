@@ -7,6 +7,7 @@
 App::App(std::string _title, int _width, int _height)
 	: window(new Window(_title, _width, _height))
 	, graphics(new Graphics())
+	, fpsManager()
 {
 	window.get()->createWindow();
 	graphics.get()->createGraphics(window.get());

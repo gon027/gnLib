@@ -2,9 +2,9 @@
 #define APP_H
 
 #include <string>
-#include <memory>
 #include "SmartPtr.h"
 #include "Render.h"
+#include "FpsManager.h"
 
 namespace window {
 	class Window;
@@ -25,6 +25,10 @@ public:
 	void begin();
 	void end();
 
+	double getFps() {
+		return fpsManager.getFps();
+	}
+
 	Window* getWindow() const;
 
 	Graphics* getGraphics() const;
@@ -32,6 +36,7 @@ public:
 private:
 	UniquePtr<Window> window;
 	UniquePtr<Graphics> graphics;
+	gnLib::FpsManager fpsManager;
 };
 
 #endif // !APP_H

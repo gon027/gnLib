@@ -150,6 +150,7 @@
     <ClInclude Include="Color.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CStream.h" />
+    <ClInclude Include="FpsManager.h" />
     <ClInclude Include="GameLib.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="include\Math.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="FpsManager.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="KeyInput.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -187,6 +189,7 @@
     <ClCompile Include="StringRender.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Test_Console.cpp" />
+    <ClCompile Include="Test_Fps.cpp" />
     <ClCompile Include="Test_GameLib_Main.cpp" />
     <ClCompile Include="Test_Main.cpp" />
     <ClCompile Include="Test_Render.cpp" />

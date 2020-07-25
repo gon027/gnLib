@@ -66,6 +66,7 @@ using window::Window;
 
 class KeyInput {
 public:
+	KeyInput() = default;
 	KeyInput(Window* _win);
 	~KeyInput();
 
