@@ -22,13 +22,14 @@ void RectAngle::draw(float _x, float _y, float _xsize, float _ysize, DWORD _colo
 	float sx = x + _xsize;
 	float sy = y + _ysize;
 
+	collider.setCollider(_x, _y, _xsize, _ysize);
+
 	Vertex2D vertex[] = {
 		{ x, sy, 0.0f, 1.0f, _color, 0.0f, 0.0f},
 		{ x,  y, 0.0f, 1.0f, _color, 0.0f, 0.0f},
 		{sx, sy, 0.0f, 1.0f, _color, 0.0f, 0.0f},
 		{sx,  y, 0.0f, 1.0f, _color, 0.0f, 0.0f},
 	};
-
 
 	RenderDevice->SetFVF(FVF_CUSTOM2D);
 	RenderDevice->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
