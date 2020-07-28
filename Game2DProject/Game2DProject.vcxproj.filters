@@ -55,183 +55,111 @@
     <Filter Include="Collider">
       <UniqueIdentifier>{f9ca5a98-6cf5-41d0-a5df-8855062834d6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Math">
-      <UniqueIdentifier>{dda7240a-4fe8-4708-a647-c540f4f458e7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Render">
       <UniqueIdentifier>{94249fff-e1a6-491d-838e-f828bee4b938}</UniqueIdentifier>
     </Filter>
     <Filter Include="StringRender">
       <UniqueIdentifier>{79ec5268-4a4c-4511-9cd0-c0c5a49e98f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FPS">
-      <UniqueIdentifier>{fb1f79bc-2444-498a-bc1a-3b5e3e765d8b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Window.h">
-      <Filter>Window</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="TestScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyInput.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseInput.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Console.h">
-      <Filter>Console</Filter>
-    </ClInclude>
-    <ClInclude Include="CStream.h">
-      <Filter>Console</Filter>
-    </ClInclude>
-    <ClInclude Include="App.h">
-      <Filter>App</Filter>
-    </ClInclude>
-    <ClInclude Include="Vertex2D.h">
-      <Filter>Vertex</Filter>
-    </ClInclude>
-    <ClInclude Include="Vertex3D.h">
-      <Filter>Vertex</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Rect.h">
-      <Filter>Rect</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Color</Filter>
-    </ClInclude>
-    <ClInclude Include="Macro.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="SmartPtr.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="IRenderObject.h">
-      <Filter>Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Render.h">
-      <Filter>Render</Filter>
-    </ClInclude>
-    <ClInclude Include="WinProc.h">
-      <Filter>Window</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Math.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="StringRender.h">
-      <Filter>StringRender</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Math</Filter>
-    </ClInclude>
     <ClInclude Include="GameLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="FpsManager.h">
-      <Filter>FPS</Filter>
+    <ClInclude Include="include\App.h">
+      <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="BaseCollider.h">
+    <ClInclude Include="include\Window\Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Texture\Texture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Collider\BaseCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="BoxCollider.h">
+    <ClInclude Include="include\Collider\BoxCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="ColliderManager.h">
+    <ClInclude Include="include\Collider\ColliderManager.h">
       <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Color\Color.h">
+      <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Console\Console.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Input\Input.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Input\KeyInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Input\MouseInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rect\Rect.h">
+      <Filter>Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Render\Render.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sprite\Sprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StringRender\StringRender.h">
+      <Filter>StringRender</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\Graphics.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="TestScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Test_Console.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Console</Filter>
-    </ClCompile>
-    <ClCompile Include="App.cpp">
+    <ClCompile Include="src\App.cpp">
       <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="Test_Main.cpp">
-      <Filter>Test</Filter>
+    <ClCompile Include="src\Window\Window.cpp">
+      <Filter>Window</Filter>
     </ClCompile>
-    <ClCompile Include="MouseInput.cpp">
-      <Filter>Input</Filter>
+    <ClCompile Include="src\Texture\Texture.cpp">
+      <Filter>Texture</Filter>
     </ClCompile>
-    <ClCompile Include="Rect.cpp">
-      <Filter>Rect</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyInput.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>Color</Filter>
-    </ClCompile>
-    <ClCompile Include="Test_StringRender.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="Test_Render.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="Render.cpp">
-      <Filter>Render</Filter>
-    </ClCompile>
-    <ClCompile Include="StringRender.cpp">
+    <ClCompile Include="src\StringRender\StringRender.cpp">
       <Filter>StringRender</Filter>
     </ClCompile>
-    <ClCompile Include="Test_GameLib_Main.cpp">
+    <ClCompile Include="src\Sprite\Sprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Render.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rect\Rect.cpp">
+      <Filter>Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\KeyInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\MouseInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Graphics.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Console\Console.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Color\Color.cpp">
+      <Filter>Color</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collider\BaseCollider.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collider\BoxCollider.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
       <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="FpsManager.cpp">
-      <Filter>FPS</Filter>
-    </ClCompile>
-    <ClCompile Include="Test_Fps.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="BoxCollider.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseCollider.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

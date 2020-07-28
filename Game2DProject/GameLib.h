@@ -1,24 +1,24 @@
 #ifndef GAMELIB_H
 #define GAMELIB_H
 
-#include "App.h"
+#include "include/App.h"
 
-#include "Console.h"
+#include "include/Console/Console.h"
 
-#include "Window.h"
+#include "include/Window/Window.h"
 
-#include "Graphics.h"
+#include "include/Graphics/Graphics.h"
 
-#include "Input.h"
+#include "include/Input/Input.h"
 
-#include "Texture.h"
+#include "include/Texture/Texture.h"
 
-#include "Sprite.h"
+#include "include/Sprite/Sprite.h"
 
-#include "Color.h"
+#include "include/Color/Color.h"
 
-#include "StringRender.h"
+#include "include/StringRender/StringRender.h"
 
-#include "Main.h"
+#include "include/Common/Math.h"
 
 #endif // !GAMELIB_H
