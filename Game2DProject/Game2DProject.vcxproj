@@ -145,12 +145,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="GameLib.h" />
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Collider\BaseCollider.h" />
     <ClInclude Include="include\Collider\BoxCollider.h" />
     <ClInclude Include="include\Collider\ColliderManager.h" />
     <ClInclude Include="include\Color\Color.h" />
+    <ClInclude Include="include\Common\Math.h" />
     <ClInclude Include="include\Console\Console.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
@@ -164,6 +166,8 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="include\Input\Input.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Collider\BaseCollider.cpp" />
     <ClCompile Include="src\Collider\BoxCollider.cpp" />

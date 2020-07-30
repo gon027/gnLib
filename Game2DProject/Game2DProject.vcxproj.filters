@@ -61,6 +61,9 @@
     <Filter Include="StringRender">
       <UniqueIdentifier>{79ec5268-4a4c-4511-9cd0-c0c5a49e98f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CIrcle">
+      <UniqueIdentifier>{c7e45028-4272-43a4-9860-0f18f005f02a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib.h">
@@ -114,6 +117,12 @@
     <ClInclude Include="include\Graphics\Graphics.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>CIrcle</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Math.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp">
@@ -160,6 +169,12 @@
     </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>CIrcle</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Input\Input.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

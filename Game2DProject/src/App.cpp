@@ -3,6 +3,7 @@
 #include "../include/Window/Window.h"
 #include "../include/Graphics/Graphics.h"
 #include "../include/Render/Render.h"
+#include "../include/Input/Input.h"
 
 App::App(std::string _title, int _width, int _height)
 	: window(new Window(_title, _width, _height))
@@ -11,6 +12,7 @@ App::App(std::string _title, int _width, int _height)
 	window.get()->createWindow();
 	graphics.get()->createGraphics(window.get());
 	RenderIns->setGraphics(graphics.get());
+	Input::init(window.get());
 }
 
 App::~App()
@@ -46,13 +48,15 @@ bool App::doEvent()
 
 bool App::update()
 {
-
+	Input::update();
 	return false;
 }
 
 void App::begin()
 {
 	graphics.get()->begin();
+
+	update();
 }
 
 void App::end()

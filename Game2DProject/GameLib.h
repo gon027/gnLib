@@ -21,4 +21,6 @@
 
 #include "include/Common/Math.h"
 
+#include "include/Rect/Rect.h"
+
 #endif // !GAMELIB_H

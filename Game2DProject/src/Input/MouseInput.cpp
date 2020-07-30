@@ -17,6 +17,13 @@ MouseInput::~MouseInput()
 	release();
 }
 
+void MouseInput::init(Window * _win)
+{
+	window = _win;
+	createDInput();
+	create();
+}
+
 bool MouseInput::createDInput()
 {
 	HRESULT ret{};

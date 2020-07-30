@@ -7,6 +7,7 @@
 #pragma comment(lib, "dxguid.lib")
 
 #include <dinput.h>
+#include <array>
 
 // キーコード
 enum class Key : BYTE {
@@ -70,6 +71,7 @@ public:
 	KeyInput(Window* _win);
 	~KeyInput();
 
+	void init(Window* _win);
 	bool createDInput();
 	bool create();
 	void update();
@@ -85,6 +87,8 @@ private:
 
 	BYTE beforeKey[256];
 	BYTE afterKey[256];
+
+	std::array<int, 256> keyArray;
 
 	void relese() noexcept;
 };

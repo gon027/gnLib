@@ -17,6 +17,13 @@ KeyInput::~KeyInput()
 	RELEASE(keyBoard);
 }
 
+void KeyInput::init(Window * _win)
+{
+	window = _win;
+	createDInput();
+	create();
+}
+
 bool KeyInput::createDInput()
 {
 	HRESULT ret;
@@ -83,6 +90,11 @@ bool KeyInput::keyDown(Key _keyCode)
 		return true;
 	}
 
+	return false;
+}
+
+bool KeyInput::keyUp(Key _keyCode)
+{
 	return false;
 }
 

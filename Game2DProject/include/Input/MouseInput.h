@@ -20,6 +20,7 @@ public:
 	MouseInput(Window* _win);
 	~MouseInput();
 
+	void init(Window* _win);
 	bool createDInput();
 	bool create();
 	void release();
@@ -32,8 +33,8 @@ public:
 private:
 	window::Window* window;
 
-	LPDIRECTINPUT8 device;
-	LPDIRECTINPUTDEVICE8 lpMouse;
+	LPDIRECTINPUT8 device = nullptr;
+	LPDIRECTINPUTDEVICE8 lpMouse = nullptr;
 	DIMOUSESTATE mouseState;
 };
 
