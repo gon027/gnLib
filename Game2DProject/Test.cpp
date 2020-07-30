@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	while (app.doEvent()) {
 		app.begin();
 
-		if (Input::getKeyDown(Key::F)) {
+		if (Input::getLeftButton()) {
 			x++;
 		}
 		else {
