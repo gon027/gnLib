@@ -6,12 +6,6 @@
 // コンソール
 #include "include/Console/Console.h"
 
-// ウインドウ
-#include "include/Window/Window.h"
-
-// グラフィクス
-#include "include/Graphics/Graphics.h"
-
 // 入力
 #include "include/Input/Input.h"
 
@@ -35,5 +29,11 @@
 
 // 円
 #include "include/Circle/Circle.h"
+
+// 線
+#include "include/Line/Line.h"
+
+// 点
+#include "include/Point/Point.h"
 
 #endif // !GAMELIB_H

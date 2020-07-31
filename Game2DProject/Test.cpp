@@ -1,10 +1,10 @@
 #include "GameLib.h"
-#include "include/Line/Line.h"
-#include "include/Point/Point.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	App app{ "Test" };
+	App app{ "Test", 400, 400 };
 
+	Texture bg("img/400x400.png");
+	Sprite spr(bg);
 	RectAngle ra;
 	Line l;
 	Point p;
@@ -13,6 +13,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	while (app.doEvent()) {
 		app.begin();
+
+		spr.draw((float)app.getWidth() / 2, (float)app.getHeight() / 2);
 
 		l.draw(0, 0, 100, 100);
 		p.draw(200, 200);

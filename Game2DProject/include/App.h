@@ -27,9 +27,16 @@ public:
 
 	Graphics* getGraphics() const;
 
+	// ウィンドウの幅と高さ
+	int getWidth() const;
+	int getHeight() const;
+
 private:
 	UniquePtr<Window> window;
 	UniquePtr<Graphics> graphics;
+
+	int windowWidth = 640;
+	int windowHeight = 480;
 };
 
 #endif // !APP_H

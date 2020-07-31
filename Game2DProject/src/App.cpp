@@ -8,6 +8,8 @@
 App::App(std::string _title, int _width, int _height)
 	: window(new Window(_title, _width, _height))
 	, graphics(new Graphics())
+	, windowWidth(_width)
+	, windowHeight(_height)
 {
 	window.get()->createWindow();
 	graphics.get()->createGraphics(window.get());
@@ -72,4 +74,14 @@ Window * App::getWindow() const
 Graphics * App::getGraphics() const
 {
 	return graphics.get();
+}
+
+int App::getWidth() const
+{
+	return windowWidth;
+}
+
+int App::getHeight() const
+{
+	return windowHeight;
 }
