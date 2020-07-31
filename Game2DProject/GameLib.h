@@ -34,6 +34,6 @@
 #include "include/Rect/Rect.h"
 
 // ‰~
-#include "Circle.h"
+#include "include/Circle/Circle.h"
 
 #endif // !GAMELIB_H

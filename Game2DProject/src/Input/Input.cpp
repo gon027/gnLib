@@ -1,4 +1,4 @@
-#include "Input.h"
+#include "../../include/Input/Input.h"
 
 KeyBorad Input::keyBorad;
 Mouse Input::mouse;

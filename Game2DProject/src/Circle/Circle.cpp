@@ -1,10 +1,10 @@
-#include "Circle.h"
-#include "./include/Common/Macro.h"
-#include "./include/Graphics/Graphics.h"
-#include "./include/Render/Render.h"
-#include "./include/Color/Color.h"
-#include "./include/Vertex/Vertex2D.h"
-#include "./include/Common/Math.h"
+#include "../../include/Circle/Circle.h"
+#include "../../include/Common/Macro.h"
+#include "../../include/Graphics/Graphics.h"
+#include "../../include/Render/Render.h"
+#include "../../include/Color/Color.h"
+#include "../../include/Vertex/Vertex2D.h"
+#include "../../include/Common/Math.h"
 
 #include <vector>
 #include <cmath>
