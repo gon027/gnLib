@@ -3,6 +3,8 @@
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	App app{ "Test" };
 
+	Texture t("img/char.png");
+	Sprite s(t);
 	Circle c;
 
 	float x = 300;
@@ -12,6 +14,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		app.begin();
 
 		c.draw(300, 300, 100);
+		c.draw(100, 100, 50);
+
+		s.draw(100, 50);
+		s.draw(200, 300);
+		s.draw(200, 100);
 
 		x += sp;
 		if (x >= app.getWidth()) {

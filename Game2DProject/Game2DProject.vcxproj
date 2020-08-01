@@ -167,6 +167,8 @@
     <ClInclude Include="include\Texture\Texture.h" />
     <ClInclude Include="include\Window\Window.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Quad.h" />
+    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Line\Line.cpp" />
