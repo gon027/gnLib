@@ -13,7 +13,7 @@ using Window = window::Window;
 
 class App {
 public:
-	App(std::string _title, int _width = 640, int _height = 480);
+	App(std::string _title = "App", int _width = 640, int _height = 480);
 	~App();
 
 	void initWindow();

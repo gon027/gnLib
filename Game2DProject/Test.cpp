@@ -1,10 +1,10 @@
 #include "GameLib.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	App app{ "Test" };
+	App app{};
 
-	Texture t("img/char.png");
-	Sprite s(t);
+	Texture t{ "img/char.png" };
+	Sprite s{ t };
 	Circle c;
 
 	float x = 300;
@@ -19,6 +19,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		s.draw(100, 50);
 		s.draw(200, 300);
 		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+		s.draw(200, 100);
+
 
 		x += sp;
 		if (x >= app.getWidth()) {
