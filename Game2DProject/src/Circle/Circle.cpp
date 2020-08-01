@@ -5,11 +5,13 @@
 #include "../../include/Color/Color.h"
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Math.h"
-
+#include "../../include/Color/Color.h"
 #include <vector>
 #include <cmath>
 
-constexpr float split = 10.0f;
+constexpr int NUM = 50 + 2;
+constexpr float SPLIT = NUM - 2;
+constexpr float theta = math::tau / SPLIT;
 
 Circle::Circle()
 {
@@ -22,25 +24,22 @@ void Circle::draw(float _x, float _y, float _radius)
 	y = _y;
 	radius = _radius;
 
-	std::vector<Vertex2D> circle(10);
+	Color c(0, 255, 0);
 
-	for (float r = 0; r < math::tau; r += math::tau / split) {
-		float nx = radius * cosf(r);
-		float ny = radius * sinf(r);
-
-
-		// TODO: ‰~‚É‚È‚é‚æ‚¤‚Éƒ|ƒŠƒSƒ“‚ðì¬‚·‚é
-		//circle.emplace_back(Vertex2D{nx, ny, 0.0f, 1.0f, 0xFFFF00FF, 0.0f, 0.0f});
-		circle.emplace_back(Vertex2D{x, y, 0.0f, 1.0f, 0xFFFF00FF, 0.0f, 0.0f});
-		if (r == 0.0f) {
-
-		}
+	std::vector<Vertex2D> circle(NUM);
+	circle[0] = Vertex2D{ _x, _y, 0.0f, 1.0f, c.getColor(), 0.0f, 0.0f };
+	for (int r = 1; r < NUM; ++r) {
+		float nx = _x + radius * cosf(theta * (r - 1));
+		float ny = _y + radius * sinf(theta * (r - 1));
+		
+		circle[r] = Vertex2D{ nx, ny, 0.0f, 1.0f, c.getColor(), 0.0f, 0.0f };
 	}
+	circle[NUM - 1] = circle[1];
 
 	RenderDevice->SetFVF(FVF_CUSTOM2D);
 	RenderDevice->DrawPrimitiveUP(
-		D3DPT_TRIANGLESTRIP,
-		10,
+		D3DPT_TRIANGLEFAN,
+		NUM - 1,
 		circle.data(),
 		sizeof(Vertex2D)
 	);

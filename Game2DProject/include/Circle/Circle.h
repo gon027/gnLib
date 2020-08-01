@@ -1,20 +1,7 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-class Object {
-public:
-	virtual ~Object() {}
-
-	void setActive(bool _active) {
-		isActive = _active;
-	}
-
-	bool getActive() { return isActive; }
-
-private:
-	bool isActive;
-};
-
+#include "../../Object.h"
 
 class Circle : public Object{
 public:

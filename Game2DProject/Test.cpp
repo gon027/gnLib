@@ -1,32 +1,25 @@
 #include "GameLib.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	App app{ "Test", 400, 400 };
+	App app{ "Test" };
 
-	Texture bg("img/400x400.png");
-	Sprite spr(bg);
-	RectAngle ra;
-	Line l;
-	Point p;
+	Circle c;
 
 	float x = 300;
+	float sp = 1;
 
 	while (app.doEvent()) {
 		app.begin();
 
-		spr.draw((float)app.getWidth() / 2, (float)app.getHeight() / 2);
+		c.draw(300, 300, 100);
 
-		l.draw(0, 0, 100, 100);
-		p.draw(200, 200);
-
-		if (Input::getLeftButton()) {
-			x++;
+		x += sp;
+		if (x >= app.getWidth()) {
+			sp = -sp;
 		}
-		else {
-			x--;
+		if (x <= 0) {
+			sp = -sp;
 		}
-
-		ra.draw(x, 200, 50, 50, 0xffff00ff);
 		
 		app.end();
 	}
