@@ -37,7 +37,7 @@
 #include "include/Point/Point.h"
 
 // ÉmÉCÉY
-#include "include/Noise/Noise.h"
+//#include "include/Noise/Noise.h"
 
 using namespace gnLib;
 

@@ -73,6 +73,18 @@
     <Filter Include="Noise">
       <UniqueIdentifier>{39793f5c-16a9-482a-a8cd-adad1738b47e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{70b4bf8f-8a3e-481f-9e6c-2967df3589ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCore">
+      <UniqueIdentifier>{7ac91c06-91cb-4065-982d-9d11bed10d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quad">
+      <UniqueIdentifier>{6e7048ca-8b2b-4953-8148-cb21dbf01b66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Triangle">
+      <UniqueIdentifier>{124a1b93-66ee-4348-9f5e-91daa4d56283}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib.h">
@@ -139,19 +151,25 @@
       <Filter>Point</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Quad.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Triangle.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="GameCore.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>GameCore</Filter>
     </ClInclude>
-    <ClInclude Include="include\Noise\Noise.h">
-      <Filter>Noise</Filter>
+    <ClInclude Include="Quad.h">
+      <Filter>Quad</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vertex\Vertex3D.h">
+      <Filter>Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vertex\Vertex2D.h">
+      <Filter>Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\SmartPtr.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -207,13 +225,13 @@
       <Filter>CIrcle</Filter>
     </ClCompile>
     <ClCompile Include="include\Line\Line.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Line</Filter>
     </ClCompile>
     <ClCompile Include="include\Point\Point.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="src\Noise\Noise.cpp">
-      <Filter>Noise</Filter>
+    <ClCompile Include="GameCore.cpp">
+      <Filter>GameCore</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

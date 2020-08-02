@@ -4,17 +4,17 @@
 #pragma comment(lib, "d3d9.lib")
 #include <d3d9.h>
 
-class Color;
+namespace gnLib {
+	class Color {
+	public:
+		Color(int _r, int _g, int _b, int _alpha = 255);
+		~Color() = default;
 
-class Color {
-public:
-	Color(int _r, int _g, int _b, int _alpha = 255);
-	~Color() = default;
+		D3DCOLOR getColor() const;
 
-	D3DCOLOR getColor() const;
-
-private:
-	int r, g, b, alpha;
-};
+	private:
+		int r, g, b, alpha;
+	};
+}
 
 #endif // !COLOR_H

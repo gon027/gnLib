@@ -10,32 +10,35 @@
 #include <string>
 #include "../Common/SmartPtr.h"
 
-class Graphics;
 using string = std::string;
 
-class Texture {
-public:
-	Texture();
-	Texture(const string& _filePath);
-	~Texture();
+namespace gnLib {
+	class Graphics;
 
-	bool loadTexture(const string& _filePath);
+	class Texture {
+	public:
+		Texture();
+		Texture(const string& _filePath);
+		~Texture();
 
-	bool imageInfo();
+		bool loadTexture(const string& _filePath);
 
-	const int getWidth();
-	const int getHeight();
+		bool imageInfo();
 
-	// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
-	const bool isLoading();
+		const int getWidth();
+		const int getHeight();
 
-	LPDIRECT3DTEXTURE9 getTexture() const;
+		// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
+		const bool isLoading();
 
-private:
-	
-	LPDIRECT3DTEXTURE9 lpTexture;
-	int width;
-	int height;
-};
+		LPDIRECT3DTEXTURE9 getTexture() const;
+
+	private:
+
+		LPDIRECT3DTEXTURE9 lpTexture;
+		int width;
+		int height;
+	};
+}
 
 #endif // !TEXTURE_H

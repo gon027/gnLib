@@ -1,17 +1,20 @@
 #include "../../include/Render/Render.h"
 
-Render* Render::Instance = new Render;
+namespace gnLib {
 
-Render::Render()
-{
-}
+	Render* Render::Instance = new Render;
 
-void Render::setGraphics(Graphics * _graphics)
-{
-	graphics = _graphics;
-}
+	Render::Render()
+	{
+	}
 
-Graphics * Render::getGraphics() const
-{
-	return graphics;
+	void Render::setGraphics(Graphics * _graphics)
+	{
+		graphics = _graphics;
+	}
+
+	Graphics * Render::getGraphics() const
+	{
+		return graphics;
+	}
 }

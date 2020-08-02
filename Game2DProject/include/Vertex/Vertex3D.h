@@ -3,11 +3,14 @@
 
 #include <windows.h>
 
-struct Vertex3D {
-	float x, y, z;
-	float u, v;
-	DWORD color;
-};
+namespace gnLib {
 
+	struct Vertex3D {
+		float x, y, z;
+		float u, v;
+		DWORD color;
+	};
+
+}
 
 #endif // !VERTEX3D_H

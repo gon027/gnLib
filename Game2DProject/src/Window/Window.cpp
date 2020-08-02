@@ -1,7 +1,7 @@
 #include "../../include/Window/Window.h"
 #include "../../include/Window/WinProc.h"
 
-namespace window {
+namespace gnLib {
 	Window::Window(string _title, int _width, int _height)
 		: winc()
 		, hInstance(GetModuleHandle(NULL))
@@ -21,7 +21,7 @@ namespace window {
 	bool Window::createWindow() {
 		winc.cbSize = sizeof(WNDCLASSEX);
 		winc.style = CS_HREDRAW | CS_VREDRAW;
-		winc.lpfnWndProc = window::WindowProc;
+		winc.lpfnWndProc = gnLib::WindowProc;
 		winc.cbClsExtra = 0;
 		winc.cbWndExtra = 0;
 		winc.hInstance = hInstance;

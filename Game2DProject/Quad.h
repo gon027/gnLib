@@ -3,10 +3,12 @@
 
 #include "Object.h"
 
-class Quad : public Object{
-public:
-	Quad() = default;
-	~Quad() = default
-};
+namespace gnLib {
+	class Quad : public Object {
+	public:
+		Quad() = default;
+		~Quad() = default
+	};
+}
 
 #endif // !QUAD_H

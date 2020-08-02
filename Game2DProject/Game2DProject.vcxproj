@@ -154,25 +154,28 @@
     <ClInclude Include="include\Collider\ColliderManager.h" />
     <ClInclude Include="include\Color\Color.h" />
     <ClInclude Include="include\Common\Math.h" />
+    <ClInclude Include="include\Common\SmartPtr.h" />
     <ClInclude Include="include\Console\Console.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
     <ClInclude Include="include\Input\KeyInput.h" />
     <ClInclude Include="include\Input\MouseInput.h" />
     <ClInclude Include="include\Line\Line.h" />
-    <ClInclude Include="include\Noise\Noise.h" />
     <ClInclude Include="include\Point\Point.h" />
     <ClInclude Include="include\Rect\Rect.h" />
     <ClInclude Include="include\Render\Render.h" />
     <ClInclude Include="include\Sprite\Sprite.h" />
     <ClInclude Include="include\StringRender\StringRender.h" />
     <ClInclude Include="include\Texture\Texture.h" />
+    <ClInclude Include="include\Vertex\Vertex2D.h" />
+    <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="include\Line\Line.cpp" />
     <ClCompile Include="include\Point\Point.cpp" />
     <ClCompile Include="src\App.cpp" />
@@ -185,7 +188,6 @@
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\Input\KeyInput.cpp" />
     <ClCompile Include="src\Input\MouseInput.cpp" />
-    <ClCompile Include="src\Noise\Noise.cpp" />
     <ClCompile Include="src\Rect\Rect.cpp" />
     <ClCompile Include="src\Render\Render.cpp" />
     <ClCompile Include="src\Sprite\Sprite.cpp" />

@@ -3,17 +3,19 @@
 
 #include "../../Object.h"
 
-class Circle : public Object{
-public:
-	Circle();
-	~Circle() = default;
+namespace gnLib {
+	class Circle : public Object {
+	public:
+		Circle();
+		~Circle() = default;
 
-	void draw(float _x, float _y, float _radius);
+		void draw(float _x, float _y, float _radius);
 
-private:
-	float x;
-	float y;
-	float radius;
-};
+	private:
+		float x;
+		float y;
+		float radius;
+	};
+}
 
 #endif // !CIRCLE_H

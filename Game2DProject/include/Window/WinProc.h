@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-namespace window {
+namespace gnLib {
 
 	LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp)
 	{

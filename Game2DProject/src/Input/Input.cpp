@@ -1,51 +1,55 @@
 #include "../../include/Input/Input.h"
 
-KeyBorad Input::keyBorad;
-Mouse Input::mouse;
+namespace gnLib {
 
-void Input::init(Window * _widnow)
-{
-	keyBorad.init(_widnow);
-	mouse.init(_widnow);
-}
+	KeyBorad Input::keyBorad;
+	Mouse Input::mouse;
 
-void Input::update()
-{
-	keyBorad.update();
-	mouse.update();
-}
+	void Input::init(Window * _widnow)
+	{
+		keyBorad.init(_widnow);
+		mouse.init(_widnow);
+	}
 
-bool Input::getKeyDown(Key key)
-{
-	return keyBorad.keyDown(key);
-}
+	void Input::update()
+	{
+		keyBorad.update();
+		mouse.update();
+	}
 
-bool Input::getKeyUp(Key key)
-{
-	return keyBorad.keyUp(key);;
-}
+	bool Input::getKeyDown(Key key)
+	{
+		return keyBorad.keyDown(key);
+	}
 
-bool Input::getKeyState(Key key)
-{
-	return false;
-}
+	bool Input::getKeyUp(Key key)
+	{
+		return keyBorad.keyUp(key);;
+	}
 
-bool Input::getLeftButton()
-{
-	return mouse.getLeftButton();
-}
+	bool Input::getKeyState(Key key)
+	{
+		return false;
+	}
 
-bool Input::getRightButton()
-{
-	return mouse.getRightButton();
-}
+	bool Input::getLeftButton()
+	{
+		return mouse.getLeftButton();
+	}
 
-bool Input::getMiddleButton()
-{
-	return mouse.getMiddleButton();
-}
+	bool Input::getRightButton()
+	{
+		return mouse.getRightButton();
+	}
 
-int Input::getPosition()
-{
-	return 0;
+	bool Input::getMiddleButton()
+	{
+		return mouse.getMiddleButton();
+	}
+
+	int Input::getPosition()
+	{
+		return 0;
+	}
+
 }

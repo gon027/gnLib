@@ -7,7 +7,7 @@
 // CONSOLE_SCREEN_BUFFER_INFOのエイリアス宣言
 using CSBInfo = CONSOLE_SCREEN_BUFFER_INFO;
 
-namespace console {
+namespace gnLib {
 
 	// コンソールクラス
 	class Console

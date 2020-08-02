@@ -3,8 +3,10 @@
 
 #include "Object.h"
 
-class Triangle : public Object {
+namespace gnLib {
+	class Triangle : public Object {
 
-};
+	};
+}
 
 #endif // !TRYANGLE_H

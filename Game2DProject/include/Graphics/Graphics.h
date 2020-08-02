@@ -9,23 +9,25 @@
 
 #include "../Window/Window.h"
 
-class Graphics {
-public:
-	Graphics();
-	~Graphics();
+namespace gnLib {
+	class Graphics {
+	public:
+		Graphics();
+		~Graphics();
 
-	// Graphicの作成
-	bool createGraphics(window::Window* _window) noexcept;
+		// Graphicの作成
+		bool createGraphics(gnLib::Window* _window) noexcept;
 
-	void begin() noexcept;		//描画開始
-	void end() noexcept;		//描画終了
+		void begin() noexcept;		//描画開始
+		void end() noexcept;		//描画終了
 
-	IDirect3D9* getInterface() const;
-	IDirect3DDevice9* getDevice() const;
+		IDirect3D9* getInterface() const;
+		IDirect3DDevice9* getDevice() const;
 
-private:
-	IDirect3D9*		pD3D9;		    // Direct3Dデバイス生成用オブジェクト
-	IDirect3DDevice9*	device;	    // Direct3Dのデバイス
-};
+	private:
+		IDirect3D9*		pD3D9;		    // Direct3Dデバイス生成用オブジェクト
+		IDirect3DDevice9*	device;	    // Direct3Dのデバイス
+	};
+}
 
 #endif // !GRAPHICS_H

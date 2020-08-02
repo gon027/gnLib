@@ -10,36 +10,38 @@
 #include "../Common/SmartPtr.h"
 #include "../Texture/Texture.h"
 
-class Graphics;
+namespace gnLib {
+	class Graphics;
 
-class Sprite {
-public:
-	Sprite();
-	Sprite(Texture& _texture);
-	~Sprite();
+	class Sprite {
+	public:
+		Sprite();
+		Sprite(Texture& _texture);
+		~Sprite();
 
-	D3DXVECTOR3 position;
+		D3DXVECTOR3 position;
 
-	bool loadTexture(Texture& _texture);
+		bool loadTexture(Texture& _texture);
 
-	// •`‰æ
-	void draw(float _x, float _y);
+		// •`‰æ
+		void draw(float _x, float _y);
 
-	// ‰ñ“]•`‰æ
-	void rotateDraw(float _x, float _y, float _angle);
+		// ‰ñ“]•`‰æ
+		void rotateDraw(float _x, float _y, float _angle);
 
-	// Šg‘åEk¬•`‰æ
-	void scaleDraw(float _x, float _y, float _sx = 1.0f, float _sy = 1.0f);
+		// Šg‘åEk¬•`‰æ
+		void scaleDraw(float _x, float _y, float _sx = 1.0f, float _sy = 1.0f);
 
-	bool isSplite();
+		bool isSplite();
 
-private:
-	Texture tex;
-	LPD3DXSPRITE sprite;
-	D3DXVECTOR3 center;
+	private:
+		Texture tex;
+		LPD3DXSPRITE sprite;
+		D3DXVECTOR3 center;
 
-	// ‰ñ“]EŠg‘åk¬‚ğl—¶‚µ‚½•`‰æ
-	void drawEx(float _x, float _y, float _angle, float _sx, float _sy);
-};
+		// ‰ñ“]EŠg‘åk¬‚ğl—¶‚µ‚½•`‰æ
+		void drawEx(float _x, float _y, float _angle, float _sx, float _sy);
+	};
+}
 
 #endif // !SPRITE_H

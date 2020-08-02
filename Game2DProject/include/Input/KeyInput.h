@@ -9,90 +9,92 @@
 #include <dinput.h>
 #include <array>
 
-// キーコード
-enum class Key : BYTE {
-	A = DIK_A,
-	B = DIK_B,
-	C = DIK_C,
-	D = DIK_D,
-	E = DIK_E,
-	F = DIK_F,
-	G = DIK_G,
+namespace gnLib {
 
-	H = DIK_H,
-	I = DIK_I,
-	J = DIK_J,
-	K = DIK_K,
-	L = DIK_L,
-	N = DIK_N,
-	M = DIK_M,
+	// キーコード
+	enum class Key : BYTE {
+		A = DIK_A,
+		B = DIK_B,
+		C = DIK_C,
+		D = DIK_D,
+		E = DIK_E,
+		F = DIK_F,
+		G = DIK_G,
 
-	O = DIK_O,
-	P = DIK_P,
-	Q = DIK_Q,
-	R = DIK_R,
-	S = DIK_S,
-	T = DIK_T,
-	U = DIK_U,
+		H = DIK_H,
+		I = DIK_I,
+		J = DIK_J,
+		K = DIK_K,
+		L = DIK_L,
+		N = DIK_N,
+		M = DIK_M,
 
-	V = DIK_V,
-	W = DIK_W,
-	X = DIK_X,
-	Y = DIK_Y,
-	Z = DIK_Z,
+		O = DIK_O,
+		P = DIK_P,
+		Q = DIK_Q,
+		R = DIK_R,
+		S = DIK_S,
+		T = DIK_T,
+		U = DIK_U,
 
-	KEY_0 = DIK_0,
-	KEY_1 = DIK_1,
-	KEY_2 = DIK_2,
-	KEY_3 = DIK_3,
-	KEY_4 = DIK_4,
-	KEY_5 = DIK_5,
-	KEY_6 = DIK_6,
-	KEY_7 = DIK_7,
-	KEY_8 = DIK_8,
-	KEY_9 = DIK_9,
+		V = DIK_V,
+		W = DIK_W,
+		X = DIK_X,
+		Y = DIK_Y,
+		Z = DIK_Z,
 
-	LEFT = DIK_LEFT,
-	RIGHT = DIK_RIGHT,
-	UP = DIK_UP,
-	DOWN = DIK_DOWN,
+		KEY_0 = DIK_0,
+		KEY_1 = DIK_1,
+		KEY_2 = DIK_2,
+		KEY_3 = DIK_3,
+		KEY_4 = DIK_4,
+		KEY_5 = DIK_5,
+		KEY_6 = DIK_6,
+		KEY_7 = DIK_7,
+		KEY_8 = DIK_8,
+		KEY_9 = DIK_9,
 
-	ESC = DIK_ESCAPE,
-	SPACE = DIK_SPACE,
-	RETURN = DIK_RETURN,
-};
+		LEFT = DIK_LEFT,
+		RIGHT = DIK_RIGHT,
+		UP = DIK_UP,
+		DOWN = DIK_DOWN,
 
-#include "../Window/Window.h"
-using window::Window;
+		ESC = DIK_ESCAPE,
+		SPACE = DIK_SPACE,
+		RETURN = DIK_RETURN,
+	};
 
-class KeyInput {
-public:
-	KeyInput() = default;
-	KeyInput(Window* _win);
-	~KeyInput();
+	class Window;
 
-	void init(Window* _win);
-	bool createDInput();
-	bool create();
-	void update();
+	class KeyInput {
+	public:
+		KeyInput() = default;
+		KeyInput(Window* _win);
+		~KeyInput();
 
-	bool keyDown(Key _keyCode);     //キーが押された時
-	bool keyUp(Key _keyCode);       //キーが離された時
+		void init(Window* _win);
+		bool createDInput();
+		bool create();
+		void update();
 
-private:
-	Window* window;
+		bool keyDown(Key _keyCode);     //キーが押された時
+		bool keyUp(Key _keyCode);       //キーが離された時
 
-	LPDIRECTINPUT8 device;
-	LPDIRECTINPUTDEVICE8 keyBoard;
+	private:
+		Window* window;
 
-	BYTE beforeKey[256];
-	BYTE afterKey[256];
+		LPDIRECTINPUT8 device;
+		LPDIRECTINPUTDEVICE8 keyBoard;
 
-	std::array<int, 256> keyArray;
+		BYTE beforeKey[256];
+		BYTE afterKey[256];
 
-	void relese() noexcept;
-};
+		std::array<int, 256> keyArray;
 
-using KeyBorad = KeyInput;
+		void relese() noexcept;
+	};
+}
+
+using KeyBorad = gnLib::KeyInput;
 
 #endif // !KEYINPUT_H

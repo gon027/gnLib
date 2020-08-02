@@ -11,36 +11,39 @@
 
 constexpr int NUM = 50 + 2;
 constexpr float SPLIT = NUM - 2;
-constexpr float theta = math::tau / SPLIT;
+constexpr float theta = gnLib::tau / SPLIT;
 
-Circle::Circle()
-{
-	this->setActive(true);
-}
-
-void Circle::draw(float _x, float _y, float _radius)
-{
-	x = _x;
-	y = _y;
-	radius = _radius;
-
-	Color c(0, 255, 0);
-
-	std::vector<Vertex2D> circle(NUM);
-	circle[0] = Vertex2D{ _x, _y, 0.0f, 1.0f, c.getColor(), 0.0f, 0.0f };
-	for (int r = 1; r < NUM; ++r) {
-		float nx = _x + radius * cosf(theta * (r - 1));
-		float ny = _y + radius * sinf(theta * (r - 1));
-		
-		circle[r] = Vertex2D{ nx, ny, 0.0f, 1.0f, c.getColor(), 0.0f, 0.0f };
+namespace gnLib {
+	Circle::Circle()
+	{
+		this->setActive(true);
 	}
-	circle[NUM - 1] = circle[1];
 
-	RenderDevice->SetFVF(FVF_CUSTOM2D);
-	RenderDevice->DrawPrimitiveUP(
-		D3DPT_TRIANGLEFAN,
-		NUM - 1,
-		circle.data(),
-		sizeof(Vertex2D)
-	);
+	void Circle::draw(float _x, float _y, float _radius)
+	{
+		x = _x;
+		y = _y;
+		radius = _radius;
+
+		Color c(0, 255, 0);
+
+		std::vector<Vertex2D> circle(NUM);
+		circle[0] = Vertex2D{ _x, _y, 0.0f, 1.0f, c.getColor(), 0.0f, 0.0f };
+		for (int r = 1; r < NUM; ++r) {
+			float nx = _x + radius * cosf(theta * (r - 1));
+			float ny = _y + radius * sinf(theta * (r - 1));
+
+			circle[r] = Vertex2D{ nx, ny, 0.0f, 1.0f, c.getColor(), 0.0f, 0.0f };
+		}
+		circle[NUM - 1] = circle[1];
+
+		RenderDevice->SetFVF(FVF_CUSTOM2D);
+		RenderDevice->DrawPrimitiveUP(
+			D3DPT_TRIANGLEFAN,
+			NUM - 1,
+			circle.data(),
+			sizeof(Vertex2D)
+		);
+	}
+
 }

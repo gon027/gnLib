@@ -6,7 +6,7 @@
 
 using string = std::string;
 
-namespace window {
+namespace gnLib {
 
 	class Window {
 	public:

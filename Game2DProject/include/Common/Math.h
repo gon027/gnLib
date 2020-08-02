@@ -1,7 +1,7 @@
 #ifndef MATH_H
 #define MATH_H
 
-namespace math {
+namespace gnLib {
 	constexpr float pi = 3.1415926535f;
 	constexpr float tau = pi * 2.0f;
 }
