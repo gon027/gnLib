@@ -70,6 +70,9 @@
     <Filter Include="Point">
       <UniqueIdentifier>{5c2e5275-fb2b-4916-b500-6a3f088d3e98}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Noise">
+      <UniqueIdentifier>{39793f5c-16a9-482a-a8cd-adad1738b47e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib.h">
@@ -144,6 +147,12 @@
     <ClInclude Include="Triangle.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="GameCore.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Noise\Noise.h">
+      <Filter>Noise</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp">
@@ -202,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="include\Point\Point.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Noise\Noise.cpp">
+      <Filter>Noise</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

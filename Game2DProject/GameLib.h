@@ -36,4 +36,9 @@
 // ì_
 #include "include/Point/Point.h"
 
+// ÉmÉCÉY
+#include "include/Noise/Noise.h"
+
+using namespace gnLib;
+
 #endif // !GAMELIB_H
