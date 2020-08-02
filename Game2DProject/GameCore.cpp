@@ -1,32 +1,50 @@
 #include "GameCore.h"
+#include "include/Window/Window.h"
+#include "include/Graphics/Graphics.h"
+#include "include/Input/KeyInput.h"
+#include "include/Input/MouseInput.h"
 
-/*
-bool gnLib::GameCore::init()
-{
-	return false;
-}
+namespace gnLib {
+	UniquePtr<Window> GameCore::window{ new Window("Test") };
+	UniquePtr<Graphics> GameCore::graphics{ new Graphics() };
+	UniquePtr<KeyInput> GameCore::keyBoard{ new KeyInput() };
+	UniquePtr<MouseInput> GameCore::mouse{ new MouseInput() };
 
-void gnLib::GameCore::update()
-{
-}
+	void GameCore::init()
+	{
+		window.get()->createWindow();
 
-gnLib::Window * gnLib::GameCore::getWindowPtr()
-{
-	return window.get();
-}
+		graphics.get()->createGraphics(window.get());
 
-Graphics * gnLib::GameCore::getGraphicPtr()
-{
-	return graphics.get();
-}
+		keyBoard.get()->init(window.get());
 
-KeyBoard * gnLib::GameCore::getKeyBoardPtr()
-{
-	return keyBoard.get();
-}
+		mouse.get()->init(window.get());
+	}
 
-Mouse * gnLib::GameCore::getMousePtr()
-{
-	return mouse.get();
+	void GameCore::update()
+	{
+		keyBoard.get()->update();
+		mouse.get()->update();
+	}
+
+	Window * gnLib::GameCore::getWindow()
+	{
+		return window.get();
+	}
+
+	Graphics * gnLib::GameCore::getGraphic()
+	{
+		return graphics.get();
+	}
+
+	KeyInput * gnLib::GameCore::getKeyBoard()
+	{
+		return keyBoard.get();
+	}
+
+	MouseInput * gnLib::GameCore::getMouse()
+	{
+		return mouse.get();
+	}
+
 }
-*/

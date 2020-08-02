@@ -39,7 +39,6 @@ namespace gnLib {
 		// スクリーンバッファ
 		CSBInfo screenBuffer;
 
-
 		TCHAR buf[256];
 	};
 }

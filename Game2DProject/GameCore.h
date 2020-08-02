@@ -1,38 +1,41 @@
 #ifndef GAMECORE_H
 #define GAMECORE_H
 
+#include <string>
 #include "include/Common/SmartPtr.h"
 
-class Graphics;
-class KeyBoard;
-class Mouse;
+using std::string;
 
-/*
 namespace gnLib {
-	class Window;
+	class Window; 
+	class Graphics;
+	class KeyInput;
+	class MouseInput;
+	class Console;
 
-
+	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
 	public:
 		GameCore() = default;
 
-		static bool init();
+		static GameCore Instance;
+
+		static void init();
 		static void update();
 
-		static Window* getWindowPtr();
-		static Graphics* getGraphicPtr();
-		static KeyBoard* getKeyBoardPtr();
-		static Mouse* getMousePtr();
+		static Window* getWindow();
+		static Graphics* getGraphic();
+		static KeyInput* getKeyBoard();
+		static MouseInput* getMouse();
 
 	private:
 		static UniquePtr<Window> window;
 		static UniquePtr<Graphics> graphics;
-		static UniquePtr<KeyBoard> keyBoard;
-		static UniquePtr<Mouse> mouse;
+		static UniquePtr<KeyInput> keyBoard;
+		static UniquePtr<MouseInput> mouse;
+		// static UniquePtr<Console> console;
 	};
 
 }
-
-*/
 
 #endif // !GAMECORE_H

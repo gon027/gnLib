@@ -4,9 +4,15 @@
 #include <Windows.h>
 #include <string>
 
-using string = std::string;
+using std::string;
 
 namespace gnLib {
+
+	namespace WindowInfo {
+		static int Width = 640;
+		static int Height = 480;
+		static string WindowName = "App";
+	}
 
 	class Window {
 	public:

@@ -1,21 +1,23 @@
 #include "../include/App.h"
-
 #include "../include/Window/Window.h"
 #include "../include/Graphics/Graphics.h"
 #include "../include/Render/Render.h"
 #include "../include/Input/Input.h"
+#include "../GameCore.h"
 
 namespace gnLib {
 	App::App(std::string _title, int _width, int _height)
-		: window(new Window(_title, _width, _height))
-		, graphics(new Graphics())
-		, windowWidth(_width)
-		, windowHeight(_height)
+		//: window(new Window(_title, _width, _height))
+		//, graphics(new Graphics())
+		//, windowWidth(_width)
+		//, windowHeight(_height)
 	{
-		window.get()->createWindow();
-		graphics.get()->createGraphics(window.get());
-		RenderIns->setGraphics(graphics.get());
-		Input::init(window.get());
+		//window.get()->createWindow();
+		//graphics.get()->createGraphics(window.get());
+		//RenderIns->setGraphics(graphics.get());
+		//Input::init(window.get());
+
+		GameCore::init();
 	}
 
 	App::~App()
@@ -25,8 +27,7 @@ namespace gnLib {
 
 	void App::initWindow()
 	{
-		window.get()->createWindow();
-		graphics.get()->createGraphics(window.get());
+
 	}
 
 	bool App::doEvent()
@@ -57,34 +58,28 @@ namespace gnLib {
 
 	void App::begin()
 	{
-		graphics.get()->begin();
+		//graphics.get()->begin();
 
-		update();
+		//update();
+
+		GameCore::getGraphic()->begin();
+		GameCore::update();
 	}
 
 	void App::end()
 	{
-		graphics.get()->end();
-	}
-
-	Window * App::getWindow() const
-	{
-		return window.get();
-	}
-
-	Graphics * App::getGraphics() const
-	{
-		return graphics.get();
+		//graphics.get()->end();
+		GameCore::getGraphic()->end();
 	}
 
 	int App::getWidth() const
 	{
-		return windowWidth;
+		return WindowInfo::Width;
 	}
 
 	int App::getHeight() const
 	{
-		return windowHeight;
+		return WindowInfo::Height;
 	}
 
 }

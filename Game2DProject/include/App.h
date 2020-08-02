@@ -20,10 +20,6 @@ namespace gnLib {
 		void begin();
 		void end();
 
-		Window* getWindow() const;
-
-		Graphics* getGraphics() const;
-
 		// ウィンドウの幅と高さ
 		int getWidth() const;
 		int getHeight() const;

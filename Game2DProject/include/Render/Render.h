@@ -1,21 +1,31 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-namespace gnLib {
 #define RenderIns Render::Instance
 #define RenderDevice Render::Instance->getGraphics()->getDevice()
+
+namespace gnLib {
 
 	class Graphics;
 
 	class Render {
 	public:
 		Render();
-		~Render() = default;
 
 		static Render* Instance;
 
 		void setGraphics(Graphics* _graphics);
 		Graphics* getGraphics() const;
+
+		/*
+		static void setRect();
+		
+		static void setCircle();
+
+		static void setPoint();
+
+		static void setSprite();
+		*/
 
 	private:
 		Graphics* graphics;

@@ -1,4 +1,5 @@
 #include "../../include/Input/Input.h"
+#include "../../GameCore.h"
 
 namespace gnLib {
 

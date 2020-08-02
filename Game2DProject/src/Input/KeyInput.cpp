@@ -14,7 +14,7 @@ namespace gnLib {
 	KeyInput::~KeyInput()
 	{
 		RELEASE(device)
-			RELEASE(keyBoard);
+		RELEASE(keyBoard);
 	}
 
 	void KeyInput::init(Window * _win)
