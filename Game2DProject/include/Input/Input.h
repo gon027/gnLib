@@ -10,6 +10,13 @@
 namespace gnLib {
 	class Window;
 
+	// マウスの入力ボタン
+	enum class MouseButton : int {
+		LEFT = 0,
+		RIGHT = 1,
+		MIDDLE = 2
+	};
+
 	class Input {
 	public:
 		static void init(Window* _widnow);

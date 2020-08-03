@@ -35,7 +35,8 @@ namespace gnLib {
 
 	bool Input::getLeftButton()
 	{
-		return mouse.getLeftButton();
+		//return mouse.getLeftButton();
+		return GCoreIns->getMouse()->getLeftButton();
 	}
 
 	bool Input::getRightButton()

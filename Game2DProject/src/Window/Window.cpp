@@ -2,6 +2,14 @@
 #include "../../include/Window/WinProc.h"
 
 namespace gnLib {
+	Window::Window()
+		: winc()
+		, hInstance(GetModuleHandle(NULL))
+		, hwnd(nullptr)
+	{
+
+	}
+
 	Window::Window(string _title, int _width, int _height)
 		: winc()
 		, hInstance(GetModuleHandle(NULL))
@@ -16,6 +24,15 @@ namespace gnLib {
 	Window::~Window() {
 		//ウインドウクラス登録解除
 		UnregisterClass(winc.lpszClassName, hInstance);
+	}
+
+	void Window::initWindow(const string & _title, int _width, int _height)
+	{
+		title = _title;
+		width = _width;
+		height = _height;
+
+		//createWindow();
 	}
 
 	bool Window::createWindow() {

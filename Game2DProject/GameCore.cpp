@@ -5,10 +5,26 @@
 #include "include/Input/MouseInput.h"
 
 namespace gnLib {
-	UniquePtr<Window> GameCore::window{ new Window("Test") };
-	UniquePtr<Graphics> GameCore::graphics{ new Graphics() };
-	UniquePtr<KeyInput> GameCore::keyBoard{ new KeyInput() };
-	UniquePtr<MouseInput> GameCore::mouse{ new MouseInput() };
+	//UniquePtr<Window> GameCore::window = nullptr;
+	//UniquePtr<Graphics> GameCore::graphics{ new Graphics() };
+	//UniquePtr<KeyInput> GameCore::keyBoard{ new KeyInput() };
+	//UniquePtr<MouseInput> GameCore::mouse{ new MouseInput() };
+
+	GameCore* GameCore::Instance = nullptr;
+
+	GameCore::GameCore()
+		: window(new Window())
+		, graphics(new Graphics())
+		, keyBoard(new KeyInput())
+		, mouse(new MouseInput())
+	{
+		Instance = this;
+	}
+
+	void GameCore::initWindow(const string& _title, int _width, int _height)
+	{
+		window.get()->initWindow(_title, _width, _height);
+	}
 
 	void GameCore::init()
 	{

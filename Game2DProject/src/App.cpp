@@ -3,10 +3,11 @@
 #include "../include/Graphics/Graphics.h"
 #include "../include/Render/Render.h"
 #include "../include/Input/Input.h"
-#include "../GameCore.h"
+//#include "../GameCore.h"
 
 namespace gnLib {
 	App::App(std::string _title, int _width, int _height)
+		: gCore()
 		//: window(new Window(_title, _width, _height))
 		//, graphics(new Graphics())
 		//, windowWidth(_width)
@@ -17,15 +18,14 @@ namespace gnLib {
 		//RenderIns->setGraphics(graphics.get());
 		//Input::init(window.get());
 
-		GameCore::init();
+		//GameCore::createWindow(_title, _width, _height);
+		//GameCore::init();
+
+		GCoreIns->initWindow(_title, _width, _height);
+		GCoreIns->init();
 	}
 
 	App::~App()
-	{
-
-	}
-
-	void App::initWindow()
 	{
 
 	}
@@ -58,18 +58,13 @@ namespace gnLib {
 
 	void App::begin()
 	{
-		//graphics.get()->begin();
-
-		//update();
-
-		GameCore::getGraphic()->begin();
-		GameCore::update();
+		GCoreIns->getGraphic()->begin();
+		GCoreIns->update();
 	}
 
 	void App::end()
 	{
-		//graphics.get()->end();
-		GameCore::getGraphic()->end();
+		GCoreIns->getGraphic()->end();
 	}
 
 	int App::getWidth() const

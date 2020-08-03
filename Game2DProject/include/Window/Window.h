@@ -16,8 +16,11 @@ namespace gnLib {
 
 	class Window {
 	public:
+		Window();
 		Window(string _title, int _width = 640, int _height = 480);
 		~Window();
+
+		void initWindow(const string& _title, int _width, int _height);
 
 		bool createWindow();	//ウインドウの設定
 

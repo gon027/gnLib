@@ -3,8 +3,11 @@
 
 #include <string>
 #include "../include/Common/SmartPtr.h"
+#include "../GameCore.h"
 
 namespace gnLib {
+	//class GameCore;
+
 	class Window;
 	class Graphics;
 
@@ -12,8 +15,6 @@ namespace gnLib {
 	public:
 		App(std::string _title = "App", int _width = 640, int _height = 480);
 		~App();
-
-		void initWindow();
 
 		bool doEvent();
 		bool update();
@@ -27,6 +28,8 @@ namespace gnLib {
 	private:
 		UniquePtr<Window> window;
 		UniquePtr<Graphics> graphics;
+
+		GameCore gCore;
 
 		int windowWidth = 640;
 		int windowHeight = 480;

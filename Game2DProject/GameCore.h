@@ -6,34 +6,39 @@
 
 using std::string;
 
+#define GCoreIns GameCore::Instance
+
 namespace gnLib {
 	class Window; 
 	class Graphics;
 	class KeyInput;
 	class MouseInput;
 	class Console;
+	class Render;
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
 	public:
-		GameCore() = default;
+		GameCore();
+		~GameCore() = default;
 
-		static GameCore Instance;
+		static GameCore* Instance;
 
-		static void init();
-		static void update();
+		void initWindow(const string& _title, int _width, int _height);
+		void init();
+		void update();
 
-		static Window* getWindow();
-		static Graphics* getGraphic();
-		static KeyInput* getKeyBoard();
-		static MouseInput* getMouse();
+		Window* getWindow();
+		Graphics* getGraphic();
+		KeyInput* getKeyBoard();
+		MouseInput* getMouse();
 
 	private:
-		static UniquePtr<Window> window;
-		static UniquePtr<Graphics> graphics;
-		static UniquePtr<KeyInput> keyBoard;
-		static UniquePtr<MouseInput> mouse;
-		// static UniquePtr<Console> console;
+		UniquePtr<Window> window;
+		UniquePtr<Graphics> graphics;
+		UniquePtr<KeyInput> keyBoard;
+		UniquePtr<MouseInput> mouse;
+		// UniquePtr<Console> console;
 	};
 
 }
