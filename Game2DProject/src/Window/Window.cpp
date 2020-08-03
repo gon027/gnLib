@@ -35,7 +35,7 @@ namespace gnLib {
 		//createWindow();
 	}
 
-	bool Window::createWindow() {
+	bool Window::init() {
 		winc.cbSize = sizeof(WNDCLASSEX);
 		winc.style = CS_HREDRAW | CS_VREDRAW;
 		winc.lpfnWndProc = gnLib::WindowProc;

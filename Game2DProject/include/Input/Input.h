@@ -19,8 +19,6 @@ namespace gnLib {
 
 	class Input {
 	public:
-		static void init(Window* _widnow);
-		static void update();
 
 		// キーボード
 		static bool getKeyDown(Key key);	// キーを下げたとき
@@ -30,12 +28,9 @@ namespace gnLib {
 		// マウス
 		static bool getLeftButton();		// マウスの左を押したとき
 		static bool getRightButton();		// マウスの右を押したとき
-		static bool getMiddleButton();		// マウスの真ん中を押したとき
+		static bool getMiddleButton();		// マウスの中心を押したとき
 		static int getPosition();			// マウスの座標を取得する
 
-	private:
-		static KeyBorad keyBorad;
-		static Mouse mouse;
 	};
 }
 

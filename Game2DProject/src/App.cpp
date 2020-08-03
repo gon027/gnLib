@@ -14,7 +14,7 @@ namespace gnLib {
 		//, windowHeight(_height)
 	{
 		//window.get()->createWindow();
-		//graphics.get()->createGraphics(window.get());
+		//graphics.get()->init(window.get());
 		//RenderIns->setGraphics(graphics.get());
 		//Input::init(window.get());
 
@@ -52,7 +52,7 @@ namespace gnLib {
 
 	bool App::update()
 	{
-		Input::update();
+		//Input::update();
 		return false;
 	}
 

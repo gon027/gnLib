@@ -3,29 +3,14 @@
 
 namespace gnLib {
 
-	KeyBorad Input::keyBorad;
-	Mouse Input::mouse;
-
-	void Input::init(Window * _widnow)
-	{
-		keyBorad.init(_widnow);
-		mouse.init(_widnow);
-	}
-
-	void Input::update()
-	{
-		keyBorad.update();
-		mouse.update();
-	}
-
 	bool Input::getKeyDown(Key key)
 	{
-		return keyBorad.keyDown(key);
+		return true; //keyBorad.keyDown(key);
 	}
 
 	bool Input::getKeyUp(Key key)
 	{
-		return keyBorad.keyUp(key);;
+		return true;// keyBorad.keyUp(key);;
 	}
 
 	bool Input::getKeyState(Key key)
@@ -41,12 +26,12 @@ namespace gnLib {
 
 	bool Input::getRightButton()
 	{
-		return mouse.getRightButton();
+		return GCoreIns->getMouse()->getRightButton();
 	}
 
 	bool Input::getMiddleButton()
 	{
-		return mouse.getMiddleButton();
+		return GCoreIns->getMouse()->getMiddleButton();
 	}
 
 	int Input::getPosition()

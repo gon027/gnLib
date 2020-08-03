@@ -15,7 +15,7 @@ namespace gnLib {
 		RELEASE(device);
 	}
 
-	bool Graphics::createGraphics(gnLib::Window* _window) noexcept
+	bool Graphics::init(gnLib::Window* _window) noexcept
 	{
 		//Direct3D9のオブジェクトの作成
 		pD3D9 = Direct3DCreate9(D3D_SDK_VERSION);

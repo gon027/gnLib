@@ -16,7 +16,7 @@ namespace gnLib {
 		~Graphics();
 
 		// Graphic‚Ìì¬
-		bool createGraphics(gnLib::Window* _window) noexcept;
+		bool init(gnLib::Window* _window) noexcept;
 
 		void begin() noexcept;		//•`‰æŠJn
 		void end() noexcept;		//•`‰æI—¹
