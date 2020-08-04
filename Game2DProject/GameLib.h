@@ -39,6 +39,9 @@
 // ノイズ
 //#include "include/Noise/Noise.h"
 
+// ベクトル(2D)
+#include "include/Vector/Vector2.h"
+
 using namespace gnLib;
 
 #endif // !GAMELIB_H

@@ -170,6 +170,7 @@
     <ClInclude Include="include\StringRender\StringRender.h" />
     <ClInclude Include="include\Texture\Texture.h" />
     <ClInclude Include="include\Triangle\Triangle.h" />
+    <ClInclude Include="include\Vector\Vector2.h" />
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
@@ -177,6 +178,7 @@
   <ItemGroup>
     <ClCompile Include="include\Line\Line.cpp" />
     <ClCompile Include="include\Point\Point.cpp" />
+    <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Circle\Circle.cpp" />
     <ClCompile Include="src\Collider\BaseCollider.cpp" />

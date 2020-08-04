@@ -8,7 +8,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	while (app.doEvent()) {
 		app.begin();
 
-		if (Input::getLeftButton()) {
+		auto v = Input::getPosition();
+		circle.draw(v.x, v.y, 50);
+
+		/*if (Input::getLeftButton()) {
 			circle.draw(100, 300, 100);
 		}
 
@@ -18,7 +21,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		if (Input::getMiddleButton()) {
 			circle.draw(200, 300, 100);
-		}
+		}*/
 
 		app.end();
 	}

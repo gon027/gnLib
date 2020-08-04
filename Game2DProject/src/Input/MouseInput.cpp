@@ -1,6 +1,7 @@
 #include "../../include/Input/MouseInput.h"
 #include "../../include/Window/Window.h"
 #include "../../include/Common/Macro.h"
+#include "../../include/Vector/Vector2.h"
 
 namespace gnLib {
 	MouseInput::MouseInput(Window* _win)
@@ -135,5 +136,21 @@ namespace gnLib {
 		}
 
 		return false;
+	}
+
+	Vector2 MouseInput::getPosition() const
+	{
+		POINT mousePoint{};
+
+		// 座標を取得
+		GetCursorPos(&mousePoint);
+
+		// マウス座標をクライアント座標に変換
+		ScreenToClient(window->getHWnd(), &mousePoint);
+
+		return Vector2(
+			(float)mousePoint.x, 
+			(float)mousePoint.y
+		);
 	}
 }

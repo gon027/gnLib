@@ -1,5 +1,6 @@
 #include "../../include/Input/Input.h"
 #include "../../include/GameCore/GameCore.h"
+#include "../../include/Vector/Vector2.h"
 
 namespace gnLib {
 
@@ -20,7 +21,6 @@ namespace gnLib {
 
 	bool Input::getLeftButton()
 	{
-		//return mouse.getLeftButton();
 		return GCoreIns->getMouse()->getLeftButton();
 	}
 
@@ -34,9 +34,9 @@ namespace gnLib {
 		return GCoreIns->getMouse()->getMiddleButton();
 	}
 
-	int Input::getPosition()
+	Vector2 Input::getPosition()
 	{
-		return 0;
+		return GCoreIns->getMouse()->getPosition();;
 	}
 
 }

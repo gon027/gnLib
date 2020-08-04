@@ -6,7 +6,7 @@
 
 using std::string;
 
-#define GCoreIns GameCore::Instance
+#define GCoreIns GameCore::get()
 
 namespace gnLib {
 	class Window; 
@@ -20,9 +20,9 @@ namespace gnLib {
 	class GameCore {
 	public:
 		GameCore();
-		~GameCore() = default;
-
-		static GameCore* Instance;
+		~GameCore();
+		
+		static GameCore* get();
 
 		void initWindow(const string& _title, int _width, int _height);
 		void init();
@@ -34,6 +34,8 @@ namespace gnLib {
 		MouseInput* getMouse();
 
 	private:
+		static GameCore* Instance;
+
 		UniquePtr<Window> window;
 		UniquePtr<Graphics> graphics;
 		UniquePtr<KeyInput> keyBoard;

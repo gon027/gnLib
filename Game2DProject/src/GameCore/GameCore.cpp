@@ -14,7 +14,21 @@ namespace gnLib {
 		, keyBoard(new KeyInput())
 		, mouse(new MouseInput())
 	{
-		Instance = this;
+
+		if (Instance == nullptr) {
+			Instance = this;
+		}
+
+	}
+
+	GameCore::~GameCore()
+	{
+		Instance = nullptr;
+	}
+
+	GameCore * GameCore::get()
+	{
+		return Instance;
 	}
 
 	void GameCore::initWindow(const string& _title, int _width, int _height)

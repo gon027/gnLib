@@ -10,6 +10,7 @@
 
 namespace gnLib {
 	class Window;
+	class Vector2;
 
 	class MouseInput {
 	public:
@@ -26,6 +27,8 @@ namespace gnLib {
 		bool getLeftButton();
 		bool getRightButton();
 		bool getMiddleButton();
+
+		Vector2 getPosition() const;
 
 	private:
 		gnLib::Window* window;

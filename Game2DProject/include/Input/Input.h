@@ -9,6 +9,7 @@
 
 namespace gnLib {
 	class Window;
+	class Vector2;
 
 	// マウスの入力ボタン
 	enum class MouseButton : int {
@@ -29,7 +30,7 @@ namespace gnLib {
 		static bool getLeftButton();		// マウスの左を押したとき
 		static bool getRightButton();		// マウスの右を押したとき
 		static bool getMiddleButton();		// マウスの中心を押したとき
-		static int getPosition();			// マウスの座標を取得する
+		static Vector2 getPosition();			// マウスの座標を取得する
 
 	};
 }
