@@ -29,10 +29,16 @@ namespace gnLib {
 
 	}
 
-	void Vector2::setPoision(float _x, float _y)
+	void Vector2::setPosition(float _x, float _y)
 	{
 		x = _x;
 		y = _y;
+	}
+
+	void Vector2::setPosition(const Vector2 & _vector)
+	{
+		x = _vector.x;
+		y = _vector.y;
 	}
 
 

@@ -22,7 +22,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		if (Input::getRightButton()) {
 			//circle.draw(300, 300, 100);
 			circle.setColor(Color::Green);
-			circle.draw(v.x, v.y, 100);
+			circle.setRadius(100);
+			circle.setPosition(Vector2(v.x, v.y));
+			circle.draw();
 
 		}
 

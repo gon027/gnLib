@@ -39,11 +39,12 @@ namespace gnLib {
 
 	void Circle::setPosition(float _x, float _y)
 	{
-		position.setPoision(_x, _y);
+		position.setPosition(_x, _y);
 	}
 
-	void Circle::setPosition(Vector2 _vector)
+	void Circle::setPosition(const Vector2& _vector)
 	{
+		position.setPosition(_vector);
 	}
 
 	void Circle::setRadius(float _radius)
