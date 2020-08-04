@@ -150,18 +150,6 @@
     <ClInclude Include="include\Point\Point.h">
       <Filter>Point</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Object</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCore.h">
-      <Filter>GameCore</Filter>
-    </ClInclude>
-    <ClInclude Include="Quad.h">
-      <Filter>Quad</Filter>
-    </ClInclude>
-    <ClInclude Include="Triangle.h">
-      <Filter>Triangle</Filter>
-    </ClInclude>
     <ClInclude Include="include\Vertex\Vertex3D.h">
       <Filter>Vertex</Filter>
     </ClInclude>
@@ -170,6 +158,18 @@
     </ClInclude>
     <ClInclude Include="include\Common\SmartPtr.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameCore\GameCore.h">
+      <Filter>GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Quad\Quad.h">
+      <Filter>Quad</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Triangle\Triangle.h">
+      <Filter>Triangle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +230,7 @@
     <ClCompile Include="include\Point\Point.cpp">
       <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="GameCore.cpp">
+    <ClCompile Include="src\GameCore\GameCore.cpp">
       <Filter>GameCore</Filter>
     </ClCompile>
   </ItemGroup>

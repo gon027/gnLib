@@ -1,8 +1,8 @@
-#include "GameCore.h"
-#include "include/Window/Window.h"
-#include "include/Graphics/Graphics.h"
-#include "include/Input/KeyInput.h"
-#include "include/Input/MouseInput.h"
+#include "../../include/GameCore/GameCore.h"
+#include "../../include/Window/Window.h"
+#include "../../include/Graphics/Graphics.h"
+#include "../../include/Input/KeyInput.h"
+#include "../../include/Input/MouseInput.h"
 
 namespace gnLib {
 

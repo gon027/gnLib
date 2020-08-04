@@ -3,24 +3,11 @@
 #include "../include/Graphics/Graphics.h"
 #include "../include/Render/Render.h"
 #include "../include/Input/Input.h"
-//#include "../GameCore.h"
 
 namespace gnLib {
 	App::App(std::string _title, int _width, int _height)
 		: gCore()
-		//: window(new Window(_title, _width, _height))
-		//, graphics(new Graphics())
-		//, windowWidth(_width)
-		//, windowHeight(_height)
 	{
-		//window.get()->createWindow();
-		//graphics.get()->init(window.get());
-		//RenderIns->setGraphics(graphics.get());
-		//Input::init(window.get());
-
-		//GameCore::createWindow(_title, _width, _height);
-		//GameCore::init();
-
 		GCoreIns->initWindow(_title, _width, _height);
 		GCoreIns->init();
 	}

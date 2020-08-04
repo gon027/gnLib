@@ -2,7 +2,7 @@
 #define GAMECORE_H
 
 #include <string>
-#include "include/Common/SmartPtr.h"
+#include "../../include/Common/SmartPtr.h"
 
 using std::string;
 

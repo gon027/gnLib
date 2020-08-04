@@ -1,7 +1,7 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include "../../Object.h"
+#include "../../include/Object/Object.h"
 
 namespace gnLib {
 	class Circle : public Object {

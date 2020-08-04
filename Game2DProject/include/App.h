@@ -3,11 +3,9 @@
 
 #include <string>
 #include "../include/Common/SmartPtr.h"
-#include "../GameCore.h"
+#include "../include/GameCore/GameCore.h"
 
 namespace gnLib {
-	//class GameCore;
-
 	class Window;
 	class Graphics;
 

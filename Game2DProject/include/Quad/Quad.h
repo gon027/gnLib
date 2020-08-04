@@ -1,7 +1,7 @@
 #ifndef QUAD_H
 #define QUAD_H
 
-#include "Object.h"
+#include "../Object/Object.h"
 
 namespace gnLib {
 	class Quad : public Object {

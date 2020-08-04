@@ -6,7 +6,7 @@
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Math.h"
 #include "../../include/Color/Color.h"
-#include "../../GameCore.h"
+#include "../../include//GameCore/GameCore.h"
 #include <vector>
 #include <cmath>
 
