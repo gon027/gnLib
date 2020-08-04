@@ -4,6 +4,7 @@
 namespace gnLib {
 	class Object {
 	public:
+		Object() {};
 		virtual ~Object() {}
 
 		void setActive(bool _active) {
