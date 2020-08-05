@@ -9,6 +9,7 @@
 
 #include "../Common/SmartPtr.h"
 #include "../Texture/Texture.h"
+#include "../Vector/Vector2.h"
 
 namespace gnLib {
 	class Graphics;
@@ -19,9 +20,17 @@ namespace gnLib {
 		Sprite(Texture& _texture);
 		~Sprite();
 
-		D3DXVECTOR3 position;
+		/*
+		void setPosition(float _x, float _y);
+		void setPosition(const Vector2& _vector);
 
-		bool loadTexture(Texture& _texture);
+		void setScale(float _scale);
+
+		void setRotation(float _x, float _y);
+		void setRotation(const Vector2 _rot);
+
+		void draw();
+		*/
 
 		// ï`âÊ
 		void draw(float _x, float _y);
@@ -35,12 +44,16 @@ namespace gnLib {
 		bool isSplite();
 
 	private:
-		Texture tex;
+		Texture texture;
 		LPD3DXSPRITE sprite;
 		D3DXVECTOR3 center;
+		D3DXVECTOR3 position;
 
 		// âÒì]ÅEägëÂèkè¨Ççló∂ÇµÇΩï`âÊ
 		void drawEx(float _x, float _y, float _angle, float _sx, float _sy);
+
+		// ÉeÉNÉXÉ`ÉÉì«Ç›çûÇ›
+		bool loadTexture(Texture& _texture);
 	};
 }
 

@@ -166,6 +166,7 @@
     <ClInclude Include="include\Quad\Quad.h" />
     <ClInclude Include="include\Rect\Rect.h" />
     <ClInclude Include="include\Render\Render.h" />
+    <ClInclude Include="include\Size\Size.h" />
     <ClInclude Include="include\Sprite\Sprite.h" />
     <ClInclude Include="include\StringRender\StringRender.h" />
     <ClInclude Include="include\Texture\Texture.h" />

@@ -9,6 +9,7 @@
 
 #include <string>
 #include "../Common/SmartPtr.h"
+#include "../Size/Size.h"
 
 using string = std::string;
 
@@ -21,12 +22,11 @@ namespace gnLib {
 		Texture(const string& _filePath);
 		~Texture();
 
+		// ‰æ‘œ“Ç‚İ‚İ
 		bool loadTexture(const string& _filePath);
 
-		bool imageInfo();
-
-		const int getWidth();
-		const int getHeight();
+		const float getWidth();
+		const float getHeight();
 
 		// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
 		const bool isLoading();
@@ -34,10 +34,15 @@ namespace gnLib {
 		LPDIRECT3DTEXTURE9 getTexture() const;
 
 	private:
-
 		LPDIRECT3DTEXTURE9 lpTexture;
+		Size size;
+
 		int width;
 		int height;
+
+
+		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğæ“¾
+		bool imageInfo();
 	};
 }
 

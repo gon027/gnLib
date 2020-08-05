@@ -2,6 +2,7 @@
 #include "../../include/Common/Macro.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Render/Render.h"
+#include "../../include/GameCore/GameCore.h"
 #include <winerror.h>
 
 namespace gnLib {
@@ -27,15 +28,18 @@ namespace gnLib {
 		HRESULT hr;
 
 		// スプライトの作成
-		hr = D3DXCreateSprite(RenderDevice, &sprite);
+		hr = D3DXCreateSprite(
+			GCoreIns->getGraphic()->getDevice(), 
+			&sprite
+		);
 
 		if (FAILED(hr)) {
 			return false;
 		}
 
-		tex = _texture;
+		texture = _texture;
 
-		center = { tex.getWidth() / 2.0f, tex.getHeight() / 2.0f, 0.0f };
+		center = { texture.getWidth() / 2.0f, texture.getHeight() / 2.0f, 0.0f };
 
 		return true;
 	}
@@ -91,8 +95,8 @@ namespace gnLib {
 
 
 			// テクスチャを読み込んでいた場合
-			if (tex.isLoading()) {
-				sprite->Draw(tex.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);
+			if (texture.isLoading()) {
+				sprite->Draw(texture.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);
 			}
 			else {
 				sprite->Draw(nullptr, NULL, &center, NULL, 0xFFFF00FF);

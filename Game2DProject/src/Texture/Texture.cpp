@@ -2,6 +2,7 @@
 #include "../../include/Common/Macro.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Render/Render.h"
+#include "../../include/GameCore/GameCore.h"
 
 namespace gnLib {
 	Texture::Texture()
@@ -26,7 +27,11 @@ namespace gnLib {
 		HRESULT hr;
 
 		// テクスチャの読み込み
-		hr = D3DXCreateTextureFromFile(RenderDevice, _filePath.c_str(), &lpTexture);
+		hr = D3DXCreateTextureFromFile(
+			GCoreIns->getGraphic()->getDevice(),
+			_filePath.c_str(),
+			&lpTexture
+		);
 
 		if (FAILED(hr)) {
 			return false;
@@ -64,22 +69,26 @@ namespace gnLib {
 		}
 
 		// 画像の縦幅と横幅を取得
-		width = surfaceInfo.Width;
-		height = surfaceInfo.Height;
+		//width = surfaceInfo.Width;
+		//height = surfaceInfo.Height;
+		size.setSize(
+			static_cast<float>(surfaceInfo.Width),
+			static_cast<float>(surfaceInfo.Height)
+		);
 
 		RELEASE(surface);
 
 		return true;
 	}
 
-	const int Texture::getWidth()
+	const float Texture::getWidth()
 	{
-		return width;
+		return size.getWidth();
 	}
 
-	const int Texture::getHeight()
+	const float Texture::getHeight()
 	{
-		return height;
+		return size.getHeight();
 	}
 
 	const bool Texture::isLoading()
