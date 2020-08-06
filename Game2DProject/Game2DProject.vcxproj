@@ -172,6 +172,7 @@
     <ClInclude Include="include\Texture\Texture.h" />
     <ClInclude Include="include\Triangle\Triangle.h" />
     <ClInclude Include="include\Vector\Vector2.h" />
+    <ClInclude Include="include\Vector\Vector3.h" />
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
