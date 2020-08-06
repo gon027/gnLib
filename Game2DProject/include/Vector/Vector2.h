@@ -19,6 +19,8 @@ namespace gnLib {
 		static Vector2 Down;
 		static Vector2 Left;
 		static Vector2 Right;
+		static Vector2 One;
+		static Vector2 Zero;
 
 		void set(float _x, float _y);
 		void set(const Vector2& _vector);
