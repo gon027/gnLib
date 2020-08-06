@@ -37,14 +37,14 @@ namespace gnLib {
 		this->setActive(true);
 	}
 
-	void Circle::setPosition(float _x, float _y)
+	void Circle::set(float _x, float _y)
 	{
-		position.setPosition(_x, _y);
+		position.set(_x, _y);
 	}
 
-	void Circle::setPosition(const Vector2& _vector)
+	void Circle::set(const Vector2& _vector)
 	{
-		position.setPosition(_vector);
+		position.set(_vector);
 	}
 
 	void Circle::setRadius(float _radius)
@@ -88,7 +88,7 @@ namespace gnLib {
 
 	void Circle::draw(float _x, float _y, float _radius)
 	{
-		setPosition(_x, _y);
+		set(_x, _y);
 		setRadius(_radius);
 
 		draw();

@@ -14,8 +14,8 @@ namespace gnLib {
 		Circle(Vector2 _pos, float _r);
 		~Circle() = default;
 
-		void setPosition(float _x, float _y);
-		void setPosition(const Vector2& _vector);
+		void set(float _x, float _y);
+		void set(const Vector2& _vector);
 
 		void setRadius(float _radius);
 

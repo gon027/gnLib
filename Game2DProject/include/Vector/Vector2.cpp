@@ -3,6 +3,11 @@
 #include <cmath>
 
 namespace gnLib {
+	Vector2 Vector2::Up{ 0, 1 };
+	Vector2 Vector2::Down{ 0, -1 };
+	Vector2 Vector2::Left{ -1, 0 };
+	Vector2 Vector2::Right{ 1, 0 };
+
 	Vector2::Vector2()
 		: x(0)
 		, y(0)
@@ -23,13 +28,13 @@ namespace gnLib {
 		, y(_xy)
 	{ }
 
-	void Vector2::setPosition(float _x, float _y)
+	void Vector2::set(float _x, float _y)
 	{
 		x = _x;
 		y = _y;
 	}
 
-	void Vector2::setPosition(const Vector2 & _vector)
+	void Vector2::set(const Vector2 & _vector)
 	{
 		x = _vector.x;
 		y = _vector.y;

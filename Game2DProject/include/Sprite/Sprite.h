@@ -21,8 +21,8 @@ namespace gnLib {
 		~Sprite();
 
 		/*
-		void setPosition(float _x, float _y);
-		void setPosition(const Vector2& _vector);
+		void set(float _x, float _y);
+		void set(const Vector2& _vector);
 
 		void setScale(float _scale);
 

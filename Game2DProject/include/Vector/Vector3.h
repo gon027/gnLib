@@ -8,6 +8,7 @@ namespace gnLib {
 	public:
 		float x;
 		float y;
+		float z;
 
 		Vector3();
 		Vector3(const Vector2& _vector);
@@ -16,10 +17,10 @@ namespace gnLib {
 		Vector3(float _xyz);
 		~Vector3() = default;
 
-		void setPosition(float _x, float _y, float z);
-		void setPosition(const Vector3& _vector);
+		void set(float _x, float _y, float _z);
+		void set(const Vector3& _vector);
 
-		Vector2 toVector2();
+		const Vector2 toVector2();
 
 		// TODO: ‰‰ŽZŽq‚ðŽÀ‘•‚·‚é
 		const Vector3 operator+() const;
@@ -41,7 +42,6 @@ namespace gnLib {
 		const Vector3 operator*=(const Vector3& _rvec) const;
 
 		const Vector3 operator/=(const Vector3& _rvec) const;
-
 	};
 }
 

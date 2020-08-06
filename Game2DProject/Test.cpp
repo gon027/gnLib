@@ -12,6 +12,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		sp.draw(app.getWidth() / 2, app.getHeight() / 2);
 		
+		circle.set(Vector2::Up);
+		circle.draw();
+
 		auto v = Input::getPosition();
 		
 		if (Input::getLeftButton()) {
@@ -22,7 +25,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		if (Input::getRightButton()) {
 			circle.setColor(Color::Green);
 			circle.setRadius(100);
-			circle.setPosition(Vector2(v.x, v.y));
+			circle.set(Vector2(v.x, v.y));
 			circle.draw();
 
 		}

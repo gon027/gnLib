@@ -181,6 +181,7 @@
     <ClCompile Include="include\Line\Line.cpp" />
     <ClCompile Include="include\Point\Point.cpp" />
     <ClCompile Include="include\Vector\Vector2.cpp" />
+    <ClCompile Include="include\Vector\Vector3.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Circle\Circle.cpp" />
     <ClCompile Include="src\Collider\BaseCollider.cpp" />

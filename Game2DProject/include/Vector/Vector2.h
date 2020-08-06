@@ -15,8 +15,13 @@ namespace gnLib {
 		Vector2(float _xy);
 		~Vector2() = default;
 
-		void setPosition(float _x, float _y);
-		void setPosition(const Vector2& _vector);
+		static Vector2 Up;
+		static Vector2 Down;
+		static Vector2 Left;
+		static Vector2 Right;
+
+		void set(float _x, float _y);
+		void set(const Vector2& _vector);
 
 		const float magnitude() const;
 
