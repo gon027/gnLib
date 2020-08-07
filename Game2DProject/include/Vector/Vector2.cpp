@@ -44,7 +44,7 @@ namespace gnLib {
 
 	const float Vector2::magnitude() const
 	{
-		return x * x + y + y;
+		return x * x + y * y;
 	}
 
 	const Vector2 Vector2::normalized() const
@@ -64,9 +64,14 @@ namespace gnLib {
 		return std::sqrt(magnitude());
 	}
 
-	const float Vector2::dot(const Vector2 _rvec)
+	const float Vector2::dot(const Vector2& _rvec)
 	{
 		return this->x * _rvec.x + this->y * _rvec.y;
+	}
+
+	const float Vector2::cross(const Vector2 & _rvec)
+	{
+		return this->x * _rvec.y - this->y * _rvec.x;
 	}
 
 	Vector3 Vector2::toVector3()
@@ -141,5 +146,4 @@ namespace gnLib {
 	{
 		return (x != _rvec.x) || (y != _rvec.y);
 	}
-
 }

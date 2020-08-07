@@ -32,11 +32,14 @@ namespace gnLib {
 		const float sqrMagnitude() const;
 
 		// “àÏ
-		const float dot(const Vector2 _rvec);
+		const float dot(const Vector2& _rvec);
 
+		// ŠOÏ
+		const float cross(const Vector2& _rvec);
+
+		// Vector3‚É•ÏŠ·
 		Vector3 toVector3();
 
-		// TODO: ‰‰Zq‚ğÀ‘•‚·‚é
 		const Vector2 operator+() const;
 
 		const Vector2 operator-() const;

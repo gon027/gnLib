@@ -20,9 +20,21 @@ namespace gnLib {
 		void set(float _x, float _y, float _z);
 		void set(const Vector3& _vector);
 
+		const float magnitude() const;
+
+		const Vector3 normalized() const;
+
+		const float sqrMagnitude() const;
+
+		// ì‡êœ
+		const float dot(const Vector3& _v);
+
+		// äOêœ
+		const Vector3 cross(const Vector3& _v);
+
+		// Vector2Ç…ïœä∑
 		const Vector2 toVector2();
 
-		// TODO: ââéZéqÇé¿ëïÇ∑ÇÈ
 		const Vector3 operator+() const;
 
 		const Vector3 operator-() const;
@@ -35,13 +47,17 @@ namespace gnLib {
 
 		const Vector3 operator/(const Vector3& _rvec) const;
 
-		const Vector3 operator+=(const Vector3& _rvec) const;
+		const Vector3& operator+=(const Vector3& _rvec);
 
-		const Vector3 operator-=(const Vector3& _rvec) const;
+		const Vector3& operator-=(const Vector3& _rvec);
 
-		const Vector3 operator*=(const Vector3& _rvec) const;
+		const Vector3& operator*=(const Vector3& _rvec);
 
-		const Vector3 operator/=(const Vector3& _rvec) const;
+		const Vector3& operator/=(const Vector3& _rvec);
+
+		const bool operator==(const Vector3& _rvec) const;
+
+		const bool operator!=(const Vector3& _rvec) const;
 	};
 }
 
