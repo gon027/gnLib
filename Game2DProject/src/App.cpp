@@ -54,14 +54,14 @@ namespace gnLib {
 		GCoreIns->getGraphic()->end();
 	}
 
-	int App::getWidth() const
+	float App::getWidth() const
 	{
-		return WindowInfo::Width;
+		return static_cast<float>(WindowInfo::Width);
 	}
 
-	int App::getHeight() const
+	float App::getHeight() const
 	{
-		return WindowInfo::Height;
+		return static_cast<float>(WindowInfo::Height);
 	}
 
 }

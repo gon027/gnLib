@@ -20,8 +20,8 @@ namespace gnLib {
 		void end();
 
 		// ウィンドウの幅と高さ
-		int getWidth() const;
-		int getHeight() const;
+		float getWidth() const;
+		float getHeight() const;
 
 	private:
 		UniquePtr<Window> window;
