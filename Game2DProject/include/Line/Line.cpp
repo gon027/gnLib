@@ -99,6 +99,7 @@ namespace gnLib {
 			{pos2.x, pos2.y}
 		};
 
+		line->SetAntialias(true);
 		line->SetWidth(weight);
 		line->Begin();
 		{

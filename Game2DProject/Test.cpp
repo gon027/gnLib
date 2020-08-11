@@ -19,7 +19,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		auto v = Input::getPosition();
 
 		line.setColor(Color::Red);
-		line.setWeight(3);
+		line.setWeight(10);
 		line.setPos(Vector2::Zero, v);
 		line.draw();
 		
