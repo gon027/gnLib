@@ -6,6 +6,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Texture tex("img/backscreen.jpg");
 	Sprite sp(tex);
 	Circle circle;
+	RectAngle ra;
 
 	while (app.doEvent()) {
 		app.begin();
@@ -13,7 +14,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		sp.draw(app.getWidth() / 2, app.getHeight() / 2);
 		
 		circle.set(Vector2::Up);
-		circle.draw();
 
 		auto v = Input::getPosition();
 		
@@ -23,11 +23,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		}
 
 		if (Input::getRightButton()) {
-			circle.setColor(Color::Green);
-			circle.setRadius(100);
-			circle.set(Vector2(v.x, v.y));
-			circle.draw();
-
+			ra.setPos(v);
+			ra.setSize(100);
+			ra.setColor(Color::White);
+			ra.draw();
 		}
 
 		app.end();
