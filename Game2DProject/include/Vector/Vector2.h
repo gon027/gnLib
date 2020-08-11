@@ -9,18 +9,18 @@ namespace gnLib {
 		float x;
 		float y;
 
-		Vector2();
-		Vector2(const Vector2& _vector);
-		Vector2(float _x, float _y);
-		Vector2(float _xy);
-		~Vector2() = default;
-
 		static Vector2 Up;
 		static Vector2 Down;
 		static Vector2 Left;
 		static Vector2 Right;
 		static Vector2 One;
 		static Vector2 Zero;
+
+		Vector2();
+		Vector2(const Vector2& _vector);
+		Vector2(float _x, float _y);
+		Vector2(float _xy);
+		~Vector2() = default;
 
 		void set(float _x, float _y);
 		void set(const Vector2& _vector);

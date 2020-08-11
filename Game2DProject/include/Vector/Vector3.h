@@ -10,6 +10,15 @@ namespace gnLib {
 		float y;
 		float z;
 
+		static Vector3 Up;
+		static Vector3 Down;
+		static Vector3 Left;
+		static Vector3 Right;
+		static Vector3 Back;
+		static Vector3 Forward;
+		static Vector3 One;
+		static Vector3 Zero;
+
 		Vector3();
 		Vector3(const Vector2& _vector);
 		Vector3(const Vector3& _vector);
