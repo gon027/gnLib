@@ -37,10 +37,6 @@ namespace gnLib {
 		LPDIRECT3DTEXTURE9 lpTexture;
 		Size size;
 
-		int width;
-		int height;
-
-
 		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğæ“¾
 		bool imageInfo();
 	};

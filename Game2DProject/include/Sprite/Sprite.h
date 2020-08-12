@@ -10,47 +10,38 @@
 #include "../Common/SmartPtr.h"
 #include "../Texture/Texture.h"
 #include "../Vector/Vector2.h"
+#include "../Vector/Vector3.h"
+#include "../Object/Object.h"
 
 namespace gnLib {
 	class Graphics;
 
-	class Sprite {
+	class Sprite : public Object{
 	public:
-		Sprite();
 		Sprite(Texture& _texture);
 		~Sprite();
 
-		/*
-		void set(float _x, float _y);
-		void set(const Vector2& _vector);
+		void setPos(float _x, float _y);
+		void setPos(const Vector2& _v);
+		void setPos(const Vector3& _v);
 
-		void setScale(float _scale);
+		void setScale(float _sx, float _sy);
+		void setScale(const Vector2& _v);
 
-		void setRotation(float _x, float _y);
-		void setRotation(const Vector2 _rot);
+		void setRotate(float _angle);
 
 		void draw();
-		*/
-
-		// ï`âÊ
-		void draw(float _x, float _y);
-
-		// âÒì]ï`âÊ
-		void rotateDraw(float _x, float _y, float _angle);
-
-		// ägëÂÅEèkè¨ï`âÊ
-		void scaleDraw(float _x, float _y, float _sx = 1.0f, float _sy = 1.0f);
 
 		bool isSplite();
 
 	private:
-		Texture texture;
 		LPD3DXSPRITE sprite;
-		D3DXVECTOR3 center;
-		D3DXVECTOR3 position;
+		Texture texture;
 
-		// âÒì]ÅEägëÂèkè¨Ççló∂ÇµÇΩï`âÊ
-		void drawEx(float _x, float _y, float _angle, float _sx, float _sy);
+		D3DXVECTOR3 center;
+		Vector3 position;
+		Vector2 scale;
+		float angle;
 
 		// ÉeÉNÉXÉ`ÉÉì«Ç›çûÇ›
 		bool loadTexture(Texture& _texture);

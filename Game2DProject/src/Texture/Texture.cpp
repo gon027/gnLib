@@ -69,8 +69,6 @@ namespace gnLib {
 		}
 
 		// ‰æ‘œ‚Ìc•‚Æ‰¡•‚ğæ“¾
-		//width = surfaceInfo.Width;
-		//height = surfaceInfo.Height;
 		size.setSize(
 			static_cast<float>(surfaceInfo.Width),
 			static_cast<float>(surfaceInfo.Height)

@@ -1,8 +1,11 @@
 #include "GameLib.h"
+#include <string>
+using namespace std;
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	App app{"Test"};
 
+	float t = 0;
 	Texture tex("img/backscreen.jpg");
 	Sprite sp(tex);
 	Circle circle;
@@ -12,11 +15,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	while (app.doEvent()) {
 		app.begin();
 
-		//sp.draw(app.getWidth() / 2, app.getHeight() / 2);
+		auto v = Input::getPosition();
+
+		sp.setPos(app.getWidth() / 2, app.getHeight() / 2);
+		//sp.setScale(0.5f, 0.5f);
+		sp.draw();
 		
 		circle.set(Vector2::Up);
-
-		auto v = Input::getPosition();
 
 		line.setColor(Color::Red);
 		line.setWeight(10);
