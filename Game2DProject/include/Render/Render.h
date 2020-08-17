@@ -17,16 +17,6 @@ namespace gnLib {
 		void setGraphics(Graphics* _graphics);
 		Graphics* getGraphics() const;
 
-		/*
-		static void setRect();
-		
-		static void setCircle();
-
-		static void setPoint();
-
-		static void setSprite();
-		*/
-
 	private:
 		Graphics* graphics;
 

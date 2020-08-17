@@ -16,20 +16,25 @@
 namespace gnLib {
 	class Graphics;
 
+	// 画像を描画するクラス
 	class Sprite : public Object{
 	public:
 		Sprite(Texture& _texture);
 		~Sprite();
 
+		// 座標を設定する
 		void setPos(float _x, float _y);
 		void setPos(const Vector2& _v);
 		void setPos(const Vector3& _v);
 
+		// 画像の大きさを設定する
 		void setScale(float _sx, float _sy);
 		void setScale(const Vector2& _v);
 
+		// 画像の角度を設定する
 		void setRotate(float _angle);
 
+		// 画像を描画する
 		void draw();
 
 		bool isSplite();

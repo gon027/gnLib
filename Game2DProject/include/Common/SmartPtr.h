@@ -5,8 +5,6 @@
 
 namespace gnLib {
 
-	// スマートポインタのエイリアス宣言
-
 	template<class T>
 	using UniquePtr = std::unique_ptr<T>;
 

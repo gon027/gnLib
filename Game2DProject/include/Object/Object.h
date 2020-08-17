@@ -2,6 +2,8 @@
 #define OBJECT_H
 
 namespace gnLib {
+
+	// 描画させるオブジェクトの基底クラス
 	class Object {
 	public:
 		Object() {};

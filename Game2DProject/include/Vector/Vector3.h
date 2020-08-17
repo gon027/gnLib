@@ -4,6 +4,7 @@
 namespace gnLib {
 	class Vector2;
 
+	// 3次元ベクトルクラス
 	class Vector3 {
 	public:
 		float x;
@@ -26,8 +27,8 @@ namespace gnLib {
 		Vector3(float _xyz);
 		~Vector3() = default;
 
-		void set(float _x, float _y, float _z);
-		void set(const Vector3& _vector);
+		void setPos(float _x, float _y, float _z);
+		void setPos(const Vector3& _vector);
 
 		const float magnitude() const;
 

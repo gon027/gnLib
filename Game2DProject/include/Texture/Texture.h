@@ -16,6 +16,7 @@ using string = std::string;
 namespace gnLib {
 	class Graphics;
 
+	// ‰æ‘œ‚ğ“Ç‚İ‚ŞƒNƒ‰ƒX
 	class Texture {
 	public:
 		Texture();

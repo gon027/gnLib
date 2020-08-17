@@ -10,8 +10,7 @@ using CSBInfo = CONSOLE_SCREEN_BUFFER_INFO;
 namespace gnLib {
 
 	// コンソールクラス
-	class Console
-	{
+	class Console{
 	public:
 		Console();
 		~Console();

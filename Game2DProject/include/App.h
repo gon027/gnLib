@@ -24,9 +24,6 @@ namespace gnLib {
 		float getHeight() const;
 
 	private:
-		UniquePtr<Window> window;
-		UniquePtr<Graphics> graphics;
-
 		GameCore gCore;
 
 		int windowWidth = 640;

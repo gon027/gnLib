@@ -66,14 +66,14 @@ namespace gnLib {
 	
 	void Line::setPos(float _sx, float _sy, float _gx, float _gy)
 	{
-		pos1.set(_sx, _sy, 0.0f);
-		pos2.set(_gx, _gy, 0.0f);
+		pos1.setPos(_sx, _sy, 0.0f);
+		pos2.setPos(_gx, _gy, 0.0f);
 	}
 
 	void Line::setPos(const Vector2 & _v1, const Vector2 & _v2)
 	{
-		pos1.set(_v1.x, _v1.y, 0.0f);
-		pos2.set(_v2.x, _v2.y, 0.0f);
+		pos1.setPos(_v1.x, _v1.y, 0.0f);
+		pos2.setPos(_v2.x, _v2.y, 0.0f);
 	}
 
 	void Line::setPos(const Vector3 & _v1, const Vector3 & _v2)

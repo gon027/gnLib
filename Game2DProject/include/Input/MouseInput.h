@@ -28,6 +28,7 @@ namespace gnLib {
 		bool getRightButton();
 		bool getMiddleButton();
 
+		// マウスの座標を取得
 		Vector2 getPosition() const;
 
 	private:

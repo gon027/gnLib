@@ -10,6 +10,7 @@
 namespace gnLib {
 	class Graphics;
 
+	// •¶š—ñ‚ğ‰æ–Êã‚É•`‰æ‚·‚éƒNƒ‰ƒX
 	class StringRender {
 		using string = std::string;
 

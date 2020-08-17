@@ -30,13 +30,13 @@ namespace gnLib {
 		, y(_xy)
 	{ }
 
-	void Vector2::set(float _x, float _y)
+	void Vector2::setPos(float _x, float _y)
 	{
 		x = _x;
 		y = _y;
 	}
 
-	void Vector2::set(const Vector2 & _vector)
+	void Vector2::setPos(const Vector2 & _vector)
 	{
 		x = _vector.x;
 		y = _vector.y;

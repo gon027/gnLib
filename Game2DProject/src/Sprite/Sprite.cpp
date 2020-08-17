@@ -112,42 +112,4 @@ namespace gnLib {
 	{
 		return sprite != nullptr;
 	}
-
-	/*
-	void Sprite::drawEx(float _x, float _y, float _angle, float _sx, float _sy)
-	{
-		position.x = _x;
-		position.y = _y;
-
-		D3DXMATRIX matWorld, matRotation, matScale, matPosition;
-
-		D3DXMatrixIdentity(&matWorld);
-		D3DXMatrixIdentity(&matRotation);
-		D3DXMatrixIdentity(&matScale);
-		D3DXMatrixIdentity(&matPosition);
-
-		D3DXMatrixScaling(&matScale, _sx, _sy, 0.0f);
-
-		D3DXMatrixRotationZ(&matRotation, D3DXToRadian(_angle));
-
-		matPosition._41 = _x;
-		matPosition._42 = _y;
-
-		D3DXMatrixMultiply(&matWorld, &matWorld, &matRotation);
-		D3DXMatrixMultiply(&matWorld, &matWorld, &matScale);
-		D3DXMatrixMultiply(&matWorld, &matWorld, &matPosition);
-
-		// •`‰æŠJn
-		sprite->Begin(NULL);
-
-		{
-			sprite->SetTransform(&matWorld);
-
-			sprite->Draw(texture.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);	
-		}
-
-		sprite->End();
-	}
-	*/
-
 }

@@ -39,7 +39,6 @@ namespace gnLib {
 
 	bool App::update()
 	{
-		//Input::update();
 		return false;
 	}
 

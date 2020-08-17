@@ -43,16 +43,16 @@ namespace gnLib {
 		, z(_xyz)
 	{ }
 
-	void Vector3::set(float _x, float _y, float _z)
+	void Vector3::setPos(float _x, float _y, float _z)
 	{
 		x = _x;
 		y = _y;
 		z = _z;
 	}
 
-	void Vector3::set(const Vector3 & _vector)
+	void Vector3::setPos(const Vector3 & _vector)
 	{
-		set(_vector.x, _vector.y, _vector.z);
+		setPos(_vector.x, _vector.y, _vector.z);
 	}
 
 	const float Vector3::magnitude() const

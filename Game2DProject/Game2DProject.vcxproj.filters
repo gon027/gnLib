@@ -88,6 +88,9 @@
     <Filter Include="Vector">
       <UniqueIdentifier>{8b99cb14-600f-4602-9b44-fda14a5cc284}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Size">
+      <UniqueIdentifier>{c7b7e056-a506-4dfc-87f8-8ef053d0f31a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib.h">
@@ -177,11 +180,11 @@
     <ClInclude Include="include\Vector\Vector2.h">
       <Filter>Vector</Filter>
     </ClInclude>
-    <ClInclude Include="include\Size\Size.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="include\Vector\Vector3.h">
       <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Size\Size.h">
+      <Filter>Size</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +253,9 @@
     </ClCompile>
     <ClCompile Include="include\Vector\Vector3.cpp">
       <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

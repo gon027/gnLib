@@ -13,7 +13,6 @@ namespace gnLib {
 	class Graphics;
 	class KeyInput;
 	class MouseInput;
-	class Console;
 	class Render;
 
 	// ゲームに使われる主要なクラスをまとめたクラス
@@ -40,7 +39,6 @@ namespace gnLib {
 		UniquePtr<Graphics> graphics;
 		UniquePtr<KeyInput> keyBoard;
 		UniquePtr<MouseInput> mouse;
-		// UniquePtr<Console> console;
 	};
 
 }

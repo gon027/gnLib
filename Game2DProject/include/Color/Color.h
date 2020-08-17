@@ -8,6 +8,12 @@ namespace gnLib {
 
 	class Color {
 	public:
+		static Color White;
+		static Color Black;
+		static Color Red;
+		static Color Green;
+		static Color Blue;
+
 		Color(const Color& _color);
 		Color(int _r, int _g, int _b, int _alpha = 255);
 		~Color() = default;
@@ -15,13 +21,8 @@ namespace gnLib {
 		void setColor(const Color& _color);
 		void setColor(int _r, int _g, int _b);
 
+		// D3DCOLORŒ^‚É•ÏŠ·
 		D3DCOLOR getColor() const;
-
-		static Color White;
-		static Color Black;
-		static Color Red;
-		static Color Green;
-		static Color Blue;
 
 	private:
 		int r, g, b, alpha;

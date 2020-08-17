@@ -19,15 +19,19 @@ namespace gnLib {
 		RectAngle(const Vector3& _v, float _width, float _height);
 		~RectAngle();
 
+		// À•W‚ğİ’è
 		void setPos(float _x, float _y, float _z);
 		void setPos(const Vector2& _v);
 		void setPos(const Vector3& _v);
 
+		// ‘å‚«‚³‚ğİ’è
 		void setSize(float _width, float _height);
 		void setSize(float _wh);
 
+		// F‚ğİ’è
 		void setColor(const Color& _color);
 
+		// •`‰æ
 		void draw();
 
 	private:

@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+/*
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	App app{"Test"};
 
@@ -21,7 +22,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		//sp.setScale(0.5f, 0.5f);
 		sp.draw();
 		
-		circle.set(Vector2::Up);
+		circle.setPos(Vector2::Up);
 
 		line.setColor(Color::Red);
 		line.setWeight(10);
@@ -43,3 +44,4 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		app.end();
 	}
 }
+*/
