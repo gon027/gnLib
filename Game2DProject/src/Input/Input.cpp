@@ -4,14 +4,22 @@
 
 namespace gnLib {
 
+	/*
+	namespace {
+		KeyBorad* keyBoard;
+		MouseInput* mouseInput;
+	}
+	*/
+
+
 	bool Input::getKeyDown(Key key)
 	{
-		return true; //keyBorad.keyDown(key);
+		return true; //keyBorad.getKeyDown(key);
 	}
 
 	bool Input::getKeyUp(Key key)
 	{
-		return true;// keyBorad.keyUp(key);;
+		return true;// keyBorad.getKeyUp(key);;
 	}
 
 	bool Input::getKeyState(Key key)

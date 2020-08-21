@@ -77,8 +77,9 @@ namespace gnLib {
 		bool create();
 		void update();
 
-		bool keyDown(Key _keyCode);     //キーが押された時
-		bool keyUp(Key _keyCode);       //キーが離された時
+		bool getKey(Key _keyCode);     // キーが押されているとき
+		bool getKeyDown(Key _keyCode); // キーが押された時
+		bool getKeyUp(Key _keyCode);   // キーが離された時
 
 	private:
 		Window* window;
@@ -86,8 +87,8 @@ namespace gnLib {
 		LPDIRECTINPUT8 device;
 		LPDIRECTINPUTDEVICE8 keyBoard;
 
-		BYTE beforeKey[256];
-		BYTE afterKey[256];
+		BYTE buffer[256];
+		//BYTE afterKey[256];
 
 		std::array<int, 256> keyArray;
 

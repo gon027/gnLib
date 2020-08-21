@@ -1,6 +1,7 @@
 #include "GameLib.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+	
 	App app{ "Main Window" };
 
 	float x = app.getWidth() / 2.0f;
@@ -25,6 +26,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		circle.setPos(x, y);
 		circle.draw();
 
+		//Debug::drawLine(Vector2(0, 0), Vector2(100, 100));
+		Debug::drawCircle(Input::getPosition(), 50);
+
 		x += speedX;
 		y += speedY;
 
@@ -38,4 +42,5 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		app.end();
 	}
+	
 }

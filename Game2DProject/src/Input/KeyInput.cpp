@@ -5,8 +5,9 @@
 namespace gnLib {
 	KeyInput::KeyInput(Window * _win)
 		: window(_win)
-		, beforeKey()
-		, afterKey()
+		, buffer()
+		//, afterKey()
+		, keyArray()
 	{
 
 	}
@@ -74,27 +75,36 @@ namespace gnLib {
 	{
 		keyBoard->Acquire();
 
-		ZeroMemory(beforeKey, sizeof(beforeKey));
+		ZeroMemory(buffer, sizeof(buffer));
 
-		HRESULT ret = keyBoard->GetDeviceState(sizeof(beforeKey), beforeKey);
+		HRESULT ret = keyBoard->GetDeviceState(sizeof(buffer), buffer);
 
 		if (FAILED(ret)) {
 			keyBoard->Acquire();
-			keyBoard->GetDeviceState(sizeof(beforeKey), beforeKey);
+			keyBoard->GetDeviceState(sizeof(buffer), buffer);
 		}
 	}
 
-	bool KeyInput::keyDown(Key _keyCode)
+	bool KeyInput::getKey(Key _keyCode)
 	{
-		if (beforeKey[(BYTE)_keyCode] & 0x80) {
+		return false;
+	}
+
+	bool KeyInput::getKeyDown(Key _keyCode)
+	{
+		keyArray[(BYTE)_keyCode] = 1;
+
+		if (buffer[(BYTE)_keyCode] & 0x80) {
 			return true;
 		}
 
 		return false;
 	}
 
-	bool KeyInput::keyUp(Key _keyCode)
+	bool KeyInput::getKeyUp(Key _keyCode)
 	{
+		keyArray[(BYTE)_keyCode] = 0;
+
 		return false;
 	}
 

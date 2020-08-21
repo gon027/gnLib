@@ -10,6 +10,15 @@
 #include "../Color/Color.h"
 
 namespace gnLib {
+
+	namespace inter {
+		struct DxLine {
+			ID3DXLine* d3dLine;
+
+
+		};
+	}
+
 	class Line : public Object{
 	public:
 		Line();
@@ -18,16 +27,21 @@ namespace gnLib {
 		Line(float _sx, float _sy, float _gx, float _gy);
 		~Line();
 
+		// À•W‚ğİ’è
 		void setPos(float _sx, float _sy, float _gx, float _gy);
 		void setPos(const Vector2& _v1, const Vector2& _v2);
 		void setPos(const Vector3& _v1, const Vector3& _v2);
 		
+		// ‘¾‚³‚ğİ’è
 		void setWeight(float _weight);
 
+		// F‚ğİ’è
 		void setColor(Color _color);
 
+		// •`‰æ
 		void draw();
 
+		// Œã‚ÉÁ‚·‚©‚à‚µ‚ê‚È‚¢
 		void draw(float _x1, float _y1, float _x2, float _y2);
 
 	private:

@@ -39,8 +39,14 @@
 // ノイズ
 //#include "include/Noise/Noise.h"
 
-// ベクトル(2D)
+// ベクトル( 2D )
 #include "include/Vector/Vector2.h"
+
+// ベクトル( 3D )
+#include "include/Vector/Vector3.h"
+
+// デバック
+#include "Debug.h"
 
 using namespace gnLib;
 

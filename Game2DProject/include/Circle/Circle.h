@@ -14,15 +14,21 @@ namespace gnLib {
 		Circle(Vector2 _pos, float _r);
 		~Circle() = default;
 
+		// À•W‚ğİ’è
 		void setPos(float _x, float _y);
 		void setPos(const Vector2& _vector);
 
+		// ‰~‚Ì‘å‚«‚³‚ğİ’è
 		void setRadius(float _radius);
 
+		// F‚ğİ’è
 		void setColor(const Color& _color);
 		void setColor(int _r, int _g, int _b);
 
+		// •`‰æ
 		void draw();
+
+		// Œã‚ÉÁ‚·‚©‚à‚µ‚ê‚È‚¢
 		void draw(float _x, float _y, float _radius);
 
 	private:

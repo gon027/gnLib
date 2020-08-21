@@ -18,6 +18,9 @@ namespace gnLib {
 		MIDDLE = 2
 	};
 
+	//void registerKeyBoard(KeyBorad* _keyBorad);
+	//void registerMouse(MouseInput* _mouseInput);
+
 	class Input {
 	public:
 
