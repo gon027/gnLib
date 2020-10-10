@@ -1,15 +1,19 @@
 #include "../../include/Collider/BoxCollider.h"
 
-BoxCollider::BoxCollider(float _x, float _y)
+BoxCollider::BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max)
+	: center(_pos)
+	, minPos(_min)
+	, maxPos(_max)
+	, size(maxPos - minPos)
 {
 }
 
 bool BoxCollider::hitTest(BoxCollider & _other)
 {
-	if (max.x >= _other.getMinSize().x
-		&&min.x <= _other.getMaxSize().x
-		&& max.y >= _other.getMinSize().y
-		&& min.y <= _other.getMaxSize().y)
+	if (maxPos.x >= _other.getMin().x
+		&&minPos.x <= _other.getMax().x
+		&& maxPos.y >= _other.getMin().y
+		&& minPos.y <= _other.getMax().y)
 	{
 		return true;
 	}
@@ -17,7 +21,7 @@ bool BoxCollider::hitTest(BoxCollider & _other)
 	return false;
 }
 
-void BoxCollider::setCollider(float _x, float _y, float _xSize, float _ySize)
+void BoxCollider::update(float _x, float _y, float _xSize, float _ySize)
 {
 	size.x = _xSize;
 	size.y = _ySize;
@@ -25,26 +29,39 @@ void BoxCollider::setCollider(float _x, float _y, float _xSize, float _ySize)
 	center.x = _x + size.x / 2;
 	center.y = _y + size.y / 2;
 
-	min.x = _x;
-	min.y = _y;
+	minPos.x = _x;
+	minPos.y = _y;
 
-	max.x = _x + size.x;
-	max.y = _y + size.y;	
+	maxPos.x = _x + size.x;
+	maxPos.y = _y + size.y;	
 }
 
-D3DXVECTOR2 BoxCollider::getPosition() const
+void BoxCollider::update(const Vector2& _pos, const Vector2& _min, const Vector2& _max)
+{
+	center.setPos(_pos);
+	minPos.setPos(_min);
+	maxPos.setPos(_max);
+	size = maxPos - minPos;
+}
+
+Vector2 BoxCollider::getPosition() const
 {
 	return center;
 }
 
-D3DXVECTOR2 BoxCollider::getMinSize() const
+Vector2 BoxCollider::getMin() const
 {
-	return min;
+	return minPos;
 }
 
-D3DXVECTOR2 BoxCollider::getMaxSize() const
+Vector2 BoxCollider::getMax() const
 {
-	return max;
+	return maxPos;
+}
+
+Vector2 BoxCollider::gerSize() const
+{
+	return size;
 }
 
 ColliderType BoxCollider::getType()

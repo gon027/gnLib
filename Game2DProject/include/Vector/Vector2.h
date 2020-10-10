@@ -1,6 +1,8 @@
 #ifndef VECTOR2_H
 #define VECTOR2_H
 
+#include <string>
+
 namespace gnLib {
 	class Vector3;
 
@@ -64,6 +66,12 @@ namespace gnLib {
 		const bool operator==(const Vector2& _rvec) const;
 
 		const bool operator!=(const Vector2& _rvec) const;
+
+		std::string toString() {
+			return "[x: " + std::to_string(x)
+				+ ", y: " + std::to_string(y)
+				+ "]\n";
+		}
 	};
 
 }

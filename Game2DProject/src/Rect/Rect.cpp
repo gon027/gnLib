@@ -12,37 +12,43 @@ namespace gnLib {
 		, width(1)
 		, height(1)
 		, color(Color::White)
-	{ }
+	{ 
+	}
 
 	RectAngle::RectAngle(float _x, float _y, float _width, float _height)
 		: position({_x, _y, 0.0f})
 		, width(_width)
 		, height(_height)
 		, color(Color::White)
-	{ }
+	{ 
+	}
 
-	RectAngle::RectAngle(const Vector2 & _v, float _width, float _height)
+	RectAngle::RectAngle(const Vector2& _v, float _width, float _height)
 		: position(_v.x, _v.y, 0.0f)
 		, width(_width)
 		, height(_height)
+		, maxPos(Vector3{ position.x + width, position.y + height })
 		, color(Color::White)
-	{ }
+	{
+	}
 
 	RectAngle::RectAngle(const Vector3 & _v, float _width, float _height)
 		: position(_v)
 		, width(_width)
 		, height(_height)
+		, maxPos(Vector3{ position.x + width, position.y + height })
 		, color(Color::White)
-	{ }
+	{ 
+	}
 
 	RectAngle::~RectAngle()
-	{ }
+	{
+	}
 
 	void RectAngle::setPos(float _x, float _y, float _z)
 	{
-		position.x = _x;
-		position.y = _y;
-		position.z = _z;
+		position.setPos(_x, _y, _z);
+		maxPos.setPos(position.x + width, position.x + height, 0.0f);
 	}
 
 	void RectAngle::setPos(const Vector2 & _v)
@@ -59,6 +65,7 @@ namespace gnLib {
 	{
 		width = _width;
 		height = _height;
+		maxPos.setPos(position.x + width, position.x + height, 0.0f);
 	}
 
 	void RectAngle::setSize(float _wh)
@@ -86,8 +93,20 @@ namespace gnLib {
 			{sx,  y, z, 1.0f, color.getColor(), 0.0f, 0.0f},
 		};
 
+		collider.update(Vector2{ sx / 2.0f, sy / 2.0f}, Vector2{ x, y }, Vector2{ sx, sy });
+
 		GCoreIns->getGraphic()->getDevice()->SetFVF(FVF_CUSTOM2D);
 		GCoreIns->getGraphic()->getDevice()->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
+	}
+
+	Vector3 RectAngle::getMinPos()
+	{
+		return position;
+	}
+
+	Vector3 RectAngle::getMaxPos()
+	{
+		return maxPos;
 	}
 
 }

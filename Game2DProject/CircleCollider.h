@@ -15,6 +15,7 @@ namespace gnLib {
 		CircleCollider();
 		CircleCollider(const Vector2& _vector, const Vector2& _radius);
 		CircleCollider(float _x, float _y, float _rx, float _ry);
+		~CircleCollider() = default;
 
 		void update(const Vector2& _vector, const Vector2& _radius);
 

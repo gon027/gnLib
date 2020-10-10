@@ -8,6 +8,7 @@
 #include "../Vector/Vector3.h"
 #include "../Vector/Vector2.h"
 #include "../Color/Color.h"
+#include "../Collider/BoxCollider.h"
 
 namespace gnLib {
 
@@ -34,11 +35,19 @@ namespace gnLib {
 		// ï`âÊ
 		void draw();
 
+		// ç¿ïWÇéÊìæ
+		Vector3 getMinPos();
+		Vector3 getMaxPos();
+
 	private:
 		Vector3 position;
+		Vector3 maxPos;
 		float width;
 		float height;
 		Color color;
+
+	public:
+		BoxCollider collider;
 	};
 
 }

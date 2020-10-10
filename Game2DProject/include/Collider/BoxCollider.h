@@ -2,29 +2,32 @@
 #define BOXCOLLIDER_H
 
 #include "BaseCollider.h"
+#include "../Vector/Vector2.h"
+using namespace gnLib;
 
 class BoxCollider : public BaseCollider{
 public:
-	BoxCollider(float _x, float _y);
+	BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max);
 	BoxCollider() = default;
 	~BoxCollider() = default;
 
 	bool hitTest(BoxCollider& _other);
 
-	void setCollider(float _x, float _y, float _xSize, float _ySize);
+	void update(float _x, float _y, float _xSize, float _ySize);
+	void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
 
-	D3DXVECTOR2 getPosition() const;
-	D3DXVECTOR2 getMinSize() const;
-	D3DXVECTOR2 getMaxSize() const;
+	Vector2 getPosition() const;
+	Vector2 getMin() const;
+	Vector2 getMax() const;
+	Vector2 gerSize() const;
 
 	virtual ColliderType getType() override;
 
 private:
-	D3DXVECTOR2 size;
-
-	D3DXVECTOR2 center;
-	D3DXVECTOR2 max;
-	D3DXVECTOR2 min;
+	Vector2 center;
+	Vector2 minPos;
+	Vector2 maxPos;
+	Vector2 size;
 };
 
 #endif // !BOXCOLLIDER_H
