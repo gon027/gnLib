@@ -64,6 +64,11 @@ namespace gnLib {
 		return std::sqrt(magnitude());
 	}
 
+	const Vector2 Vector2::half() const
+	{
+		return Vector2{ x / 2.0f, y / 2.0f };
+	}
+
 	const float Vector2::dot(const Vector2& _rvec)
 	{
 		return this->x * _rvec.x + this->y * _rvec.y;

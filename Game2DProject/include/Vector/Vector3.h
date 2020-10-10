@@ -1,6 +1,8 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
 
+#include <string>
+
 namespace gnLib {
 	class Vector2;
 
@@ -36,6 +38,9 @@ namespace gnLib {
 
 		const float sqrMagnitude() const;
 
+		// îºï™ÇÃí∑Ç≥
+		const Vector3 half() const;
+
 		// ì‡êœ
 		const float dot(const Vector3& _v);
 
@@ -68,6 +73,8 @@ namespace gnLib {
 		const bool operator==(const Vector3& _rvec) const;
 
 		const bool operator!=(const Vector3& _rvec) const;
+
+		std::string toString();
 	};
 }
 

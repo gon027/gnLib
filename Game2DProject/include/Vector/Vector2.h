@@ -34,6 +34,9 @@ namespace gnLib {
 
 		const float sqrMagnitude() const;
 
+		// ベクトルの半分の値
+		const Vector2 half() const;
+
 		// 内積
 		const float dot(const Vector2& _rvec);
 

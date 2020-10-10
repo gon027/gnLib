@@ -76,6 +76,11 @@ namespace gnLib {
 		return sqrtf(magnitude());
 	}
 
+	const Vector3 Vector3::half() const
+	{
+		return Vector3{ x / 2.0f, y / 2.0f, z / 2.0f };
+	}
+
 	const float Vector3::dot(const Vector3 & _v)
 	{
 		return x * _v.x + y * _v.y + z * _v.z;
@@ -165,6 +170,14 @@ namespace gnLib {
 	const bool Vector3::operator!=(const Vector3 & _rvec) const
 	{
 		return (x != _rvec.x) || (y != _rvec.y) || (z != _rvec.z);
+	}
+
+	std::string Vector3::toString()
+	{
+		return "[x: " + std::to_string(x)
+			+ ", y: " + std::to_string(y)
+			+ ", z " + std::to_string(z)
+			+ "]\n";
 	}
 
 }
