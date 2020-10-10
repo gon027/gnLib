@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CircleCollider.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="GameLib.h" />
     <ClInclude Include="include\App.h" />
@@ -181,6 +182,7 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CircleCollider.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="include\Line\Line.cpp" />
     <ClCompile Include="include\Point\Point.cpp" />
