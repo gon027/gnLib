@@ -6,8 +6,8 @@ using namespace std;
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	
 	App app{ "Main Window" };
-	//Console cn;
-	//cn.createConsole();
+	Console cn;
+	cn.createConsole();
 
 	float x = app.getWidth() / 2.0f;
 	float y = app.getHeight() / 2.0f;
@@ -33,43 +33,46 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		sprite.setPos(app.getWidth() / 2.0f, app.getHeight() / 2.0f);
 		sprite.draw();
 
-		/*
-		circle.setPos(x, y);
+		//x += speedX;
+
+		//circle.setPos(x, y);
 		circle.draw();
 
 		c2.setPos(50, 50);
 		c2.draw();
-		*/
 
-		//r1.setPos(Input::getPosition());
-		r1.setPos(x, y, 0);
+		r1.setPos(Input::getPosition());
+		//r1.setPos(x, y, 0);
 		r1.setColor(Color::Red);
 		r1.draw();
+
+		r2.setPos(r1.getPos());
 		r2.draw();
 
-		auto a = r1.getMinPos().toVector2();
+		cn.print(r1.getMinPos().toString().c_str());
+		cn.print(r1.getMaxPos().toString().c_str());
+		cn.print(r1.getPos().toString().c_str());
 
-		//cn.print(a.toString().c_str());
 		//Debug::drawLine(Vector2(0, 0), Vector2(100, 100));
-		//Debug::drawCircle(Input::getPosition(), 50);
+		//Debug::drawCircle(Input::getPosition(), 20);
 
-		x += speedX;
+		
 		//y += speedY;
 
-		if (r1.collider.getMax().x > app.getWidth() || r1.collider.getMin().x < 0) {
-			speedX = -speedX;
-		}
+		//if (r1.collider.getMax().x > app.getWidth()) {
+			//speedX = -speedX;
+		//}
 
-		if (y + 75 >= app.getHeight() || y <= 0) {
-			speedY = -speedY;
-		}
+		//if (y + 75 >= app.getHeight() || y <= 0) {
+			//speedY = -speedY;
+		//}
 		
 
-		if (r1.collider.hitTest(r2.collider)) {
+		//if (r1.collider.hitTest(r2.collider)) {
 			//speedX += 3;
-			speedX = -speedX;
-			r1.setColor(Color::Green);
-		}
+			//speedX = -speedX;
+			//r1.setColor(Color::Green);
+		//}
 
 		app.end();
 	}

@@ -8,7 +8,7 @@
 namespace gnLib {
 
 	RectAngle::RectAngle()
-		: position()
+		: minPos()
 		, width(1)
 		, height(1)
 		, color(Color::White)
@@ -16,7 +16,7 @@ namespace gnLib {
 	}
 
 	RectAngle::RectAngle(float _x, float _y, float _width, float _height)
-		: position({_x, _y, 0.0f})
+		: minPos({_x, _y, 0.0f})
 		, width(_width)
 		, height(_height)
 		, color(Color::White)
@@ -24,19 +24,21 @@ namespace gnLib {
 	}
 
 	RectAngle::RectAngle(const Vector2& _v, float _width, float _height)
-		: position(_v.x, _v.y, 0.0f)
+		: minPos(_v.x, _v.y, 0.0f)
 		, width(_width)
 		, height(_height)
-		, maxPos(Vector3{ position.x + width, position.y + height })
+		, maxPos(Vector3{ minPos.x + width, minPos.y + height })
+		, position((maxPos - minPos).half())
 		, color(Color::White)
 	{
 	}
 
 	RectAngle::RectAngle(const Vector3 & _v, float _width, float _height)
-		: position(_v)
+		: minPos(_v)
 		, width(_width)
 		, height(_height)
-		, maxPos(Vector3{ position.x + width, position.y + height })
+		, maxPos(Vector3{ minPos.x + width, minPos.y + height })
+		, position((maxPos - minPos).half())
 		, color(Color::White)
 	{ 
 	}
@@ -47,8 +49,13 @@ namespace gnLib {
 
 	void RectAngle::setPos(float _x, float _y, float _z)
 	{
-		position.setPos(_x, _y, _z);
-		maxPos.setPos(position.x + width, position.x + height, 0.0f);
+		minPos.setPos(_x, _y, _z);
+		maxPos.setPos(minPos.x + width, minPos.y + height, 0.0f);
+		position.setPos(
+			minPos.x + (maxPos.x - minPos.x) / 2.0f,
+			minPos.y + (maxPos.y - minPos.y) / 2.0f,
+			minPos.z + (maxPos.z - minPos.z) / 2.0f
+		);
 	}
 
 	void RectAngle::setPos(const Vector2 & _v)
@@ -58,14 +65,14 @@ namespace gnLib {
 
 	void RectAngle::setPos(const Vector3 & _v)
 	{
-		position = _v;
+		setPos(_v.x, _v.y, _v.z);
 	}
 
 	void RectAngle::setSize(float _width, float _height)
 	{
 		width = _width;
 		height = _height;
-		maxPos.setPos(position.x + width, position.x + height, 0.0f);
+		maxPos.setPos(minPos.x + width, minPos.x + height, 0.0f);
 	}
 
 	void RectAngle::setSize(float _wh)
@@ -80,9 +87,9 @@ namespace gnLib {
 
 	void RectAngle::draw()
 	{
-		float x = position.x;
-		float y = position.y;
-		float z = position.z;
+		float x = minPos.x;
+		float y = minPos.y;
+		float z = minPos.z;
 		float sx = x + width;
 		float sy = y + height;
 
@@ -99,9 +106,14 @@ namespace gnLib {
 		GCoreIns->getGraphic()->getDevice()->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 	}
 
-	Vector3 RectAngle::getMinPos()
+	Vector3 RectAngle::getPos()
 	{
 		return position;
+	}
+
+	Vector3 RectAngle::getMinPos()
+	{
+		return minPos;
 	}
 
 	Vector3 RectAngle::getMaxPos()

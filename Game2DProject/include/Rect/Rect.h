@@ -36,11 +36,13 @@ namespace gnLib {
 		void draw();
 
 		// À•W‚ğæ“¾
+		Vector3 getPos();
 		Vector3 getMinPos();
 		Vector3 getMaxPos();
 
 	private:
 		Vector3 position;
+		Vector3 minPos;
 		Vector3 maxPos;
 		float width;
 		float height;

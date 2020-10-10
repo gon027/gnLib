@@ -17,7 +17,7 @@ namespace gnLib {
 	Circle::Circle()
 		: radius(10)
 		, color(255, 255, 255)
-		, circleCollider(Vector2::Zero, Vector2{radius, 0.0f})
+		, collider(Vector2::Zero, Vector2{radius, 0.0f})
 	{
 		this->setActive(true);
 	}
@@ -26,7 +26,7 @@ namespace gnLib {
 		: position(_x, _y)
 		, radius(_r)
 		, color(255, 255, 255)
-		, circleCollider(position, Vector2{ _r, 0.0f })
+		, collider(position, Vector2{ _r, 0.0f })
 	{
 		this->setActive(true);
 	}
@@ -35,7 +35,7 @@ namespace gnLib {
 		: position(_pos)
 		, radius(_r)
 		, color(255, 255, 255)
-		, circleCollider(position, Vector2{ _r, 0.0f })
+		, collider(position, Vector2{ _r, 0.0f })
 	{
 		this->setActive(true);
 	}
@@ -80,7 +80,7 @@ namespace gnLib {
 		}
 		circle[NUM - 1] = circle[1];
 
-		circleCollider.update(position, Vector2{ radius, 0.0f });
+		collider.update(position, Vector2{ radius, 0.0f });
 
 		GCoreIns->getGraphic()->getDevice()->SetFVF(FVF_CUSTOM2D);
 		GCoreIns->getGraphic()->getDevice()->DrawPrimitiveUP(

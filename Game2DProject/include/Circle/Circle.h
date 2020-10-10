@@ -38,7 +38,7 @@ namespace gnLib {
 		Color color;
 
 	public:
-		CircleCollider circleCollider;
+		CircleCollider collider;
 	};
 }
 
