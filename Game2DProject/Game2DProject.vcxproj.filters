@@ -266,14 +266,14 @@
     <ClCompile Include="Debug.cpp">
       <Filter>Debug</Filter>
     </ClCompile>
-    <ClCompile Include="CircleCollider.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="src\Collider\ICollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
     <ClCompile Include="Polygon.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCollider.cpp">
+      <Filter>Collider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

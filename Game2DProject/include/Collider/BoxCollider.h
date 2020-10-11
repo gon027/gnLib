@@ -11,9 +11,8 @@ public:
 	BoxCollider() = default;
 	~BoxCollider() = default;
 
-	bool hitTest(BoxCollider& _other);
+	bool hitTest(BoxCollider& _collider);
 
-	void update(float _x, float _y, float _xSize, float _ySize);
 	void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
 
 	Vector2 getPosition() const;

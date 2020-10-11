@@ -96,7 +96,7 @@ namespace gnLib {
 			{sx,  y, z, 1.0f, color.getColor(), 0.0f, 0.0f},
 		};
 
-		collider.update(Vector2{ sx / 2.0f, sy / 2.0f}, Vector2{ x, y }, Vector2{ sx, sy });
+		collider.update(position.toVector2(), minPos.toVector2(), Vector2{ sx, sy });
 
 		GCoreIns->getGraphic()->getDevice()->SetFVF(FVF_CUSTOM2D);
 		GCoreIns->getGraphic()->getDevice()->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
