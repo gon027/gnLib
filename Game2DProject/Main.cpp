@@ -6,8 +6,6 @@ using namespace std;
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	
 	App app{ "Main Window" };
-	Console cn;
-	cn.createConsole();
 
 	float x = app.getWidth() / 2.0f;
 	float y = app.getHeight() / 2.0f;
@@ -48,10 +46,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		r2.setPos(r1.getPos());
 		r2.draw();
-
-		cn.print(r1.getMinPos().toString().c_str());
-		cn.print(r1.getMaxPos().toString().c_str());
-		cn.print(r1.getPos().toString().c_str());
 
 		//Debug::drawLine(Vector2(0, 0), Vector2(100, 100));
 		//Debug::drawCircle(Input::getPosition(), 20);

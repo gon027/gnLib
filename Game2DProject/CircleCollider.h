@@ -1,7 +1,7 @@
 #ifndef CIRCLECOLLIDER_H
 #define CIRCLECOLLIDER_H
 
-#include "include/Collider/BaseCollider.h"
+#include "include/Collider/ICollider.h"
 #include "include/Vector/Vector2.h"
 
 
@@ -10,7 +10,7 @@ namespace gnLib {
 	/// <summary>
 	/// ‰~‚ÌÕ“Ë”»’èƒNƒ‰ƒX
 	/// </summary>
-	class CircleCollider : public BaseCollider {
+	class CircleCollider : public ICollider {
 	public:
 		CircleCollider();
 		CircleCollider(const Vector2& _vector, const Vector2& _radius);

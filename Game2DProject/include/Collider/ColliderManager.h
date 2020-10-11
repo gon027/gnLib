@@ -3,7 +3,7 @@
 
 #include <vector>
 
-class BaseCollider;
+class ICollider;
 
 class ColliderManager {
 

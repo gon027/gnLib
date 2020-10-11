@@ -152,7 +152,7 @@
     <ClInclude Include="GameLib.h" />
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Circle\Circle.h" />
-    <ClInclude Include="include\Collider\BaseCollider.h" />
+    <ClInclude Include="include\Collider\ICollider.h" />
     <ClInclude Include="include\Collider\BoxCollider.h" />
     <ClInclude Include="include\Collider\ColliderManager.h" />
     <ClInclude Include="include\Color\Color.h" />
@@ -191,7 +191,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Circle\Circle.cpp" />
-    <ClCompile Include="src\Collider\BaseCollider.cpp" />
+    <ClCompile Include="src\Collider\ICollider.cpp" />
     <ClCompile Include="src\Collider\BoxCollider.cpp" />
     <ClCompile Include="src\Color\Color.cpp" />
     <ClCompile Include="src\Console\Console.cpp" />

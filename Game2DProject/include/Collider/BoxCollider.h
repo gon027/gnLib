@@ -1,11 +1,11 @@
 #ifndef BOXCOLLIDER_H
 #define BOXCOLLIDER_H
 
-#include "BaseCollider.h"
+#include "ICollider.h"
 #include "../Vector/Vector2.h"
 using namespace gnLib;
 
-class BoxCollider : public BaseCollider{
+class BoxCollider : public ICollider{
 public:
 	BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max);
 	BoxCollider() = default;

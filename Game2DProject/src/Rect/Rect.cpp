@@ -51,11 +51,7 @@ namespace gnLib {
 	{
 		minPos.setPos(_x, _y, _z);
 		maxPos.setPos(minPos.x + width, minPos.y + height, 0.0f);
-		position.setPos(
-			minPos.x + (maxPos.x - minPos.x) / 2.0f,
-			minPos.y + (maxPos.y - minPos.y) / 2.0f,
-			minPos.z + (maxPos.z - minPos.z) / 2.0f
-		);
+		position.setPos(minPos + (maxPos - minPos).half());
 	}
 
 	void RectAngle::setPos(const Vector2 & _v)
