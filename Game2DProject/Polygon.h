@@ -3,24 +3,31 @@
 #include <initializer_list>
 #include <vector>
 #include "../Object/Object.h"
-#include "include/Vertex/Vertex3D.h"
+#include "include/Vertex/Vertex2D.h"
+#include "include/Vector/Vector2.h"
+#include "include/Color/Color.h"
 
 namespace gnLib {
 
-	class Vector3;
-
 	class Polygon {
 	public:
-		Polygon(std::initializer_list<Vertex3D> _list);
-		Polygon(std::vector<Vertex3D> _vertex);
+		Polygon(std::initializer_list<Vertex2D> _vertex);
+		Polygon(std::vector<Vertex2D> _vertex);
 		~Polygon() = default;
 
-		void setPos();
+		void setPos(Vector2 _v);
 
-		void setVertex(std::vector<Vertex3D> _vertex);
+		void setColor(Color _color);
+
+		void draw();
+
+		void setVertex(std::vector<Vertex2D> _vertex);
 
 	private:
-		std::vector<Vertex3D> vertex;
+		std::vector<Vertex2D> vertex;
+
+		Vector2 position;
+		Color color;
 	};
 
 }

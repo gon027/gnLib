@@ -156,6 +156,7 @@
     <ClInclude Include="include\Collider\BoxCollider.h" />
     <ClInclude Include="include\Collider\ColliderManager.h" />
     <ClInclude Include="include\Color\Color.h" />
+    <ClInclude Include="include\Common\Macro.h" />
     <ClInclude Include="include\Common\Math.h" />
     <ClInclude Include="include\Common\SmartPtr.h" />
     <ClInclude Include="include\Console\Console.h" />

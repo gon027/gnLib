@@ -1,4 +1,5 @@
 #include "GameLib.h"
+#include "Polygon.h"
 
 #include <string>
 using namespace std;
@@ -20,6 +21,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	circle.setColor(Color::Green);
 	circle.setRadius(50);
 
+
+	float a{ 100.0f };
+	gnLib::Polygon po{
+		{
+			Vertex2D{0.0, 0.0f, 0.f, 1.0f},
+			Vertex2D{a, 0.0f, 0.f, 1.0f},
+			Vertex2D{0.0f, a, 0.f, 1.0f},
+			Vertex2D{a, a, 0.f, 1.0f},
+			Vertex2D{a + 50, a, 0.f, 1.0f}
+		}
+	};
+
 	RectAngle r1{ Vector2{300, 200}, 75.0f, 100.0f}, r2{ Vector2{150, 150}, 50.f, 50.f };
 
 	c2.setColor(Color::Red);
@@ -28,28 +41,33 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	while (app.doEvent()) {
 		app.begin();
 
-		sprite.setPos(app.getWidth() / 2.0f, app.getHeight() / 2.0f);
-		sprite.draw();
+		
+		//sprite.setPos(app.getWidth() / 2.0f, app.getHeight() / 2.0f);
+		//sprite.draw();
 
 		//x += speedX;
 
 		//circle.setPos(x, y);
-		circle.draw();
+		//circle.draw();
 
-		c2.setPos(50, 50);
-		c2.draw();
+		//c2.setPos(50, 50);
+		//c2.draw();
 
-		r1.setPos(Input::getPosition());
+		//r1.setPos(Input::getPosition());
 		//r1.setPos(x, y, 0);
-		r1.setColor(Color::Red);
-		r1.draw();
+		//r1.setColor(Color::Red);
+		//r1.draw();
 
-		r2.setPos(r1.getPos());
-		r2.draw();
+		//r2.setPos(r1.getPos());
+		//r2.draw();
+		
 
 		//Debug::drawLine(Vector2(0, 0), Vector2(100, 100));
 		//Debug::drawCircle(Input::getPosition(), 20);
 
+		po.setColor(Color::Red);
+		po.setPos(Vector2{ 1.0f, 0.0f });
+		po.draw();
 		
 		//y += speedY;
 
