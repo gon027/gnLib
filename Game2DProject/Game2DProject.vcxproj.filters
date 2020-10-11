@@ -79,9 +79,6 @@
     <Filter Include="GameCore">
       <UniqueIdentifier>{7ac91c06-91cb-4065-982d-9d11bed10d86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Quad">
-      <UniqueIdentifier>{6e7048ca-8b2b-4953-8148-cb21dbf01b66}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Triangle">
       <UniqueIdentifier>{124a1b93-66ee-4348-9f5e-91daa4d56283}</UniqueIdentifier>
     </Filter>
@@ -171,9 +168,6 @@
     <ClInclude Include="include\GameCore\GameCore.h">
       <Filter>GameCore</Filter>
     </ClInclude>
-    <ClInclude Include="include\Quad\Quad.h">
-      <Filter>Quad</Filter>
-    </ClInclude>
     <ClInclude Include="include\Triangle\Triangle.h">
       <Filter>Triangle</Filter>
     </ClInclude>
@@ -194,6 +188,9 @@
     </ClInclude>
     <ClInclude Include="include\Collider\ICollider.h">
       <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +268,9 @@
     </ClCompile>
     <ClCompile Include="src\Collider\ICollider.cpp">
       <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

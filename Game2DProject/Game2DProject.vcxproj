@@ -167,7 +167,6 @@
     <ClInclude Include="include\Line\Line.h" />
     <ClInclude Include="include\Object\Object.h" />
     <ClInclude Include="include\Point\Point.h" />
-    <ClInclude Include="include\Quad\Quad.h" />
     <ClInclude Include="include\Rect\Rect.h" />
     <ClInclude Include="include\Render\Render.h" />
     <ClInclude Include="include\Size\Size.h" />
@@ -180,6 +179,7 @@
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
+    <ClInclude Include="Polygon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CircleCollider.cpp" />
@@ -189,6 +189,7 @@
     <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="include\Vector\Vector3.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Circle\Circle.cpp" />
     <ClCompile Include="src\Collider\ICollider.cpp" />
