@@ -183,20 +183,20 @@
     <ClInclude Include="include\Size\Size.h">
       <Filter>Size</Filter>
     </ClInclude>
-    <ClInclude Include="Debug.h">
-      <Filter>Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="CircleCollider.h">
-      <Filter>Collider</Filter>
-    </ClInclude>
     <ClInclude Include="include\Collider\ICollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
     <ClInclude Include="include\Common\Macro.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Polygon.h">
+    <ClInclude Include="include\Polygon\Polygon.h">
       <Filter>Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Collider\CircleCollider.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Debug\Debug.h">
+      <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -266,17 +266,17 @@
     <ClCompile Include="Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Debug.cpp">
-      <Filter>Debug</Filter>
-    </ClCompile>
     <ClCompile Include="src\Collider\ICollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="CircleCollider.cpp">
+    <ClCompile Include="src\Polygon\Polygon.cpp">
+      <Filter>Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collider\CircleCollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="Polygon.cpp">
-      <Filter>Polygon</Filter>
+    <ClCompile Include="src\Debug\Debug.cpp">
+      <Filter>Debug</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

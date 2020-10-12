@@ -1,4 +1,4 @@
-#include "Polygon.h"
+#include "../../include/Polygon/Polygon.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Macro.h"

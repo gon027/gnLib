@@ -1,4 +1,4 @@
-#include "CircleCollider.h"
+#include "../../include/Collider/CircleCollider.h"
 
 namespace gnLib {
 

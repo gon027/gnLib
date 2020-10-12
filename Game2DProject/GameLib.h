@@ -3,6 +3,9 @@
 
 #include "include/App.h"
 
+// デバック
+#include "include/Debug/Debug.h"
+
 // コンソール
 #include "include/Console/Console.h"
 
@@ -36,6 +39,9 @@
 // 点
 #include "include/Point/Point.h"
 
+// ポリゴン
+#include "include/Polygon/Polygon.h"
+
 // ノイズ
 //#include "include/Noise/Noise.h"
 
@@ -44,9 +50,6 @@
 
 // ベクトル( 3D )
 #include "include/Vector/Vector3.h"
-
-// デバック
-#include "Debug.h"
 
 using namespace gnLib;
 

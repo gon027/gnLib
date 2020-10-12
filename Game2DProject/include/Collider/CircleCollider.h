@@ -1,8 +1,8 @@
 #ifndef CIRCLECOLLIDER_H
 #define CIRCLECOLLIDER_H
 
-#include "include/Collider/ICollider.h"
-#include "include/Vector/Vector2.h"
+#include "ICollider.h"
+#include "../Vector/Vector2.h"
 
 namespace gnLib {
 

@@ -147,11 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CircleCollider.h" />
-    <ClInclude Include="Debug.h" />
     <ClInclude Include="GameLib.h" />
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Circle\Circle.h" />
+    <ClInclude Include="include\Collider\CircleCollider.h" />
     <ClInclude Include="include\Collider\ICollider.h" />
     <ClInclude Include="include\Collider\BoxCollider.h" />
     <ClInclude Include="include\Collider\ColliderManager.h" />
@@ -160,6 +159,7 @@
     <ClInclude Include="include\Common\Math.h" />
     <ClInclude Include="include\Common\SmartPtr.h" />
     <ClInclude Include="include\Console\Console.h" />
+    <ClInclude Include="include\Debug\Debug.h" />
     <ClInclude Include="include\GameCore\GameCore.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
@@ -168,6 +168,7 @@
     <ClInclude Include="include\Line\Line.h" />
     <ClInclude Include="include\Object\Object.h" />
     <ClInclude Include="include\Point\Point.h" />
+    <ClInclude Include="include\Polygon\Polygon.h" />
     <ClInclude Include="include\Rect\Rect.h" />
     <ClInclude Include="include\Render\Render.h" />
     <ClInclude Include="include\Size\Size.h" />
@@ -180,28 +181,27 @@
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
-    <ClInclude Include="Polygon.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CircleCollider.cpp" />
-    <ClCompile Include="Debug.cpp" />
     <ClCompile Include="include\Line\Line.cpp" />
     <ClCompile Include="include\Point\Point.cpp" />
     <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="include\Vector\Vector3.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Circle\Circle.cpp" />
+    <ClCompile Include="src\Collider\CircleCollider.cpp" />
     <ClCompile Include="src\Collider\ICollider.cpp" />
     <ClCompile Include="src\Collider\BoxCollider.cpp" />
     <ClCompile Include="src\Color\Color.cpp" />
     <ClCompile Include="src\Console\Console.cpp" />
+    <ClCompile Include="src\Debug\Debug.cpp" />
     <ClCompile Include="src\GameCore\GameCore.cpp" />
     <ClCompile Include="src\Graphics\Graphics.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\Input\KeyInput.cpp" />
     <ClCompile Include="src\Input\MouseInput.cpp" />
+    <ClCompile Include="src\Polygon\Polygon.cpp" />
     <ClCompile Include="src\Rect\Rect.cpp" />
     <ClCompile Include="src\Render\Render.cpp" />
     <ClCompile Include="src\Sprite\Sprite.cpp" />

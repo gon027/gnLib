@@ -1,5 +1,4 @@
 #include "GameLib.h"
-#include "Polygon.h"
 
 #include <string>
 using namespace std;
