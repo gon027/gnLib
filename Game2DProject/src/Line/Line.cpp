@@ -12,8 +12,8 @@ void Line::draw(float _x1, float _y1, float _x2, float _y2)
 		{_x2, _y2, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f}
 	};
 
-	RenderDevice->SetFVF(FVF_CUSTOM2D);
-	RenderDevice->DrawPrimitiveUP(
+	GCGraphics->SetFVF(FVF_CUSTOM2D);
+	GCGraphics->DrawPrimitiveUP(
 		D3DPT_LINELIST,
 		1,
 		vertex,
