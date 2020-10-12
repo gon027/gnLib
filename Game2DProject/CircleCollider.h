@@ -4,8 +4,10 @@
 #include "include/Collider/ICollider.h"
 #include "include/Vector/Vector2.h"
 
-
 namespace gnLib {
+
+	class BoxCollider;
+	class PolygonCollider;
 
 	/// <summary>
 	/// ‰~‚ÌÕ“Ë”»’èƒNƒ‰ƒX
@@ -19,7 +21,9 @@ namespace gnLib {
 
 		void update(const Vector2& _vector, const Vector2& _radius);
 
-		bool hitTest(const CircleCollider& _circleCollider);
+		bool circleHitTest(const CircleCollider& _circleCollider);
+		bool circleHitTest(const BoxCollider& _collider);
+		bool circleHitTest(const PolygonCollider& _collider);
 
 		ColliderType getType() override;
 

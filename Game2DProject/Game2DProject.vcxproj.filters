@@ -91,6 +91,9 @@
     <Filter Include="Debug">
       <UniqueIdentifier>{665b7a5b-36e5-4083-af29-bd578f4f9aad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Polygon">
+      <UniqueIdentifier>{da1a269a-98df-46eb-8147-774cabf2a9b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib.h">
@@ -189,11 +192,11 @@
     <ClInclude Include="include\Collider\ICollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="Polygon.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="include\Common\Macro.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>Polygon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -269,11 +272,11 @@
     <ClCompile Include="src\Collider\ICollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="Polygon.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="CircleCollider.cpp">
       <Filter>Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>Polygon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

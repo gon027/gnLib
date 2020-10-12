@@ -3,30 +3,38 @@
 
 #include "ICollider.h"
 #include "../Vector/Vector2.h"
-using namespace gnLib;
 
-class BoxCollider : public ICollider{
-public:
-	BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max);
-	BoxCollider() = default;
-	~BoxCollider() = default;
 
-	bool hitTest(BoxCollider& _collider);
+namespace gnLib {
 
-	void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
+	class CircleCollider;
+	class PolygonCollider;
 
-	Vector2 getPosition() const;
-	Vector2 getMin() const;
-	Vector2 getMax() const;
-	Vector2 gerSize() const;
+	class BoxCollider : public ICollider {
+	public:
+		BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max);
+		BoxCollider() = default;
+		~BoxCollider() = default;
 
-	virtual ColliderType getType() override;
+		bool boxHitTest(BoxCollider& _collider);
+		bool boxHitTest(const CircleCollider& _collider);
+		bool boxHitTest(const PolygonCollider& _collider);
 
-private:
-	Vector2 center;
-	Vector2 minPos;
-	Vector2 maxPos;
-	Vector2 size;
-};
+		void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
+
+		Vector2 getPosition() const;
+		Vector2 getMin() const;
+		Vector2 getMax() const;
+		Vector2 gerSize() const;
+
+		virtual ColliderType getType() override;
+
+	private:
+		Vector2 center;
+		Vector2 minPos;
+		Vector2 maxPos;
+		Vector2 size;
+	};
+}
 
 #endif // !BOXCOLLIDER_H

@@ -9,7 +9,7 @@
 
 namespace gnLib {
 
-	class Polygon {
+	class Polygon : public Object{
 	public:
 		Polygon(std::initializer_list<Vertex2D> _vertex);
 		Polygon(std::vector<Vertex2D> _vertex);

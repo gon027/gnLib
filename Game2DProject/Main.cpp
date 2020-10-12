@@ -55,7 +55,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		r2.setPos(Vector2{ 250.f, 250.f });
 		r2.draw();
 		
-		if (r1.collider.hitTest(r2.collider)) {
+		if (r1.collider.boxHitTest(r2.collider)) {
 			r1.setColor(Color::Green);
 		}
 		else {
