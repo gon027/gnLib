@@ -11,8 +11,8 @@ namespace gnLib {
 		/*
 		Vertex2D vertex[1] = { _x, _y, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f };
 
-		RenderDevice->SetFVF(FVF_CUSTOM2D);
-		RenderDevice->DrawPrimitiveUP(
+		GCGraphics->SetFVF(FVF_CUSTOM2D);
+		GCGraphics->DrawPrimitiveUP(
 			D3DPT_POINTLIST,
 			1,
 			vertex,

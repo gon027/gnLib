@@ -4,31 +4,26 @@
 
 namespace gnLib {
 
-	Render* Render::Instance = new Render;
-
-	Render::Render()
-	{
-	}
-
-	Render::~Render()
+	RenderDevice_::~RenderDevice_()
 	{
 		RELEASE(d3dxLine);
+		//RELEASE(lpd3dxFont);
 	}
 
-	void Render::init(Graphics * _graphics)
+	void RenderDevice_::init(Graphics* _graphics)
 	{
-		graphics = _graphics;
-		
-		D3DXCreateLine(graphics->getDevice(), &d3dxLine);
+		D3DXCreateLine(_graphics->getDevice(), &d3dxLine);;
 	}
 
-	Graphics * Render::getGraphics() const
-	{
-		return graphics;
-	}
-
-	ID3DXLine* Render::getLineDevice() const
+	ID3DXLine* RenderDevice_::getLineDevice() const
 	{
 		return d3dxLine;
 	}
+
+	/*
+	LPD3DXFONT RenderDevice_::getFontDevice() const
+	{
+		return lpd3dxFont;
+	}
+	*/
 }

@@ -37,7 +37,6 @@ namespace gnLib {
 		void draw(float _x1, float _y1, float _x2, float _y2);
 
 	private:
-		ID3DXLine* line;
 		Vector3 pos1;
 		Vector3 pos2;
 		float weight;

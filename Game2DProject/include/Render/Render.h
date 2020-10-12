@@ -7,39 +7,21 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
-#define RenderIns    Render::Instance
-#define RenderDevice Render::Instance->getGraphics()->getDevice()
-#define LineDevice 
-
 namespace gnLib {
-
 	class Graphics;
 
-	namespace {
-		class LineRender {
-
-		};
-	}
-
-	class Render {
+	class RenderDevice_ {
 	public:
-		Render();
-		~Render();
-
-		static Render* Instance;
+		~RenderDevice_();
 
 		void init(Graphics* _graphics);
 
-		Graphics* getGraphics() const;
 		ID3DXLine* getLineDevice() const;
+		//LPD3DXFONT getFontDevice() const;
 
 	private:
-		Graphics* graphics;
 		ID3DXLine* d3dxLine;
-
-		// コピーコンストラクタ禁止
-		Render(const Render& _render) = delete;
-		Render& operator= (const Render& _render) = delete;
+		//LPD3DXFONT lpd3dxFont;
 	};
 }
 

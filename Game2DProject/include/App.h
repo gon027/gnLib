@@ -6,8 +6,6 @@
 #include "../include/GameCore/GameCore.h"
 
 namespace gnLib {
-	class Window;
-	class Graphics;
 
 	class App {
 	public:

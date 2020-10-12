@@ -9,10 +9,11 @@ namespace gnLib {
 	GameCore* GameCore::Instance = nullptr;
 
 	GameCore::GameCore()
-		: window(new Window())
-		, graphics(new Graphics())
-		, keyBoard(new KeyInput())
-		, mouse(new MouseInput())
+		: window(new Window{})
+		, graphics(new Graphics{})
+		, keyBoard(new KeyInput{})
+		, mouse(new MouseInput{})
+		, renderDevice(new RenderDevice_{})
 	{
 
 		if (Instance == nullptr) {
@@ -45,6 +46,8 @@ namespace gnLib {
 		keyBoard.get()->init(window.get());
 
 		mouse.get()->init(window.get());
+
+		renderDevice.get()->init(getGraphic());
 	}
 
 	void GameCore::update()
@@ -71,6 +74,11 @@ namespace gnLib {
 	MouseInput * gnLib::GameCore::getMouse()
 	{
 		return mouse.get();
+	}
+
+	RenderDevice_* GameCore::getRenderDevice()
+	{
+		return renderDevice.get();
 	}
 
 }

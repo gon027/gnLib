@@ -7,10 +7,11 @@
 
 using std::string;
 
-#define GCoreIns       GameCore::get()
-//#define GCoreRender    GameCore::get()->getRender()
-//#define RDevice        GameCore::get()->getRender()->getGraphics()->getDevice();
-//#define RLineDevice    GameCore::get()->getRender()->getLineDevice()
+#define GCoreIns        GameCore::get()
+#define GCGraphics      GameCore::get()->getGraphic()->getDevice()
+#define GCRenderDevice  GameCore::get()->getRenderDevice()
+//#define RDevice       GameCore::get()->getRender()->getGraphics()->getDevice();
+#define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
 
 namespace gnLib {
 	class Window; 
@@ -31,19 +32,20 @@ namespace gnLib {
 		void init();
 		void update();
 
-		Window* getWindow();
-		Graphics* getGraphic();
-		KeyInput* getKeyBoard();
-		MouseInput* getMouse();
+		Window*        getWindow();
+		Graphics*      getGraphic();
+		KeyInput*      getKeyBoard();
+		MouseInput*    getMouse();
+		RenderDevice_* getRenderDevice();
 
 	private:
 		static GameCore* Instance;
 
-		UniquePtr<Window>     window;    // ウインドウ
-		UniquePtr<Graphics>   graphics;  // グラフィクス
-		UniquePtr<KeyInput>   keyBoard;  // キーボード
-		UniquePtr<MouseInput> mouse;     // マウス
-		Render     render;    // レンダー
+		UniquePtr<Window>        window;        // ウインドウ
+		UniquePtr<Graphics>      graphics;      // グラフィクス
+		UniquePtr<KeyInput>      keyBoard;      // キーボード
+		UniquePtr<MouseInput>    mouse;         // マウス
+		UniquePtr<RenderDevice_> renderDevice;	// レンダーデバイス
 	};
 
 }

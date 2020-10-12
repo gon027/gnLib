@@ -2,6 +2,7 @@
 #include "../../include/Render/Render.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Common/Macro.h"
+#include "../../include/GameCore/GameCore.h"
 
 namespace gnLib {
 	StringRender::StringRender()
@@ -18,7 +19,7 @@ namespace gnLib {
 		HRESULT ret;
 
 		ret = D3DXCreateFont(
-			RenderDevice,
+			GCGraphics,
 			height,
 			width,
 			0,

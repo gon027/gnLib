@@ -59,6 +59,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		//r1.draw();
 
 		Debug::drawRect(Input::getPosition(), Color::Black);
+		Debug::drawLine(Input::getPosition(), Vector2{ 0.f, 0.f });
 
 		r2.setPos(Vector2{ 250.f, 250.f });
 		r2.draw();

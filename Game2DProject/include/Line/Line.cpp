@@ -15,7 +15,6 @@ namespace gnLib {
 		, weight(1.0f)
 		, color(Color::White)
 	{
-		D3DXCreateLine(GCoreIns->getGraphic()->getDevice(), &line);
 	}
 
 	Line::Line(float _sx, float _sy, float _gx, float _gy)
@@ -24,7 +23,6 @@ namespace gnLib {
 		, weight(1.0f)
 		, color(Color::White)
 	{ 
-		D3DXCreateLine(GCoreIns->getGraphic()->getDevice(), &line);
 	}
 
 	Line::Line(const Vector2 & _v1, const Vector2 & _v2)
@@ -33,7 +31,6 @@ namespace gnLib {
 		, weight(1.0f)
 		, color(Color::White)
 	{
-		D3DXCreateLine(GCoreIns->getGraphic()->getDevice(), &line);
 	}
 
 	Line::Line(const Vector3 & _v1, const Vector3 & _v2)
@@ -42,12 +39,10 @@ namespace gnLib {
 		, weight(1.0f)
 		, color(Color::White)
 	{
-		D3DXCreateLine(GCoreIns->getGraphic()->getDevice(), &line);
 	}
 
 	Line::~Line()
 	{
-		RELEASE(line);
 	}
 	
 	void Line::setPos(float _sx, float _sy, float _gx, float _gy)
@@ -85,19 +80,20 @@ namespace gnLib {
 			{pos2.x, pos2.y}
 		};
 
-		/*
-		RLineDevice->SetAntialias(true);
-		RLineDevice->SetWidth(weight);
-		RLineDevice->Begin();
+		
+		GCLineDevice->SetAntialias(true);
+		GCLineDevice->SetWidth(weight);
+		GCLineDevice->Begin();
 		{
-			RLineDevice->Draw(
+			GCLineDevice->Draw(
 				vLise, 2, color.getColor()
 			);
 		}
-		RLineDevice->End();
-		*/
+		GCLineDevice->End();
+		
 
 		
+		/*
 		line->SetAntialias(true);
 		line->SetWidth(weight);
 		line->Begin();
@@ -107,7 +103,7 @@ namespace gnLib {
 			);
 		}
 		line->End();
-		
+		*/
 	}
 
 	void Line::draw(float _x1, float _y1, float _x2, float _y2)
@@ -117,8 +113,8 @@ namespace gnLib {
 			{_x2, _y2, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f}
 		};
 
-		RenderDevice->SetFVF(FVF_CUSTOM2D);
-		RenderDevice->DrawPrimitiveUP(
+		GCGraphics->SetFVF(FVF_CUSTOM2D);
+		GCGraphics->DrawPrimitiveUP(
 			D3DPT_LINELIST,
 			1,
 			vertex,
