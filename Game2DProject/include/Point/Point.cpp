@@ -8,6 +8,7 @@
 namespace gnLib {
 	void Point::draw(float _x, float _y)
 	{
+		/*
 		Vertex2D vertex[1] = { _x, _y, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f };
 
 		RenderDevice->SetFVF(FVF_CUSTOM2D);
@@ -17,5 +18,6 @@ namespace gnLib {
 			vertex,
 			sizeof(Vertex2D)
 		);
+		*/
 	}
 }

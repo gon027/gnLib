@@ -11,14 +11,6 @@
 
 namespace gnLib {
 
-	namespace inter {
-		struct DxLine {
-			ID3DXLine* d3dLine;
-
-
-		};
-	}
-
 	class Line : public Object{
 	public:
 		Line();

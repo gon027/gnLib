@@ -181,6 +181,7 @@
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
+    <ClInclude Include="Noise.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Line\Line.cpp" />

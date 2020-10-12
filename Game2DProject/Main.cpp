@@ -36,6 +36,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	c2.setColor(Color::Red);
 	c2.setRadius(20);
 
+	Line line{ Vector2{0, 0}, Vector2{app.getWidth(), app.getHeight()} };
+
 	while (app.doEvent()) {
 		app.begin();
 		
@@ -46,10 +48,17 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		//circle.draw();
 
 		//c2.setPos(50, 50);
-		//c2.draw();
 
-		r1.setPos(Input::getPosition());
-		r1.draw();
+		line.setWeight(10);
+		line.setColor(Color::Green);
+		line.draw();
+
+		c2.draw();
+
+		//r1.setPos(Input::getPosition());
+		//r1.draw();
+
+		Debug::drawRect(Input::getPosition(), Color::Black);
 
 		r2.setPos(Vector2{ 250.f, 250.f });
 		r2.draw();

@@ -85,6 +85,19 @@ namespace gnLib {
 			{pos2.x, pos2.y}
 		};
 
+		/*
+		RLineDevice->SetAntialias(true);
+		RLineDevice->SetWidth(weight);
+		RLineDevice->Begin();
+		{
+			RLineDevice->Draw(
+				vLise, 2, color.getColor()
+			);
+		}
+		RLineDevice->End();
+		*/
+
+		
 		line->SetAntialias(true);
 		line->SetWidth(weight);
 		line->Begin();
@@ -94,6 +107,7 @@ namespace gnLib {
 			);
 		}
 		line->End();
+		
 	}
 
 	void Line::draw(float _x1, float _y1, float _x2, float _y2)

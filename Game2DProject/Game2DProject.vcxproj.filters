@@ -198,6 +198,9 @@
     <ClInclude Include="include\Debug\Debug.h">
       <Filter>Debug</Filter>
     </ClInclude>
+    <ClInclude Include="Noise.h">
+      <Filter>Noise</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp">

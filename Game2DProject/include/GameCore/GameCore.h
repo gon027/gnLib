@@ -3,17 +3,21 @@
 
 #include <string>
 #include "../../include/Common/SmartPtr.h"
+#include "../../include/Render/Render.h"
 
 using std::string;
 
-#define GCoreIns GameCore::get()
+#define GCoreIns       GameCore::get()
+//#define GCoreRender    GameCore::get()->getRender()
+//#define RDevice        GameCore::get()->getRender()->getGraphics()->getDevice();
+//#define RLineDevice    GameCore::get()->getRender()->getLineDevice()
 
 namespace gnLib {
 	class Window; 
 	class Graphics;
 	class KeyInput;
 	class MouseInput;
-	class Render;
+	//class Render;
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
@@ -35,10 +39,11 @@ namespace gnLib {
 	private:
 		static GameCore* Instance;
 
-		UniquePtr<Window> window;
-		UniquePtr<Graphics> graphics;
-		UniquePtr<KeyInput> keyBoard;
-		UniquePtr<MouseInput> mouse;
+		UniquePtr<Window>     window;    // ウインドウ
+		UniquePtr<Graphics>   graphics;  // グラフィクス
+		UniquePtr<KeyInput>   keyBoard;  // キーボード
+		UniquePtr<MouseInput> mouse;     // マウス
+		Render     render;    // レンダー
 	};
 
 }
