@@ -61,9 +61,6 @@
     <Filter Include="StringRender">
       <UniqueIdentifier>{79ec5268-4a4c-4511-9cd0-c0c5a49e98f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CIrcle">
-      <UniqueIdentifier>{c7e45028-4272-43a4-9860-0f18f005f02a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Line">
       <UniqueIdentifier>{6dd3f49f-6e13-4c6c-ae91-4b1ea31bee9a}</UniqueIdentifier>
     </Filter>
@@ -93,6 +90,9 @@
     </Filter>
     <Filter Include="Polygon">
       <UniqueIdentifier>{da1a269a-98df-46eb-8147-774cabf2a9b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Circle">
+      <UniqueIdentifier>{c7e45028-4272-43a4-9860-0f18f005f02a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -132,9 +132,6 @@
     <ClInclude Include="include\Rect\Rect.h">
       <Filter>Rect</Filter>
     </ClInclude>
-    <ClInclude Include="include\Render\Render.h">
-      <Filter>Render</Filter>
-    </ClInclude>
     <ClInclude Include="include\Sprite\Sprite.h">
       <Filter>Sprite</Filter>
     </ClInclude>
@@ -148,7 +145,7 @@
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="include\Circle\Circle.h">
-      <Filter>CIrcle</Filter>
+      <Filter>Circle</Filter>
     </ClInclude>
     <ClInclude Include="include\Line\Line.h">
       <Filter>Line</Filter>
@@ -201,6 +198,9 @@
     <ClInclude Include="Noise.h">
       <Filter>Noise</Filter>
     </ClInclude>
+    <ClInclude Include="include\Render\Render.h">
+      <Filter>Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp">
@@ -217,9 +217,6 @@
     </ClCompile>
     <ClCompile Include="src\Sprite\Sprite.cpp">
       <Filter>Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Render\Render.cpp">
-      <Filter>Render</Filter>
     </ClCompile>
     <ClCompile Include="src\Rect\Rect.cpp">
       <Filter>Rect</Filter>
@@ -249,7 +246,7 @@
       <Filter>Input</Filter>
     </ClCompile>
     <ClCompile Include="src\Circle\Circle.cpp">
-      <Filter>CIrcle</Filter>
+      <Filter>Circle</Filter>
     </ClCompile>
     <ClCompile Include="include\Line\Line.cpp">
       <Filter>Line</Filter>
@@ -280,6 +277,9 @@
     </ClCompile>
     <ClCompile Include="src\Debug\Debug.cpp">
       <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Render.cpp">
+      <Filter>Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

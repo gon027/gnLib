@@ -36,7 +36,7 @@ namespace gnLib {
 		Graphics*      getGraphic();
 		KeyInput*      getKeyBoard();
 		MouseInput*    getMouse();
-		RenderDevice_* getRenderDevice();
+		RenderDevice* getRenderDevice();
 
 	private:
 		static GameCore* Instance;
@@ -45,7 +45,7 @@ namespace gnLib {
 		UniquePtr<Graphics>      graphics;      // グラフィクス
 		UniquePtr<KeyInput>      keyBoard;      // キーボード
 		UniquePtr<MouseInput>    mouse;         // マウス
-		UniquePtr<RenderDevice_> renderDevice;	// レンダーデバイス
+		UniquePtr<RenderDevice> renderDevice;	// レンダーデバイス
 	};
 
 }

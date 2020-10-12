@@ -10,9 +10,9 @@
 namespace gnLib {
 	class Graphics;
 
-	class RenderDevice_ {
+	class RenderDevice {
 	public:
-		~RenderDevice_();
+		~RenderDevice();
 
 		void init(Graphics* _graphics);
 

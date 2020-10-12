@@ -13,7 +13,7 @@ namespace gnLib {
 		, graphics(new Graphics{})
 		, keyBoard(new KeyInput{})
 		, mouse(new MouseInput{})
-		, renderDevice(new RenderDevice_{})
+		, renderDevice(new RenderDevice{})
 	{
 
 		if (Instance == nullptr) {
@@ -76,7 +76,7 @@ namespace gnLib {
 		return mouse.get();
 	}
 
-	RenderDevice_* GameCore::getRenderDevice()
+	RenderDevice* GameCore::getRenderDevice()
 	{
 		return renderDevice.get();
 	}
