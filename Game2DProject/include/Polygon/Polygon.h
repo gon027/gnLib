@@ -1,4 +1,5 @@
-#pragma once
+#ifndef POLYGON_H
+#define POLYGON_H
 
 #include <initializer_list>
 #include <vector>
@@ -31,3 +32,5 @@ namespace gnLib {
 	};
 
 }
+
+#endif // !POLYGON_H

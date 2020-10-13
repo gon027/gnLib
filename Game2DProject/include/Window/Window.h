@@ -41,6 +41,7 @@ namespace gnLib {
 		WNDCLASSEX winc;		//ウインドウの情報を格納する構造体
 		HINSTANCE hInstance;
 		HWND hwnd;				//ウインドウハンドル
+
 		string title;
 		int width;
 		int height;

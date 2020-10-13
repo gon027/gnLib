@@ -2,7 +2,7 @@
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	
-	App app{ "Main Window", 640, 480 };
+	App app{""};
 
 	Texture texture{ "img/background.png" };
 	Sprite sprite{ texture };
@@ -19,9 +19,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		line.setColor(Color::Green);
 		line.draw();
 
-		Debug::drawRect(Input::getPos(), Color::Black);
-		Debug::drawLine(Input::getPos(), Vector2{ 0.f, 0.f });
-		Debug::drawRect(Vector2{ app.getWidth(), app.getHeight() });
+		//Debug::drawRect(Input::getPos(), Color::Black);
+		//Debug::drawLine(Input::getPos(), Vector2{ 0.f, 0.f });
+		//Debug::drawRect(Vector2{ app.getWidth(), app.getHeight() });
 
 		app.end();
 	}

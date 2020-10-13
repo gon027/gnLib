@@ -1,4 +1,8 @@
 #include "../../include/Rect/Rect.h"
+
+#pragma comment(lib, "d3dx9.lib")
+#include <d3dx9.h>
+
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Macro.h"
@@ -98,8 +102,8 @@ namespace gnLib {
 
 		collider.update(position.toVector2(), minPos.toVector2(), Vector2{ sx, sy });
 
-		GCoreIns->getGraphic()->getDevice()->SetFVF(FVF_CUSTOM2D);
-		GCoreIns->getGraphic()->getDevice()->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
+		GCGraphics->SetFVF(FVF_CUSTOM2D);
+		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 	}
 
 	Vector3 RectAngle::getPos()

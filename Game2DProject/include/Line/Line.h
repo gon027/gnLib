@@ -33,9 +33,6 @@ namespace gnLib {
 		// ï`âÊ
 		void draw();
 
-		// å„Ç…è¡Ç∑Ç©Ç‡ÇµÇÍÇ»Ç¢
-		void draw(float _x1, float _y1, float _x2, float _y2);
-
 	private:
 		Vector3 pos1;
 		Vector3 pos2;

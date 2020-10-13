@@ -7,7 +7,7 @@ namespace gnLib {
 	RenderDevice::~RenderDevice()
 	{
 		RELEASE(d3dxLine);
-		//RELEASE(lpd3dxFont);
+		RELEASE(lpd3dxFont);
 	}
 
 	void RenderDevice::init(Graphics* _graphics)
@@ -20,10 +20,9 @@ namespace gnLib {
 		return d3dxLine;
 	}
 
-	/*
 	LPD3DXFONT RenderDevice::getFontDevice() const
 	{
 		return lpd3dxFont;
 	}
-	*/
+	
 }

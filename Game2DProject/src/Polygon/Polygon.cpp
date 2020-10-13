@@ -1,9 +1,9 @@
 #include "../../include/Polygon/Polygon.h"
+#include "../../include/GameCore/GameCore.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Macro.h"
 #include "../../include/Render/Render.h"
-#include "../../include/GameCore/GameCore.h"
 
 namespace gnLib {
 

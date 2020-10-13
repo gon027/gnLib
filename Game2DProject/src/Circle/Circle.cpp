@@ -1,19 +1,20 @@
 #include "../../include/Circle/Circle.h"
+
+#include <vector>
+#include <cmath>
 #include "../../include/Common/Macro.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Render/Render.h"
-#include "../../include/Color/Color.h"
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Math.h"
 #include "../../include//GameCore/GameCore.h"
-#include <vector>
-#include <cmath>
 
 constexpr int NUM = 50 + 2;
 constexpr float SPLIT = NUM - 2;
 constexpr float theta = gnLib::tau / SPLIT;
 
 namespace gnLib {
+
 	Circle::Circle()
 		: radius(10)
 		, color(255, 255, 255)

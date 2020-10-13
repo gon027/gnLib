@@ -8,6 +8,9 @@
 
 namespace gnLib {
 
+	/// <summary>
+	/// ‰~‚ð•`‰æ‚·‚éƒNƒ‰ƒX
+	/// </summary>
 	class Circle : public Object {
 	public:
 		Circle();

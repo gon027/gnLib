@@ -1,6 +1,7 @@
 #include "../../include/Color/Color.h"
 
 namespace gnLib {
+
 	Color Color::White = Color(255, 255, 255);
 	Color Color::Black = Color(0, 0, 0);
 	Color Color::Red = Color(255, 0, 0);
@@ -43,4 +44,5 @@ namespace gnLib {
 	{
 		return D3DCOLOR_ARGB(alpha, r, g, b);
 	}
+
 }

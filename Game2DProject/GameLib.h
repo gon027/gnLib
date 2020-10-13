@@ -43,7 +43,7 @@
 #include "include/Polygon/Polygon.h"
 
 // ノイズ
-//#include "include/Noise/Noise.h"
+#include "include/Noise/Noise.h"
 
 // ベクトル( 2D )
 #include "include/Vector/Vector2.h"

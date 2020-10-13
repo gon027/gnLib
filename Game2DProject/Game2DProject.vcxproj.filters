@@ -248,12 +248,6 @@
     <ClCompile Include="src\Circle\Circle.cpp">
       <Filter>Circle</Filter>
     </ClCompile>
-    <ClCompile Include="include\Line\Line.cpp">
-      <Filter>Line</Filter>
-    </ClCompile>
-    <ClCompile Include="include\Point\Point.cpp">
-      <Filter>Point</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameCore\GameCore.cpp">
       <Filter>GameCore</Filter>
     </ClCompile>
@@ -280,6 +274,12 @@
     </ClCompile>
     <ClCompile Include="src\Render\Render.cpp">
       <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Line\Line.cpp">
+      <Filter>Line</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Point\Point.cpp">
+      <Filter>Point</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

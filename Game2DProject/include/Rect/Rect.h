@@ -1,9 +1,6 @@
 #ifndef RECT_H
 #define RECT_H
 
-#pragma comment(lib, "d3dx9.lib")
-#include <d3dx9.h>
-
 #include "../Object/Object.h"
 #include "../Vector/Vector3.h"
 #include "../Vector/Vector2.h"
