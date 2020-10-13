@@ -3,6 +3,7 @@
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Input/KeyInput.h"
 #include "../../include/Input/MouseInput.h"
+#include "../../include/Render/Render.h"
 
 namespace gnLib {
 
@@ -47,7 +48,7 @@ namespace gnLib {
 
 		mouse.get()->init(window.get());
 
-		renderDevice.get()->init(getGraphic());
+		renderDevice.get()->init(graphics.get());
 	}
 
 	void GameCore::update()

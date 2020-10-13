@@ -32,7 +32,9 @@ namespace gnLib {
 		width = _width;
 		height = _height;
 
-		//createWindow();
+		WindowInfo::WindowName = _title;
+		WindowInfo::Width  = _width;
+		WindowInfo::Height = _height;
 	}
 
 	bool Window::init() {

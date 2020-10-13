@@ -23,9 +23,6 @@ namespace gnLib {
 
 	private:
 		GameCore gCore;
-
-		int windowWidth = 640;
-		int windowHeight = 480;
 	};
 
 }

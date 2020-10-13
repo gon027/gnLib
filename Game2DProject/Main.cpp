@@ -7,12 +7,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	
 	App app{ "Main Window" };
 
-	float x = app.getWidth() / 2.0f;
-	float y = app.getHeight() / 2.0f;
-
-	float speedX = 5.0f;
-	float speedY = 2.5f;
-
 	Texture texture{ "img/background.png" };
 	Sprite sprite{ texture };
 
@@ -60,6 +54,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		Debug::drawRect(Input::getPosition(), Color::Black);
 		Debug::drawLine(Input::getPosition(), Vector2{ 0.f, 0.f });
+		Debug::drawRect(Vector2{ app.getWidth(), app.getHeight() });
 
 		r2.setPos(Vector2{ 250.f, 250.f });
 		r2.draw();
