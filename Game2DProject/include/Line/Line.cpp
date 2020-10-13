@@ -27,7 +27,7 @@ namespace gnLib {
 
 	Line::Line(const Vector2 & _v1, const Vector2 & _v2)
 		: pos1({ _v1.x, _v1.y, 0.0f })
-		, pos2({ _v2.x, _v2.x, 0.0f })
+		, pos2({ _v2.x, _v2.y, 0.0f })
 		, weight(1.0f)
 		, color(Color::White)
 	{
@@ -79,7 +79,6 @@ namespace gnLib {
 			{pos1.x, pos1.y},
 			{pos2.x, pos2.y}
 		};
-
 		
 		GCLineDevice->SetAntialias(true);
 		GCLineDevice->SetWidth(weight);
@@ -90,20 +89,6 @@ namespace gnLib {
 			);
 		}
 		GCLineDevice->End();
-		
-
-		
-		/*
-		line->SetAntialias(true);
-		line->SetWidth(weight);
-		line->Begin();
-		{
-			line->Draw(
-				vLise, 2, color.getColor()
-			);
-		}
-		line->End();
-		*/
 	}
 
 	void Line::draw(float _x1, float _y1, float _x2, float _y2)

@@ -22,7 +22,7 @@ namespace gnLib {
 
 		void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
 
-		Vector2 getPosition() const;
+		Vector2 getPos() const;
 		Vector2 getMin() const;
 		Vector2 getMax() const;
 		Vector2 gerSize() const;

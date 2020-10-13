@@ -42,9 +42,9 @@ namespace gnLib {
 		return GCoreIns->getMouse()->getMiddleButton();
 	}
 
-	Vector2 Input::getPosition()
+	Vector2 Input::getPos()
 	{
-		return GCoreIns->getMouse()->getPosition();;
+		return GCoreIns->getMouse()->getPos();;
 	}
 
 }

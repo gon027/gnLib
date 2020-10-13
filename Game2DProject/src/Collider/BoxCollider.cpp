@@ -42,7 +42,7 @@ namespace gnLib {
 		center.setPos(minPos + size.half());
 	}
 
-	Vector2 BoxCollider::getPosition() const
+	Vector2 BoxCollider::getPos() const
 	{
 		return center;
 	}

@@ -55,7 +55,7 @@ namespace gnLib {
 		return ColliderType::CIRCLE;
 	}
 
-	Vector2& CircleCollider::getPosition()
+	Vector2& CircleCollider::getPos()
 	{
 		return position;
 	}

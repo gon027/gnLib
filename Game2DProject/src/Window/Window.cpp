@@ -6,6 +6,8 @@ namespace gnLib {
 		: winc()
 		, hInstance(GetModuleHandle(NULL))
 		, hwnd(nullptr)
+		, width(640)
+		, height(480)
 	{
 
 	}

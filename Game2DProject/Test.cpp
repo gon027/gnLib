@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	while (app.doEvent()) {
 		app.begin();
 
-		auto v = Input::getPosition();
+		auto v = Input::getPos();
 
 		sp.setPos(app.getWidth() / 2, app.getHeight() / 2);
 		//sp.setScale(0.5f, 0.5f);

@@ -138,7 +138,7 @@ namespace gnLib {
 		return false;
 	}
 
-	Vector2 MouseInput::getPosition() const
+	Vector2 MouseInput::getPos() const
 	{
 		POINT mousePoint{};
 
