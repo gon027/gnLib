@@ -5,6 +5,8 @@
 namespace gnLib {
 	KeyInput::KeyInput(Window * _win)
 		: window(_win)
+		, device(nullptr)
+		, keyBoard(nullptr)
 		, buffer()
 		//, afterKey()
 		, keyArray()
