@@ -2,15 +2,6 @@
 #include "../../include/Window/WinProc.h"
 
 namespace gnLib {
-	Window::Window()
-		: winc()
-		, hInstance(GetModuleHandle(NULL))
-		, hwnd(nullptr)
-		, width(640)
-		, height(480)
-	{
-
-	}
 
 	Window::Window(string _title, int _width, int _height)
 		: winc()
@@ -20,7 +11,9 @@ namespace gnLib {
 		, width(_width)
 		, height(_height)
 	{
-
+		WindowInfo::WindowName = _title;
+		WindowInfo::Width = _width;
+		WindowInfo::Height = _height;
 	}
 
 	Window::~Window() {

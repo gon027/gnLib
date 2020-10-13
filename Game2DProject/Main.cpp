@@ -2,7 +2,7 @@
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	
-	App app{""};
+	App app{};
 
 	Texture texture{ "img/background.png" };
 	Sprite sprite{ texture };
