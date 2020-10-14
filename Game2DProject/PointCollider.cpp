@@ -25,6 +25,11 @@ namespace gnLib {
 
 	bool PointCollider::boxHitTest(const PointCollider& _collider)
 	{
+		auto pos = _collider.position;
+
+		if (position == pos) {
+			return true;
+		}
 
 		return false;
 	}
