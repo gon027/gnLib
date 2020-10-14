@@ -10,6 +10,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Line line{ Vector2{0, 0}, Vector2{app.getWidth(), app.getHeight()} };
 
 	Point p;
+	RectAngle re{ Vector2{100.0f, 100.0f}, 50.0f, 50.0f };
 
 	while (app.doEvent()) {
 		app.begin();
@@ -21,11 +22,16 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		line.setColor(Color::Green);
 		line.draw();
 
-		for (float i = 0; i < tau; i += tau / 30.0f) {
-			p.setPos(
-				Vector2{ 320.f + 100.f * cosf(i), 240.f + 100.f * sinf(i) }
-			);
-			p.draw();
+		re.draw();
+
+		p.setPos(Input::getPos());
+		p.draw();
+
+		if (p.collider.boxHitTest(re.collider)) {
+			re.setColor(Color::Green);
+		}
+		else {
+			re.setColor(Color::Red);
 		}
 
 		//Debug::drawRect(Input::getPos(), Color::Black);

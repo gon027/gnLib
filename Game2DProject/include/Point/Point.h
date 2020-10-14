@@ -4,7 +4,7 @@
 #include "../Object/Object.h"
 #include "../Vector/Vector2.h"
 #include "../Color/Color.h"
-//#include "../Collider/ICollider.h"
+#include "../../PointCollider.h"
 
 namespace gnLib {
 
@@ -29,6 +29,9 @@ namespace gnLib {
 	private:
 		Vector2 position;
 		Color color;
+
+	public:
+		PointCollider collider;
 	};
 
 }

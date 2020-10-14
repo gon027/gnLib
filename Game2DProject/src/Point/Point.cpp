@@ -10,6 +10,7 @@ namespace gnLib {
 	Point::Point()
 		: position(Vector2::Zero)
 		, color(Color::Black)
+		, collider()
 	{
 
 	}
@@ -17,6 +18,7 @@ namespace gnLib {
 	Point::Point(const Vector2& _pos)
 		: position(_pos)
 		, color(Color::Black)
+		, collider(_pos)
 	{
 
 	}
@@ -36,6 +38,8 @@ namespace gnLib {
 		Vertex2D vertex[1] = { 
 			position.x, position.y, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f
 		};
+
+		collider.update(position);
 
 		GCGraphics->SetFVF(FVF_CUSTOM2D);
 		GCGraphics->DrawPrimitiveUP(
