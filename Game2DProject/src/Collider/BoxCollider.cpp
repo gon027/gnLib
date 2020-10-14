@@ -10,7 +10,7 @@ namespace gnLib {
 	{
 	}
 
-	bool BoxCollider::boxHitTest(BoxCollider& _collider)
+	bool BoxCollider::isHitTest(BoxCollider& _collider)
 	{
 		if (maxPos.x >= _collider.getMin().x
 			&& minPos.x <= _collider.getMax().x
@@ -23,12 +23,12 @@ namespace gnLib {
 		return false;
 	}
 
-	bool gnLib::BoxCollider::boxHitTest(const CircleCollider& _collider)
+	bool gnLib::BoxCollider::isHitTest(const CircleCollider& _collider)
 	{
 		return false;
 	}
 
-	bool gnLib::BoxCollider::boxHitTest(const PolygonCollider& _collider)
+	bool gnLib::BoxCollider::isHitTest(const PolygonCollider& _collider)
 	{
 		return false;
 	}

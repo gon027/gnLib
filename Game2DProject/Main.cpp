@@ -31,7 +31,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		p.setPos(Input::getPos());
 		p.draw();
 
-		if (p.collider.boxHitTest(p2.collider)) {
+		if (p.collider.isHitTest(p2.collider)) {
 			re.setColor(Color::Green);
 		}
 		else {

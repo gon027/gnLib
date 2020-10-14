@@ -16,9 +16,9 @@ namespace gnLib {
 		BoxCollider() = default;
 		~BoxCollider() = default;
 
-		bool boxHitTest(BoxCollider& _collider);
-		bool boxHitTest(const CircleCollider& _collider);
-		bool boxHitTest(const PolygonCollider& _collider);
+		bool isHitTest(BoxCollider& _collider);
+		bool isHitTest(const CircleCollider& _collider);
+		bool isHitTest(const PolygonCollider& _collider);
 
 		void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
 

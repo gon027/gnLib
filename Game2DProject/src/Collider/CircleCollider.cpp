@@ -27,7 +27,7 @@ namespace gnLib {
 		radius.setPos(_radius);
 	}
 
-	bool CircleCollider::circleHitTest(const CircleCollider& _circleCollider)
+	bool CircleCollider::isHitTest(const CircleCollider& _circleCollider)
 	{
 		auto dist = _circleCollider.position - this->position;
 		auto c = dist.magnitude();
@@ -40,12 +40,12 @@ namespace gnLib {
 		return false;
 	}
 
-	bool CircleCollider::circleHitTest(const BoxCollider& _collider)
+	bool CircleCollider::isHitTest(const BoxCollider& _collider)
 	{
 		return false;
 	}
 
-	bool CircleCollider::circleHitTest(const PolygonCollider& _collider)
+	bool CircleCollider::isHitTest(const PolygonCollider& _collider)
 	{
 		return false;
 	}

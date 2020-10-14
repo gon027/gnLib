@@ -21,9 +21,9 @@ namespace gnLib {
 
 		void update(const Vector2& _vector, const Vector2& _radius);
 
-		bool circleHitTest(const CircleCollider& _circleCollider);
-		bool circleHitTest(const BoxCollider& _collider);
-		bool circleHitTest(const PolygonCollider& _collider);
+		bool isHitTest(const CircleCollider& _circleCollider);
+		bool isHitTest(const BoxCollider& _collider);
+		bool isHitTest(const PolygonCollider& _collider);
 
 		ColliderType getType() override;
 

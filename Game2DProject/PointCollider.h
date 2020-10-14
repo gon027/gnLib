@@ -18,10 +18,10 @@ namespace gnLib {
 
 		void update(const Vector2 _pos);
 
-		bool boxHitTest(const PointCollider& _collider);
-		bool boxHitTest(const BoxCollider& _collider);
-		bool boxHitTest(const CircleCollider& _collider);
-		bool boxHitTest(const PolygonCollider& _collider);
+		bool isHitTest(const PointCollider& _collider);
+		bool isHitTest(const BoxCollider& _collider);
+		bool isHitTest(const CircleCollider& _collider);
+		bool isHitTest(const PolygonCollider& _collider);
 		
 		ColliderType getType() override;
 

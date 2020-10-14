@@ -23,7 +23,7 @@ namespace gnLib {
 		position = _pos;
 	}
 
-	bool PointCollider::boxHitTest(const PointCollider& _collider)
+	bool PointCollider::isHitTest(const PointCollider& _collider)
 	{
 		auto pos = _collider.position;
 
@@ -34,7 +34,7 @@ namespace gnLib {
 		return false;
 	}
 
-	bool PointCollider::boxHitTest(const BoxCollider& _collider)
+	bool PointCollider::isHitTest(const BoxCollider& _collider)
 	{
 		auto min = _collider.getMin();
 		auto max = _collider.getMax();
@@ -49,7 +49,7 @@ namespace gnLib {
 		return false;
 	}
 
-	bool PointCollider::boxHitTest(const CircleCollider& _collider)
+	bool PointCollider::isHitTest(const CircleCollider& _collider)
 	{
 		//auto a = p - position;
 
@@ -59,7 +59,7 @@ namespace gnLib {
 		return false;
 	}
 
-	bool PointCollider::boxHitTest(const PolygonCollider& _collider)
+	bool PointCollider::isHitTest(const PolygonCollider& _collider)
 	{
 		return false;
 	}
