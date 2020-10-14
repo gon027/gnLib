@@ -7,10 +7,35 @@
 
 namespace gnLib {
 
-	void Point::draw(float _x, float _y)
+	Point::Point()
+		: position(Vector2::Zero)
+		, color(Color::Black)
 	{
-		
-		Vertex2D vertex[1] = { _x, _y, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f };
+
+	}
+
+	Point::Point(const Vector2& _pos)
+		: position(_pos)
+		, color(Color::Black)
+	{
+
+	}
+
+	void Point::setPos(const Vector2& _pos)
+	{
+		position = _pos;
+	}
+
+	void Point::setColor(const Color& _color)
+	{
+		color = _color;
+	}
+
+	void Point::draw()
+	{
+		Vertex2D vertex[1] = { 
+			position.x, position.y, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f
+		};
 
 		GCGraphics->SetFVF(FVF_CUSTOM2D);
 		GCGraphics->DrawPrimitiveUP(
@@ -19,7 +44,12 @@ namespace gnLib {
 			vertex,
 			sizeof(Vertex2D)
 		);
-		
 	}
+
+	Vector2 Point::getPos() const
+	{
+		return position;
+	}
+
 
 }
