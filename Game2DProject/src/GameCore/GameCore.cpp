@@ -4,6 +4,7 @@
 #include "../../include/Input/KeyInput.h"
 #include "../../include/Input/MouseInput.h"
 #include "../../include/Render/Render.h"
+#include "../../include/Console/Console.h"
 
 namespace gnLib {
 
@@ -13,6 +14,7 @@ namespace gnLib {
 		: window(new Window{})
 		, graphics(new Graphics{})
 		, keyBoard(new KeyInput{})
+		//, console(new Console{})
 		, mouse(new MouseInput{})
 		, renderDevice(new RenderDevice{})
 	{
@@ -72,6 +74,12 @@ namespace gnLib {
 		return keyBoard.get();
 	}
 
+	/*
+	Console* GameCore::getConsole()
+	{
+		return nullptr;
+	}
+	*/
 	MouseInput * gnLib::GameCore::getMouse()
 	{
 		return mouse.get();

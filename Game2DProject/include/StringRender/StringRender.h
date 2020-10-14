@@ -20,12 +20,10 @@ namespace gnLib {
 
 		//void setFont(string _fontName);
 		//void setFontSize(int _fontSize);
-		bool create();
-		void drawText(string _str, int _x, int _y, Color _color);
+		bool init();
+		void drawText(const string& _str, int _x, int _y, Color _color);
 
 	private:
-		LPD3DXFONT font;
-
 		int width = 10;
 		int height = 20;
 		int fontSize;

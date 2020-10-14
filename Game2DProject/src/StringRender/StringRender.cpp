@@ -11,11 +11,12 @@ namespace gnLib {
 
 	StringRender::~StringRender()
 	{
-		RELEASE(font);
+		//RELEASE(font);
 	}
 
-	bool StringRender::create()
+	bool StringRender::init()
 	{
+		/*
 		HRESULT ret;
 
 		ret = D3DXCreateFont(
@@ -36,16 +37,17 @@ namespace gnLib {
 		if (FAILED(ret)) {
 			return false;
 		}
+		*/
 
 		return true;
 	}
 
-	void StringRender::drawText(string _str, int _x, int _y, Color _color)
+	void StringRender::drawText(const string& _str, int _x, int _y, Color _color)
 	{
 		// left, top, right, bottom
 		RECT rc{ _x, _y, 480, 600 };
 
-		font->DrawText(
+		GCStrDevice->DrawText(
 			NULL,
 			_str.c_str(),
 			-1,

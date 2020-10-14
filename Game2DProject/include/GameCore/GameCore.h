@@ -11,6 +11,8 @@ using std::string;
 #define GCGraphics      GameCore::get()->getGraphic()->getDevice()
 #define GCRenderDevice  GameCore::get()->getRenderDevice()
 #define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
+#define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
+#define GCConsole	    GameCore::get()->getConsole()
 
 namespace gnLib {
 
@@ -19,6 +21,7 @@ namespace gnLib {
 	class KeyInput;
 	class MouseInput;
 	class RenderDevice;
+	class Console;
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
@@ -35,6 +38,7 @@ namespace gnLib {
 		Window*        getWindow();
 		Graphics*      getGraphic();
 		KeyInput*      getKeyBoard();
+		//Console*       getConsole();
 		MouseInput*    getMouse();
 		RenderDevice*  getRenderDevice();
 
@@ -44,6 +48,7 @@ namespace gnLib {
 		UniquePtr<Window>        window;        // ウインドウ
 		UniquePtr<Graphics>      graphics;      // グラフィクス
 		UniquePtr<KeyInput>      keyBoard;      // キーボード
+		//UniquePtr<Console>       console;       // コンソール
 		UniquePtr<MouseInput>    mouse;         // マウス
 		UniquePtr<RenderDevice>  renderDevice;	// レンダーデバイス
 	};
