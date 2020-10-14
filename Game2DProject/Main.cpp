@@ -9,7 +9,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	//Line line{ Vector2{0, 0}, Vector2{app.getWidth(), app.getHeight()} };
 
-	StringRender sr;
+	//StringRender sr;
 
 	Point p, p2;
 	RectAngle re{ Vector2{100.0f, 100.0f}, 50.0f, 50.0f };
@@ -21,8 +21,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		sprite.setPos(app.getWidth() / 2.0f, app.getHeight() / 2.0f);
 		sprite.draw();
 
-		sr.drawText("aaa", 0, 0, Color::Red);
-		sr.drawText("x = " + std::to_string(12), 0, 20, Color::Green);
+		//sr.drawText("aaa", 0, 0, Color::Red);
+		//sr.drawText("x = " + std::to_string(12), 0, 20, Color::Green);
+
+		//sr.drawText(0, 0, "aiueo");
+		//sr.drawFormatText(0, 20, Color::Red, "%d, %d", 100, 20);
 
 		//line.setWeight(10);
 		//line.setColor(Color::Green);
@@ -47,6 +50,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		//Debug::drawRect(Input::getPos(), Color::Black);
 		//Debug::drawLine(Input::getPos(), Vector2{ 0.f, 0.f });
 		//Debug::drawRect(Vector2{ app.getWidth(), app.getHeight() });
+
+		Debug::drawText(0, 0, "AIUEO");
+		Debug::drawFormatText(0, 20, Color::Red, "x = %d, y = %d", 100, 100);
 
 		app.end();
 	}
