@@ -1,6 +1,6 @@
-#include "PointCollider.h"
-#include "include/Collider/CircleCollider.h"
-#include "include/Collider/BoxCollider.h"
+#include "../../include/Collider/PointCollider.h"
+#include "../../include/Collider/CircleCollider.h"
+#include "../../include/Collider/BoxCollider.h"
 
 namespace gnLib {
 

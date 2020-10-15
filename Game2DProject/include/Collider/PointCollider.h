@@ -1,8 +1,8 @@
 #ifndef POINTCOLLIDER_H
 #define POINTCOLLIDER_H
 
-#include "include/Vector/Vector2.h"
-#include "include/Collider/ICollider.h"
+#include "../Vector/Vector2.h"
+#include "ICollider.h"
 
 namespace gnLib {
 

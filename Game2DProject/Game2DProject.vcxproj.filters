@@ -31,9 +31,6 @@
     <Filter Include="Input">
       <UniqueIdentifier>{be9685cb-0b8f-48e9-99e5-93ec930e9ec4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Console">
-      <UniqueIdentifier>{6d14e8f9-bb6b-474b-98b1-939d384b8973}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Test">
       <UniqueIdentifier>{241e822c-3352-49f2-88b6-35776e88bbda}</UniqueIdentifier>
     </Filter>
@@ -109,9 +106,6 @@
       <Filter>Texture</Filter>
     </ClInclude>
     <ClInclude Include="include\Collider\BoxCollider.h">
-      <Filter>Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Collider\ColliderManager.h">
       <Filter>Collider</Filter>
     </ClInclude>
     <ClInclude Include="include\Color\Color.h">
@@ -198,10 +192,10 @@
     <ClInclude Include="include\Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="PointCollider.h">
+    <ClInclude Include="LineCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="LineCollider.h">
+    <ClInclude Include="include\Collider\PointCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
   </ItemGroup>
@@ -281,8 +275,8 @@
     <ClCompile Include="src\Point\Point.cpp">
       <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="PointCollider.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Collider\PointCollider.cpp">
+      <Filter>Collider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
