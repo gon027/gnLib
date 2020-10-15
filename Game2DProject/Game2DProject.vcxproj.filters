@@ -73,9 +73,6 @@
     <Filter Include="GameCore">
       <UniqueIdentifier>{7ac91c06-91cb-4065-982d-9d11bed10d86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Triangle">
-      <UniqueIdentifier>{124a1b93-66ee-4348-9f5e-91daa4d56283}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Vector">
       <UniqueIdentifier>{8b99cb14-600f-4602-9b44-fda14a5cc284}</UniqueIdentifier>
     </Filter>
@@ -158,9 +155,6 @@
     </ClInclude>
     <ClInclude Include="include\GameCore\GameCore.h">
       <Filter>GameCore</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Triangle\Triangle.h">
-      <Filter>Triangle</Filter>
     </ClInclude>
     <ClInclude Include="include\Vector\Vector2.h">
       <Filter>Vector</Filter>
