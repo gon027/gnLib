@@ -158,7 +158,6 @@
     <ClInclude Include="include\Common\Macro.h" />
     <ClInclude Include="include\Common\Math.h" />
     <ClInclude Include="include\Common\SmartPtr.h" />
-    <ClInclude Include="include\Console\Console.h" />
     <ClInclude Include="include\Debug\Debug.h" />
     <ClInclude Include="include\GameCore\GameCore.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
@@ -196,7 +195,6 @@
     <ClCompile Include="src\Collider\ICollider.cpp" />
     <ClCompile Include="src\Collider\BoxCollider.cpp" />
     <ClCompile Include="src\Color\Color.cpp" />
-    <ClCompile Include="src\Console\Console.cpp" />
     <ClCompile Include="src\Debug\Debug.cpp" />
     <ClCompile Include="src\GameCore\GameCore.cpp" />
     <ClCompile Include="src\Graphics\Graphics.cpp" />

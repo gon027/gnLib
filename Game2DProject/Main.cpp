@@ -47,10 +47,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			re.setColor(Color::Red);
 		}
 
-		//Debug::drawRect(Input::getPos(), Color::Black);
-		//Debug::drawLine(Input::getPos(), Vector2{ 0.f, 0.f });
-		//Debug::drawRect(Vector2{ app.getWidth(), app.getHeight() });
-
+		Debug::drawRect(Input::getPos(), Color::Black);
+		Debug::drawLine(re.collider.getPos(), Vector2{ 0.f, 0.f });
+		Debug::drawRect(Vector2{ app.getWidth(), app.getHeight() });
 		Debug::drawText(0, 0, "AIUEO");
 		Debug::drawFormatText(0, 20, Color::Red, "x = %d, y = %d", 100, 100);
 

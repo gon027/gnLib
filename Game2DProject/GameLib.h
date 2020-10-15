@@ -6,9 +6,6 @@
 // デバック
 #include "include/Debug/Debug.h"
 
-// コンソール
-#include "include/Console/Console.h"
-
 // 入力
 #include "include/Input/Input.h"
 
@@ -20,9 +17,6 @@
 
 // 色
 #include "include/Color/Color.h"
-
-// 文字列描画
-#include "include/StringRender/StringRender.h"
 
 // 数学
 #include "include/Common/Math.h"
