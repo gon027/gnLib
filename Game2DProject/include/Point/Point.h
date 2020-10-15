@@ -4,7 +4,7 @@
 #include "../Object/Object.h"
 #include "../Vector/Vector2.h"
 #include "../Color/Color.h"
-#include "../../PointCollider.h"
+#include "../Collider/PointCollider.h"
 
 namespace gnLib {
 

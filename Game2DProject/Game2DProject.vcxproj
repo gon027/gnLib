@@ -151,6 +151,7 @@
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Circle\Circle.h" />
     <ClInclude Include="include\Collider\CircleCollider.h" />
+    <ClInclude Include="include\Collider\Collider2d.h" />
     <ClInclude Include="include\Collider\ICollider.h" />
     <ClInclude Include="include\Collider\BoxCollider.h" />
     <ClInclude Include="include\Collider\PointCollider.h" />
@@ -180,8 +181,8 @@
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
-    <ClInclude Include="LineCollider.h" />
     <ClInclude Include="Noise.h" />
+    <ClInclude Include="PolygonCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Vector\Vector2.cpp" />

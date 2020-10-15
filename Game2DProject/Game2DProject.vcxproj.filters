@@ -192,10 +192,13 @@
     <ClInclude Include="include\Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="LineCollider.h">
+    <ClInclude Include="include\Collider\PointCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="include\Collider\PointCollider.h">
+    <ClInclude Include="include\Collider\Collider2d.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
   </ItemGroup>
