@@ -275,5 +275,11 @@
     <ClCompile Include="src\Collider\PointCollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
+    <ClCompile Include="Test_Game.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_Texture.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -63,4 +63,12 @@ namespace gnLib {
 		return static_cast<float>(WindowInfo::Height);
 	}
 
+	Vector2 App::getPos() const
+	{
+		return Vector2{
+			static_cast<float>(WindowInfo::Width),
+			static_cast<float>(WindowInfo::Height)
+		};
+	}
+
 }

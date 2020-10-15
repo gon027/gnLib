@@ -29,10 +29,18 @@ namespace gnLib {
 		const float getWidth();
 		const float getHeight();
 
+		// ‰æ‘œ‚ÌƒTƒCƒYæ“¾
+		Size getTextureSize();
+
 		// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
 		const bool isLoading();
 
 		LPDIRECT3DTEXTURE9 getTexture() const;
+
+		string toString() {
+			return "[x = " + std::to_string(getWidth()) +
+				+", y = " + std::to_string(getHeight()) + "]";
+		};
 
 	private:
 		LPDIRECT3DTEXTURE9 lpTexture;
@@ -41,6 +49,7 @@ namespace gnLib {
 		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğæ“¾
 		bool imageInfo();
 	};
+
 }
 
 #endif // !TEXTURE_H

@@ -4,8 +4,11 @@
 #include <string>
 #include "../include/Common/SmartPtr.h"
 #include "../include/GameCore/GameCore.h"
+#include "../include/Vector/Vector2.h"
 
 namespace gnLib {
+
+	class Vector2;
 
 	class App {
 	public:
@@ -20,6 +23,7 @@ namespace gnLib {
 		// ウィンドウの幅と高さ
 		float getWidth() const;
 		float getHeight() const;
+		Vector2 getPos() const;
 
 	private:
 		GameCore gCore;

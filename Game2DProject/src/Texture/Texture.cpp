@@ -26,11 +26,25 @@ namespace gnLib {
 	{
 		HRESULT hr;
 
-		// テクスチャの読み込み
-		hr = D3DXCreateTextureFromFile(
-			GCoreIns->getGraphic()->getDevice(),
+		// 画像の縦と横の幅を取得
+		D3DXIMAGE_INFO imgInfo;
+		D3DXGetImageInfoFromFile(_filePath.c_str(), &imgInfo);
+
+		hr = D3DXCreateTextureFromFileEx(
+			GCGraphics,
 			_filePath.c_str(),
-			&lpTexture
+			imgInfo.Width,      // 読み込む画像の幅
+			imgInfo.Height,     // 読み込む画像の高さ
+			D3DX_DEFAULT,       // MipLevels
+			0,                  // Usage
+			D3DFMT_UNKNOWN,     // Format
+			D3DPOOL_MANAGED,    // Pool
+			D3DX_DEFAULT,       // フィルタリング方法
+			D3DX_DEFAULT,       // ミニマップに対して行われるフィルタリング法
+			0,                  // カラーキー
+			NULL,               // 元の画像の情報を格納するD3DXIMAGE_INFOのポインタ
+			NULL,               // 256フォーマットの場合にのみ使われる
+			&lpTexture          // 生成したテクスチャオブジェクトへのポインタが返る
 		);
 
 		if (FAILED(hr)) {
@@ -87,6 +101,11 @@ namespace gnLib {
 	const float Texture::getHeight()
 	{
 		return size.getHeight();
+	}
+
+	Size Texture::getTextureSize()
+	{
+		return size;
 	}
 
 	const bool Texture::isLoading()

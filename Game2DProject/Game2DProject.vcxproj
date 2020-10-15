@@ -210,6 +210,8 @@
     <ClCompile Include="src\Texture\Texture.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Test_Game.cpp" />
+    <ClCompile Include="Test_Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
