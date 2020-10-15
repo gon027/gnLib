@@ -9,13 +9,13 @@
 
 namespace gnLib {
 
-	class RectAngle : public Object{
+	class Rect : public Object{
 	public:
-		RectAngle();
-		RectAngle(float _x, float _y, float _width, float _height);
-		RectAngle(const Vector2& _v, float _width, float _height);
-		RectAngle(const Vector3& _v, float _width, float _height);
-		~RectAngle();
+		Rect();
+		Rect(float _x, float _y, float _width, float _height);
+		Rect(const Vector2& _v, float _width, float _height);
+		Rect(const Vector3& _v, float _width, float _height);
+		~Rect();
 
 		// ç¿ïWÇê›íË
 		void setPos(float _x, float _y, float _z);

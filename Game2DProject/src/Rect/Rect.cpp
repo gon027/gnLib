@@ -11,7 +11,7 @@
 
 namespace gnLib {
 
-	RectAngle::RectAngle()
+	Rect::Rect()
 		: minPos()
 		, width(1)
 		, height(1)
@@ -19,7 +19,7 @@ namespace gnLib {
 	{ 
 	}
 
-	RectAngle::RectAngle(float _x, float _y, float _width, float _height)
+	Rect::Rect(float _x, float _y, float _width, float _height)
 		: minPos({_x, _y, 0.0f})
 		, width(_width)
 		, height(_height)
@@ -27,7 +27,7 @@ namespace gnLib {
 	{ 
 	}
 
-	RectAngle::RectAngle(const Vector2& _v, float _width, float _height)
+	Rect::Rect(const Vector2& _v, float _width, float _height)
 		: minPos(_v.x, _v.y, 0.0f)
 		, width(_width)
 		, height(_height)
@@ -37,7 +37,7 @@ namespace gnLib {
 	{
 	}
 
-	RectAngle::RectAngle(const Vector3 & _v, float _width, float _height)
+	Rect::Rect(const Vector3 & _v, float _width, float _height)
 		: minPos(_v)
 		, width(_width)
 		, height(_height)
@@ -47,45 +47,45 @@ namespace gnLib {
 	{ 
 	}
 
-	RectAngle::~RectAngle()
+	Rect::~Rect()
 	{
 	}
 
-	void RectAngle::setPos(float _x, float _y, float _z)
+	void Rect::setPos(float _x, float _y, float _z)
 	{
 		minPos.setPos(_x, _y, _z);
 		maxPos.setPos(minPos.x + width, minPos.y + height, 0.0f);
 		position.setPos(minPos + (maxPos - minPos).half());
 	}
 
-	void RectAngle::setPos(const Vector2 & _v)
+	void Rect::setPos(const Vector2 & _v)
 	{
 		setPos(_v.x, _v.y, 0.0f);
 	}
 
-	void RectAngle::setPos(const Vector3 & _v)
+	void Rect::setPos(const Vector3 & _v)
 	{
 		setPos(_v.x, _v.y, _v.z);
 	}
 
-	void RectAngle::setSize(float _width, float _height)
+	void Rect::setSize(float _width, float _height)
 	{
 		width = _width;
 		height = _height;
 		maxPos.setPos(minPos.x + width, minPos.x + height, 0.0f);
 	}
 
-	void RectAngle::setSize(float _wh)
+	void Rect::setSize(float _wh)
 	{
 		setSize(_wh, _wh);
 	}
 
-	void RectAngle::setColor(const Color & _color)
+	void Rect::setColor(const Color & _color)
 	{
 		color = _color;
 	}
 
-	void RectAngle::draw()
+	void Rect::draw()
 	{
 		float x = minPos.x;
 		float y = minPos.y;
@@ -106,17 +106,17 @@ namespace gnLib {
 		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 	}
 
-	Vector3 RectAngle::getPos()
+	Vector3 Rect::getPos()
 	{
 		return position;
 	}
 
-	Vector3 RectAngle::getMinPos()
+	Vector3 Rect::getMinPos()
 	{
 		return minPos;
 	}
 
-	Vector3 RectAngle::getMaxPos()
+	Vector3 Rect::getMaxPos()
 	{
 		return maxPos;
 	}

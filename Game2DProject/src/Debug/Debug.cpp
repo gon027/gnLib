@@ -4,7 +4,7 @@ namespace gnLib {
 	Line Debug::line{};
 	Circle Debug::circle{};
 	StringRender Debug::strRender{};
-	RectAngle Debug::rectAngle{};
+	Rect Debug::rectAngle{};
 	
 	void Debug::drawRect(const Vector2& _pos, const Color& _color)
 	{

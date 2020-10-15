@@ -28,7 +28,7 @@ namespace gnLib {
 		static void drawFormatText(int _x, int _y, const Color& _color, const char* _format, Args ... args);
 
 	private:
-		static RectAngle rectAngle;
+		static Rect rectAngle;
 		static Line line;
 		static Circle circle;
 		static StringRender strRender;

@@ -10,7 +10,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Texture tex("img/backscreen.jpg");
 	Sprite sp(tex);
 	Circle circle;
-	RectAngle ra;
+	Rect ra;
 	Line line;
 
 	while (app.doEvent()) {
