@@ -3,19 +3,28 @@
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	App app{ "Test_Game" };
 
-	Texture t{ "img/backscreen.jpg" }, c1{ "img/char.png" };
-	Sprite s{ t }, sc{ c1 };
+	Rect rc;
+	rc.setSize(100, 75);
+	//rc.setPos(Vector2{ 320.f, 240.f });
+	//rc.setRotate(0);
+
+
+	float time = 0.0f;
 
 	while (app.doEvent()) {
 		app.begin();
 
-		s.setPos(app.getPos().half());
-		s.draw();
+		time += 1.0f;
 
-		sc.setPos(Input::getPos());
-		sc.draw();
 
-		Debug::drawText(0, 0, t.toString().c_str());
+		//rc.setSize(100, 100);
+		rc.setColor(Color::Blue);
+		rc.setPos(Input::getPos());
+		rc.setRotate(time);
+		rc.draw();
+
+		Debug::drawLine(rc.collider.getMin(), rc.collider.getMax(), 5.f);
+
 
 		app.end();
 	}

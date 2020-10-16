@@ -1,21 +1,19 @@
 #include "../../include/Collider/BoxCollider.h"
+#include "../../include/Debug/Debug.h"
 
 namespace gnLib {
 
 	BoxCollider::BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max)
 		: center(_pos)
-		, minPos(_min)
-		, maxPos(_max)
-		, size(maxPos - minPos)
 	{
 	}
 
 	bool BoxCollider::isHitTest(BoxCollider& _collider)
 	{
-		if (maxPos.x >= _collider.getMin().x
-			&& minPos.x <= _collider.getMax().x
-			&& maxPos.y >= _collider.getMin().y
-			&& minPos.y <= _collider.getMax().y)
+		if (getMax().x >= _collider.getMin().x
+			&& getMin().x <= _collider.getMax().x
+			&& getMax().y >= _collider.getMin().y
+			&& getMin().y <= _collider.getMax().y)
 		{
 			return true;
 		}
@@ -33,13 +31,17 @@ namespace gnLib {
 		return false;
 	}
 
-	void BoxCollider::update(const Vector2& _pos, const Vector2& _min, const Vector2& _max)
+	void BoxCollider::update(const Vector2& _pos, const Bounds& _bounds)
 	{
-		//center.setPos(_pos);
-		minPos.setPos(_min);
-		maxPos.setPos(_max);
-		size.setPos(maxPos - minPos);
-		center.setPos(minPos + size.half());
+		center.setPos(_pos);
+		bounds = _bounds;
+		size.setPos(bounds.rightBottom - bounds.leftTop);
+
+		Debug::drawLine(bounds.leftTop,    bounds.rightTop,    5.0f);
+		Debug::drawLine(bounds.leftTop,    bounds.leftBottom,  5.0f);
+		Debug::drawLine(bounds.rightTop,   bounds.rightBottom, 5.0f);
+		Debug::drawLine(bounds.leftBottom, bounds.rightBottom, 5.0f);
+		Debug::drawText(0, 0, size.toString().c_str());
 	}
 
 	Vector2 BoxCollider::getPos() const
@@ -49,12 +51,12 @@ namespace gnLib {
 
 	Vector2 BoxCollider::getMin() const
 	{
-		return minPos;
+		return bounds.leftTop;
 	}
 
 	Vector2 BoxCollider::getMax() const
 	{
-		return maxPos;
+		return bounds.rightBottom;
 	}
 
 	Vector2 BoxCollider::gerSize() const

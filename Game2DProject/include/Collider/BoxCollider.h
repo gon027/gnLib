@@ -3,7 +3,7 @@
 
 #include "ICollider.h"
 #include "../Vector/Vector2.h"
-
+#include "../../Bounds.h"
 
 namespace gnLib {
 
@@ -20,7 +20,7 @@ namespace gnLib {
 		bool isHitTest(const CircleCollider& _collider);
 		bool isHitTest(const PolygonCollider& _collider);
 
-		void update(const Vector2& _pos, const Vector2& _min, const Vector2& _max);
+		void update(const Vector2& _pos, const Bounds& _bounds);
 
 		Vector2 getPos() const;
 		Vector2 getMin() const;
@@ -31,9 +31,8 @@ namespace gnLib {
 
 	private:
 		Vector2 center;
-		Vector2 minPos;
-		Vector2 maxPos;
 		Vector2 size;
+		Bounds bounds;
 	};
 }
 
