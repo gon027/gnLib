@@ -186,20 +186,14 @@
     <ClInclude Include="include\Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="include\Collider\PointCollider.h">
-      <Filter>Collider</Filter>
-    </ClInclude>
     <ClInclude Include="include\Collider\Collider2d.h">
-      <Filter>Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Collider\LineCollider.h">
-      <Filter>Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Collider\PolygonCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
     <ClInclude Include="Bounds.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="IScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -257,9 +251,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="src\Collider\ICollider.cpp">
-      <Filter>Collider</Filter>
-    </ClCompile>
     <ClCompile Include="src\Polygon\Polygon.cpp">
       <Filter>Polygon</Filter>
     </ClCompile>
@@ -278,17 +269,11 @@
     <ClCompile Include="src\Point\Point.cpp">
       <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="src\Collider\PointCollider.cpp">
-      <Filter>Collider</Filter>
-    </ClCompile>
     <ClCompile Include="Test_Game.cpp">
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test_Texture.cpp">
       <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="include\Collider\LineCollider.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

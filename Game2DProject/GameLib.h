@@ -36,6 +36,9 @@
 // ƒ|ƒŠƒSƒ“
 #include "include/Polygon/Polygon.h"
 
+// •¶š—ñ•`‰æ
+#include "include/StringRender/StringRender.h"
+
 // ƒmƒCƒY
 #include "include/Noise/Noise.h"
 

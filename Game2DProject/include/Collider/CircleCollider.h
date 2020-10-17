@@ -15,24 +15,23 @@ namespace gnLib {
 	class CircleCollider : public ICollider {
 	public:
 		CircleCollider();
-		CircleCollider(const Vector2& _vector, const Vector2& _radius);
-		CircleCollider(float _x, float _y, float _rx, float _ry);
+		CircleCollider(const Vector2& _vector, float _radius);
+		CircleCollider(float _x, float _y, float _r);
 		~CircleCollider() = default;
-
-		void update(const Vector2& _vector, const Vector2& _radius);
-
-		bool isHitTest(const CircleCollider& _circleCollider);
-		bool isHitTest(const BoxCollider& _collider);
-		bool isHitTest(const PolygonCollider& _collider);
 
 		ColliderType getType() override;
 
+		bool isHitTest(const CircleCollider& _circleCollider) override;
+		bool isHitTest(const BoxCollider& _collider) override;
+
+		void update(const Vector2& _vector, float _radius);
+
 		Vector2& getPos();
-		Vector2& getRadius();
+		float getRadius();
 
 	private:
 		Vector2 position;
-		Vector2 radius;
+		float radius;
 	};
 
 }

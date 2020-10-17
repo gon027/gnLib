@@ -32,9 +32,6 @@ namespace gnLib {
 		// ï`âÊ
 		void draw();
 
-		// å„Ç…è¡Ç∑Ç©Ç‡ÇµÇÍÇ»Ç¢
-		void draw(float _x, float _y, float _radius);
-
 	private:
 		Vector2 position;
 		float radius;

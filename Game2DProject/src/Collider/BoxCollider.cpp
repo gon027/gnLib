@@ -8,7 +8,7 @@ namespace gnLib {
 	{
 	}
 
-	bool BoxCollider::isHitTest(BoxCollider& _collider)
+	bool BoxCollider::isHitTest(const BoxCollider& _collider)
 	{
 		if (getMax().x >= _collider.getMin().x
 			&& getMin().x <= _collider.getMax().x
@@ -22,11 +22,6 @@ namespace gnLib {
 	}
 
 	bool gnLib::BoxCollider::isHitTest(const CircleCollider& _collider)
-	{
-		return false;
-	}
-
-	bool gnLib::BoxCollider::isHitTest(const PolygonCollider& _collider)
 	{
 		return false;
 	}
@@ -66,7 +61,7 @@ namespace gnLib {
 
 	ColliderType BoxCollider::getType()
 	{
-		return ColliderType::RECT;
+		return ColliderType::BOX;
 	}
 
 }

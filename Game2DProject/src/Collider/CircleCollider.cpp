@@ -4,27 +4,32 @@ namespace gnLib {
 
 	CircleCollider::CircleCollider()
 		: position(Vector2::Zero)
-		, radius(Vector2::Zero)
+		, radius(0)
 	{
 	}
 
-	CircleCollider::CircleCollider(const Vector2& _vector, const Vector2& _radius)
+	CircleCollider::CircleCollider(const Vector2& _vector, float _radius)
 		: position(_vector)
 		, radius(_radius)
 	{
 	}
 
-	CircleCollider::CircleCollider(float _x, float _y, float _rx, float _ry)
+	CircleCollider::CircleCollider(float _x, float _y, float _r)
 		: position(Vector2{ _x, _y })
-		, radius(Vector2{ _rx, _ry })
+		, radius(_r)
 	{
 
 	}
 
-	void CircleCollider::update(const Vector2& _vector, const Vector2& _radius)
+	ColliderType CircleCollider::getType()
+	{
+		return ColliderType::CIRCLE;
+	}
+
+	void CircleCollider::update(const Vector2& _vector, float _radius)
 	{
 		position.setPos(_vector);
-		radius.setPos(_radius);
+		radius = _radius;
 	}
 
 	bool CircleCollider::isHitTest(const CircleCollider& _circleCollider)
@@ -33,7 +38,7 @@ namespace gnLib {
 		auto c = dist.magnitude();
 		auto r = _circleCollider.radius + this->radius;
 
-		if (c <= r.x * r.x) {
+		if (c <= r * r) {
 			return true;
 		}
 
@@ -45,22 +50,14 @@ namespace gnLib {
 		return false;
 	}
 
-	bool CircleCollider::isHitTest(const PolygonCollider& _collider)
-	{
-		return false;
-	}
-
-	ColliderType CircleCollider::getType()
-	{
-		return ColliderType::CIRCLE;
-	}
+	
 
 	Vector2& CircleCollider::getPos()
 	{
 		return position;
 	}
 
-	Vector2& CircleCollider::getRadius()
+	float CircleCollider::getRadius()
 	{
 		return radius;
 	}
