@@ -1,11 +1,12 @@
 #include "../../include/Collider/BoxCollider.h"
+#include "../../include/Common/Math.h"
 #include "../../include/Debug/Debug.h"
 
 namespace gnLib {
 
 	bool BoxCollider::isHitTest(const BoxCollider& _collider)
 	{
-		const auto& cb = _collider.getBounds();
+		auto& cb = _collider.getBounds();
 
 		if (bounds.maxPos.x >= cb.minPos.x
 			&& bounds.minPos.x <= cb.maxPos.x
@@ -20,8 +21,45 @@ namespace gnLib {
 
 	bool gnLib::BoxCollider::isHitTest(const CircleCollider& _collider)
 	{
+		auto c = _collider;
+		auto& b = bounds;
 
+		if (c.getPos().x > b.minPos.x && c.getPos().x < b.maxPos.x
+			&& c.getPos().y > b.minPos.y - c.getRadius() && c.getPos().y < b.maxPos.y + c.getRadius()) {
+			return true;
+		}
 
+		if (c.getPos().x > b.minPos.x - c.getRadius() && c.getPos().x < b.maxPos.x + c.getRadius()
+			&& c.getPos().y > b.minPos.y && c.getPos().y < b.maxPos.y) {
+			return true;
+		}
+
+		float r = c.getRadius() * c.getRadius();
+
+		float rx = bounds.minPos.x - c.getPos().x;
+		float ry = bounds.minPos.y - c.getPos().y;
+		float d = dist(rx, ry);
+
+		if (d < r) return true;
+
+		rx = bounds.maxPos.x - c.getPos().x;
+		ry = bounds.minPos.y - c.getPos().y;
+		d = dist(rx, ry);
+
+		if (d < r) return true;
+
+		rx = bounds.maxPos.x - c.getPos().x;
+		ry = bounds.maxPos.y - c.getPos().y;
+		d = dist(rx, ry);
+
+		if (d < r) return true;
+
+		rx = bounds.minPos.x - c.getPos().x;
+		ry = bounds.maxPos.y - c.getPos().y;
+		d = dist(rx, ry);
+
+		if (d < r) return true;
+		
 		return false;
 	}
 
@@ -42,7 +80,7 @@ namespace gnLib {
 		Debug::drawText(0, 0, bounds.size.toString().c_str());
 	}
 
-	Bounds BoxCollider::getBounds() const
+	const Bounds& BoxCollider::getBounds() const
 	{
 		return bounds;
 	}

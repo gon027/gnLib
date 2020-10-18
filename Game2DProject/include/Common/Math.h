@@ -8,6 +8,11 @@ namespace gnLib {
 	constexpr float pi = 3.1415926535f;
 	constexpr float tau = pi * 2.0f;
 
+	// ‹——£‚ğ‹‚ß‚é
+	constexpr float dist(float _x, float _y) {
+		return _x * _x + _y * _y;
+	}
+
 	// ƒxƒNƒgƒ‹‚ğ‰ñ“]‚³‚¹‚é
 	inline Vector2 rotation(const Vector2& _origin, const Vector2& _center, float _rot) {
 

@@ -91,7 +91,7 @@ namespace gnLib {
 		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 	}
 
-	Vector2 Rect::getPos()
+	const Vector2& Rect::getPos()
 	{
 		return position;
 	}

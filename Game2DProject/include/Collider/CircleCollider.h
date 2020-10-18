@@ -6,9 +6,6 @@
 
 namespace gnLib {
 
-	class BoxCollider;
-	class PolygonCollider;
-
 	/// <summary>
 	/// ‰~‚ÌÕ“Ë”»’èƒNƒ‰ƒX
 	/// </summary>
@@ -26,14 +23,13 @@ namespace gnLib {
 
 		void update(const Vector2& _vector, float _radius);
 
-		Vector2& getPos();
-		float getRadius();
+		const Vector2& getPos() const;
+		const float getRadius();
 
 	private:
 		Vector2 position;
 		float radius;
 	};
-
 }
 
 #endif // !CIRCLECOLLIDER_H

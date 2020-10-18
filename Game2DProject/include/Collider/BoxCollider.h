@@ -19,7 +19,7 @@ namespace gnLib {
 
 		void update(const Vector2& _v, float _width, float _height);
 
-		Bounds getBounds() const;
+		const Bounds& getBounds() const;
 
 	private:
 		Bounds bounds;

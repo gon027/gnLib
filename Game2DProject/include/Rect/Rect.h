@@ -34,7 +34,7 @@ namespace gnLib {
 		void draw();
 
 		// À•W‚ğæ“¾
-		Vector2 getPos();
+		const Vector2& getPos();
 
 	private:
 		Vector2 position;

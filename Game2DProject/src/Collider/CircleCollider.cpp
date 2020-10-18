@@ -1,4 +1,5 @@
 #include "../../include/Collider/CircleCollider.h"
+#include "../../include/Collider/BoxCollider.h"
 
 namespace gnLib {
 
@@ -47,20 +48,19 @@ namespace gnLib {
 
 	bool CircleCollider::isHitTest(const BoxCollider& _collider)
 	{
+		auto a = _collider;
+
 		return false;
 	}
 
-	
-
-	Vector2& CircleCollider::getPos()
+	const Vector2& CircleCollider::getPos() const
 	{
 		return position;
 	}
 
-	float CircleCollider::getRadius()
+	const float CircleCollider::getRadius()
 	{
 		return radius;
 	}
-
 
 }
