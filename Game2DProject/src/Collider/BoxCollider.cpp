@@ -39,25 +39,21 @@ namespace gnLib {
 		float rx = bounds.minPos.x - c.getPos().x;
 		float ry = bounds.minPos.y - c.getPos().y;
 		float d = dist(rx, ry);
-
 		if (d < r) return true;
 
 		rx = bounds.maxPos.x - c.getPos().x;
 		ry = bounds.minPos.y - c.getPos().y;
 		d = dist(rx, ry);
-
 		if (d < r) return true;
 
 		rx = bounds.maxPos.x - c.getPos().x;
 		ry = bounds.maxPos.y - c.getPos().y;
 		d = dist(rx, ry);
-
 		if (d < r) return true;
 
 		rx = bounds.minPos.x - c.getPos().x;
 		ry = bounds.maxPos.y - c.getPos().y;
 		d = dist(rx, ry);
-
 		if (d < r) return true;
 		
 		return false;

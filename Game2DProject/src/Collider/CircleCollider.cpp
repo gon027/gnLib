@@ -1,5 +1,6 @@
 #include "../../include/Collider/CircleCollider.h"
 #include "../../include/Collider/BoxCollider.h"
+#include "../../include/Common/Math.h"
 
 namespace gnLib {
 
@@ -48,7 +49,40 @@ namespace gnLib {
 
 	bool CircleCollider::isHitTest(const BoxCollider& _collider)
 	{
-		auto a = _collider;
+		auto& b = _collider.getBounds();
+		auto& p = position;
+
+		if (p.x > b.minPos.x && p.x < b.maxPos.x
+			&& p.y > b.minPos.y - radius && p.y < b.maxPos.y + radius) {
+			return true;
+		}
+
+		if (p.x > b.minPos.x - radius && p.x < b.maxPos.x + radius
+			&& p.y > b.minPos.y && p.y < b.maxPos.y) {
+			return true;
+		}
+
+		float r = radius * radius;
+
+		float rx = b.minPos.x - p.x;
+		float ry = b.minPos.y - p.y;
+		float d = dist(rx, ry);
+		if (d < r)return true;
+
+		rx = b.maxPos.x - p.x;
+		ry = b.minPos.y - p.y;
+		d = dist(rx, ry);
+		if (d < r)return true;
+
+		rx = b.maxPos.x - p.x;
+		ry = b.maxPos.y - p.y;
+		d = dist(rx, ry);
+		if (d < r)return true;
+
+		rx = b.minPos.x - p.x;
+		ry = b.maxPos.y - p.y;
+		d = dist(rx, ry);
+		if (d < r)return true;
 
 		return false;
 	}
