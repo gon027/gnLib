@@ -38,10 +38,10 @@ namespace gnLib {
 
 	private:
 		Vector2 position;
-		Bounds bounds;
-		float width;
-		float height;
-		Color color;
+		float width;         // ‰¡•
+		float height;        // ‰¡•
+		float radian;        // ‰ñ“]Šp
+		Color color;         // F
 
 	public:
 		BoxCollider collider;

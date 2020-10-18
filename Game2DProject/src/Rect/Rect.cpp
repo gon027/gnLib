@@ -15,7 +15,6 @@ namespace gnLib {
 
 	Rect::Rect()
 		: position()
-		, bounds()
 		, width(1)
 		, height(1)
 		, color(Color::White)
@@ -24,7 +23,6 @@ namespace gnLib {
 
 	Rect::Rect(float _x, float _y, float _width, float _height)
 		: position({ _x, _y })
-		, bounds() 
 		, width(_width)
 		, height(_height)
 		, color(Color::White)
@@ -33,7 +31,6 @@ namespace gnLib {
 
 	Rect::Rect(const Vector2& _v, float _width, float _height)
 		: position(_v)
-		, bounds()
 		, width(_width)
 		, height(_height)
 		, color(Color::White)
@@ -48,14 +45,6 @@ namespace gnLib {
 	void Rect::setPos(const Vector2 & _v)
 	{
 		position.setPos(_v);
-
-		auto w = width / 2.0f;
-		auto h = height / 2.0f;
-
-		bounds.leftTop.setPos(_v.x - w, _v.y - h);
-		bounds.leftBottom.setPos(_v.x - w, _v.y + h);
-		bounds.rightTop.setPos(_v.x + w, _v.y - h);
-		bounds.rightBottom.setPos(_v.x + w, _v.y + h);
 	}
 
 	void Rect::setSize(float _width, float _height)
@@ -71,12 +60,7 @@ namespace gnLib {
 
 	void Rect::setRotate(float _rot)
 	{
-		auto rad = D3DXToRadian(_rot);
-
-		bounds.leftTop     = rotation(bounds.leftTop,     position, rad);
-		bounds.leftBottom  = rotation(bounds.leftBottom,  position, rad);
-		bounds.rightTop    = rotation(bounds.rightTop,    position, rad);
-		bounds.rightBottom = rotation(bounds.rightBottom, position, rad);
+		radian = D3DXToRadian(_rot);
 	}
 
 	void Rect::setColor(const Color & _color)
@@ -86,15 +70,22 @@ namespace gnLib {
 
 	void Rect::draw()
 	{
+		auto w = width / 2.0f;
+		auto h = height / 2.0f;
+
+		auto leftTop     = rotation(Vector2(position.x - w, position.y - h), position, radian);
+		auto leftBottom  = rotation(Vector2(position.x - w, position.y + h), position, radian);
+		auto rightTop    = rotation(Vector2(position.x + w, position.y - h), position, radian);
+		auto rightBottom = rotation(Vector2(position.x + w, position.y + h), position, radian);
 
 		Vertex2D vertex[] = {
-			{bounds.leftBottom.x,  bounds.leftBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{bounds.leftTop.x,     bounds.leftTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{bounds.rightBottom.x, bounds.rightBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{bounds.rightTop.x,    bounds.rightTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{leftBottom.x,  leftBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{leftTop.x,     leftTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{rightBottom.x, rightBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{rightTop.x,    rightTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
 		};
 
-		collider.update(position, bounds);
+		collider.update(position, width, height);
 
 		GCGraphics->SetFVF(FVF_CUSTOM2D);
 		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));

@@ -3,17 +3,14 @@
 
 namespace gnLib {
 
-	BoxCollider::BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max)
-		: center(_pos)
-	{
-	}
-
 	bool BoxCollider::isHitTest(const BoxCollider& _collider)
 	{
-		if (getMax().x >= _collider.getMin().x
-			&& getMin().x <= _collider.getMax().x
-			&& getMax().y >= _collider.getMin().y
-			&& getMin().y <= _collider.getMax().y)
+		const auto& cb = _collider.getBounds();
+
+		if (bounds.maxPos.x >= cb.minPos.x
+			&& bounds.minPos.x <= cb.maxPos.x
+			&& bounds.maxPos.y >= cb.minPos.y
+			&& bounds.minPos.y <= cb.maxPos.y)
 		{
 			return true;
 		}
@@ -23,40 +20,31 @@ namespace gnLib {
 
 	bool gnLib::BoxCollider::isHitTest(const CircleCollider& _collider)
 	{
+
+
 		return false;
 	}
 
-	void BoxCollider::update(const Vector2& _pos, const Bounds& _bounds)
+	void BoxCollider::update(const Vector2& _v, float _width, float _height)
 	{
-		center.setPos(_pos);
-		bounds = _bounds;
-		size.setPos(bounds.rightBottom - bounds.leftTop);
+		auto w = _width / 2.0f;
+		auto h = _height / 2.0f;
 
-		Debug::drawLine(bounds.leftTop,    bounds.rightTop,    5.0f);
-		Debug::drawLine(bounds.leftTop,    bounds.leftBottom,  5.0f);
-		Debug::drawLine(bounds.rightTop,   bounds.rightBottom, 5.0f);
-		Debug::drawLine(bounds.leftBottom, bounds.rightBottom, 5.0f);
-		Debug::drawText(0, 0, size.toString().c_str());
+		bounds.center = _v;
+		bounds.minPos.setPos(_v.x - w, _v.y - h);
+		bounds.maxPos.setPos(_v.x + w, _v.y + h);
+		bounds.size.setPos(_width, _height);
+
+		Debug::drawLine(bounds.minPos, Vector2{ bounds.maxPos.x, bounds.minPos.y }, 5.0f);
+		Debug::drawLine(bounds.minPos, Vector2{ bounds.minPos.x, bounds.maxPos.y }, 5.0f);
+		Debug::drawLine(Vector2{ bounds.maxPos.x, bounds.minPos.y }, bounds.maxPos, 5.0f);
+		Debug::drawLine(Vector2{ bounds.minPos.x, bounds.maxPos.y }, bounds.maxPos, 5.0f);
+		Debug::drawText(0, 0, bounds.size.toString().c_str());
 	}
 
-	Vector2 BoxCollider::getPos() const
+	Bounds BoxCollider::getBounds() const
 	{
-		return center;
-	}
-
-	Vector2 BoxCollider::getMin() const
-	{
-		return bounds.leftTop;
-	}
-
-	Vector2 BoxCollider::getMax() const
-	{
-		return bounds.rightBottom;
-	}
-
-	Vector2 BoxCollider::gerSize() const
-	{
-		return size;
+		return bounds;
 	}
 
 	ColliderType BoxCollider::getType()

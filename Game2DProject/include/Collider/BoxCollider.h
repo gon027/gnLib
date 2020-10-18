@@ -9,7 +9,6 @@ namespace gnLib {
 
 	class BoxCollider : public ICollider {
 	public:
-		BoxCollider(Vector2& _pos, Vector2& _min, Vector2& _max);
 		BoxCollider() = default;
 		~BoxCollider() = default;
 
@@ -18,16 +17,11 @@ namespace gnLib {
 		bool isHitTest(const BoxCollider& _collider) override;
 		bool isHitTest(const CircleCollider& _collider) override;
 
-		void update(const Vector2& _pos, const Bounds& _bounds);
+		void update(const Vector2& _v, float _width, float _height);
 
-		Vector2 getPos() const;
-		Vector2 getMin() const;
-		Vector2 getMax() const;
-		Vector2 gerSize() const;
+		Bounds getBounds() const;
 
 	private:
-		Vector2 center;
-		Vector2 size;
 		Bounds bounds;
 	};
 }
