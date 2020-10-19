@@ -4,7 +4,6 @@
 #include "../../include/Object/Object.h"
 #include "../../include/Vector/Vector2.h"
 #include "../../include/Color/Color.h"
-#include "../../include/Collider/CircleCollider.h"
 
 namespace gnLib {
 
@@ -36,9 +35,6 @@ namespace gnLib {
 		Vector2 position;
 		float radius;
 		Color color;
-
-	public:
-		CircleCollider collider;
 	};
 }
 

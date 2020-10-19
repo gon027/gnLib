@@ -4,8 +4,6 @@
 #include "../Object/Object.h"
 #include "../Vector/Vector2.h"
 #include "../Color/Color.h"
-#include "../Collider/BoxCollider.h"
-#include "../../Bounds.h"
 
 namespace gnLib {
 
@@ -42,9 +40,6 @@ namespace gnLib {
 		float height;        // â°ïù
 		float radian;        // âÒì]äp
 		Color color;         // êF
-
-	public:
-		BoxCollider collider;
 	};
 
 }

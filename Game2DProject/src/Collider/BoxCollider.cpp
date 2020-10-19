@@ -1,6 +1,6 @@
 #include "../../include/Collider/BoxCollider.h"
+#include "../../include/Collider/CircleCollider.h"
 #include "../../include/Common/Math.h"
-#include "../../include/Debug/Debug.h"
 
 namespace gnLib {
 
@@ -68,12 +68,6 @@ namespace gnLib {
 		bounds.minPos.setPos(_v.x - w, _v.y - h);
 		bounds.maxPos.setPos(_v.x + w, _v.y + h);
 		bounds.size.setPos(_width, _height);
-
-		Debug::drawLine(bounds.minPos, Vector2{ bounds.maxPos.x, bounds.minPos.y }, 5.0f);
-		Debug::drawLine(bounds.minPos, Vector2{ bounds.minPos.x, bounds.maxPos.y }, 5.0f);
-		Debug::drawLine(Vector2{ bounds.maxPos.x, bounds.minPos.y }, bounds.maxPos, 5.0f);
-		Debug::drawLine(Vector2{ bounds.minPos.x, bounds.maxPos.y }, bounds.maxPos, 5.0f);
-		Debug::drawText(0, 0, bounds.size.toString().c_str());
 	}
 
 	const Bounds& BoxCollider::getBounds() const

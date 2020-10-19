@@ -9,7 +9,6 @@
 #include "../../include/Render/Render.h"
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/Common/Math.h"
-#include "../../include/Debug/Debug.h"
 
 namespace gnLib {
 
@@ -84,8 +83,6 @@ namespace gnLib {
 			{rightBottom.x, rightBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
 			{rightTop.x,    rightTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
 		};
-
-		collider.update(position, width, height);
 
 		GCGraphics->SetFVF(FVF_CUSTOM2D);
 		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));

@@ -29,14 +29,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		c.setPos(100, 200);
 		c.draw();
 
-		if (c.collider.isHitTest(rc.collider)) {
-			c.setColor(Color::Green);
-		}
-		else {
-			c.setColor(Color::Red);
-
-		}
-
 		app.end();
 	}
 }
