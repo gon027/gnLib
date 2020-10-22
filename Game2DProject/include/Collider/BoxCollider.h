@@ -3,7 +3,7 @@
 
 #include "ICollider.h"
 #include "../Vector/Vector2.h"
-#include "../../Bounds.h"
+#include "../Bounds/Bounds.h"
 
 namespace gnLib {
 

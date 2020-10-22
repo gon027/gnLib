@@ -148,7 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bounds.h" />
-    <ClInclude Include="GameLib.h" />
+    <ClInclude Include="gnLib.h" />
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Circle\Circle.h" />
     <ClInclude Include="include\Collider\CircleCollider.h" />
@@ -186,7 +186,6 @@
   <ItemGroup>
     <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="include\Vector\Vector3.cpp" />
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Circle\Circle.cpp" />
     <ClCompile Include="src\Collider\CircleCollider.cpp" />
@@ -207,9 +206,7 @@
     <ClCompile Include="src\StringRender\StringRender.cpp" />
     <ClCompile Include="src\Texture\Texture.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
-    <ClCompile Include="Test.cpp" />
-    <ClCompile Include="Test_Game.cpp" />
-    <ClCompile Include="Test_Texture.cpp" />
+    <ClCompile Include="Test_gnMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

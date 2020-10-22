@@ -1,5 +1,5 @@
-#ifndef GAMELIB_H
-#define GAMELIB_H
+#ifndef GNLIB_H
+#define GNLIB_H
 
 #include "include/App.h"
 
@@ -50,4 +50,15 @@
 
 using namespace gnLib;
 
-#endif // !GAMELIB_H
+// メイン関数
+// cppファイルでこの関数を実装する
+void gnMain();
+
+// WinMain関数
+// gnMainを呼び出す
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+	gnMain();
+	return 0;
+}
+
+#endif // !GNLIB_H

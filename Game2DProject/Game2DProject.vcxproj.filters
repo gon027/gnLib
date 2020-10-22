@@ -88,11 +88,11 @@
     <Filter Include="Circle">
       <UniqueIdentifier>{c7e45028-4272-43a4-9860-0f18f005f02a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bounds">
+      <UniqueIdentifier>{ec6f8540-5114-4aaa-b39b-9a38b1058fb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameLib.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="include\App.h">
       <Filter>App</Filter>
     </ClInclude>
@@ -189,11 +189,14 @@
     <ClInclude Include="include\Collider\Collider2d.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="Bounds.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="IScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="gnLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Bounds.h">
+      <Filter>Bounds</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -230,9 +233,6 @@
     <ClCompile Include="src\Collider\BoxCollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
     <ClCompile Include="src\Input\Input.cpp">
       <Filter>Input</Filter>
     </ClCompile>
@@ -247,9 +247,6 @@
     </ClCompile>
     <ClCompile Include="include\Vector\Vector3.cpp">
       <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="src\Polygon\Polygon.cpp">
       <Filter>Polygon</Filter>
@@ -269,10 +266,7 @@
     <ClCompile Include="src\Point\Point.cpp">
       <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="Test_Game.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="Test_Texture.cpp">
+    <ClCompile Include="Test_gnMain.cpp">
       <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
