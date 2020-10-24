@@ -1,11 +1,11 @@
 #include "../../include/StringRender/StringRender.h"
-
-#include <stdio.h>
-#include <stdarg.h>
 #include "../../include/Render/Render.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/Window/Window.h"
+
+#include <stdio.h>
+#include <stdarg.h>
 
 namespace gnLib {
 

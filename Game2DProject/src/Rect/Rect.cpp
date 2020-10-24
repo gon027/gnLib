@@ -1,14 +1,13 @@
 #include "../../include/Rect/Rect.h"
-
-#pragma comment(lib, "d3dx9.lib")
-#include <d3dx9.h>
-
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Vertex/Vertex2D.h"
 #include "../../include/Common/Macro.h"
 #include "../../include/Render/Render.h"
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/Common/Math.h"
+
+#pragma comment(lib, "d3dx9.lib")
+#include <d3dx9.h>
 
 namespace gnLib {
 

@@ -1,18 +1,17 @@
 #include "../../include/Sprite/Sprite.h"
-
-#include <winerror.h>
-
 #include "../../include/Common/Macro.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Render/Render.h"
 #include "../../include/GameCore/GameCore.h"
+
+#include <winerror.h>
 
 namespace gnLib {
 
 	Sprite::Sprite(Texture & _texture)
 		: sprite(nullptr)
 		, center()
-		, position({ 0.0f, 0.0f, 0.0f })
+		, position(Vector2::Zero)
 		, scale({ 1.0f, 1.0f })
 		, angle(0)
 	{
@@ -28,17 +27,11 @@ namespace gnLib {
 	{
 		position.x = _x;
 		position.y = _y;
-		position.z = 0.0f;
 	}
 
 	void Sprite::setPos(const Vector2 & _v)
 	{
 		setPos(_v.x, _v.y);
-	}
-
-	void Sprite::setPos(const Vector3 & _v)
-	{
-		position = _v;
 	}
 
 	void Sprite::setScale(float _sx, float _sy)
@@ -110,7 +103,7 @@ namespace gnLib {
 		return true;
 	}
 
-	bool Sprite::isSplite()
+	bool Sprite::isLoading()
 	{
 		return sprite != nullptr;
 	}

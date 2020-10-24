@@ -6,7 +6,7 @@ namespace gnLib {
 	// 描画させるオブジェクトの基底クラス
 	class Object {
 	public:
-		Object() {};
+		Object() : isActive(true) {};
 		virtual ~Object() {}
 
 		void setActive(bool _active) {

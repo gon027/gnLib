@@ -9,6 +9,7 @@
 #include "../StringRender/StringRender.h"
 
 namespace gnLib {
+
 	class Vector2;
 
 	/// <summary>

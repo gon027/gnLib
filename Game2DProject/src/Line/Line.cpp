@@ -8,57 +8,39 @@
 namespace gnLib {
 	
 	Line::Line()
-		: pos1(Vector3::Zero)
-		, pos2(Vector3::Zero)
+		: start(Vector2::Zero)
+		, end(Vector2::Zero)
 		, weight(1.0f)
 		, color(Color::White)
 	{
 	}
 
 	Line::Line(float _sx, float _sy, float _gx, float _gy)
-		: pos1({_sx, _sy, 0.0f})
-		, pos2({_gx, _gy, 0.0f})
+		: start({_sx, _sy})
+		, end({_gx, _gy})
 		, weight(1.0f)
 		, color(Color::White)
 	{ 
 	}
 
 	Line::Line(const Vector2 & _v1, const Vector2 & _v2)
-		: pos1({ _v1.x, _v1.y, 0.0f })
-		, pos2({ _v2.x, _v2.y, 0.0f })
+		: start(_v1)
+		, end(_v2)
 		, weight(1.0f)
 		, color(Color::White)
-	{
-	}
-
-	Line::Line(const Vector3 & _v1, const Vector3 & _v2)
-		: pos1(_v1)
-		, pos2(_v2)
-		, weight(1.0f)
-		, color(Color::White)
-	{
-	}
-
-	Line::~Line()
 	{
 	}
 	
 	void Line::setPos(float _sx, float _sy, float _gx, float _gy)
 	{
-		pos1.setPos(_sx, _sy, 0.0f);
-		pos2.setPos(_gx, _gy, 0.0f);
+		start.setPos(_sx, _sy);
+		end.setPos(_gx, _gy);
 	}
 
 	void Line::setPos(const Vector2 & _v1, const Vector2 & _v2)
 	{
-		pos1.setPos(_v1.x, _v1.y, 0.0f);
-		pos2.setPos(_v2.x, _v2.y, 0.0f);
-	}
-
-	void Line::setPos(const Vector3 & _v1, const Vector3 & _v2)
-	{
-		pos1 = _v1;
-		pos2 = _v2;
+		start.setPos(_v1);
+		end.setPos(_v2);
 	}
 
 	void Line::setWeight(float _weight)
@@ -74,8 +56,8 @@ namespace gnLib {
 	void Line::draw()
 	{
 		D3DXVECTOR2 vLise[] = {
-			{pos1.x, pos1.y},
-			{pos2.x, pos2.y}
+			{start.x, start.y},
+			{end.x, end.y}
 		};
 		
 		GCLineDevice->SetAntialias(true);

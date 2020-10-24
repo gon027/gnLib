@@ -14,6 +14,7 @@ namespace gnLib {
 		Bounds()  = default;
 		~Bounds() = default;
 	};
+
 }
 
 #endif // !BOUNDS_H

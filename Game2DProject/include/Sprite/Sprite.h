@@ -10,7 +10,6 @@
 #include "../Common/SmartPtr.h"
 #include "../Texture/Texture.h"
 #include "../Vector/Vector2.h"
-#include "../Vector/Vector3.h"
 #include "../Object/Object.h"
 
 namespace gnLib {
@@ -25,7 +24,6 @@ namespace gnLib {
 		// À•W‚ğİ’è‚·‚é
 		void setPos(float _x, float _y);
 		void setPos(const Vector2& _v);
-		void setPos(const Vector3& _v);
 
 		// ‰æ‘œ‚Ì‘å‚«‚³‚ğİ’è‚·‚é
 		void setScale(float _sx, float _sy);
@@ -37,14 +35,15 @@ namespace gnLib {
 		// ‰æ‘œ‚ğ•`‰æ‚·‚é
 		void draw();
 
-		bool isSplite();
+		// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
+		bool isLoading();
 
 	private:
 		LPD3DXSPRITE sprite;
 		Texture texture;
 
 		D3DXVECTOR3 center;
-		Vector3 position;
+		Vector2 position;
 		Vector2 scale;
 		float angle;
 

@@ -70,11 +70,7 @@ namespace gnLib {
 
 		const bool operator!=(const Vector2& _rvec) const;
 
-		std::string toString() {
-			return "[x: " + std::to_string(x)
-				+ ", y: " + std::to_string(y)
-				+ "]\n";
-		}
+		const std::string toString() const;
 	};
 
 }

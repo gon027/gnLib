@@ -16,9 +16,6 @@
     <Filter Include="Window">
       <UniqueIdentifier>{638a96bc-3ed1-4b34-9df1-6124c1fb1dcb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{a77cd008-d295-4e97-9408-1700b0e45c5d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sprite">
       <UniqueIdentifier>{ec9226f4-7cf5-433f-b814-ac3927a807a8}</UniqueIdentifier>
     </Filter>
@@ -30,9 +27,6 @@
     </Filter>
     <Filter Include="Input">
       <UniqueIdentifier>{be9685cb-0b8f-48e9-99e5-93ec930e9ec4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Test">
-      <UniqueIdentifier>{241e822c-3352-49f2-88b6-35776e88bbda}</UniqueIdentifier>
     </Filter>
     <Filter Include="App">
       <UniqueIdentifier>{af8f7cd9-fe6d-42e4-a58e-55a35cbd7e25}</UniqueIdentifier>
@@ -180,22 +174,19 @@
     <ClInclude Include="include\Debug\Debug.h">
       <Filter>Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Noise.h">
-      <Filter>Noise</Filter>
-    </ClInclude>
     <ClInclude Include="include\Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
     <ClInclude Include="include\Collider\Collider2d.h">
       <Filter>Collider</Filter>
     </ClInclude>
-    <ClInclude Include="IScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="gnLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Bounds.h">
+    <ClInclude Include="include\Noise\Noise.h">
+      <Filter>Noise</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Bounds\Bounds.h">
       <Filter>Bounds</Filter>
     </ClInclude>
   </ItemGroup>
@@ -266,8 +257,8 @@
     <ClCompile Include="src\Point\Point.cpp">
       <Filter>Point</Filter>
     </ClCompile>
-    <ClCompile Include="Test_gnMain.cpp">
-      <Filter>Test</Filter>
+    <ClCompile Include="gnLib.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

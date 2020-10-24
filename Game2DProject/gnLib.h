@@ -54,11 +54,4 @@ using namespace gnLib;
 // cppファイルでこの関数を実装する
 void gnMain();
 
-// WinMain関数
-// gnMainを呼び出す
-int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	gnMain();
-	return 0;
-}
-
 #endif // !GNLIB_H

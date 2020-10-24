@@ -4,7 +4,7 @@
 namespace gnLib {
 	struct Size {
 	public:
-		explicit Size(float _width = 0, float _height = 0)
+		Size(float _width = 0, float _height = 0)
 			: width(_width)
 			, height(_height)
 		{ }

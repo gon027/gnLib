@@ -1,4 +1,4 @@
-#include "gnLib.h"
+/*#include "gnLib.h"
 
 void gnMain() {
 	App app;
@@ -8,4 +8,4 @@ void gnMain() {
 
 		app.end();
 	}
-}
+}*/

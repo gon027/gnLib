@@ -147,9 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bounds.h" />
     <ClInclude Include="gnLib.h" />
     <ClInclude Include="include\App.h" />
+    <ClInclude Include="include\Bounds\Bounds.h" />
     <ClInclude Include="include\Circle\Circle.h" />
     <ClInclude Include="include\Collider\CircleCollider.h" />
     <ClInclude Include="include\Collider\Collider2d.h" />
@@ -166,6 +166,7 @@
     <ClInclude Include="include\Input\KeyInput.h" />
     <ClInclude Include="include\Input\MouseInput.h" />
     <ClInclude Include="include\Line\Line.h" />
+    <ClInclude Include="include\Noise\Noise.h" />
     <ClInclude Include="include\Object\Object.h" />
     <ClInclude Include="include\Point\Point.h" />
     <ClInclude Include="include\Polygon\Polygon.h" />
@@ -180,10 +181,9 @@
     <ClInclude Include="include\Vertex\Vertex2D.h" />
     <ClInclude Include="include\Vertex\Vertex3D.h" />
     <ClInclude Include="include\Window\Window.h" />
-    <ClInclude Include="IScene.h" />
-    <ClInclude Include="Noise.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gnLib.cpp" />
     <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="include\Vector\Vector3.cpp" />
     <ClCompile Include="src\App.cpp" />
@@ -206,7 +206,6 @@
     <ClCompile Include="src\StringRender\StringRender.cpp" />
     <ClCompile Include="src\Texture\Texture.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
-    <ClCompile Include="Test_gnMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

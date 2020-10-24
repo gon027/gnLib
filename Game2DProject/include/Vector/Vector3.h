@@ -74,7 +74,7 @@ namespace gnLib {
 
 		const bool operator!=(const Vector3& _rvec) const;
 
-		std::string toString();
+		const std::string toString() const;
 	};
 }
 

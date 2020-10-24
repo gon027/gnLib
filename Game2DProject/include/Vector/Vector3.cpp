@@ -172,7 +172,7 @@ namespace gnLib {
 		return (x != _rvec.x) || (y != _rvec.y) || (z != _rvec.z);
 	}
 
-	std::string Vector3::toString()
+	const std::string Vector3::toString() const 
 	{
 		return "[x: " + std::to_string(x)
 			+ ", y: " + std::to_string(y)

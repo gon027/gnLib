@@ -1,9 +1,6 @@
 #ifndef STRINGRENDER_H
 #define STRINGRENDER_H
 
-#pragma comment(lib, "d3dx9.lib")
-#include <d3dx9.h>
-
 #include <string>
 #include "../Color/Color.h"
 
