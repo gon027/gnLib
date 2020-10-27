@@ -28,7 +28,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -41,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -163,6 +163,7 @@
     <ClInclude Include="include\Common\SmartPtr.h" />
     <ClInclude Include="include\Debug\Debug.h" />
     <ClInclude Include="include\GameCore\GameCore.h" />
+    <ClInclude Include="include\gnLibMain.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
     <ClInclude Include="include\Input\KeyInput.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\gnLibMain.cpp" />
     <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="include\Vector\Vector3.cpp" />
     <ClCompile Include="src\App.cpp" />

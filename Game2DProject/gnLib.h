@@ -1,6 +1,10 @@
 #ifndef GNLIB_H
 #define GNLIB_H
 
+// メイン関数
+#include "include/gnLibMain.h"
+
+// アプリケーション
 #include "include/App.h"
 
 // デバック
@@ -52,16 +56,5 @@
 #include "include/Vector/Vector3.h"
 
 using namespace gnLib;
-
-// メイン関数
-// cppファイルでこの関数を実装する
-void gnMain();
-
-// WinMain関数
-// gnMainを呼び出す
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrefInstance, LPSTR lpCmdLine, int cmdShow) {
-	gnMain();
-	return 0;
-}
 
 #endif // !GNLIB_H
