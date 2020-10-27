@@ -1,8 +1,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#pragma comment(lib, "d3d9.lib")
-#include <d3d9.h>
+#include "../Common/Lib.h"
 
 namespace gnLib {
 

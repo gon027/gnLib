@@ -6,9 +6,6 @@
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/Common/Math.h"
 
-#pragma comment(lib, "d3dx9.lib")
-#include <d3dx9.h>
-
 namespace gnLib {
 
 	Rect::Rect()
@@ -71,10 +68,10 @@ namespace gnLib {
 		auto w = width / 2.0f;
 		auto h = height / 2.0f;
 
-		auto leftTop     = rotation(Vector2(position.x - w, position.y - h), position, radian);
-		auto leftBottom  = rotation(Vector2(position.x - w, position.y + h), position, radian);
-		auto rightTop    = rotation(Vector2(position.x + w, position.y - h), position, radian);
-		auto rightBottom = rotation(Vector2(position.x + w, position.y + h), position, radian);
+		auto leftTop     = Vector2{ position.x - w, position.y - h };
+		auto leftBottom  = Vector2{ position.x - w, position.y + h };
+		auto rightTop    = Vector2{ position.x + w, position.y - h };
+		auto rightBottom = Vector2{ position.x + w, position.y + h };
 
 		Vertex2D vertex[] = {
 			{leftBottom.x,  leftBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},

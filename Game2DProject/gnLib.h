@@ -24,6 +24,9 @@
 // 四角形
 #include "include/Rect/Rect.h"
 
+// オブジェクト
+#include "include/Object/Object.h"
+
 // 円
 #include "include/Circle/Circle.h"
 
