@@ -7,9 +7,7 @@ namespace gnLib {
 		: window(_win)
 		, device(nullptr)
 		, keyBoard(nullptr)
-		, buffer()
-		//, afterKey()
-		, keyArray()
+		, bufferKey()
 	{
 
 	}
@@ -77,35 +75,51 @@ namespace gnLib {
 	{
 		keyBoard->Acquire();
 
-		ZeroMemory(buffer, sizeof(buffer));
+		ZeroMemory(bufferKey.buffer, sizeof(bufferKey.buffer));
 
-		HRESULT ret = keyBoard->GetDeviceState(sizeof(buffer), buffer);
+		HRESULT ret = keyBoard->GetDeviceState(sizeof(bufferKey.buffer), bufferKey.buffer);
 
 		if (FAILED(ret)) {
 			keyBoard->Acquire();
-			keyBoard->GetDeviceState(sizeof(buffer), buffer);
+			keyBoard->GetDeviceState(sizeof(bufferKey.buffer), bufferKey.buffer);
 		}
 	}
 
 	bool KeyInput::getKey(Key _keyCode)
 	{
-		return false;
+		getKeyDown(_keyCode);
+
+		bool result = false;
+
+		if (bufferKey.buffer[(BYTE)_keyCode] & 0x80) {
+			if (bufferKey.oldKey[(BYTE)_keyCode] & 0x80) {
+				result = true;
+			}
+		}
+
+		return result;
 	}
 
 	bool KeyInput::getKeyDown(Key _keyCode)
 	{
-		keyArray[(BYTE)_keyCode] = 1;
+		bool result = false;
 
-		if (buffer[(BYTE)_keyCode] & 0x80) {
-			return true;
+		if (bufferKey.buffer[(BYTE)_keyCode] & 0x80) {
+			if (!bufferKey.oldKey[(BYTE)_keyCode]) {
+				result = true;
+			}
 		}
 
-		return false;
+		bufferKey.oldKey[(BYTE)_keyCode] = bufferKey.buffer[(BYTE)_keyCode];
+
+		return result;
 	}
 
 	bool KeyInput::getKeyUp(Key _keyCode)
 	{
-		keyArray[(BYTE)_keyCode] = 0;
+		if (!(bufferKey.buffer[(BYTE)_keyCode] & 0x80)) {
+			return true;
+		}
 
 		return false;
 	}

@@ -4,47 +4,39 @@
 
 namespace gnLib {
 
-	/*
-	namespace {
-		KeyBorad* keyBoard;
-		MouseInput* mouseInput;
-	}
-	*/
-
-
-	bool Input::getKeyDown(Key key)
+	bool Input::getKeyDown(Key _key)
 	{
-		return true; //keyBorad.getKeyDown(key);
+		return GCInputKeyBoard->getKeyDown(_key);
 	}
 
-	bool Input::getKeyUp(Key key)
+	bool Input::getKeyUp(Key _key)
 	{
-		return true;// keyBorad.getKeyUp(key);;
+		return GCInputKeyBoard->getKeyUp(_key);
 	}
 
-	bool Input::getKeyState(Key key)
+	bool Input::getKey(Key _key)
 	{
-		return false;
+		return GCInputKeyBoard->getKey(_key);
 	}
 
 	bool Input::getLeftButton()
 	{
-		return GCoreIns->getMouse()->getLeftButton();
+		return GCInputMouse->getLeftButton();
 	}
 
 	bool Input::getRightButton()
 	{
-		return GCoreIns->getMouse()->getRightButton();
+		return GCInputMouse->getRightButton();
 	}
 
 	bool Input::getMiddleButton()
 	{
-		return GCoreIns->getMouse()->getMiddleButton();
+		return GCInputMouse->getMiddleButton();
 	}
 
 	Vector2 Input::getPos()
 	{
-		return GCoreIns->getMouse()->getPos();;
+		return GCInputMouse->getPos();
 	}
 
 }

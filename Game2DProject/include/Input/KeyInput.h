@@ -64,6 +64,14 @@ namespace gnLib {
 		RETURN = DIK_RETURN,
 	};
 
+	struct BufferKey {
+		BYTE buffer[256];
+		BYTE oldKey[256];
+
+		BufferKey(): buffer(), oldKey() { }
+		~BufferKey() = default;
+	};
+
 	class Window;
 
 	class KeyInput {
@@ -87,10 +95,7 @@ namespace gnLib {
 		LPDIRECTINPUT8 device;
 		LPDIRECTINPUTDEVICE8 keyBoard;
 
-		BYTE buffer[256];
-		//BYTE afterKey[256];
-
-		std::array<int, 256> keyArray;
+		BufferKey bufferKey;
 
 		void relese() noexcept;
 	};

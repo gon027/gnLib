@@ -9,6 +9,8 @@ using std::string;
 #define GCoreIns        GameCore::get()
 #define GCWindow        GameCore::get()->getGraphic()->getWindow()
 #define GCGraphics      GameCore::get()->getGraphic()->getDevice()
+#define GCInputMouse    GameCore::get()->getMouse()
+#define GCInputKeyBoard GameCore::get()->getKeyBoard()
 #define GCRenderDevice  GameCore::get()->getRenderDevice()
 #define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
 #define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
