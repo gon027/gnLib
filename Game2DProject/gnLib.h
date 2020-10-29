@@ -55,6 +55,9 @@
 // ƒxƒNƒgƒ‹( 3D )
 #include "include/Vector/Vector3.h"
 
+// ‹«ŠE
+#include "include/Bounds/Bounds.h"
+
 using namespace gnLib;
 
 #endif // !GNLIB_H
