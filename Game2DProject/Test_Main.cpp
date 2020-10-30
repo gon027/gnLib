@@ -38,11 +38,17 @@ void Test_Key() {
 void gnMain() {
 	App app;
 
-	Rect r;
+	Point pt;
 
 	while (app.doEvent()) {
 		app.begin();
 
+		
+		for (int i = 0; i < 100; ++i) {
+			pt.setColor(Color::Green);
+			pt.setPos(Vector2{320.f + i, 240.f});
+			pt.draw();
+		}
 
 		app.end();
 	}

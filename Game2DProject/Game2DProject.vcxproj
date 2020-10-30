@@ -179,6 +179,7 @@
     <ClInclude Include="include\Sprite\Sprite.h" />
     <ClInclude Include="include\StringRender\StringRender.h" />
     <ClInclude Include="include\Texture\Texture.h" />
+    <ClInclude Include="include\Time\Time.h" />
     <ClInclude Include="include\Vector\Vector2.h" />
     <ClInclude Include="include\Vector\Vector3.h" />
     <ClInclude Include="include\Vertex\Vertex2D.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Time\Time.cpp" />
     <ClCompile Include="src\gnLibMain.cpp" />
     <ClCompile Include="include\Vector\Vector2.cpp" />
     <ClCompile Include="include\Vector\Vector3.cpp" />

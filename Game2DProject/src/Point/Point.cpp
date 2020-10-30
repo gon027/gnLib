@@ -34,7 +34,7 @@ namespace gnLib {
 	void Point::draw()
 	{
 		Vertex2D vertex[1] = { 
-			position.x, position.y, 0.0f, 1.0f, 0xFFFF0000, 0.0f, 0.0f
+			position.x, position.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f
 		};
 
 		GCGraphics->SetFVF(FVF_CUSTOM2D);
