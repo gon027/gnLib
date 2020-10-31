@@ -6,11 +6,11 @@ namespace gnLib {
 	StringRender Debug::strRender{};
 	Rect Debug::rectAngle{};
 	
-	void Debug::drawRect(const Vector2& _pos, const Color& _color)
+	void Debug::drawRect(const Vector2& _pos, float _width, float _height, const Color& _color)
 	{
 		rectAngle.setPos(_pos);
 		rectAngle.setColor(_color);
-		rectAngle.setSize(50.0f);
+		rectAngle.setSize(_width, _height);
 		rectAngle.draw();
 	}
 
