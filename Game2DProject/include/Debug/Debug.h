@@ -17,7 +17,7 @@ namespace gnLib {
 	/// </summary>
 	class Debug {
 	public:
-		static void drawRect(const Vector2& _pos, const Color& _color = Color::Black);
+		static void drawRect(const Vector2& _pos, float _width, float _height, const Color& _color = Color::Black);
 
 		static void drawCircle(const Vector2& _pos, float radius, const Color& _color = Color::Black);
 
