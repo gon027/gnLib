@@ -15,7 +15,7 @@ namespace gnLib {
 		, scale({ 1.0f, 1.0f })
 		, angle(0)
 	{
-		loadTexture(_texture);
+		setTexture(_texture);
 	}
 
 	Sprite::~Sprite()
@@ -52,37 +52,40 @@ namespace gnLib {
 
 	void Sprite::draw()
 	{
-		D3DXMATRIX matWorld, matRotation, matScale, matPosition;
+		auto rect = RECT{ 0, 0, (int)texture.getWidth(), (int)texture.getHeight() };
+		draw(rect);
+	}
 
-		D3DXMatrixIdentity(&matWorld);
-		D3DXMatrixIdentity(&matRotation);
-		D3DXMatrixIdentity(&matScale);
-		D3DXMatrixIdentity(&matPosition);
+	void Sprite::draw(RECT& _rect)
+	{
+		TransformMatrix tMatrix;
+		tMatrix.initIdentity();
 
-		D3DXMatrixScaling(&matScale, scale.x, scale.y, 0.0f);
+		D3DXMatrixScaling(&tMatrix.scale, scale.x, scale.y, 0.0f);
+		D3DXMatrixRotationZ(&tMatrix.rotation, D3DXToRadian(angle));
 
-		D3DXMatrixRotationZ(&matRotation, D3DXToRadian(angle));
+		tMatrix.position._41 = position.x;
+		tMatrix.position._42 = position.y;
 
-		matPosition._41 = position.x;
-		matPosition._42 = position.y;
-
-		D3DXMatrixMultiply(&matWorld, &matWorld, &matRotation);
-		D3DXMatrixMultiply(&matWorld, &matWorld, &matScale);
-		D3DXMatrixMultiply(&matWorld, &matWorld, &matPosition);
+		tMatrix.calcWorldMatrix();
 
 		// •`‰æŠJŽn
 		sprite->Begin(NULL);
 
 		{
-			sprite->SetTransform(&matWorld);
-
-			sprite->Draw(texture.getTexture(), NULL, &center, NULL, 0xFFFFFFFF);
+			sprite->SetTransform(&tMatrix.world);
+			sprite->Draw(texture.getTexture(), &_rect, &center, NULL, 0xFFFFFFFF);
 		}
 
 		sprite->End();
 	}
 
-	bool Sprite::loadTexture(Texture & _texture)
+	const Size Sprite::getSize()
+	{
+		return texture.getTextureSize();
+	}
+
+	bool Sprite::setTexture(Texture & _texture)
 	{
 		HRESULT hr;
 

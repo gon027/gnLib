@@ -4,10 +4,15 @@
 #include "../include/Render/Render.h"
 #include "../include/Input/Input.h"
 
+#include <assert.h>
+
 namespace gnLib {
 	App::App(std::string _title, int _width, int _height)
 		: gCore()
 	{
+		// title‚ª‹ó”’‚Ìê‡AƒGƒ‰[‚Æ‚·‚é
+		assert(_title != "");
+
 		GCoreIns->initWindow(_title, _width, _height);
 		GCoreIns->init();
 	}

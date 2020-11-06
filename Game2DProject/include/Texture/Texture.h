@@ -2,11 +2,13 @@
 #define TEXTURE_H
 
 #include <string>
+#include <vector>
 #include "../Common/Lib.h"
 #include "../Common/SmartPtr.h"
 #include "../Size/Size.h"
 
-using string = std::string;
+using std::string;
+using std::vector;
 
 namespace gnLib {
 
@@ -20,7 +22,10 @@ namespace gnLib {
 		// ‰æ‘œ“Ç‚İ‚İ
 		bool loadTexture(const string& _filePath);
 
+		// ‰æ‘œ‚Ì•
 		const float getWidth();
+
+		// ‰æ‘œ‚Ì‚‚³
 		const float getHeight();
 
 		// ‰æ‘œ‚ÌƒTƒCƒYæ“¾
@@ -31,10 +36,14 @@ namespace gnLib {
 
 		LPDIRECT3DTEXTURE9 getTexture() const;
 
-		string toString() {
-			return "[x = " + std::to_string(getWidth()) +
-				+", y = " + std::to_string(getHeight()) + "]";
-		};
+		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğ•¶š—ñ‚Æ‚µ‚Ä•Ô‚·
+		const string toString();
+
+		// ‰æ‘œ‚ğ•ªŠ„‚·‚é
+		// TODO : ‚à‚¤­‚µ‚¢‚¢ˆ—‚ğŒã‚Å‘‚­
+		static vector<RECT> spriteTexture(int _xNum, int _yNum, int _xSize, int _ySize);
+
+		static vector<RECT> spriteTexture(Texture& _texture, int _xNum, int _yNum);
 
 	private:
 		LPDIRECT3DTEXTURE9 lpTexture;

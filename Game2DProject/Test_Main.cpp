@@ -1,4 +1,4 @@
-/*#include "gnLib.h"
+#include "gnLib.h"
 
 void Test_Key() {
 
@@ -35,22 +35,30 @@ void Test_Key() {
 	}
 }
 
+#include <vector>
+using namespace std;
+
 void gnMain() {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 	App app;
 
-	Point pt;
+	Texture tex{ "img/char.png" };
+	Sprite spr{ tex };
+	auto aaa = Texture::spriteTexture(tex, 4, 4);
+
+	int frame = 0;
 
 	while (app.doEvent()) {
 		app.begin();
 
-		
-		for (int i = 0; i < 100; ++i) {
-			pt.setColor(Color::Green);
-			pt.setPos(Vector2{320.f + i, 240.f});
-			pt.draw();
-		}
+		frame++;
+		frame = frame % 16;
+
+		spr.setPos({ 300.0f, 200.0f });
+		spr.draw();
+		spr.draw(aaa[frame]);
 
 		app.end();
 	}
 }
-*/
