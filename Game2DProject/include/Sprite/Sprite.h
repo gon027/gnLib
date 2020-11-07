@@ -3,10 +3,9 @@
 
 #include <vector>
 #include "../Common/Lib.h"
+#include "../Vector/Vector2.h"
 #include "../Common/SmartPtr.h"
 #include "../Texture/Texture.h"
-#include "../Vector/Vector2.h"
-#include "../Object/Object.h"
 
 using std::vector;
 
@@ -34,7 +33,7 @@ namespace gnLib {
 	};
 
 	// 画像を描画するクラス
-	class Sprite : public Object{
+	class Sprite {
 	public:
 		explicit Sprite(Texture& _texture);
 		Sprite(const string& _filePath);
@@ -55,13 +54,13 @@ namespace gnLib {
 		bool setTexture(Texture& _texture);
 
 		// 画像を描画する
-		void draw();
+		void draw(bool _isCenter = true);
 
 		// サイズを指定して画像を描画する
-		void draw(RECT& _rect);
+		void draw(RECT& _rect, bool _isCenter = true);
 
 		// 画像のサイズを取得
-		const Size getSize();
+		const Size& getSize();
 
 		// 画像が読み込めているか
 		bool isLoading();
@@ -70,7 +69,6 @@ namespace gnLib {
 		LPD3DXSPRITE sprite;
 		Texture texture;
 
-		D3DXVECTOR3 center;    
 		Vector2 position;      
 		Vector2 scale;
 		float angle;

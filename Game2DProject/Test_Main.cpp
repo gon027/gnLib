@@ -1,4 +1,4 @@
-#include "gnLib.h"
+/*#include "gnLib.h"
 
 void Test_Key() {
 
@@ -62,3 +62,4 @@ void gnMain() {
 		app.end();
 	}
 }
+*/

@@ -84,32 +84,29 @@ namespace gnLib {
 		}
 
 		// âÊëúÇÃècïùÇ∆â°ïùÇéÊìæ
-		size.setSize(
-			static_cast<float>(surfaceInfo.Width),
-			static_cast<float>(surfaceInfo.Height)
-		);
+		size.setSize(surfaceInfo.Width, surfaceInfo.Height);
 
 		RELEASE(surface);
 
 		return true;
 	}
 
-	const float Texture::getWidth()
+	const int Texture::getWidth()
 	{
 		return size.getWidth();
 	}
 
-	const float Texture::getHeight()
+	const int Texture::getHeight()
 	{
 		return size.getHeight();
 	}
 
-	Size Texture::getTextureSize()
+	const Size& Texture::getTextureSize()
 	{
 		return size;
 	}
 
-	const bool Texture::isLoading()
+	bool Texture::isLoading()
 	{
 		return lpTexture;
 	}
@@ -117,12 +114,6 @@ namespace gnLib {
 	LPDIRECT3DTEXTURE9 Texture::getTexture() const
 	{
 		return lpTexture;
-	}
-
-	const string Texture::toString()
-	{
-		return "[x = " + std::to_string(getWidth()) 
-				+ ", y = " + std::to_string(getHeight()) + "]";
 	}
 
 	vector<RECT> Texture::spriteTexture(int _xNum, int _yNum, int _xSize, int _ySize)
@@ -135,12 +126,12 @@ namespace gnLib {
 
 		for (int i{}; i < _yNum - 1; ++i) {
 			for (int j{}; j < _xNum - 1; ++j) {
-				size_t index = (long(i) * _xNum) + long(j);
+				auto index = static_cast<long>(i) * static_cast<long>(_xNum) + static_cast<long>(j);
 				result[index] = RECT{ 
-					int(width  * float(j)),
-					int(height * float(i)),
-					int(width  * float(j + 1)),
-					int(height * float(i + 1))
+					static_cast<int>(width  * static_cast<float>(j)),
+					static_cast<int>(height * static_cast<float>(i)),
+					static_cast<int>(width  * static_cast<float>(j + 1)),
+					static_cast<int>(height * static_cast<float>(i + 1))
 				};
 			}
 		}
@@ -150,7 +141,7 @@ namespace gnLib {
 
 	vector<RECT> Texture::spriteTexture(Texture& _texture, int _xNum, int _yNum)
 	{
-		return spriteTexture(_xNum, _yNum, (int)_texture.getWidth(), (int)_texture.getHeight());
+		return spriteTexture(_xNum, _yNum, _texture.getWidth(), _texture.getHeight());
 	}
 
 }

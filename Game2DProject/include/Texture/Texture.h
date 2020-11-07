@@ -23,21 +23,18 @@ namespace gnLib {
 		bool loadTexture(const string& _filePath);
 
 		// ‰æ‘œ‚Ì•
-		const float getWidth();
+		const int getWidth();
 
 		// ‰æ‘œ‚Ì‚‚³
-		const float getHeight();
+		const int getHeight();
 
 		// ‰æ‘œ‚ÌƒTƒCƒYæ“¾
-		Size getTextureSize();
+		const Size& getTextureSize();
 
 		// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
-		const bool isLoading();
+		bool isLoading();
 
 		LPDIRECT3DTEXTURE9 getTexture() const;
-
-		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğ•¶š—ñ‚Æ‚µ‚Ä•Ô‚·
-		const string toString();
 
 		// ‰æ‘œ‚ğ•ªŠ„‚·‚é
 		// TODO : ‚à‚¤­‚µ‚¢‚¢ˆ—‚ğŒã‚Å‘‚­
@@ -46,13 +43,13 @@ namespace gnLib {
 		static vector<RECT> spriteTexture(Texture& _texture, int _xNum, int _yNum);
 
 	private:
-		LPDIRECT3DTEXTURE9 lpTexture;
-		Size size;
-
 		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğæ“¾
 		bool imageInfo();
-	};
 
+	private:
+		LPDIRECT3DTEXTURE9 lpTexture;
+		Size size;
+	};
 }
 
 #endif // !TEXTURE_H

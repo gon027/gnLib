@@ -4,29 +4,29 @@
 namespace gnLib {
 	struct Size {
 	public:
-		Size(float _width = 0, float _height = 0)
+		Size(int _width = 0, int _height = 0)
 			: width(_width)
 			, height(_height)
 		{ }
 
 		~Size() = default;
 
-		void setSize(float _width = 0, float _height = 0) {
+		void setSize(int _width = 0, int _height = 0) {
 			width = _width;
 			height = _height;
 		}
 
-		const float getWidth() const {
+		const int getWidth() const {
 			return width;
 		}
 
-		const float getHeight() const {
+		const int getHeight() const {
 			return height;
 		}
 
 	private:
-		float width;
-		float height;
+		int width;
+		int height;
 	};
 }
 

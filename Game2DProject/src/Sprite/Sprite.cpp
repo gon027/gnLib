@@ -10,12 +10,16 @@ namespace gnLib {
 
 	Sprite::Sprite(Texture & _texture)
 		: sprite(nullptr)
-		, center()
+		, texture(_texture)
 		, position(Vector2::Zero)
 		, scale({ 1.0f, 1.0f })
 		, angle(0)
 	{
 		setTexture(_texture);
+	}
+
+	Sprite::Sprite(const string& _filePath)
+	{
 	}
 
 	Sprite::~Sprite()
@@ -50,13 +54,13 @@ namespace gnLib {
 		angle = _angle;
 	}
 
-	void Sprite::draw()
+	void Sprite::draw(bool _isCenter)
 	{
 		auto rect = RECT{ 0, 0, (int)texture.getWidth(), (int)texture.getHeight() };
-		draw(rect);
+		draw(rect, _isCenter);
 	}
 
-	void Sprite::draw(RECT& _rect)
+	void Sprite::draw(RECT& _rect, bool _isCenter)
 	{
 		TransformMatrix tMatrix;
 		tMatrix.initIdentity();
@@ -69,18 +73,21 @@ namespace gnLib {
 
 		tMatrix.calcWorldMatrix();
 
+		D3DXVECTOR3 center{0.0f, 0.0f, 0.0f};
+		
+		// 画像が中心座標に来るようにする
+		if(_isCenter){
+			center = { texture.getWidth() / 2.0f, texture.getHeight() / 2.0f, 0.0f };
+		};
+
 		// 描画開始
 		sprite->Begin(NULL);
-
-		{
-			sprite->SetTransform(&tMatrix.world);
-			sprite->Draw(texture.getTexture(), &_rect, &center, NULL, 0xFFFFFFFF);
-		}
-
+		sprite->SetTransform(&tMatrix.world);
+		sprite->Draw(texture.getTexture(), &_rect, &center, NULL, 0xFFFFFFFF);
 		sprite->End();
 	}
 
-	const Size Sprite::getSize()
+	const Size& Sprite::getSize()
 	{
 		return texture.getTextureSize();
 	}
@@ -98,10 +105,6 @@ namespace gnLib {
 		if (FAILED(hr)) {
 			return false;
 		}
-
-		texture = _texture;
-
-		center = { texture.getWidth() / 2.0f, texture.getHeight() / 2.0f, 0.0f };
 
 		return true;
 	}
