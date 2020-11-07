@@ -24,9 +24,6 @@ namespace gnLib {
 		float getWidth() const;
 		float getHeight() const;
 		Vector2 getPos() const;
-
-	private:
-		GameCore gCore;
 	};
 
 }

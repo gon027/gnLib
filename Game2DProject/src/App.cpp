@@ -8,7 +8,6 @@
 
 namespace gnLib {
 	App::App(std::string _title, int _width, int _height)
-		: gCore()
 	{
 		// title‚ª‹ó”’‚Ìê‡AƒGƒ‰[‚Æ‚·‚é
 		assert(_title != "");
