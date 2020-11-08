@@ -3,6 +3,7 @@
 #include "../include/Graphics/Graphics.h"
 #include "../include/Render/Render.h"
 #include "../include/Input/Input.h"
+#include "../include/SpriteRender/SpriteRender.h"
 
 #include <assert.h>
 
@@ -49,11 +50,13 @@ namespace gnLib {
 	void App::begin()
 	{
 		GCoreIns->getGraphic()->begin();
+		GCSprite->begin();
 		GCoreIns->update();
 	}
 
 	void App::end()
 	{
+		GCSprite->end();
 		GCoreIns->getGraphic()->end();
 	}
 

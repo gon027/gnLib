@@ -10,6 +10,9 @@
 // デバック
 #include "include/Debug/Debug.h"
 
+// 時間
+#include "include/Time/Time.h"
+
 // 入力
 #include "include/Input/Input.h"
 

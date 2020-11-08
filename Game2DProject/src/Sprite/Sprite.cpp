@@ -3,28 +3,32 @@
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Render/Render.h"
 #include "../../include/GameCore/GameCore.h"
+#include "../../include/SpriteRender/SpriteRender.h"
 
 #include <winerror.h>
 
 namespace gnLib {
 
 	Sprite::Sprite(Texture & _texture)
-		: sprite(nullptr)
-		, texture(_texture)
+		: texture(_texture)
 		, position(Vector2::Zero)
 		, scale({ 1.0f, 1.0f })
 		, angle(0)
 	{
-		setTexture(_texture);
+
 	}
 
 	Sprite::Sprite(const string& _filePath)
+		: texture(_filePath)
+		, position(Vector2::Zero)
+		, scale({ 1.0f, 1.0f })
+		, angle(0)
 	{
 	}
 
 	Sprite::~Sprite()
 	{
-		RELEASE(sprite);
+
 	}
 
 	void Sprite::setPos(float _x, float _y)
@@ -62,55 +66,40 @@ namespace gnLib {
 
 	void Sprite::draw(RECT& _rect, bool _isCenter)
 	{
-		TransformMatrix tMatrix;
-		tMatrix.initIdentity();
+		D3DXMATRIX mat;
+		D3DXMatrixIdentity(&mat);
 
-		D3DXMatrixScaling(&tMatrix.scale, scale.x, scale.y, 0.0f);
-		D3DXMatrixRotationZ(&tMatrix.rotation, D3DXToRadian(angle));
-
-		tMatrix.position._41 = position.x;
-		tMatrix.position._42 = position.y;
-
-		tMatrix.calcWorldMatrix();
-
-		D3DXVECTOR3 center{0.0f, 0.0f, 0.0f};
-		
-		// 画像が中心座標に来るようにする
-		if(_isCenter){
-			center = { texture.getWidth() / 2.0f, texture.getHeight() / 2.0f, 0.0f };
+		D3DXVECTOR2 center{
+			texture.getWidth() / 2.0f,
+			texture.getHeight() / 2.0f 
 		};
 
-		// 描画開始
-		sprite->Begin(NULL);
-		sprite->SetTransform(&tMatrix.world);
-		sprite->Draw(texture.getTexture(), &_rect, &center, NULL, 0xFFFFFFFF);
-		sprite->End();
+		D3DXVECTOR2 rotate{ scale.x, scale.y };
+
+		D3DXVECTOR2 pos{ position.x, position.y };
+
+		if (_isCenter) {
+			pos.x -= center.x;
+			pos.y -= center.y;
+		}
+
+		D3DXMatrixTransformation2D(
+			&mat, 
+			&center,  // スケーリングするときの座標の中心
+			0.0f,
+			&rotate,  
+			&center, 
+			angle,    // 回転角
+			&pos      // 座標
+		);
+
+		GCSprite->getSprite()->SetTransform(&mat);
+		GCSprite->getSprite()->Draw(texture.getTexture(), &_rect, NULL, NULL, 0xFFFFFFFF);
+
 	}
 
 	const Size& Sprite::getSize()
 	{
 		return texture.getTextureSize();
-	}
-
-	bool Sprite::setTexture(Texture & _texture)
-	{
-		HRESULT hr;
-
-		// スプライトの作成
-		hr = D3DXCreateSprite(
-			GCoreIns->getGraphic()->getDevice(), 
-			&sprite
-		);
-
-		if (FAILED(hr)) {
-			return false;
-		}
-
-		return true;
-	}
-
-	bool Sprite::isLoading()
-	{
-		return sprite != nullptr;
 	}
 }

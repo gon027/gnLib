@@ -3,6 +3,7 @@
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Input/KeyInput.h"
 #include "../../include/Input/MouseInput.h"
+#include "../../include/SpriteRender/SpriteRender.h"
 #include "../../include/Render/Render.h"
 
 namespace gnLib {
@@ -14,6 +15,7 @@ namespace gnLib {
 		, graphics(new Graphics{})
 		, keyBoard(new KeyInput{})
 		, mouse(new MouseInput{})
+		, spriteRender(new SpriteRender{})
 		, renderDevice(new RenderDevice{})
 	{
 
@@ -48,6 +50,8 @@ namespace gnLib {
 
 		mouse.get()->init(window.get());
 
+		spriteRender.get()->init();
+
 		renderDevice.get()->init(graphics.get());
 	}
 
@@ -75,6 +79,11 @@ namespace gnLib {
 	MouseInput * gnLib::GameCore::getMouse()
 	{
 		return mouse.get();
+	}
+
+	SpriteRender* GameCore::getSprite()
+	{
+		return spriteRender.get();
 	}
 
 	RenderDevice* GameCore::getRenderDevice()

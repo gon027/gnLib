@@ -11,6 +11,7 @@ using std::string;
 #define GCGraphics      GameCore::get()->getGraphic()->getDevice()
 #define GCInputMouse    GameCore::get()->getMouse()
 #define GCInputKeyBoard GameCore::get()->getKeyBoard()
+#define GCSprite        GameCore::get()->getSprite()
 #define GCRenderDevice  GameCore::get()->getRenderDevice()
 #define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
 #define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
@@ -21,6 +22,7 @@ namespace gnLib {
 	class Graphics;
 	class KeyInput;
 	class MouseInput;
+	class SpriteRender;
 	class RenderDevice;
 	class Console;
 
@@ -40,6 +42,7 @@ namespace gnLib {
 		Graphics*      getGraphic();
 		KeyInput*      getKeyBoard();
 		MouseInput*    getMouse();
+		SpriteRender*  getSprite();
 		RenderDevice*  getRenderDevice();
 
 	private:
@@ -48,6 +51,7 @@ namespace gnLib {
 		UniquePtr<Window>        window;        // ウインドウ
 		UniquePtr<Graphics>      graphics;      // グラフィクス
 		UniquePtr<KeyInput>      keyBoard;      // キーボード
+		UniquePtr<SpriteRender>  spriteRender;  // スプライトレンダー
 		UniquePtr<MouseInput>    mouse;         // マウス
 		UniquePtr<RenderDevice>  renderDevice;	// レンダーデバイス
 	};

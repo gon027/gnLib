@@ -1,57 +1,28 @@
 /*#include "gnLib.h"
 
-#include "include/Time/Time.h"
-
-class FpsCounter {
-public:
-	FpsCounter() {
-
-	}
-
-	~FpsCounter() = default;
-
-private:
-	int a = 0;
-};
-
-#pragma comment(lib, "winmm.lib")
-
-class T {
-private:
-	DWORD currentTime;
-};
-
-DWORD frameTime{ 17 };
-
-DWORD current{ 0 };  // Œ»ÝŽžŠÔ
-DWORD prev{ 0 };	// ‰ß‹ŽŽžŠÔ
-
-
 void gnMain() {
 	App app;
 
 	timeBeginPeriod(1);
 
-	prev = timeGetTime();
+	Time time;
 
 	while (app.doEvent()) {
 		app.begin();
 
-		current = timeGetTime();
+		time.beginTime();
 
-		if (current - prev >= frameTime) {
-			//Debug::drawFormatText(0, 20, Color::Black, "%d", 1123160);
+		if (time.deltaTime() >= 17) {
 			Sleep(1);
-			current = timeGetTime();
+			time.beginTime();
 		}
 
-		Debug::drawFormatText(0, 0, Color::Black, "%d", current - prev);
+		Debug::drawFormatText(0, 0, Color::Black, "%d", time.deltaTime());
 
-		prev = current;
+		time.endTime();
 
 		app.end();
 	}
 
-	timeEndPeriod(1);
 }
 */
