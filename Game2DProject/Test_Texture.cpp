@@ -1,5 +1,6 @@
 #include "gnLib.h"
 
+/*
 void gnMain() {
 	App app;
 
@@ -24,3 +25,4 @@ void gnMain() {
 		app.end();
 	}
 }
+*/

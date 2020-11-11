@@ -28,7 +28,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -41,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -180,6 +180,7 @@
     <ClInclude Include="include\Sprite\Sprite.h" />
     <ClInclude Include="include\StringRender\StringRender.h" />
     <ClInclude Include="include\Texture\Texture.h" />
+    <ClInclude Include="include\Time\GameTime.h" />
     <ClInclude Include="include\Time\Time.h" />
     <ClInclude Include="include\Vector\Vector2.h" />
     <ClInclude Include="include\Vector\Vector3.h" />
@@ -188,6 +189,7 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Time\GameTime.cpp" />
     <ClCompile Include="src\SpriteRender\SpriteRender.cpp" />
     <ClCompile Include="src\Time\Time.cpp" />
     <ClCompile Include="src\gnLibMain.cpp" />

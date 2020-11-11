@@ -5,6 +5,7 @@
 #include "../../include/Input/MouseInput.h"
 #include "../../include/SpriteRender/SpriteRender.h"
 #include "../../include/Render/Render.h"
+#include "../../include/Time/GameTime.h"
 
 namespace gnLib {
 
@@ -17,6 +18,7 @@ namespace gnLib {
 		, mouse(new MouseInput{})
 		, spriteRender(new SpriteRender{})
 		, renderDevice(new RenderDevice{})
+		, gameTime(new GameTime{})
 	{
 
 		if (Instance == nullptr) {
@@ -89,6 +91,11 @@ namespace gnLib {
 	RenderDevice* GameCore::getRenderDevice()
 	{
 		return renderDevice.get();
+	}
+
+	GameTime* GameCore::getGameTime()
+	{
+		return gameTime.get();
 	}
 
 }

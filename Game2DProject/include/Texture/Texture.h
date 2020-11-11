@@ -24,9 +24,9 @@ namespace gnLib {
 	public:
 		// ‰æ‘œ‚ğ•ªŠ„‚·‚é
 		// TODO : ‚à‚¤­‚µ‚¢‚¢ˆ—‚ğŒã‚Å‘‚­
-		static vector<RECT> spriteTexture(int _xNum, int _yNum, int _xSize, int _ySize);
+		static vector<RECT> spriteTexture(int _xSize, int _ySize, int _textureWidth, int _textureHeight);
 
-		static vector<RECT> spriteTexture(Texture& _texture, int _xNum, int _yNum);
+		static vector<RECT> spriteTexture(Texture& _texture, int _xSize, int _ySize);
 
 	public:
 		Texture();

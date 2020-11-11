@@ -136,9 +136,9 @@ namespace gnLib {
 		return result;
 	}
 
-	vector<RECT> Texture::spriteTexture(Texture& _texture, int _xNum, int _yNum)
+	vector<RECT> Texture::spriteTexture(Texture& _texture, int _xSize, int _ySize)
 	{
-		return spriteTexture(_xNum, _yNum, _texture.getWidth(), _texture.getHeight());
+		return spriteTexture(_xSize, _ySize, _texture.getWidth(), _texture.getHeight());
 	}
 
 }

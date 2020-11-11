@@ -1,9 +1,7 @@
-/*#include "gnLib.h"
+#include "gnLib.h"
 
 void gnMain() {
 	App app;
-
-	Time time;
 
 	float frame = 0;
 	Sprite s("img/char.png");
@@ -13,7 +11,6 @@ void gnMain() {
 	while (app.doEvent()) {
 		app.begin();
 
-		time.beginTime();
 
 		frame++;
 
@@ -22,18 +19,19 @@ void gnMain() {
 			//time.beginTime();
 		//}
 
-		float delta = time.deltaTime() / 1000.f;
-		Debug::drawFormatText(0, 0, Color::Black, "%lf", delta);
+		float delta = Time::deltaTime();
 
 		angle += 90.0f * delta;
 		s.setRotate(angle);
 		s.setPos(300, 300);
 		s.draw();
 
-		time.endTime();
+		Debug::drawFormatText(0, 0, Color::Black, "%d", Time::getTime());
+		Debug::drawFormatText(0, 20, Color::Black, "%d", Time::getStartTime());
+		Debug::drawFormatText(0, 40, Color::Black, "%d", Time::getEndTime());
+		Debug::drawFormatText(0, 60, Color::Black, "%lf", Time::deltaTime());
 
 		app.end();
 	}
 
 }
-*/

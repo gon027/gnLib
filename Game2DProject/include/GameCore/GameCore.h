@@ -15,6 +15,7 @@ using std::string;
 #define GCRenderDevice  GameCore::get()->getRenderDevice()
 #define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
 #define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
+#define GCGameTime      GameCore::get()->getGameTime()
 
 namespace gnLib {
 
@@ -25,6 +26,7 @@ namespace gnLib {
 	class SpriteRender;
 	class RenderDevice;
 	class Console;
+	class GameTime;
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
@@ -48,6 +50,7 @@ namespace gnLib {
 		MouseInput*    getMouse();
 		SpriteRender*  getSprite();
 		RenderDevice*  getRenderDevice();
+		GameTime*      getGameTime();
 
 	private:
 		UniquePtr<Window>        window;        // ウインドウ
@@ -56,6 +59,7 @@ namespace gnLib {
 		UniquePtr<SpriteRender>  spriteRender;  // スプライトレンダー
 		UniquePtr<MouseInput>    mouse;         // マウス
 		UniquePtr<RenderDevice>  renderDevice;	// レンダーデバイス
+		UniquePtr<GameTime>      gameTime;      // 時間
 	};
 
 }

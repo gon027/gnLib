@@ -1,42 +1,26 @@
 #include "../../include/Time/Time.h"
+#include "../../include/Time/GameTime.h"
+#include "../../include/GameCore/GameCore.h"
 
 namespace gnLib {
 
-	Time::Time()
-		: currentTime(0)
-		, prevTime(0)
-	{
-		timeBeginPeriod(1);
-		prevTime = timeGetTime();
-	}
-
-	Time::~Time() {
-		timeEndPeriod(1);
-	}
-
 	DWORD Time::getTime() {
-		return timeGetTime();
-	}
-
-	void Time::beginTime() {
-		currentTime = timeGetTime();
-	}
-
-	void Time::endTime() {
-		prevTime = currentTime;
+		return GCGameTime->getTime();
 	}
 
 	DWORD Time::getStartTime()
 	{
-		return currentTime;
+		return GCGameTime->getStartTime();;
 	}
 
 	DWORD Time::getEndTime()
 	{
-		return prevTime;
+		return GCGameTime->getEndTime();;
 	}
 
-	DWORD Time::deltaTime() {
-		return currentTime - prevTime;
+	float Time::deltaTime() {
+		float result = static_cast<float>(GCGameTime->deltaTime() / 1000.0f);
+		if (result > 0.5f) result = 0.5f;
+		return result;
 	}
 }

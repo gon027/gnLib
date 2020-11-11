@@ -4,6 +4,7 @@
 #include "../include/Render/Render.h"
 #include "../include/Input/Input.h"
 #include "../include/SpriteRender/SpriteRender.h"
+#include "../include/Time/GameTime.h"
 
 #include <assert.h>
 
@@ -50,6 +51,7 @@ namespace gnLib {
 	void App::begin()
 	{
 		GCoreIns->getGraphic()->begin();
+		GCGameTime->beginTime();
 		GCSprite->begin();
 		GCoreIns->update();
 	}
@@ -57,6 +59,7 @@ namespace gnLib {
 	void App::end()
 	{
 		GCSprite->end();
+		GCGameTime->endTime();
 		GCoreIns->getGraphic()->end();
 	}
 
