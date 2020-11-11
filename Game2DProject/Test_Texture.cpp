@@ -1,54 +1,26 @@
-//#include "gnLib.h"
+#include "gnLib.h"
 
-/*
-class DivSprite {
-public:
-	DivSprite();
-	~DivSprite() = default;
-
-	static DivSprite div(Texture _texture, int _allNum, int _xNum, int _yNum, int _xSize, int _ySize) {
-
-	}
-
-	void setPos();
-	void setPos();
-
-	void setScale()
-	void setScale();
-
-	void setRotate(float _angle);
-
-	void draw(int _index);
-
-private:
-	Sprite sprite;
-};
-*/
-/*
 void gnMain() {
 	App app;
 
-	Texture texture("img/char.png");
-	Sprite sprite{ texture };
-
-	Sprite sprite2{ "img/backscreen.jpg" };
-
-	float frame = 0.0f;
+	Texture texture("img/MapData.png");
+	auto a = Texture::spriteTexture(texture, 32, 32);
+	Sprite sp{ texture };
+	
+	int frame = 0;
 
 	while (app.doEvent()) {
 		app.begin();
-		frame += 0.01f;
 
-		//sprite.setRotate(frame);
-		sprite.setScale({ cosf(frame) * 2.0f, 1 });
-		sprite.setPos(300, 300);
-		sprite.draw(true);
+		sp.setPos(200, 100);
+		sp.draw(a[0], false);
 
-		sprite2.setScale({ 0.5f, cosf(frame) * 2.0f });
-		sprite2.setPos(100, 100);
-		sprite2.draw(false);
+		Debug::drawFormatText(0, 0, Color::Red, "%d, %d", texture.getWidth(), texture.getWidth());
+		Debug::drawFormatText
+		(0, 20, Color::Red, "%lf, %lf", float(texture.getWidth()) / 32.f, float(texture.getHeight()) / 32.f);
+		Debug::drawFormatText(0, 40, Color::Red, "%d, %d, %d, %d", a[0].left, a[0].top, a[0].right, a[0].bottom);
+		Debug::drawFormatText(0, 60, Color::Red, "%d", a.size());
 
 		app.end();
 	}
 }
-*/

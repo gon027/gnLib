@@ -28,12 +28,16 @@ namespace gnLib {
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
+	private:
+		static GameCore* Instance;
+
+	public:
+		static GameCore* get();
+
 	public:
 		GameCore();
 		~GameCore();
 		
-		static GameCore* get();
-
 		void initWindow(const string& _title, int _width, int _height);
 		void init();
 		void update();
@@ -46,8 +50,6 @@ namespace gnLib {
 		RenderDevice*  getRenderDevice();
 
 	private:
-		static GameCore* Instance;
-
 		UniquePtr<Window>        window;        // ウインドウ
 		UniquePtr<Graphics>      graphics;      // グラフィクス
 		UniquePtr<KeyInput>      keyBoard;      // キーボード

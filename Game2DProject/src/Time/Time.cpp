@@ -26,6 +26,16 @@ namespace gnLib {
 		prevTime = currentTime;
 	}
 
+	DWORD Time::getStartTime()
+	{
+		return currentTime;
+	}
+
+	DWORD Time::getEndTime()
+	{
+		return prevTime;
+	}
+
 	DWORD Time::deltaTime() {
 		return currentTime - prevTime;
 	}

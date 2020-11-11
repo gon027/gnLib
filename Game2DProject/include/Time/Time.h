@@ -21,6 +21,12 @@ namespace gnLib {
 		// 終了時間を記録
 		void endTime();
 
+		// 開始時間を取得
+		DWORD getStartTime();
+
+		// 終了時間を取得 
+		DWORD getEndTime();
+
 		// 開始時間から終了時間を引いた時間
 		DWORD deltaTime();
 

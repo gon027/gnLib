@@ -12,8 +12,22 @@ using std::vector;
 
 namespace gnLib {
 
+	struct TextureRect{
+		int left;
+		int top;
+		int right;
+		int bottom;
+	};
+
 	// ‰æ‘œ‚ğ“Ç‚İ‚ŞƒNƒ‰ƒX
 	class Texture {
+	public:
+		// ‰æ‘œ‚ğ•ªŠ„‚·‚é
+		// TODO : ‚à‚¤­‚µ‚¢‚¢ˆ—‚ğŒã‚Å‘‚­
+		static vector<RECT> spriteTexture(int _xNum, int _yNum, int _xSize, int _ySize);
+
+		static vector<RECT> spriteTexture(Texture& _texture, int _xNum, int _yNum);
+
 	public:
 		Texture();
 		Texture(const string& _filePath);
@@ -35,12 +49,6 @@ namespace gnLib {
 		bool isLoading();
 
 		LPDIRECT3DTEXTURE9 getTexture() const;
-
-		// ‰æ‘œ‚ğ•ªŠ„‚·‚é
-		// TODO : ‚à‚¤­‚µ‚¢‚¢ˆ—‚ğŒã‚Å‘‚­
-		static vector<RECT> spriteTexture(int _xNum, int _yNum, int _xSize, int _ySize);
-
-		static vector<RECT> spriteTexture(Texture& _texture, int _xNum, int _yNum);
 
 	private:
 		// ‰æ‘œ‚Ì•‚Æ‹t‚³‚ğæ“¾

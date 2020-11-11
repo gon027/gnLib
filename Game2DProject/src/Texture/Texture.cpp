@@ -116,23 +116,20 @@ namespace gnLib {
 		return lpTexture;
 	}
 
-	vector<RECT> Texture::spriteTexture(int _xNum, int _yNum, int _xSize, int _ySize)
+	vector<RECT> Texture::spriteTexture(int _xSize, int _ySize, int _textureWidth, int _textureHeight)
 	{
-		int size{ _xNum * _yNum };
+		int width{ _textureWidth / _xSize };
+		int height{ _textureHeight / _ySize };
+
+		int size{ width * height };
 		vector<RECT> result(size);
 
-		float width{ float(_xSize) / float(_xNum) };
-		float height{ float(_ySize) / float(_yNum) };
+		for (int i{}; i < height - 1; ++i) {
+			for (int j{}; j < width - 1; ++j) {
 
-		for (int i{}; i < _yNum - 1; ++i) {
-			for (int j{}; j < _xNum - 1; ++j) {
-				auto index = static_cast<long>(i) * static_cast<long>(_xNum) + static_cast<long>(j);
-				result[index] = RECT{ 
-					static_cast<int>(width  * static_cast<float>(j)),
-					static_cast<int>(height * static_cast<float>(i)),
-					static_cast<int>(width  * static_cast<float>(j + 1)),
-					static_cast<int>(height * static_cast<float>(i + 1))
-				};
+				auto index = static_cast<long>(i) * static_cast<long>(width) + static_cast<long>(j);
+
+				result[index] = RECT{ _xSize * j, _ySize * i, _xSize * (j + 1), _ySize * (i + 1) };
 			}
 		}
 
