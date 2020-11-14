@@ -10,6 +10,14 @@
 
 namespace gnLib {
 
+	Sprite::Sprite()
+		: texture()
+		, position(Vector2::Zero)
+		, scale({ 1.0f, 1.0f })
+		, angle(0)
+	{
+	}
+
 	Sprite::Sprite(Texture & _texture)
 		: texture(_texture)
 		, position(Vector2::Zero)
@@ -30,6 +38,11 @@ namespace gnLib {
 	Sprite::~Sprite()
 	{
 
+	}
+
+	void Sprite::loadTexture(Texture& _texture)
+	{
+		texture = _texture;
 	}
 
 	void Sprite::setPos(float _x, float _y)

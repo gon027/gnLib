@@ -58,6 +58,9 @@
 // ベクトル( 3D )
 #include "include/Vector/Vector3.h"
 
+// トランスフォーム
+#include "include/Object/Transform.h"
+
 // 境界
 #include "include/Bounds/Bounds.h"
 
