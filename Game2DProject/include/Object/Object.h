@@ -37,7 +37,7 @@ namespace gnLib {
 	public:
 		Transform transform;
 
-	private:
+	protected:
 		string name;
 		bool isActive;
 	};

@@ -12,6 +12,14 @@ using std::vector;
 
 namespace gnLib {
 
+	class Texture;
+
+	// Texture‚Ìshared_ptr
+	using TextureSPtr = SharedPtr<Texture>;
+
+	// Texture‚Ìweak_ptr
+	using TextureWPtr = WeakPtr<Texture>;
+
 	struct TextureRect{
 		int left;
 		int top;
@@ -22,6 +30,8 @@ namespace gnLib {
 	// ‰æ‘œ‚ğ“Ç‚İ‚ŞƒNƒ‰ƒX
 	class Texture {
 	public:
+		static TextureSPtr createTexture(const string& _filePath);
+
 		// ‰æ‘œ‚ğ•ªŠ„‚·‚é
 		// TODO : ‚à‚¤­‚µ‚¢‚¢ˆ—‚ğŒã‚Å‘‚­
 		static vector<RECT> spriteTexture(int _xSize, int _ySize, int _textureWidth, int _textureHeight);

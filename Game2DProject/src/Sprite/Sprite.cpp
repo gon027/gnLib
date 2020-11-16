@@ -18,6 +18,7 @@ namespace gnLib {
 	{
 	}
 
+	/*
 	Sprite::Sprite(Texture & _texture)
 		: texture(_texture)
 		, position(Vector2::Zero)
@@ -26,21 +27,14 @@ namespace gnLib {
 	{
 
 	}
-
-	Sprite::Sprite(const string& _filePath)
-		: texture(_filePath)
-		, position(Vector2::Zero)
-		, scale({ 1.0f, 1.0f })
-		, angle(0)
-	{
-	}
+	*/
 
 	Sprite::~Sprite()
 	{
 
 	}
 
-	void Sprite::loadTexture(Texture& _texture)
+	void Sprite::setTexture(TextureSPtr& _texture)
 	{
 		texture = _texture;
 	}
@@ -74,7 +68,7 @@ namespace gnLib {
 
 	void Sprite::draw(bool _isCenter)
 	{
-		auto rect = RECT{ 0, 0, (int)texture.getWidth(), (int)texture.getHeight() };
+		auto rect = RECT{ 0, 0, (int)texture->getWidth(), (int)texture->getHeight() };
 		draw(rect, _isCenter);
 	}
 
@@ -84,8 +78,8 @@ namespace gnLib {
 		D3DXMatrixIdentity(&mat);
 
 		D3DXVECTOR2 center{
-			texture.getWidth() / 2.0f,
-			texture.getHeight() / 2.0f 
+			texture->getWidth() / 2.0f,
+			texture->getHeight() / 2.0f 
 		};
 
 		D3DXVECTOR2 rotate{ scale.x, scale.y };
@@ -108,12 +102,12 @@ namespace gnLib {
 		);
 
 		GCSprite->getSprite()->SetTransform(&mat);
-		GCSprite->getSprite()->Draw(texture.getTexture(), &_rect, NULL, NULL, 0xFFFFFFFF);
+		GCSprite->getSprite()->Draw(texture->getTexture(), &_rect, NULL, NULL, 0xFFFFFFFF);
 
 	}
 
 	const Size& Sprite::getSize()
 	{
-		return texture.getTextureSize();
+		return texture->getTextureSize();
 	}
 }

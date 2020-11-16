@@ -9,17 +9,14 @@
 using std::vector;
 
 namespace gnLib {
-
 	// 画像を描画するクラス
 	class Sprite {
 	public:
 		Sprite();
-		explicit Sprite(Texture& _texture);
-		Sprite(const string& _filePath);
 		~Sprite();
 
 		// テクスチャを読み込む
-		void loadTexture(Texture& _texture);
+		void setTexture(TextureSPtr& _texture);
 
 		// 座標を設定する
 		void setPos(float _x, float _y);
@@ -42,13 +39,12 @@ namespace gnLib {
 		const Size& getSize();
 
 	private:
-		Texture texture;
+		TextureSPtr texture;
 
 		Vector2 position;      
 		Vector2 scale;
 		float angle;
 	};
-
 
 	// テクスチャを分割できるクラス
 	class DivSprite : public Sprite{

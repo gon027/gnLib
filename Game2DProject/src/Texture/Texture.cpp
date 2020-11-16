@@ -116,6 +116,12 @@ namespace gnLib {
 		return lpTexture;
 	}
 
+	TextureSPtr Texture::createTexture(const string& _filePath)
+	{
+		//TextureSPtr result = std::make_shared<Texture>(_filePath);
+		return std::make_shared<Texture>(_filePath);
+	}
+
 	vector<RECT> Texture::spriteTexture(int _xSize, int _ySize, int _textureWidth, int _textureHeight)
 	{
 		int width{ _textureWidth / _xSize };
