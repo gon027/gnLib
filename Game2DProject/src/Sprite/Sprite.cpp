@@ -11,103 +11,55 @@
 namespace gnLib {
 
 	Sprite::Sprite()
-		: texture()
-		, position(Vector2::Zero)
-		, scale({ 1.0f, 1.0f })
-		, angle(0)
+		: ISprite()
 	{
 	}
 
-	/*
-	Sprite::Sprite(Texture & _texture)
-		: texture(_texture)
-		, position(Vector2::Zero)
-		, scale({ 1.0f, 1.0f })
-		, angle(0)
+	void Sprite::setTexture(TextureSPtr& _texturePtr) 
 	{
-
-	}
-	*/
-
-	Sprite::~Sprite()
-	{
-
+		this->texturePtr = _texturePtr;
+		this->size = _texturePtr->getSize();
 	}
 
-	void Sprite::setTexture(TextureSPtr& _texture)
-	{
-		texture = _texture;
-	}
+	void Sprite::draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter, bool _isFlip) {
+		if (texturePtr) {
+			D3DXMATRIX mat;
+			D3DXMatrixIdentity(&mat);
 
-	void Sprite::setPos(float _x, float _y)
-	{
-		position.x = _x;
-		position.y = _y;
-	}
+			D3DXVECTOR2 center{ texturePtr->getWidth() / 2.0f, texturePtr->getHeight() / 2.0f };  // 中心座標
+			D3DXVECTOR2 scale{ _isFlip ? -_scale.x : _scale.x , _scale.y };  // スケール
+			D3DXVECTOR2 pos{ _pos.x, _pos.y };         // 座標
 
-	void Sprite::setPos(const Vector2 & _v)
-	{
-		setPos(_v.x, _v.y);
-	}
+			if (_isCenter) {
+				pos.x -= center.x;
+				pos.y -= center.y;
+			}
 
-	void Sprite::setScale(float _sx, float _sy)
-	{
-		scale.x = _sx;
-		scale.y = _sy;
-	}
+			D3DXMatrixTransformation2D(
+				&mat,
+				&center,  // スケーリングするときの座標の中心
+				0.0f,
+				&scale,
+				&center,
+				_angle,    // 回転角
+				&pos      // 座標
+			);
 
-	void Sprite::setScale(const Vector2 & _v)
-	{
-		scale = _v;
-	}
+			auto rect = RECT{ 0, 0, (int)texturePtr->getWidth(), (int)texturePtr->getHeight() };
 
-	void Sprite::setRotate(float _angle)
-	{
-		angle = _angle / 180.0f * pi;
-	}
-
-	void Sprite::draw(bool _isCenter)
-	{
-		auto rect = RECT{ 0, 0, (int)texture->getWidth(), (int)texture->getHeight() };
-		draw(rect, _isCenter);
-	}
-
-	void Sprite::draw(RECT& _rect, bool _isCenter)
-	{
-		D3DXMATRIX mat;
-		D3DXMatrixIdentity(&mat);
-
-		D3DXVECTOR2 center{
-			texture->getWidth() / 2.0f,
-			texture->getHeight() / 2.0f 
-		};
-
-		D3DXVECTOR2 rotate{ scale.x, scale.y };
-
-		D3DXVECTOR2 pos{ position.x, position.y };
-
-		if (_isCenter) {
-			pos.x -= center.x;
-			pos.y -= center.y;
+			GCSprite->getSprite()->SetTransform(&mat);
+			GCSprite->getSprite()->Draw(
+				texturePtr->getTexture(),
+				&rect,
+				NULL,
+				NULL,
+				0xFFFFFFFF
+			);
 		}
-
-		D3DXMatrixTransformation2D(
-			&mat, 
-			&center,  // スケーリングするときの座標の中心
-			0.0f,
-			&rotate,  
-			&center, 
-			angle,    // 回転角
-			&pos      // 座標
-		);
-
-		GCSprite->getSprite()->SetTransform(&mat);
-		GCSprite->getSprite()->Draw(texture->getTexture(), &_rect, NULL, NULL, 0xFFFFFFFF);
-
 	}
 
-	const Size& Sprite::getSize()
-	{
-		return texture->getTextureSize();
+	const Size& Sprite::getSize() {
+		return this->size;
 	}
 }
+

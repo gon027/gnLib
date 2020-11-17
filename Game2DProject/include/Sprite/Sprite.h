@@ -9,56 +9,68 @@
 using std::vector;
 
 namespace gnLib {
-	// 画像を描画するクラス
-	class Sprite {
+
+	class ISprite {
+	public:
+		ISprite() : texturePtr(nullptr), size() {}
+
+		virtual ~ISprite() = default;
+
+		/// <summary>
+		/// テクスチャをセットする
+		/// </summary>
+		/// <param name="_texturePtr"></param>
+		virtual void setTexture(TextureSPtr& _texturePtr) = 0;
+
+		/// <summary>
+		/// スプライトを描画
+		/// </summary>
+		/// <param name="_pos"> 座標 </param>
+		/// <param name="_scale"> スケール </param>
+		/// <param name="angle"> 角度 </param>
+		virtual void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = false, bool _isFlip = false) = 0;
+
+		/// <summary>
+		/// 画像のサイズを取得する
+		/// </summary>
+		/// <returns>  </returns>
+		virtual const Size& getSize() = 0;
+
+	protected:
+		TextureSPtr texturePtr;		// テクスチャのポインタ
+		Size size;
+	};
+
+	// スプライトクラス
+	class Sprite : public ISprite {
 	public:
 		Sprite();
-		~Sprite();
+		~Sprite() = default;
 
-		// テクスチャを読み込む
-		void setTexture(TextureSPtr& _texture);
+		void setTexture(TextureSPtr& _texturePtr) override;
 
-		// 座標を設定する
-		void setPos(float _x, float _y);
-		void setPos(const Vector2& _v);
+		void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = false, bool _isFlip = false) override;
 
-		// 画像の大きさを設定する
-		void setScale(float _sx, float _sy);
-		void setScale(const Vector2& _v);
-
-		// 画像の角度を設定する
-		void setRotate(float _angle);
-
-		// 画像を描画する
-		void draw(bool _isCenter = true);
-
-		// サイズを指定して画像を描画する
-		void draw(RECT& _rect, bool _isCenter = true);
-
-		// 画像のサイズを取得
-		const Size& getSize();
-
-	private:
-		TextureSPtr texture;
-
-		Vector2 position;      
-		Vector2 scale;
-		float angle;
+		const Size& getSize() override;
 	};
 
-	// テクスチャを分割できるクラス
-	class DivSprite : public Sprite{
-	public:
-		DivSprite(Texture& _texture);
-		DivSprite(const string& _filePath);
-		~DivSprite() = default;
+	namespace unimpl {
 
-		void draw(int _index);
+		// アニメーション用スプライトクラス
+		class AnimSprite : public ISprite {
+			AnimSprite();
+			~AnimSprite() = default;
 
-	private:
-		vector<RECT> textureRect;
-	};
+			void setTexture(TextureSPtr& _texturePtr) override;
 
+			void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = false, bool _isFlip = false) override;
+
+			const Size& getSize() override;
+
+		private:
+			vector<TextureRect> textureRect;
+		};
+	}
 }
 
 #endif // !SPRITE_H

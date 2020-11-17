@@ -53,7 +53,7 @@ namespace gnLib {
 		const int getHeight();
 
 		// ‰æ‘œ‚ÌƒTƒCƒYæ“¾
-		const Size& getTextureSize();
+		const Size& getSize();
 
 		// ‰æ‘œ‚ª“Ç‚İ‚ß‚Ä‚¢‚é‚©
 		bool isLoading();

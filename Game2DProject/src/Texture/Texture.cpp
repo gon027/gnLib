@@ -101,7 +101,7 @@ namespace gnLib {
 		return size.getHeight();
 	}
 
-	const Size& Texture::getTextureSize()
+	const Size& Texture::getSize()
 	{
 		return size;
 	}
