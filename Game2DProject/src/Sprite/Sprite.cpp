@@ -37,12 +37,12 @@ namespace gnLib {
 
 			D3DXMatrixTransformation2D(
 				&mat,
-				&center,  // スケーリングするときの座標の中心
+				&center,   // スケーリングするときの座標の中心
 				0.0f,
 				&scale,
 				&center,
 				_angle,    // 回転角
-				&pos      // 座標
+				&pos       // 座標
 			);
 
 			auto rect = RECT{ 0, 0, (int)texturePtr->getWidth(), (int)texturePtr->getHeight() };

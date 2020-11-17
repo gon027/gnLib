@@ -12,9 +12,9 @@ void gnMain() {
 	while (app.doEvent()) {
 		app.begin();
 
-		sp.draw(Vector2::Zero, Vector2{ 2.0f, 0.5f }, 0.0f, true, true);
-		sp2.draw(Vector2{ 100.f, 200.f }, Vector2::One, 0.0f, true);
-		sp3.draw(Vector2{ 200.f, 300.f }, Vector2::One, 0.0f, true);
+		//sp.draw(Vector2::Zero, Vector2{ 2.0f, 0.5f }, 0.0f);
+		sp2.draw(Vector2{ 300.f, 300.f }, Vector2::One, 0.0f);
+		sp3.draw(Vector2{ 300.f, 300.f }, Vector2::One, 0.0f, false);
 
 		app.end();
 	}

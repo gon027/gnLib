@@ -2,6 +2,13 @@
 
 namespace gnLib {
 
+	Transform::Transform()
+		: pos(Vector2::Zero)
+		, scale(Vector2::One)
+		, angle(0.0f)
+	{
+	}
+
 	void Transform::setPos(float _x, float _y)
 	{
 		pos.setPos(_x, _y);

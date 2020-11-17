@@ -8,6 +8,9 @@ namespace gnLib {
 
 	class Transform {
 	public:
+		Transform();
+		~Transform() = default;;
+
 		// À•W‚ğİ’è‚·‚é
 		void setPos(float _x, float _y);
 		void setPos(const Vector2& _v);

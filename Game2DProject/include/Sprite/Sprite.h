@@ -28,7 +28,7 @@ namespace gnLib {
 		/// <param name="_pos"> 座標 </param>
 		/// <param name="_scale"> スケール </param>
 		/// <param name="angle"> 角度 </param>
-		virtual void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = false, bool _isFlip = false) = 0;
+		virtual void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) = 0;
 
 		/// <summary>
 		/// 画像のサイズを取得する
@@ -49,7 +49,7 @@ namespace gnLib {
 
 		void setTexture(TextureSPtr& _texturePtr) override;
 
-		void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = false, bool _isFlip = false) override;
+		void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) override;
 
 		const Size& getSize() override;
 	};
@@ -63,7 +63,7 @@ namespace gnLib {
 
 			void setTexture(TextureSPtr& _texturePtr) override;
 
-			void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = false, bool _isFlip = false) override;
+			void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) override;
 
 			const Size& getSize() override;
 
