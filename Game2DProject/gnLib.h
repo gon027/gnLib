@@ -46,6 +46,12 @@
 // ƒ|ƒŠƒSƒ“
 #include "include/Polygon/Polygon.h"
 
+// BoxCollider
+#include "include/Collider/BoxCollider.h"
+
+// CircleCollider
+#include "include/Collider/CircleCollider.h"
+
 // •¶Žš—ñ•`‰æ
 #include "include/StringRender/StringRender.h"
 
