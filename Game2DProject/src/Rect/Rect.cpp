@@ -12,6 +12,7 @@ namespace gnLib {
 		: position()
 		, width(1)
 		, height(1)
+		, radian(0.0f)
 		, color(Color::White)
 	{ 
 	}
@@ -20,6 +21,7 @@ namespace gnLib {
 		: position({ _x, _y })
 		, width(_width)
 		, height(_height)
+		, radian(0.0f)
 		, color(Color::White)
 	{ 
 	}
@@ -28,6 +30,7 @@ namespace gnLib {
 		: position(_v)
 		, width(_width)
 		, height(_height)
+		, radian(0.0f)
 		, color(Color::White)
 	{
 	}
@@ -65,28 +68,19 @@ namespace gnLib {
 
 	void Rect::draw()
 	{
-		auto w = width / 2.0f;
-		auto h = height / 2.0f;
-
-		auto leftTop     = Vector2{ position.x - w, position.y - h };
-		auto leftBottom  = Vector2{ position.x - w, position.y + h };
-		auto rightTop    = Vector2{ position.x + w, position.y - h };
-		auto rightBottom = Vector2{ position.x + w, position.y + h };
+		auto leftTop     = Vector2{ position.x, position.y };
+		auto leftBottom  = Vector2{ position.x, position.y + height };
+		auto rightTop    = Vector2{ position.x + width, position.y };
+		auto rightBottom = Vector2{ position.x + width, position.y + height };
 
 		Vertex2D vertex[] = {
-			{leftBottom.x,  leftBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{leftTop.x,     leftTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{leftBottom.x,  leftBottom.y,  0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{leftTop.x,     leftTop.y,     0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
 			{rightBottom.x, rightBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{rightTop.x,    rightTop.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
+			{rightTop.x,    rightTop.y,    0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
 		};
 
 		GCGraphics->SetFVF(FVF_CUSTOM2D);
 		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
 	}
-
-	const Vector2& Rect::getPos()
-	{
-		return position;
-	}
-
 }

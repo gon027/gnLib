@@ -10,7 +10,7 @@ namespace gnLib {
 	/// <summary>
 	/// ‰~‚ð•`‰æ‚·‚éƒNƒ‰ƒX
 	/// </summary>
-	class Circle : public Object {
+	class Circle {
 	public:
 		Circle();
 		Circle(float _x, float _y, float _r);

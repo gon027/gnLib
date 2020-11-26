@@ -19,7 +19,6 @@ namespace gnLib {
 		: radius(10)
 		, color(255, 255, 255)
 	{
-		this->setActive(true);
 	}
 
 	Circle::Circle(float _x, float _y, float _r)
@@ -27,7 +26,6 @@ namespace gnLib {
 		, radius(_r)
 		, color(255, 255, 255)
 	{
-		this->setActive(true);
 	}
 
 	Circle::Circle(Vector2 _pos, float _r)
@@ -35,7 +33,6 @@ namespace gnLib {
 		, radius(_r)
 		, color(255, 255, 255)
 	{
-		this->setActive(true);
 	}
 
 	void Circle::setPos(float _x, float _y)

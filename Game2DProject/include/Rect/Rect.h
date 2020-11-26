@@ -7,7 +7,7 @@
 
 namespace gnLib {
 
-	class Rect : public Object{
+	class Rect {
 	public:
 		Rect();
 		Rect(float _x, float _y, float _width, float _height);
@@ -30,9 +30,6 @@ namespace gnLib {
 
 		// •`‰æ
 		void draw();
-
-		// À•W‚ğæ“¾
-		const Vector2& getPos();
 
 	private:
 		Vector2 position;
