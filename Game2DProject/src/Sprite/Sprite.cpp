@@ -1,6 +1,5 @@
 #include "../../include/Sprite/Sprite.h"
 #include "../../include/Common/Macro.h"
-#include "../../include/Common/Math.h"
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/Render/Render.h"
 #include "../../include/GameCore/GameCore.h"

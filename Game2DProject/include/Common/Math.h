@@ -8,6 +8,22 @@ namespace gnLib {
 	constexpr float pi = 3.1415926535f;
 	constexpr float tau = pi * 2.0f;
 
+	// 角度に変換
+	inline float toDegrees(float _radians) {
+		return _radians * 180.0f / pi;
+	}
+
+	// ラジアンに変換
+	inline float toRadians(float _degrees) {
+		return _degrees * pi / 180.0f;
+	}
+
+	// 最小値から最大値の間に収める
+	template<class T>
+	inline T clamp(T _value, T _min, T _max) {
+		return min(max(_value, _min), _max);
+	}
+
 	// 距離を求める
 	constexpr float dist(float _x, float _y) {
 		return _x * _x + _y * _y;

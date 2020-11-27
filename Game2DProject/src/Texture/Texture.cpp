@@ -34,18 +34,18 @@ namespace gnLib {
 		hr = D3DXCreateTextureFromFileEx(
 			GCGraphics,
 			_filePath.c_str(),
-			imgInfo.Width,      // 読み込む画像の幅
-			imgInfo.Height,     // 読み込む画像の高さ
-			D3DX_DEFAULT,       // MipLevels
-			0,                  // Usage
-			D3DFMT_UNKNOWN,     // Format
-			D3DPOOL_MANAGED,    // Pool
-			D3DX_DEFAULT,       // フィルタリング方法
-			D3DX_DEFAULT,       // ミニマップに対して行われるフィルタリング法
-			0,                  // カラーキー
-			NULL,               // 元の画像の情報を格納するD3DXIMAGE_INFOのポインタ
-			NULL,               // 256フォーマットの場合にのみ使われる
-			&lpTexture          // 生成したテクスチャオブジェクトへのポインタが返る
+			imgInfo.Width,                      // 読み込む画像の幅
+			imgInfo.Height,                     // 読み込む画像の高さ
+			D3DX_DEFAULT,                       // MipLevels
+			0,                                  // Usage
+			D3DFMT_UNKNOWN,                     // Format
+			D3DPOOL_MANAGED,                    // Pool
+			D3DX_DEFAULT,                       // フィルタリング方法
+			D3DX_DEFAULT,                       // ミニマップに対して行われるフィルタリング法
+			D3DCOLOR_ARGB(255, 255, 255, 0),  // 透過色
+			NULL,                               // 元の画像の情報を格納するD3DXIMAGE_INFOのポインタ
+			NULL,                               // 256フォーマットの場合にのみ使われる
+			&lpTexture                          // 生成したテクスチャオブジェクトへのポインタが返る
 		);
 
 		if (FAILED(hr)) {

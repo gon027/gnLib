@@ -70,6 +70,11 @@ namespace gnLib {
 			}
 		}
 
+		// アルファブレンディングを行う
+		device->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+		// 透過処理を行う
+		device->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+
 		return true;
 	}
 
