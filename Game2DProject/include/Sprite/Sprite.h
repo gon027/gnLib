@@ -30,12 +30,6 @@ namespace gnLib {
 		/// <param name="angle"> 角度 </param>
 		virtual void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) = 0;
 
-		/// <summary>
-		/// 画像のサイズを取得する
-		/// </summary>
-		/// <returns>  </returns>
-		virtual const Size& getSize() = 0;
-
 	protected:
 		TextureSPtr texturePtr;		// テクスチャのポインタ
 		Size size;
@@ -51,26 +45,27 @@ namespace gnLib {
 
 		void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) override;
 
-		const Size& getSize() override;
+		const Size& getSize();
 	};
 
-	namespace unimpl {
+	// アニメーション用スプライトクラス
+	class AnimSprite : public ISprite {
+	public:
+		// 
+		AnimSprite(int _xNum, int _yNum, float _animfps = 60.0f);
+		~AnimSprite() = default;
 
-		// アニメーション用スプライトクラス
-		class AnimSprite : public ISprite {
-			AnimSprite();
-			~AnimSprite() = default;
+		void setTexture(TextureSPtr& _texturePtr) override;
 
-			void setTexture(TextureSPtr& _texturePtr) override;
+		void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) override;
 
-			void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) override;
-
-			const Size& getSize() override;
-
-		private:
-			vector<TextureRect> textureRect;
-		};
-	}
+	private:
+		int textureNum;
+		vector<TextureRect> textureRect;
+		Size textureSize;
+		float frame;
+		float animFps;
+	};
 }
 
 #endif // !SPRITE_H
