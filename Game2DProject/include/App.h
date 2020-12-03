@@ -15,7 +15,6 @@ namespace gnLib {
 		App(std::string _title = "App", int _width = 640, int _height = 480);
 		~App();
 
-		bool doEvent();
 		bool update();
 		void begin();
 		void end();

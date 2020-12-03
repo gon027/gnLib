@@ -1,21 +1,40 @@
-/*#include "gnLib.h"
+#include "gnLib.h"
 
-void gnMain() {
+/*void gnMain() {
 	App app;
 
 	TextureSPtr texture = Texture::createTexture("img/char.png");
-	Sprite sp, sp2, sp3;
+	//TextureRegion vt = Texture::spriteTexture(texture, 20, 20);
+
+	// Texture[] ts = spliteTexture("", 32, 32, 5, 5);
+	// sprite.draw(ts[0], one, one, 0.0f);
+
+	Sprite sp{};
 	sp.setTexture(texture);
-	sp2.setTexture(texture);
-	sp3.setTexture(texture);
+
+	int a = 0;
+
 	
 	while (app.doEvent()) {
 		app.begin();
 
-		//sp.draw(Vector2::Zero, Vector2{ 2.0f, 0.5f }, 0.0f);
-		sp2.draw(Vector2{ 300.f, 300.f }, Vector2::One, 0.0f);
-		sp3.draw(Vector2{ 300.f, 300.f }, Vector2::One, 0.0f, false);
+		//sp.draw({100, 100}, { 1, 1 }, 0.0f, false);
+
+		for (int i = 0; i < 100; ++i) {
+			for (int j = 0; j < 100; ++j) {
+				sp.draw(
+					{ 50.f * i, 50.f * j },
+					Vector2::One,
+					0.0f
+				);
+			}
+		}
+
+		//Debug::drawFormatText(0, 20, Color::Black, "%d", texture->getWidth());
+		//Debug::drawFormatText(0, 40, Color::Black, "%d", texture->getHeight());
+		Sleep(1);
 
 		app.end();
 	}
-}*/
+}
+*/

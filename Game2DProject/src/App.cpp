@@ -23,7 +23,7 @@ namespace gnLib {
 
 	}
 
-	bool App::doEvent()
+	bool App::update()
 	{
 		MSG msg{};
 
@@ -41,11 +41,6 @@ namespace gnLib {
 				return true;
 			}
 		}
-	}
-
-	bool App::update()
-	{
-		return false;
 	}
 
 	void App::begin()

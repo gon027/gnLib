@@ -18,7 +18,6 @@ namespace gnLib {
 	void Sprite::setTexture(TextureSPtr& _texturePtr) 
 	{
 		this->texturePtr = _texturePtr;
-		this->size = _texturePtr->getSize();
 	}
 
 	void Sprite::draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter, bool _isFlip) {
@@ -58,8 +57,47 @@ namespace gnLib {
 		}
 	}
 
-	const Size& Sprite::getSize() {
-		return this->size;
+	void Sprite::draw(const TextureRect& _rect, const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter, bool _isFlip)
+	{
+		if (texturePtr) {
+			D3DXMATRIX mat;
+			D3DXMatrixIdentity(&mat);
+
+			D3DXVECTOR2 center{ texturePtr->getWidth() / 2.0f, texturePtr->getHeight() / 2.0f };  // 中心座標
+			D3DXVECTOR2 scale{ _isFlip ? -_scale.x : _scale.x , _scale.y };  // スケール
+			D3DXVECTOR2 pos{ _pos.x, _pos.y };         // 座標
+
+			if (_isCenter) {
+				pos.x -= center.x;
+				pos.y -= center.y;
+			}
+
+			D3DXMatrixTransformation2D(
+				&mat,
+				&center,   // スケーリングするときの座標の中心
+				0.0f,
+				&scale,
+				&center,
+				_angle,    // 回転角
+				&pos       // 座標
+			);
+
+			auto rect = RECT{ 
+				_rect.left,
+				_rect.top,
+				_rect.right,
+				_rect.bottom
+			};
+
+			GCSprite->getSprite()->SetTransform(&mat);
+			GCSprite->getSprite()->Draw(
+				texturePtr->getTexture(),
+				&rect,
+				NULL,
+				NULL,
+				0xFFFFFFFF
+			);
+		}
 	}
 
 	AnimSprite::AnimSprite(int _xNum, int _yNum, float _animfps)
@@ -139,3 +177,44 @@ namespace gnLib {
 	}
 }
 
+gnLib::umImpl::gnSprite::gnSprite()
+{
+}
+
+void gnLib::umImpl::gnSprite::setTexture(TextureTest* _texturePtr)
+{
+	texturePtr = _texturePtr;
+}
+
+void gnLib::umImpl::gnSprite::draw(const Vector2 _pos)
+{
+	if (texturePtr) {
+		D3DXMATRIX mat;
+		D3DXMatrixIdentity(&mat);
+
+		D3DXVECTOR2 center{ texturePtr->getSize().getWidth() / 2.0f, texturePtr->getSize().getHeight() / 2.0f };  // 中心座標
+		D3DXVECTOR2 scale{ 1.0f, 1.0f };  // スケール
+		D3DXVECTOR2 pos{ _pos.x, _pos.y };         // 座標
+
+		D3DXMatrixTransformation2D(
+			&mat,
+			&center,   // スケーリングするときの座標の中心
+			0.0f,
+			&scale,
+			&center,
+			0.0f,    // 回転角
+			&pos       // 座標
+		);
+
+		auto rect = RECT{ 0, 0, texturePtr->getSize().getWidth(), texturePtr->getSize().getHeight() };
+
+		GCSprite->getSprite()->SetTransform(&mat);
+		GCSprite->getSprite()->Draw(
+			texturePtr->getTexture2(),
+			&rect,
+			NULL,
+			NULL,
+			0xFFFFFFFF
+		);
+	}
+}

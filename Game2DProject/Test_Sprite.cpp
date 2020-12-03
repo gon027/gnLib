@@ -1,6 +1,6 @@
 #include "gnLib.h"
 
-void gnMain() {
+/*void gnMain() {
 	App app;
 
 	TextureSPtr tp = Texture::createTexture("img/char.png");
@@ -10,8 +10,9 @@ void gnMain() {
 	while (app.doEvent()) {
 		app.begin();
 
+		f += Time::deltaTime();
 		as.draw({ 300, 300 }, { 1, 1 }, 0.0f);
 
 		app.end();
 	}
-}
+}*/

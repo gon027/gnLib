@@ -12,7 +12,7 @@ namespace gnLib {
 
 	class ISprite {
 	public:
-		ISprite() : texturePtr(nullptr), size() {}
+		ISprite() : texturePtr(nullptr){}
 
 		virtual ~ISprite() = default;
 
@@ -32,7 +32,6 @@ namespace gnLib {
 
 	protected:
 		TextureSPtr texturePtr;		// テクスチャのポインタ
-		Size size;
 	};
 
 	// スプライトクラス
@@ -45,7 +44,7 @@ namespace gnLib {
 
 		void draw(const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false) override;
 
-		const Size& getSize();
+		void draw(const TextureRect& _rect, const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter = true, bool _isFlip = false);
 	};
 
 	// アニメーション用スプライトクラス
@@ -66,6 +65,22 @@ namespace gnLib {
 		float frame;
 		float animFps;
 	};
+
+	namespace umImpl {
+		class gnSprite {
+		public:
+			gnSprite();
+			~gnSprite() {};
+
+			void setTexture(TextureTest* _texturePtr);
+
+			void draw(const Vector2 _pos);
+
+		private:
+			TextureTest* texturePtr;		// テクスチャのポインタ
+			Size size;
+		};
+	}
 }
 
 #endif // !SPRITE_H

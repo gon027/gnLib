@@ -14,18 +14,21 @@ namespace gnLib {
 
 	class Texture;
 
+	struct TextureRect {
+		int left;
+		int top;
+		int right;
+		int bottom;
+	};
+
 	// Textureのshared_ptr
 	using TextureSPtr = SharedPtr<Texture>;
 
 	// Textureのweak_ptr
 	using TextureWPtr = WeakPtr<Texture>;
 
-	struct TextureRect{
-		int left;
-		int top;
-		int right;
-		int bottom;
-	};
+	// Textureの領域
+	using TextureRegion = std::vector<TextureRect>;
 
 	// 画像を読み込むクラス
 	class Texture {
@@ -33,18 +36,14 @@ namespace gnLib {
 		static TextureSPtr createTexture(const string& _filePath);
 
 		// 画像を分割する
-		// TODO : もう少しいい処理を後で書く
-		static vector<RECT> spriteTexture(int _xSize, int _ySize, int _textureWidth, int _textureHeight);
+		static TextureRegion spriteTexture(TextureSPtr& _texture, int _xNum, int _yNum);
 
-		static vector<RECT> spriteTexture(Texture& _texture, int _xSize, int _ySize);
+		static TextureRegion spriteTexture(int _textureWidth, int _textureHeight, int _xNum, int _yNum);
 
 	public:
 		Texture();
 		Texture(const string& _filePath);
 		~Texture();
-
-		// 画像読み込み
-		bool loadTexture(const string& _filePath);
 
 		// 画像の幅
 		const int getWidth();
@@ -58,16 +57,53 @@ namespace gnLib {
 		// 画像が読み込めているか
 		bool isLoading();
 
+		// テクスチャのポインタを取得
 		LPDIRECT3DTEXTURE9 getTexture() const;
-
-	private:
-		// 画像の幅と逆さを取得
-		bool imageInfo();
 
 	private:
 		LPDIRECT3DTEXTURE9 lpTexture;
 		Size size;
 	};
+
+	class TextureTest {
+	public:
+		TextureTest(const string& _filePath);
+		~TextureTest();
+
+		void test();
+
+		LPDIRECT3DTEXTURE9 getTexture() {
+			return lpTexture;
+		}
+
+		LPDIRECT3DTEXTURE9 getTexture2() {
+			return emp;
+		}
+
+		Size getSize() {
+			return size;
+		}
+
+		Size geteSize() {
+			return esize;
+		}
+
+	private:
+		LPDIRECT3DTEXTURE9 lpTexture;
+		Size size;
+
+		LPDIRECT3DTEXTURE9 emp;
+		Size esize;
+	};
+
+	/*
+	class TextureRegion {
+	public:
+		TextureSPtr& getTexture();
+	private:
+		TextureSPtr tsp;
+	};
+	*/
 }
 
 #endif // !TEXTURE_H

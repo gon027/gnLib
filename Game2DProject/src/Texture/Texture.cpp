@@ -6,6 +6,129 @@
 
 namespace gnLib {
 
+	namespace helper {
+
+		// テクスチャのサイズを取得する
+		Size getTextureSize(const string& _filePath) {
+			Size size{};
+			D3DXIMAGE_INFO imgInfo;
+			D3DXGetImageInfoFromFile(_filePath.c_str(), &imgInfo);
+			size.setSize(imgInfo.Width, imgInfo.Height);
+			return size;
+		}
+
+		// 読み込まれたテクスチャからテクスチャのサイズを取得
+		Size getTextureSize(LPDIRECT3DTEXTURE9 _lpTexture)
+		{
+			Size size{};
+
+			if (!_lpTexture) {
+				return size;
+			}
+
+			HRESULT hr;
+
+			// テクスチャからサーフェイスを取得
+			IDirect3DSurface9* surface;
+			hr = _lpTexture->GetSurfaceLevel(0, &surface);
+
+			if (FAILED(hr)) {
+				RELEASE(surface);
+				return size;
+			}
+
+			// サーフェイス情報から画像サイズを取得
+			D3DSURFACE_DESC surfaceInfo;
+			hr = surface->GetDesc(&surfaceInfo);
+
+			if (FAILED(hr)) {
+				return size;
+			}
+
+			// 画像の縦幅と横幅を取得
+			size.setSize(surfaceInfo.Width, surfaceInfo.Height);
+
+			RELEASE(surface);
+
+			return size;
+		}
+
+		// テクスチャのポインタを作成する
+		LPDIRECT3DTEXTURE9 createTexture(const string& _filePath) {
+			LPDIRECT3DTEXTURE9 result{ nullptr };
+			
+			// 画像の縦と横の幅を取得
+			auto size = getTextureSize(_filePath);
+
+			HRESULT hr;
+			hr = D3DXCreateTextureFromFileEx(
+				GCGraphics,
+				_filePath.c_str(),
+				size.getWidth(),                    // 読み込む画像の幅
+				size.getHeight(),                    // 読み込む画像の高さ
+				D3DX_DEFAULT,                       
+				0,                                  
+				D3DFMT_UNKNOWN,                     
+				D3DPOOL_MANAGED,                    
+				D3DX_DEFAULT,                       
+				D3DX_DEFAULT,                       
+				D3DCOLOR_ARGB(255, 255, 255, 0),    // 透過色
+				NULL,                               
+				NULL,                               
+				&result                             // 生成したテクスチャオブジェクトへのポインタが返る
+			);
+
+			if (FAILED(hr)) {
+				return result;
+			}
+
+			return result;
+		}
+
+		// 指定したサイズのテクスチャのポインタを作成する
+		LPDIRECT3DTEXTURE9 createTexture(const string& _filePath, int _width, int _height) {
+			LPDIRECT3DTEXTURE9 result{ nullptr };
+
+			D3DXCreateTextureFromFileEx(
+				GCGraphics,
+				_filePath.c_str(),
+				_width,                    // 読み込む画像の幅
+				_height,                    // 読み込む画像の高さ
+				D3DX_DEFAULT,
+				0,
+				D3DFMT_UNKNOWN,
+				D3DPOOL_MANAGED,
+				D3DX_DEFAULT,
+				D3DX_DEFAULT,
+				D3DCOLOR_ARGB(255, 255, 255, 0),    // 透過色
+				NULL,
+				NULL,
+				&result                             // 生成したテクスチャオブジェクトへのポインタが返る
+			);
+
+			return result;
+		}
+
+		// 空のテクスチャを作成
+		LPDIRECT3DTEXTURE9 createEmptyTexture(int _width, int _height) {
+			LPDIRECT3DTEXTURE9 result{ nullptr };
+
+			D3DXCreateTexture(
+				GCGraphics,
+				_width,
+				_height,
+				0,                 // Levels
+				0,                 // Usage
+				D3DFMT_UNKNOWN,    // Format
+				D3DPOOL_MANAGED,   // Pool
+				&result
+			);
+			
+			return result;
+		}
+	}
+
+
 	Texture::Texture()
 		: lpTexture(nullptr)
 	{
@@ -13,82 +136,15 @@ namespace gnLib {
 	}
 
 	Texture::Texture(const string& _filePath)
-		: lpTexture(nullptr)
+		: lpTexture(helper::createTexture(_filePath))
+		, size(helper::getTextureSize(lpTexture))
 	{
-		loadTexture(_filePath);
+		//loadTexture(_filePath);
 	}
 
 	Texture::~Texture()
 	{
 		RELEASE(lpTexture);
-	}
-
-	bool Texture::loadTexture(const string & _filePath)
-	{
-		HRESULT hr;
-
-		// 画像の縦と横の幅を取得
-		D3DXIMAGE_INFO imgInfo;
-		D3DXGetImageInfoFromFile(_filePath.c_str(), &imgInfo);
-
-		hr = D3DXCreateTextureFromFileEx(
-			GCGraphics,
-			_filePath.c_str(),
-			imgInfo.Width,                      // 読み込む画像の幅
-			imgInfo.Height,                     // 読み込む画像の高さ
-			D3DX_DEFAULT,                       // MipLevels
-			0,                                  // Usage
-			D3DFMT_UNKNOWN,                     // Format
-			D3DPOOL_MANAGED,                    // Pool
-			D3DX_DEFAULT,                       // フィルタリング方法
-			D3DX_DEFAULT,                       // ミニマップに対して行われるフィルタリング法
-			D3DCOLOR_ARGB(255, 255, 255, 0),  // 透過色
-			NULL,                               // 元の画像の情報を格納するD3DXIMAGE_INFOのポインタ
-			NULL,                               // 256フォーマットの場合にのみ使われる
-			&lpTexture                          // 生成したテクスチャオブジェクトへのポインタが返る
-		);
-
-		if (FAILED(hr)) {
-			return false;
-		}
-
-		if (imageInfo()) {
-			return false;
-		}
-
-		return true;
-	}
-
-	bool Texture::imageInfo()
-	{
-		// 画像の情報を取得
-
-		HRESULT hr;
-
-		// テクスチャからサーフェイスを取得
-		IDirect3DSurface9* surface;
-		hr = lpTexture->GetSurfaceLevel(0, &surface);
-
-
-		if (FAILED(hr)) {
-			RELEASE(surface);
-			return false;
-		}
-
-		// サーフェイス情報から画像サイズを取得
-		D3DSURFACE_DESC surfaceInfo;
-		hr = surface->GetDesc(&surfaceInfo);
-
-		if (FAILED(hr)) {
-			return false;
-		}
-
-		// 画像の縦幅と横幅を取得
-		size.setSize(surfaceInfo.Width, surfaceInfo.Height);
-
-		RELEASE(surface);
-
-		return true;
 	}
 
 	const int Texture::getWidth()
@@ -118,33 +174,96 @@ namespace gnLib {
 
 	TextureSPtr Texture::createTexture(const string& _filePath)
 	{
-		//TextureSPtr result = std::make_shared<Texture>(_filePath);
 		return std::make_shared<Texture>(_filePath);
 	}
 
-	vector<RECT> Texture::spriteTexture(int _xSize, int _ySize, int _textureWidth, int _textureHeight)
+	TextureRegion Texture::spriteTexture(TextureSPtr& _texture, int _xNum, int _yNum)
 	{
-		int width{ _textureWidth / _xSize };
-		int height{ _textureHeight / _ySize };
+		return spriteTexture(_texture->getWidth(), _texture->getHeight(), _xNum, _yNum);
+	}
 
-		int size{ width * height };
-		vector<RECT> result(size);
+	TextureRegion Texture::spriteTexture(int _textureWidth, int _textureHeight, int _xNum, int _yNum)
+	{
+		int xSize{ _textureWidth  / _xNum };
+		int ySize{ _textureHeight / _yNum };
 
-		for (int i{}; i < height - 1; ++i) {
-			for (int j{}; j < width - 1; ++j) {
+		int size{ _xNum * _yNum };
+		vector<TextureRect> result(size);
 
-				auto index = static_cast<long>(i) * static_cast<long>(width) + static_cast<long>(j);
+		for (int i{}; i < _yNum; ++i) {
+			for (int j{}; j < _xNum; ++j) {
 
-				result[index] = RECT{ _xSize * j, _ySize * i, _xSize * (j + 1), _ySize * (i + 1) };
+				auto index = static_cast<long>(i) * static_cast<long>(_xNum) + static_cast<long>(j);
+
+				result[index] = TextureRect{
+					xSize * j,
+					ySize * i,
+					xSize * (j + 1),
+					ySize * (i + 1)
+				};
 			}
 		}
 
 		return result;
 	}
 
-	vector<RECT> Texture::spriteTexture(Texture& _texture, int _xSize, int _ySize)
+	namespace umImpl {
+
+	}
+
+	LPDIRECT3DTEXTURE9 cet()
 	{
-		return spriteTexture(_xSize, _ySize, _texture.getWidth(), _texture.getHeight());
+		return helper::createEmptyTexture(32, 32);
+	}
+
+	LPDIRECT3DTEXTURE9 ct(const string& _s)
+	{
+		return helper::createTexture(_s);
+	}
+
+	TextureTest::TextureTest(const string& _filePath)
+		: lpTexture(helper::createTexture(_filePath))
+		, size(helper::getTextureSize(lpTexture))
+		, emp(helper::createEmptyTexture(32, 32))
+		, esize(helper::getTextureSize(emp))
+	{
+
+	}
+
+	TextureTest::~TextureTest()
+	{
+		RELEASE(lpTexture);
+	}
+
+	// 初期化
+	void TextureTest::test()
+	{
+		// テクスチャにフォントビットマップ書き込み
+		D3DLOCKED_RECT lockedRect, copyRect;
+		// ロック
+		lpTexture->LockRect(0, &copyRect, NULL, D3DLOCK_READONLY);
+
+
+		// ロック
+		emp->LockRect(0, &lockedRect, NULL, D3DLOCK_DISCARD);
+		ZeroMemory(lockedRect.pBits, lockedRect.Pitch);
+
+		for (int y = 0; y < 32; ++y) {
+			for (int x = 0; x < 32; ++x) {
+				//(BYTE*)((lockedRect.pBits) + 1) = 0;
+				memcpy(
+					(BYTE*)lockedRect.pBits + lockedRect.Pitch * y + 4 * x, 
+					(BYTE*)copyRect.pBits + copyRect.Pitch * y + 4 * x,
+					sizeof(DWORD)
+				);
+			}
+		}
+		
+
+		emp->UnlockRect(0);
+
+		lpTexture->UnlockRect(0);
+
 	}
 
 }
