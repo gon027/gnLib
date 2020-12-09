@@ -63,7 +63,15 @@ namespace gnLib {
 			D3DXMATRIX mat;
 			D3DXMatrixIdentity(&mat);
 
-			D3DXVECTOR2 center{ texturePtr->getWidth() / 2.0f, texturePtr->getHeight() / 2.0f };  // 中心座標
+			auto rect = RECT{
+				_rect.left,
+				_rect.top,
+				_rect.right,
+				_rect.bottom
+			};
+
+			//D3DXVECTOR2 center{ texturePtr->getWidth() / 2.0f, texturePtr->getHeight() / 2.0f };  // 中心座標
+			D3DXVECTOR2 center{ (rect.right - rect.left) / 2.0f, (rect.bottom - rect.top) / 2.0f };  // 中心座標
 			D3DXVECTOR2 scale{ _isFlip ? -_scale.x : _scale.x , _scale.y };  // スケール
 			D3DXVECTOR2 pos{ _pos.x, _pos.y };         // 座標
 
@@ -81,13 +89,6 @@ namespace gnLib {
 				_angle,    // 回転角
 				&pos       // 座標
 			);
-
-			auto rect = RECT{ 
-				_rect.left,
-				_rect.top,
-				_rect.right,
-				_rect.bottom
-			};
 
 			GCSprite->getSprite()->SetTransform(&mat);
 			GCSprite->getSprite()->Draw(
