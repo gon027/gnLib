@@ -70,7 +70,6 @@ namespace gnLib {
 				_rect.bottom
 			};
 
-			//D3DXVECTOR2 center{ texturePtr->getWidth() / 2.0f, texturePtr->getHeight() / 2.0f };  // 中心座標
 			D3DXVECTOR2 center{ (rect.right - rect.left) / 2.0f, (rect.bottom - rect.top) / 2.0f };  // 中心座標
 			D3DXVECTOR2 scale{ _isFlip ? -_scale.x : _scale.x , _scale.y };  // スケール
 			D3DXVECTOR2 pos{ _pos.x, _pos.y };         // 座標
@@ -175,47 +174,5 @@ namespace gnLib {
 				0xFFFFFFFF
 			);
 		}
-	}
-}
-
-gnLib::umImpl::gnSprite::gnSprite()
-{
-}
-
-void gnLib::umImpl::gnSprite::setTexture(TextureTest* _texturePtr)
-{
-	texturePtr = _texturePtr;
-}
-
-void gnLib::umImpl::gnSprite::draw(const Vector2 _pos)
-{
-	if (texturePtr) {
-		D3DXMATRIX mat;
-		D3DXMatrixIdentity(&mat);
-
-		D3DXVECTOR2 center{ texturePtr->getSize().getWidth() / 2.0f, texturePtr->getSize().getHeight() / 2.0f };  // 中心座標
-		D3DXVECTOR2 scale{ 1.0f, 1.0f };  // スケール
-		D3DXVECTOR2 pos{ _pos.x, _pos.y };         // 座標
-
-		D3DXMatrixTransformation2D(
-			&mat,
-			&center,   // スケーリングするときの座標の中心
-			0.0f,
-			&scale,
-			&center,
-			0.0f,    // 回転角
-			&pos       // 座標
-		);
-
-		auto rect = RECT{ 0, 0, texturePtr->getSize().getWidth(), texturePtr->getSize().getHeight() };
-
-		GCSprite->getSprite()->SetTransform(&mat);
-		GCSprite->getSprite()->Draw(
-			texturePtr->getTexture2(),
-			&rect,
-			NULL,
-			NULL,
-			0xFFFFFFFF
-		);
 	}
 }

@@ -65,22 +65,6 @@ namespace gnLib {
 		float frame;
 		float animFps;
 	};
-
-	namespace umImpl {
-		class gnSprite {
-		public:
-			gnSprite();
-			~gnSprite() {};
-
-			void setTexture(TextureTest* _texturePtr);
-
-			void draw(const Vector2 _pos);
-
-		private:
-			TextureTest* texturePtr;		// テクスチャのポインタ
-			Size size;
-		};
-	}
 }
 
 #endif // !SPRITE_H

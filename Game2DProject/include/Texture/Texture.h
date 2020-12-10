@@ -64,46 +64,6 @@ namespace gnLib {
 		LPDIRECT3DTEXTURE9 lpTexture;
 		Size size;
 	};
-
-	class TextureTest {
-	public:
-		TextureTest(const string& _filePath);
-		~TextureTest();
-
-		void test();
-
-		LPDIRECT3DTEXTURE9 getTexture() {
-			return lpTexture;
-		}
-
-		LPDIRECT3DTEXTURE9 getTexture2() {
-			return emp;
-		}
-
-		Size getSize() {
-			return size;
-		}
-
-		Size geteSize() {
-			return esize;
-		}
-
-	private:
-		LPDIRECT3DTEXTURE9 lpTexture;
-		Size size;
-
-		LPDIRECT3DTEXTURE9 emp;
-		Size esize;
-	};
-
-	/*
-	class TextureRegion {
-	public:
-		TextureSPtr& getTexture();
-	private:
-		TextureSPtr tsp;
-	};
-	*/
 }
 
 #endif // !TEXTURE_H
