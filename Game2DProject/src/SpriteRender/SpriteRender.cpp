@@ -26,8 +26,6 @@ namespace gnLib {
 			GCGraphics,
 			&lpSprite
 		);
-		
-		assert(!hr);
 
 		if (FAILED(hr)) {
 			return false;

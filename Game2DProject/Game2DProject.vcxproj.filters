@@ -207,6 +207,9 @@
     <ClInclude Include="include\Object\Transform.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="include\Font\Font.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp">
@@ -296,9 +299,6 @@
     <ClCompile Include="src\Time\GameTime.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Audio_Test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="include\Object\Transform.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -309,6 +309,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Test_Texture2.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_Font.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Font\Font.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_Audio.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

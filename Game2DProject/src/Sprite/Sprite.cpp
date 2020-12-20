@@ -5,6 +5,7 @@
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/SpriteRender/SpriteRender.h"
 #include "../../include/Time/Time.h"
+#include "../../include/Vertex/Vertex2D.h"
 
 #include <winerror.h>
 
@@ -60,6 +61,8 @@ namespace gnLib {
 	void Sprite::draw(const TextureRect& _rect, const Vector2& _pos, const Vector2& _scale, float _angle, bool _isCenter, bool _isFlip)
 	{
 		if (texturePtr) {
+
+
 			D3DXMATRIX mat;
 			D3DXMatrixIdentity(&mat);
 

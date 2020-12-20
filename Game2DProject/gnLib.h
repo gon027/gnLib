@@ -22,6 +22,9 @@
 // スプライト
 #include "include/Sprite/Sprite.h"
 
+// フォント
+#include "include/Font/Font.h"
+
 // 色
 #include "include/Color/Color.h"
 
@@ -51,12 +54,6 @@
 
 // CircleCollider
 #include "include/Collider/CircleCollider.h"
-
-// 文字列描画
-#include "include/StringRender/StringRender.h"
-
-// ノイズ
-#include "include/Noise/Noise.h"
 
 // ベクトル( 2D )
 #include "include/Vector/Vector2.h"

@@ -3,21 +3,30 @@
 #include "../../include/Graphics/Graphics.h"
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/Window/Window.h"
+#include "../../include/SpriteRender/SpriteRender.h"
 
 #include <stdio.h>
 #include <stdarg.h>
 
 namespace gnLib {
 
-	void StringRender::drawText(const string& _str, int _x, int _y, Color _color)
+	void StringRender::drawText(int _x, int _y, const string& _str, Color _color)
 	{
-		// left, top, right, bottom
-		RECT rc{ 
-			_x, _y, WindowInfo::Width, WindowInfo::Height
+		// スプライトの行列を取得
+		D3DXMATRIX mat;
+		GCoreIns->getSprite()->getSprite()->GetTransform(&mat);
+
+		auto size = _str.size();
+
+		RECT rc{
+			static_cast<LONG>(_x - mat._41),
+			static_cast<LONG>(_y - mat._42),
+			static_cast<LONG>(_x + (10 * size) - mat._41),
+			static_cast<LONG>(_y + 20 - mat._42)
 		};
 
-		GCStrDevice->DrawText(
-			NULL,
+		GCStrDevice->DrawTextA(
+			GCoreIns->getSprite()->getSprite(),
 			_str.c_str(),
 			-1,
 			&rc,
@@ -26,38 +35,28 @@ namespace gnLib {
 		);
 	}
 
-	void StringRender::drawText(int _x, int _y, const char* _str, Color _color)
-	{
-		// left, top, right, bottom
-		RECT rc{
-			_x, _y, WindowInfo::Width, WindowInfo::Height
-		};
-
-		GCStrDevice->DrawText(
-			NULL,
-			_str,
-			-1,
-			&rc,
-			NULL,
-			_color.getColor()
-		);
-	}
-
-	void StringRender::drawText(int _x, int _y, const string& _str, Color _color)
-	{
-		drawText(_x, _y, _str.c_str(), _color);
-	}
-
 	void StringRender::drawFormatText(int _x, int _y, Color _color, const char* format, ...)
 	{
 		va_list args;
 		int len;
-		char* buffer;
+		//char* buffer;
 
 		va_start(args, format);
 		len = _vscprintf(format, args) + 1;
 
+#if _UNICODE
+		char* buffer;
 		buffer = (char*)malloc(len * sizeof(char));
+#else
+		//wchar_t* buffer;
+		//buffer = (wchar_t*)malloc(len * sizeof(wchar_t));
+
+		
+#endif
+
+		char* buffer;
+		buffer = (char*)malloc(len * sizeof(char));
+
 		if (buffer != nullptr) {
 			vsprintf_s(buffer, len, format, args);
 			drawText(_x, _y, buffer, _color);

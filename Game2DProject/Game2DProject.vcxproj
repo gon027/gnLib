@@ -31,14 +31,14 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -162,6 +162,7 @@
     <ClInclude Include="include\Common\Math.h" />
     <ClInclude Include="include\Common\SmartPtr.h" />
     <ClInclude Include="include\Debug\Debug.h" />
+    <ClInclude Include="include\Font\Font.h" />
     <ClInclude Include="include\GameCore\GameCore.h" />
     <ClInclude Include="include\gnLibMain.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
@@ -190,7 +191,9 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Audio_Test.cpp" />
+    <ClCompile Include="src\Font\Font.cpp" />
+    <ClCompile Include="Test_Audio.cpp" />
+    <ClCompile Include="Test_Font.cpp" />
     <ClCompile Include="Test_Object.cpp" />
     <ClCompile Include="include\Object\Transform.cpp" />
     <ClCompile Include="src\Time\GameTime.cpp" />

@@ -1,5 +1,6 @@
-#include "gnLib.h"
+//#include "gnLib.h"
 
+/*
 void gnMain() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
@@ -11,3 +12,4 @@ void gnMain() {
 		app.end();
 	}
 }
+*/
