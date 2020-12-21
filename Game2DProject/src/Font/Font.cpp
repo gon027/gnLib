@@ -46,7 +46,7 @@ namespace gnLib {
 
 	void Font::drawText(Vector2 _pos, const string& _str, Color _color)
 	{
-		drawText(_pos.x, _pos.y, _str, _color);
+		drawText(static_cast<int>(_pos.x), static_cast<int>(_pos.y), _str, _color);
 	}
 
 	void Font::drawText(int _x, int _y, const string& _str, Color _color)
@@ -70,7 +70,7 @@ namespace gnLib {
 				_str.c_str(),
 				-1,
 				&rc,
-				NULL,
+				DT_NOCLIP | DT_CENTER,
 				_color.getColor()
 			);
 		}

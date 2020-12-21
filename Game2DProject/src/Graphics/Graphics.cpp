@@ -72,6 +72,7 @@ namespace gnLib {
 
 		// アルファブレンディングを行う
 		device->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+		device->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
 		// 透過処理を行う
 		device->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
 
