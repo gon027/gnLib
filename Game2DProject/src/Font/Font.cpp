@@ -52,17 +52,22 @@ namespace gnLib {
 	void Font::drawText(int _x, int _y, const string& _str, Color _color)
 	{
 		if (lpFont) {
-			// スプライトの行列を取得
-			D3DXMATRIX mat;
-			GCoreIns->getSprite()->getSprite()->GetTransform(&mat);
+			{
+				// 文字列描画用の単位行列を作成
+				D3DXMATRIX mat;
+				D3DXMatrixIdentity(&mat);
+
+				// D3DXSPRITEで文字列を描画する前のSpriteで使った行列計算反映されるため
+				// 単位行列をセットして元に戻す
+				GCoreIns->getSprite()->getSprite()->SetTransform(&mat);
+			}
 
 			auto size = _str.size();
-
 			RECT rc{
-				static_cast<LONG>(_x - mat._41),
-				static_cast<LONG>(_y - mat._42),
-				static_cast<LONG>(_x + (fontInfo.width * size) - mat._41),
-				static_cast<LONG>(_y + fontInfo.height - mat._42)
+				static_cast<LONG>(_x),
+				static_cast<LONG>(_y),
+				static_cast<LONG>(_x + (fontInfo.width * size)),
+				static_cast<LONG>(_y + fontInfo.height)
 			};
 
 			lpFont->DrawTextA(
@@ -70,7 +75,7 @@ namespace gnLib {
 				_str.c_str(),
 				-1,
 				&rc,
-				DT_NOCLIP | DT_CENTER,
+				DT_NOCLIP,
 				_color.getColor()
 			);
 		}
