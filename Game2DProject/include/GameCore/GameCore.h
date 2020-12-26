@@ -7,7 +7,7 @@
 using std::string;
 
 #define GCoreIns        GameCore::get()
-#define GCWindow        GameCore::get()->getGraphic()->getWindow()
+#define GCWindow        GameCore::get()->getWindow()
 #define GCGraphics      GameCore::get()->getGraphic()->getDevice()
 #define GCInputMouse    GameCore::get()->getMouse()
 #define GCInputKeyBoard GameCore::get()->getKeyBoard()
@@ -16,6 +16,7 @@ using std::string;
 #define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
 #define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
 #define GCGameTime      GameCore::get()->getGameTime()
+#define GCAudio         GameCore::get()->getAudioListener()
 
 namespace gnLib {
 
@@ -27,6 +28,7 @@ namespace gnLib {
 	class RenderDevice;
 	class Console;
 	class GameTime;
+	class AudioListener;
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
@@ -51,6 +53,7 @@ namespace gnLib {
 		SpriteRender*  getSprite();
 		RenderDevice*  getRenderDevice();
 		GameTime*      getGameTime();
+		AudioListener* getAudioListener();
 
 	private:
 		UniquePtr<Window>        window;        // ウインドウ
@@ -60,6 +63,7 @@ namespace gnLib {
 		UniquePtr<MouseInput>    mouse;         // マウス
 		UniquePtr<RenderDevice>  renderDevice;	// レンダーデバイス
 		UniquePtr<GameTime>      gameTime;      // 時間
+		UniquePtr<AudioListener> audioListener; // オーディオリスナー
 	};
 
 }

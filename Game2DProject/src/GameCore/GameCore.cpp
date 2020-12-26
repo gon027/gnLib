@@ -6,6 +6,7 @@
 #include "../../include/SpriteRender/SpriteRender.h"
 #include "../../include/Render/Render.h"
 #include "../../include/Time/GameTime.h"
+#include "../../include/Audio/AudioListener.h"
 
 namespace gnLib {
 
@@ -19,6 +20,7 @@ namespace gnLib {
 		, spriteRender(new SpriteRender{})
 		, renderDevice(new RenderDevice{})
 		, gameTime(new GameTime{})
+		, audioListener(new AudioListener{})
 	{
 
 		if (Instance == nullptr) {
@@ -55,6 +57,8 @@ namespace gnLib {
 		spriteRender.get()->init();
 
 		renderDevice.get()->init(graphics.get());
+
+		audioListener.get()->init();
 	}
 
 	void GameCore::update()
@@ -96,6 +100,11 @@ namespace gnLib {
 	GameTime* GameCore::getGameTime()
 	{
 		return gameTime.get();
+	}
+
+	AudioListener* GameCore::getAudioListener()
+	{
+		return audioListener.get();
 	}
 
 }

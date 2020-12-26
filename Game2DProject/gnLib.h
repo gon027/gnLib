@@ -16,6 +16,9 @@
 // 入力
 #include "include/Input/Input.h"
 
+// 音
+#include "include/Audio/AudioSource.h"
+
 // テクスチャ
 #include "include/Texture/Texture.h"
 
