@@ -21,14 +21,26 @@ namespace gnLib {
 		// ‰¹‚ğ–Â‚ç‚·
 		virtual void play(PlayType _type = PlayType::Nomal) override;
 
+		// ‰¹—Ê‚ğ’²®‚·‚é
+		virtual void setVolume(long _volume) override;
+
+		// ‰¹—Ê‚ğæ“¾
+		virtual long getVolume() override;
+
+		// Ä¶ˆÊ’u‚ğİ’è‚·‚é
+		virtual void setPosition(unsigned long _position) override;
+
 		// ˆê’â~
 		virtual void pause() override;
 
 		// ’â~
 		virtual void stop() override;
 
+		// ‰¹—Ê‚ğæ“¾
+
 	private:
 		IDirectSoundBuffer* soundBuffer = nullptr;
+		long volume;
 	};
 
 }

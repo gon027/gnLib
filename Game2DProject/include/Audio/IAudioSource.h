@@ -26,6 +26,15 @@ namespace gnLib {
 		// ‰¹‚ğ–Â‚ç‚·
 		virtual void play(PlayType _type = PlayType::Nomal) = 0;
 
+		// ‰¹—Ê‚ğ’²®‚·‚é
+		virtual void setVolume(long _volume) = 0;
+
+		// ‰¹—Ê‚ğæ“¾
+		virtual long getVolume() = 0;
+
+		// Ä¶ˆÊ’u‚ğİ’è‚·‚é
+		virtual void setPosition(unsigned long _position) = 0;
+
 		// ˆê’â~
 		virtual void pause() = 0;
 

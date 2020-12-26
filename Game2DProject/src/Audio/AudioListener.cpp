@@ -45,7 +45,7 @@ namespace gnLib {
 		}
 
 		// ‹¦’²ƒŒƒxƒ‹‚ðÝ’è
-		hr = audioDevice.dSound->SetCooperativeLevel(GCWindow->getHWnd(), DSSCL_NORMAL);
+		hr = audioDevice.dSound->SetCooperativeLevel(GCWindow->getHWnd(), DSSCL_EXCLUSIVE | DSSCL_PRIORITY);
 		if (FAILED(hr)) {
 			return false;
 		}

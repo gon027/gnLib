@@ -2,6 +2,7 @@
 #include "../../include/Common/Macro.h"
 #include "../../include/Audio/AudioListener.h"
 #include "../../include/GameCore/GameCore.h"
+#include "../../include/Common/Math.h"
 
 namespace gnLib {
 
@@ -92,7 +93,7 @@ namespace gnLib {
 		// サウンドバッファの作成
 		DSBUFFERDESC dsDesc{};
 		dsDesc.dwSize = sizeof(DSBUFFERDESC);
-		dsDesc.dwFlags = DSBCAPS_GETCURRENTPOSITION2 | DSBCAPS_STATIC | DSBCAPS_LOCDEFER;
+		dsDesc.dwFlags = DSBCAPS_GETCURRENTPOSITION2 | DSBCAPS_STATIC | DSBCAPS_LOCDEFER | DSBCAPS_CTRLVOLUME;
 		dsDesc.dwBufferBytes = mSrcWaveData.cksize;
 		dsDesc.lpwfxFormat = wf2;
 		dsDesc.guid3DAlgorithm = DS3DALG_DEFAULT;
@@ -133,6 +134,23 @@ namespace gnLib {
     {
         soundBuffer->Play(0, 0, static_cast<DWORD>(_type));
     }
+
+	void AudioSource::setVolume(long _volume)
+	{
+		_volume = clamp(_volume, -10000L, 0L);
+		soundBuffer->SetVolume(_volume);
+	}
+
+	long AudioSource::getVolume()
+	{
+		soundBuffer->GetVolume(&volume);
+		return volume;
+	}
+
+	void AudioSource::setPosition(unsigned long _position)
+	{
+		soundBuffer->SetCurrentPosition(_position);
+	}
 
     void AudioSource::pause()
     {
