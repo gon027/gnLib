@@ -36,8 +36,6 @@ namespace gnLib {
 		// ’âŽ~
 		virtual void stop() override;
 
-		// ‰¹—Ê‚ðŽæ“¾
-
 	private:
 		IDirectSoundBuffer* soundBuffer = nullptr;
 		long volume;
