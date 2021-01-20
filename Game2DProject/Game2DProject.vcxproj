@@ -197,9 +197,9 @@
     <ClCompile Include="src\Audio\AudioSource.cpp" />
     <ClCompile Include="src\Audio\AudioListener.cpp" />
     <ClCompile Include="src\Font\Font.cpp" />
-    <ClCompile Include="Test_Audio.cpp" />
-    <ClCompile Include="Test_Font.cpp" />
-    <ClCompile Include="Test_Object.cpp" />
+    <ClCompile Include="Test\Test_Audio.cpp" />
+    <ClCompile Include="Test\Test_Font.cpp" />
+    <ClCompile Include="Test\Test_Object.cpp" />
     <ClCompile Include="include\Object\Transform.cpp" />
     <ClCompile Include="src\Time\GameTime.cpp" />
     <ClCompile Include="src\SpriteRender\SpriteRender.cpp" />
@@ -227,11 +227,11 @@
     <ClCompile Include="src\StringRender\StringRender.cpp" />
     <ClCompile Include="src\Texture\Texture.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
-    <ClCompile Include="Test_Main.cpp" />
-    <ClCompile Include="Test_Sprite.cpp" />
-    <ClCompile Include="Test_Texture.cpp" />
-    <ClCompile Include="Test_Texture2.cpp" />
-    <ClCompile Include="Test_Timer.cpp" />
+    <ClCompile Include="Test\Test_Main.cpp" />
+    <ClCompile Include="Test\Test_Sprite.cpp" />
+    <ClCompile Include="Test\Test_Texture.cpp" />
+    <ClCompile Include="Test\Test_Texture2.cpp" />
+    <ClCompile Include="Test\Test_Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
