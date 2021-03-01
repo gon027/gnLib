@@ -66,7 +66,7 @@ namespace gnLib {
 		float y = position.y;
 
 		std::vector<Vertex2D> circle(NUM);
-		circle[0] = Vertex2D{ x, y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f };
+		circle[0] = Vertex2D{ x + radius * cosf(0.0f),  y + radius * sin(0.0f), 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f };
 		for (int r = 1; r < NUM; ++r) {
 			float nx = x + radius * cosf(theta * (r - 1));
 			float ny = y + radius * sinf(theta * (r - 1));

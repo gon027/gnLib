@@ -24,6 +24,14 @@ namespace gnLib {
 		return min(max(_value, _min), _max);
 	}
 
+	// ƒxƒNƒgƒ‹‚ÌclampŠÖ”
+	inline Vector2 vecClamp(const Vector2& _vec, const Vector2& _min, const Vector2& _max) {
+		return{
+			min(_max.x, max(_vec.x, _min.x)),
+			min(_max.y, max(_vec.y, _min.y))
+		};
+	}
+
 	// ‹——£‚ğ‹‚ß‚é
 	constexpr float dist(float _x, float _y) {
 		return _x * _x + _y * _y;
