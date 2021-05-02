@@ -2,28 +2,45 @@
 #define APP_H
 
 #include <string>
-#include "../include/Common/SmartPtr.h"
-#include "../include/GameCore/GameCore.h"
 #include "../include/Vector/Vector2.h"
 
 namespace gnLib {
 
 	class Vector2;
 
-	class App {
-	public:
-		App(std::string _title = "App", int _width = 640, int _height = 480);
-		~App();
+	namespace App {
 
+		/// <summary>
+		/// ゲームライブラリの初期化
+		/// </summary>
+		/// <param name="_title"> ウインドウのタイトル </param>
+		/// <param name="_width"> ウインドウの幅 </param>
+		/// <param name="_height"> ウインドウの高さ </param>
+		/// <returns></returns>
+		bool init(std::string _title = "App", int _width = 640, int _height = 480);
+
+		/// <summary>
+		/// 更新関数
+		/// </summary>
+		/// <returns></returns>
 		bool update();
+
+		/// <summary>
+		/// 更新開始関数
+		/// </summary>
 		void begin();
+
+		/// <summary>
+		/// 更新終了関数
+		/// </summary>
 		void end();
 
-		// ウィンドウの幅と高さ
-		float getWidth() const;
-		float getHeight() const;
-		Vector2 getPos() const;
-	};
+		/// <summary>
+		/// ウインドウのサイズを取得する関数
+		/// </summary>
+		/// <returns> ウインドウのサイズ </returns>
+		const Vector2 getWindowSize();
+	}
 
 }
 

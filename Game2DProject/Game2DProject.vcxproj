@@ -201,6 +201,7 @@
     <ClCompile Include="src\Font\Font.cpp" />
     <ClCompile Include="Test\Test_Audio.cpp" />
     <ClCompile Include="Test\Test_Font.cpp" />
+    <ClCompile Include="Test\Test_NewMain.cpp" />
     <ClCompile Include="Test\Test_Object.cpp" />
     <ClCompile Include="include\Object\Transform.cpp" />
     <ClCompile Include="src\Time\GameTime.cpp" />

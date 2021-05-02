@@ -7,6 +7,7 @@
 // 5 : アニメーションの描画
 // 6 : 音を鳴らす
 
+/*
 enum class Mode {
 	Nomal,
 	Mouse,
@@ -135,3 +136,4 @@ void gnMain() {
 		app.end();
 	}
 }
+*/
