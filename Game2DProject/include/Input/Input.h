@@ -1,11 +1,7 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-// キーボード
-#include "KeyInput.h"
-
-// マウス
-#include "MouseInput.h"
+#include "Key.h"
 
 namespace gnLib {
 

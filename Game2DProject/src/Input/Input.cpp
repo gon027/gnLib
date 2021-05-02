@@ -1,6 +1,8 @@
 #include "../../include/Input/Input.h"
 #include "../../include/GameCore/GameCore.h"
 #include "../../include/Vector/Vector2.h"
+#include "../../include/Input/KeyInput.h"
+#include "../../include/Input/MouseInput.h"
 
 namespace gnLib {
 

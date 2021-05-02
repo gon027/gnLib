@@ -172,6 +172,7 @@
     <ClInclude Include="include\gnLibMain.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
+    <ClInclude Include="include\Input\Key.h" />
     <ClInclude Include="include\Input\KeyInput.h" />
     <ClInclude Include="include\Input\MouseInput.h" />
     <ClInclude Include="include\Line\Line.h" />
