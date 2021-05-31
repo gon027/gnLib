@@ -26,12 +26,54 @@ DirectX9を使った自作のゲームライブラリです。
 #include "gnLib"
 
 void gnMain(){
-  App app{"Window", 640, 480};
+  App::init( "Window", 640, 480 );
   
-  while(app.update()){
-    app.begin();
+  while(App::update()){
+    App::begin();
     
-    app.end();
+    App::end();
   }
 }
+```
+
+- 図形描画
+``` cpp
+// 矩形
+
+// 円
+
+// 線
+
+```
+
+- テクスチャ
+``` cpp
+// 画像読み込み
+
+// スプライト作成
+
+
+```
+
+- アニメーション
+``` cpp
+
+```
+
+- フォント
+``` cpp
+
+```
+
+- 入力 (Input)
+``` cpp
+// マウス
+
+// キーボード
+
+```
+
+- デバッグ
+``` cpp
+
 ```
