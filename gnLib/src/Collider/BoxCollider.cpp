@@ -27,11 +27,6 @@ namespace gnLib {
 		return bounds;
 	}
 
-	bool BoxCollider::onCollsion(const ICollider& _collider)
-	{
-		return Collision2D::isCollision(*this, *this);
-	}
-
 	ColliderType BoxCollider::getType() const
 	{
 		return ColliderType::Box;

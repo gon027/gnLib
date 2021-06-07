@@ -20,11 +20,6 @@ namespace gnLib {
 		virtual ColliderType getType() const = 0;
 
 		virtual bool isCollsion(const ICollider& _collider) = 0;
-
-	protected:
-		bool isCollsion(const BoxCollider& _collider);
-
-		bool isCollsion(const CircleCollider& _collider);
 	};
 
 }
