@@ -18,8 +18,6 @@ namespace gnLib {
 		virtual ~ICollider() {};
 
 		virtual ColliderType getType() const = 0;
-
-		virtual bool isCollsion(const ICollider& _collider) = 0;
 	};
 
 }
