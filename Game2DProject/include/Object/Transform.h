@@ -9,7 +9,7 @@ namespace gnLib {
 	class Transform {
 	public:
 		Transform();
-		~Transform() = default;;
+		~Transform() = default;
 
 		// À•W‚ğİ’è‚·‚é
 		void setPos(float _x, float _y);

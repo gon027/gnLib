@@ -16,15 +16,12 @@ namespace gnLib {
 		CircleCollider(float _x, float _y, float _r);
 		~CircleCollider() = default;
 
-		ColliderType getType() override;
-
-		bool isHitTest(const CircleCollider& _circleCollider) override;
-		bool isHitTest(const BoxCollider& _collider) override;
+		ColliderType getType() const override;
 
 		void update(const Vector2& _vector, float _radius);
 
 		const Vector2& getPos() const;
-		const float getRadius();
+		const float getRadius() const;
 
 	private:
 		Vector2 position;

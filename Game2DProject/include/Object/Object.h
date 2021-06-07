@@ -11,7 +11,12 @@ namespace gnLib {
 	// オブジェクトの基底クラス
 	class Object {
 	public:
-		Object() : isActive(true), transform() {};
+		Object() 
+			: name("Object")
+			, isActive(true)
+			, transform()
+		{ };
+
 		virtual ~Object() = default;
 
 		// オブジェクトの名前を変更する

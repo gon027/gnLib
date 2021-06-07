@@ -28,26 +28,26 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -159,6 +159,7 @@
     <ClInclude Include="include\Circle\Circle.h" />
     <ClInclude Include="include\Collider\CircleCollider.h" />
     <ClInclude Include="include\Collider\Collider2d.h" />
+    <ClInclude Include="include\Collider\Collision2D.h" />
     <ClInclude Include="include\Collider\ICollider.h" />
     <ClInclude Include="include\Collider\BoxCollider.h" />
     <ClInclude Include="include\Color\Color.h" />
@@ -199,6 +200,7 @@
   <ItemGroup>
     <ClCompile Include="src\Audio\AudioSource.cpp" />
     <ClCompile Include="src\Audio\AudioListener.cpp" />
+    <ClCompile Include="src\Collider\Collision2D.cpp" />
     <ClCompile Include="src\Font\Font.cpp" />
     <ClCompile Include="Test\Test_Audio.cpp" />
     <ClCompile Include="Test\Test_Font.cpp" />

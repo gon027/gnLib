@@ -2,6 +2,7 @@
 #define MATH_H
 
 #include "../Vector/Vector2.h"
+#include <cmath>
 
 namespace gnLib {
 
@@ -27,8 +28,8 @@ namespace gnLib {
 	// ÉxÉNÉgÉãÇÃclampä÷êî
 	inline Vector2 vecClamp(const Vector2& _vec, const Vector2& _min, const Vector2& _max) {
 		return{
-			min(_max.x, max(_vec.x, _min.x)),
-			min(_max.y, max(_vec.y, _min.y))
+			(std::min)(_max.x, (std::max)(_vec.x, _min.x)),
+			(std::min)(_max.y, (std::max)(_vec.y, _min.y))
 		};
 	}
 

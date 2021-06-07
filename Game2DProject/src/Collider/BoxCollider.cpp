@@ -1,62 +1,14 @@
 #include "../../include/Collider/BoxCollider.h"
 #include "../../include/Collider/CircleCollider.h"
 #include "../../include/Common/Math.h"
+#include "../../include/Collider/Collision2D.h"
 
 namespace gnLib {
 
-	bool BoxCollider::isHitTest(const BoxCollider& _collider)
+	BoxCollider::BoxCollider()
+		: position()
+		, bounds()
 	{
-		auto& cb = _collider.getBounds();
-
-		if (bounds.maxPos.x >= cb.minPos.x
-			&& bounds.minPos.x <= cb.maxPos.x
-			&& bounds.maxPos.y >= cb.minPos.y
-			&& bounds.minPos.y <= cb.maxPos.y)
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-	bool gnLib::BoxCollider::isHitTest(const CircleCollider& _collider)
-	{
-		auto c = _collider;
-		auto& b = bounds;
-
-		if (c.getPos().x > b.minPos.x && c.getPos().x < b.maxPos.x
-			&& c.getPos().y > b.minPos.y - c.getRadius() && c.getPos().y < b.maxPos.y + c.getRadius()) {
-			return true;
-		}
-
-		if (c.getPos().x > b.minPos.x - c.getRadius() && c.getPos().x < b.maxPos.x + c.getRadius()
-			&& c.getPos().y > b.minPos.y && c.getPos().y < b.maxPos.y) {
-			return true;
-		}
-
-		float r = c.getRadius() * c.getRadius();
-
-		float rx = bounds.minPos.x - c.getPos().x;
-		float ry = bounds.minPos.y - c.getPos().y;
-		float d = dist(rx, ry);
-		if (d < r) return true;
-
-		rx = bounds.maxPos.x - c.getPos().x;
-		ry = bounds.minPos.y - c.getPos().y;
-		d = dist(rx, ry);
-		if (d < r) return true;
-
-		rx = bounds.maxPos.x - c.getPos().x;
-		ry = bounds.maxPos.y - c.getPos().y;
-		d = dist(rx, ry);
-		if (d < r) return true;
-
-		rx = bounds.minPos.x - c.getPos().x;
-		ry = bounds.maxPos.y - c.getPos().y;
-		d = dist(rx, ry);
-		if (d < r) return true;
-		
-		return false;
 	}
 
 	void BoxCollider::update(const Vector2& _v, float _width, float _height)
@@ -65,8 +17,8 @@ namespace gnLib {
 		auto h = _height / 2.0f;
 
 		bounds.center = _v;
-		bounds.minPos.setPos(_v.x - w, _v.y - h);
-		bounds.maxPos.setPos(_v.x + w, _v.y + h);
+		bounds.minPos.setPos(_v.x, _v.y);
+		bounds.maxPos.setPos(_v.x + _width, _v.y + _height);
 		bounds.size.setPos(_width, _height);
 	}
 
@@ -75,9 +27,14 @@ namespace gnLib {
 		return bounds;
 	}
 
-	ColliderType BoxCollider::getType()
+	bool BoxCollider::onCollsion(const ICollider& _collider)
 	{
-		return ColliderType::BOX;
+		return Collision2D::isCollision(*this, *this);
+	}
+
+	ColliderType BoxCollider::getType() const
+	{
+		return ColliderType::Box;
 	}
 
 }

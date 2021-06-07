@@ -1,8 +1,7 @@
 #ifndef ICOLLIDER_H
 #define ICOLLIDER_H
 
-#pragma comment(lib, "d3dx9.lib")
-#include <d3dx9.h>
+#include "Collision2D.h"
 
 namespace gnLib {
 
@@ -10,18 +9,22 @@ namespace gnLib {
 	class CircleCollider;
 
 	enum class ColliderType : int {
-		BOX,
-		CIRCLE,
+		Box,
+		Circle,
 	};
 
 	class ICollider {
 	public:
 		virtual ~ICollider() {};
 
-		virtual ColliderType getType() = 0;
+		virtual ColliderType getType() const = 0;
 
-		virtual bool isHitTest(const BoxCollider& _collider) = 0;
-		virtual bool isHitTest(const CircleCollider& _collider) = 0;
+		virtual bool isCollsion(const ICollider& _collider) = 0;
+
+	protected:
+		bool isCollsion(const BoxCollider& _collider);
+
+		bool isCollsion(const CircleCollider& _collider);
 	};
 
 }

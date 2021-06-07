@@ -58,6 +58,9 @@
 // CircleCollider
 #include "include/Collider/CircleCollider.h"
 
+// Õ“Ë”»’è
+#include "include/Collider/Collision2D.h"
+
 // ƒxƒNƒgƒ‹( 2D )
 #include "include/Vector/Vector2.h"
 
