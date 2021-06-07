@@ -64,6 +64,11 @@ namespace gnLib {
 		GCWindow->setWindowPosition(_x, _y);
 	}
 
+	void App::setColor(const Color& _color)
+	{
+		GCoreIns->getGraphic()->setColor(_color);
+	}
+
 	const Vector2 App::getWindowSize() {
 		return {
 			static_cast<float>(WindowInfo::Width),

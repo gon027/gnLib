@@ -5,6 +5,7 @@ namespace gnLib {
 	Graphics::Graphics()
 		: pD3D9(nullptr)
 		, device(nullptr)
+		, color(Color{ 0x00, 0xFF, 0xFF })
 	{
 
 	}
@@ -81,12 +82,17 @@ namespace gnLib {
 
 	void Graphics::begin() noexcept {
 		device->BeginScene();
-		device->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0x00, 0xFF, 0xFF), 1.0, 0);
+		device->Clear(0, NULL, D3DCLEAR_TARGET, color.getColor(), 1.0, 0);
 	}
 
 	void Graphics::end() noexcept {
 		device->EndScene();
 		device->Present(NULL, NULL, NULL, NULL);
+	}
+
+	void Graphics::setColor(const Color& _color)
+	{
+		color = _color;
 	}
 
 	IDirect3D9 * Graphics::getInterface() const

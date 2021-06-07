@@ -28,68 +28,14 @@
     <ClCompile Include="Test\Test_Timer.cpp">
       <Filter>Test</Filter>
     </ClCompile>
-    <ClCompile Include="src\App.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\AudioListener.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\AudioSource.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Color\Color.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Debug\Debug.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Font\Font.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameCore\GameCore.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Time\GameTime.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gnLibMain.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Render\Render.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Sprite\Sprite.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SpriteRender\SpriteRender.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\StringRender\StringRender.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Texture\Texture.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Time\Time.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="include\Object\Transform.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="include\Vector\Vector2.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="include\Vector\Vector3.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="gnLibCore\src\GraphicsRender.cpp">
       <Filter>core\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Window\Window.cpp">
-      <Filter>Window</Filter>
+      <Filter>core\Window</Filter>
     </ClCompile>
     <ClCompile Include="src\Graphics\Graphics.cpp">
-      <Filter>Graphics</Filter>
+      <Filter>core\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="src\Circle\Circle.cpp">
       <Filter>Shape</Filter>
@@ -124,67 +70,64 @@
     <ClCompile Include="src\Input\Input.cpp">
       <Filter>Input</Filter>
     </ClCompile>
+    <ClCompile Include="src\Audio\AudioListener.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Color\Color.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameCore\GameCore.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time\GameTime.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gnLibMain.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Render.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpriteRender\SpriteRender.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringRender\StringRender.cpp">
+      <Filter>core\gnLibCore</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Vector\Vector2.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Vector\Vector3.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Debug\Debug.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Audio\AudioSource.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Font\Font.cpp">
+      <Filter>core\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time\Time.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture\Texture.cpp">
+      <Filter>core\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprite\Sprite.cpp">
+      <Filter>core\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Object\Transform.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\App.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Audio\AudioListener.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Audio\AudioSource.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Color\Color.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Debug\Debug.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Font\Font.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameCore\GameCore.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Time\GameTime.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="gnLib.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gnLibMain.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Audio\IAudioSource.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Noise\Noise.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Object\Object.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Render\Render.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Sprite\Sprite.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SpriteRender\SpriteRender.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\StringRender\StringRender.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Texture\Texture.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Time\Time.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Object\Transform.h">
-      <Filter>include</Filter>
+      <Filter>gnLib</Filter>
     </ClInclude>
     <ClInclude Include="gnLibCore\include\GraphicsRender.h">
       <Filter>core\include</Filter>
@@ -193,10 +136,10 @@
       <Filter>core\interface</Filter>
     </ClInclude>
     <ClInclude Include="include\Window\Window.h">
-      <Filter>Window</Filter>
+      <Filter>core\Window</Filter>
     </ClInclude>
     <ClInclude Include="include\Graphics\Graphics.h">
-      <Filter>Graphics</Filter>
+      <Filter>core\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="include\Polygon\Polygon.h">
       <Filter>Shape</Filter>
@@ -270,16 +213,79 @@
     <ClInclude Include="include\Common\SmartPtr.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="include\Audio\AudioListener.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Color\Color.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameCore\GameCore.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Time\GameTime.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Audio\IAudioSource.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Render\Render.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SpriteRender\SpriteRender.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StringRender\StringRender.h">
+      <Filter>core\gnLibCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\App.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\Transform.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Time\Time.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Debug\Debug.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Font\Font.h">
+      <Filter>core\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Texture\Texture.h">
+      <Filter>core\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sprite\Sprite.h">
+      <Filter>core\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Audio\AudioSource.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="gnLibCore\interface\IWindow.h">
+      <Filter>core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="gnLibCore\interface\IGraphics.h">
+      <Filter>core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="gnLibCore\interface\IKeyInput.h">
+      <Filter>core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="gnLibCore\interface\IMouseInput.h">
+      <Filter>core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="gnLibCore\interface\IGameTime.h">
+      <Filter>core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gnLibMain.h">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Test">
       <UniqueIdentifier>{1145ca30-dd1c-404f-ac3f-f0380abca996}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{6ae7d543-203e-4355-9e00-51e7fc148fa3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{67d07c40-861a-4f13-9a6a-42c1071e7334}</UniqueIdentifier>
     </Filter>
     <Filter Include="core">
       <UniqueIdentifier>{8aafafde-c407-4640-a819-93c9445bad8e}</UniqueIdentifier>
@@ -293,12 +299,6 @@
     <Filter Include="core\interface">
       <UniqueIdentifier>{914317ae-5582-4ad4-b44e-924f830096c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Window">
-      <UniqueIdentifier>{d8aba7b5-c7c8-4afb-9a30-523ac2ef8317}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Graphics">
-      <UniqueIdentifier>{a8ee39fe-2aa0-448c-803d-71d9908555bd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shape">
       <UniqueIdentifier>{ec814320-8829-4087-b9fd-de5f351b2f11}</UniqueIdentifier>
     </Filter>
@@ -310,6 +310,39 @@
     </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{3038b5d5-d3eb-4c1d-97fe-f199b532bd6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{2ca4af29-4ed9-4fad-9a2d-fac1a842bf9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{a849e6c4-455e-4a21-bd3e-7f551baa87ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{4e4495f6-4285-4834-a800-367dc28bd726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{fd8b4d1b-b78f-4693-ace8-1ec6643dcf5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{116d07ab-7382-4b8e-9177-437d31f27e39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gnLib">
+      <UniqueIdentifier>{6ae7d543-203e-4355-9e00-51e7fc148fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\gnLibCore">
+      <UniqueIdentifier>{3a5223c2-613b-45c5-ae3d-536caca539c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Window">
+      <UniqueIdentifier>{d8aba7b5-c7c8-4afb-9a30-523ac2ef8317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Font">
+      <UniqueIdentifier>{783ea644-b0a2-4fe6-8253-e9413473b5bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Graphics">
+      <UniqueIdentifier>{a8ee39fe-2aa0-448c-803d-71d9908555bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\Texture">
+      <UniqueIdentifier>{8c32b8ec-6073-4086-a42f-bbf8f3e16cd4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -164,7 +164,12 @@
   <ItemGroup>
     <ClInclude Include="gnLib.h" />
     <ClInclude Include="gnLibCore\include\GraphicsRender.h" />
+    <ClInclude Include="gnLibCore\interface\IGameTime.h" />
+    <ClInclude Include="gnLibCore\interface\IGraphics.h" />
     <ClInclude Include="gnLibCore\interface\IGraphicsRender.h" />
+    <ClInclude Include="gnLibCore\interface\IKeyInput.h" />
+    <ClInclude Include="gnLibCore\interface\IMouseInput.h" />
+    <ClInclude Include="gnLibCore\interface\IWindow.h" />
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Audio\AudioListener.h" />
     <ClInclude Include="include\Audio\AudioSource.h" />
@@ -191,7 +196,6 @@
     <ClInclude Include="include\Input\KeyInput.h" />
     <ClInclude Include="include\Input\MouseInput.h" />
     <ClInclude Include="include\Line\Line.h" />
-    <ClInclude Include="include\Noise\Noise.h" />
     <ClInclude Include="include\Object\Object.h" />
     <ClInclude Include="include\Object\Transform.h" />
     <ClInclude Include="include\Point\Point.h" />

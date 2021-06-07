@@ -6,6 +6,7 @@
 
 namespace gnLib {
 
+	class Color;
 	class Vector2;
 
 	namespace App {
@@ -47,6 +48,12 @@ namespace gnLib {
 		/// <param name="_x"> x座標 </param>
 		/// <param name="_y"> y座標 </param>
 		void setWindowPosition(int _x, int _y);
+
+		/// <summary>
+		/// 背景色の設定
+		/// </summary>
+		/// <param name="_color"></param>
+		void setColor(const Color& _color);
 
 		/// <summary>
 		/// ウインドウのサイズを取得する関数
