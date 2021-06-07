@@ -13,7 +13,8 @@ namespace gnLib {
 			Size size{};
 			D3DXIMAGE_INFO imgInfo;
 			D3DXGetImageInfoFromFile(_filePath.c_str(), &imgInfo);
-			size.setSize(imgInfo.Width, imgInfo.Height);
+			size.width = imgInfo.Width;
+			size.height = imgInfo.Height;
 			return size;
 		}
 
@@ -46,7 +47,8 @@ namespace gnLib {
 			}
 
 			// ‰æ‘œ‚Ìc•‚Æ‰¡•‚ğæ“¾
-			size.setSize(surfaceInfo.Width, surfaceInfo.Height);
+			size.width = surfaceInfo.Width;
+			size.height = surfaceInfo.Height;
 
 			RELEASE(surface);
 
@@ -64,8 +66,8 @@ namespace gnLib {
 			hr = D3DXCreateTextureFromFileEx(
 				GCGraphics,
 				_filePath.c_str(),
-				size.getWidth(),                    // “Ç‚İ‚Ş‰æ‘œ‚Ì•
-				size.getHeight(),                    // “Ç‚İ‚Ş‰æ‘œ‚Ì‚‚³
+				size.width,                    // “Ç‚İ‚Ş‰æ‘œ‚Ì•
+				size.height,                    // “Ç‚İ‚Ş‰æ‘œ‚Ì‚‚³
 				D3DX_DEFAULT,                       
 				0,                                  
 				D3DFMT_UNKNOWN,                     
@@ -149,12 +151,12 @@ namespace gnLib {
 
 	const int Texture::getWidth()
 	{
-		return size.getWidth();
+		return size.width;
 	}
 
 	const int Texture::getHeight()
 	{
-		return size.getHeight();
+		return size.height;
 	}
 
 	const Size& Texture::getSize()

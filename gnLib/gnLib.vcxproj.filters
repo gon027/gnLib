@@ -135,9 +135,6 @@
     <ClInclude Include="include\Audio\AudioSource.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\Bounds\Bounds.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\Color\Color.h">
       <Filter>include</Filter>
     </ClInclude>
@@ -162,15 +159,6 @@
     <ClInclude Include="include\Audio\IAudioSource.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\Common\Lib.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Common\Macro.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Common\Math.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\Noise\Noise.h">
       <Filter>include</Filter>
     </ClInclude>
@@ -178,12 +166,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\Render\Render.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Size\Size.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Common\SmartPtr.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\Sprite\Sprite.h">
@@ -202,18 +184,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\Object\Transform.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vector\Vector2.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vector\Vector3.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vertex\Vertex2D.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vertex\Vertex3D.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="gnLibCore\include\GraphicsRender.h">
@@ -270,6 +240,36 @@
     <ClInclude Include="include\Collider\ICollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
+    <ClInclude Include="include\Vertex\Vertex3D.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vertex\Vertex2D.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector\Vector3.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector\Vector2.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Bounds\Bounds.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Lib.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Macro.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Math.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Size\Size.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\SmartPtr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Test">
@@ -307,6 +307,9 @@
     </Filter>
     <Filter Include="Collider">
       <UniqueIdentifier>{78742994-c46c-440e-bb25-957eed3904f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{3038b5d5-d3eb-4c1d-97fe-f199b532bd6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -117,12 +117,12 @@ namespace gnLib {
 		this->texturePtr = _texturePtr;
 
 		auto tSize = texturePtr->getSize();                       // テクスチャの全体のサイズ
-		int xSize = tSize.getWidth() / textureSize.getWidth();    // 分割するテクスチャの横の幅
-		int ySize = tSize.getHeight() / textureSize.getHeight();  // 分割するテクスチャの縦の幅
+		int xSize = tSize.width / textureSize.width;    // 分割するテクスチャの横の幅
+		int ySize = tSize.height / textureSize.height;  // 分割するテクスチャの縦の幅
 			
-		for (long y{ 0 }; y < textureSize.getHeight(); ++y) {
-			for (long x{ 0 }; x < textureSize.getWidth(); ++x) {
-				long index = y * static_cast<long>(textureSize.getWidth()) + x;
+		for (long y{ 0 }; y < textureSize.height; ++y) {
+			for (long x{ 0 }; x < textureSize.width; ++x) {
+				long index = y * static_cast<long>(textureSize.width) + x;
 				textureRect[index] = {
 					xSize * x,
 					ySize * y,
