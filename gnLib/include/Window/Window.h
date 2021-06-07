@@ -14,6 +14,22 @@ namespace gnLib {
 		static string WindowName = "App";
 	}
 
+	struct WindowSize {
+		int width;
+		int height;
+	};
+
+	struct WindowPosition {
+		int x;
+		int y;
+	};
+
+	// スクリーンの大きさ
+	struct ScreenSize {
+		int width;
+		int height;
+	};
+
 	class Window {
 	public:
 		Window(string _title = "App", int _width = 640, int _height = 480);
@@ -23,7 +39,11 @@ namespace gnLib {
 
 		bool init();	//ウインドウの設定
 
+		// ウインドウのタイトルを設定
 		void setTitle(const string& _title);
+
+		// ウインドウの位置を設定
+		void setWindowPosition(int _x, int _y);
 
 		const int getWidth() const;
 
@@ -37,10 +57,16 @@ namespace gnLib {
 		const HWND getHWnd() const;
 
 	private:
-		WNDCLASSEX winc;		//ウインドウの情報を格納する構造体
-		HINSTANCE hInstance;
-		HWND hwnd;				//ウインドウハンドル
+		ScreenSize getScreenSize() const;
 
+	private:
+		WNDCLASSEX winc;		// ウインドウの情報を格納する構造体
+		HINSTANCE hInstance;    // HInstance
+		HWND hwnd;				// ウインドウハンドル
+
+		ScreenSize screenSize;
+		WindowSize windowSize;
+		WindowPosition windowPosition;
 		string title;
 		int width;
 		int height;

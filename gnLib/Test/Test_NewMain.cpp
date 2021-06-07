@@ -2,7 +2,9 @@
 
 void gnMain() {
 	App::init("Window", 640, 480);
+	App::setWindowPosition(0, 90);
 
+	int x = 0;
 	while (App::update()) {
 		App::begin();
 
@@ -27,7 +29,10 @@ void gnMain() {
 		p.setPos({ 400, 100 });
 		p.setColor(Color::Blue);
 		p.draw();
-	
+
+		x += 1;
+		App::setWindowPosition(x, 90);
+		//Sleep(100);
 
 		App::end();
 	}

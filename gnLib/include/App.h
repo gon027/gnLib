@@ -36,6 +36,19 @@ namespace gnLib {
 		void end();
 
 		/// <summary>
+		/// ウインドウのタイトルを変更
+		/// </summary>
+		/// <param name="_title"></param>
+		void setTitle(const std::string& _title);
+
+		/// <summary>
+		/// ウインドウの位置を設定
+		/// </summary>
+		/// <param name="_x"> x座標 </param>
+		/// <param name="_y"> y座標 </param>
+		void setWindowPosition(int _x, int _y);
+
+		/// <summary>
 		/// ウインドウのサイズを取得する関数
 		/// </summary>
 		/// <returns> ウインドウのサイズ </returns>

@@ -54,6 +54,16 @@ namespace gnLib {
 		GCoreIns->getGraphic()->end();
 	}
 
+	void App::setTitle(const std::string& _title)
+	{
+		GCWindow->setTitle(_title);
+	}
+
+	void App::setWindowPosition(int _x, int _y)
+	{
+		GCWindow->setWindowPosition(_x, _y);
+	}
+
 	const Vector2 App::getWindowSize() {
 		return {
 			static_cast<float>(WindowInfo::Width),
