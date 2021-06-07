@@ -1,13 +1,12 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include "../Object/Object.h"
 #include "../Vector/Vector2.h"
 #include "../Color/Color.h"
 
 namespace gnLib {
 
-	class Line : public Object{
+	class Line {
 	public:
 		Line();
 		Line(const Vector2& _v1, const Vector2& _v2);

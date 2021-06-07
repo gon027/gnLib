@@ -17,6 +17,7 @@ using std::string;
 #define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
 #define GCGameTime      GameCore::get()->getGameTime()
 #define GCAudio         GameCore::get()->getAudioListener()
+#define GCGraphicsRender GameCore::get()->getGraphicsRender()
 
 namespace gnLib {
 
@@ -29,6 +30,10 @@ namespace gnLib {
 	class Console;
 	class GameTime;
 	class AudioListener;
+
+	namespace gnLibCore {
+		class IGraphicsRender;
+	}
 
 	// ゲームに使われる主要なクラスをまとめたクラス
 	class GameCore {
@@ -54,6 +59,7 @@ namespace gnLib {
 		RenderDevice*  getRenderDevice();
 		GameTime*      getGameTime();
 		AudioListener* getAudioListener();
+		gnLibCore::IGraphicsRender* getGraphicsRender();
 
 	private:
 		UniquePtr<Window>        window;        // ウインドウ
@@ -64,6 +70,7 @@ namespace gnLib {
 		UniquePtr<RenderDevice>  renderDevice;	// レンダーデバイス
 		UniquePtr<GameTime>      gameTime;      // 時間
 		UniquePtr<AudioListener> audioListener; // オーディオリスナー
+		UniquePtr<gnLibCore::IGraphicsRender> graphicsRender;
 	};
 
 }

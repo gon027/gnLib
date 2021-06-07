@@ -1,9 +1,6 @@
 #include "../../include/Line/Line.h"
 #include "../../include/GameCore/GameCore.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/Render/Render.h"
-#include "../../include/Vertex/Vertex2D.h"
+#include "../../gnLibCore/include/GraphicsRender.h"
 
 namespace gnLib {
 	
@@ -55,19 +52,12 @@ namespace gnLib {
 
 	void Line::draw()
 	{
-		D3DXVECTOR2 vLise[] = {
-			{start.x, start.y},
-			{end.x, end.y}
-		};
-		
-		GCLineDevice->SetAntialias(true);
-		GCLineDevice->SetWidth(weight);
-		GCLineDevice->Begin();
-		{
-			GCLineDevice->Draw(
-				vLise, 2, color.getColor()
-			);
-		}
-		GCLineDevice->End();
+		GCGraphicsRender->drawLine2D(
+			start.x, start.y,
+			end.x, end.y,
+			weight,
+			0.0f,
+			color
+		);
 	}
 }

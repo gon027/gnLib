@@ -1,10 +1,6 @@
 #include "../../include/Rect/Rect.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/Vertex/Vertex2D.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/Render/Render.h"
 #include "../../include/GameCore/GameCore.h"
-#include "../../include/Common/Math.h"
+#include "../../gnLibCore/include/GraphicsRender.h"
 
 namespace gnLib {
 
@@ -68,19 +64,14 @@ namespace gnLib {
 
 	void Rect::draw()
 	{
-		auto leftTop     = Vector2{ position.x, position.y };
-		auto leftBottom  = Vector2{ position.x, position.y + height };
-		auto rightTop    = Vector2{ position.x + width, position.y };
-		auto rightBottom = Vector2{ position.x + width, position.y + height };
-
-		Vertex2D vertex[] = {
-			{leftBottom.x,  leftBottom.y,  0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{leftTop.x,     leftTop.y,     0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{rightBottom.x, rightBottom.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-			{rightTop.x,    rightTop.y,    0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},
-		};
-
-		GCGraphics->SetFVF(FVF_CUSTOM2D);
-		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex, sizeof(Vertex2D));
+		GCGraphicsRender->drawRect2D(
+			position.x, 
+			position.y,
+			width,
+			height,
+			radian,
+			color
+		);
+	
 	}
 }

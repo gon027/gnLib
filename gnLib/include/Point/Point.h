@@ -1,13 +1,12 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include "../Object/Object.h"
 #include "../Vector/Vector2.h"
 #include "../Color/Color.h"
 
 namespace gnLib {
 
-	class Point : public Object{
+	class Point {
 	public:
 		Point();
 		Point(const Vector2& _pos);
@@ -21,9 +20,6 @@ namespace gnLib {
 
 		// ï`âÊ
 		void draw();
-
-		// ç¿ïWéÊìæ
-		Vector2 getPos() const;
 
 	private:
 		Vector2 position;

@@ -1,9 +1,6 @@
 #include "../../include/Point/Point.h"
 #include "../../include/GameCore/GameCore.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/Color/Color.h"
-#include "../../include/Vertex/Vertex2D.h"
+#include "../../gnLibCore/include/GraphicsRender.h"
 
 namespace gnLib {
 
@@ -33,23 +30,6 @@ namespace gnLib {
 
 	void Point::draw()
 	{
-		Vertex2D vertex[1] = { 
-			position.x, position.y, 0.0f, 1.0f, color.getColor(), 0.0f, 0.0f
-		};
-
-		GCGraphics->SetFVF(FVF_CUSTOM2D);
-		GCGraphics->DrawPrimitiveUP(
-			D3DPT_POINTLIST,
-			1,
-			vertex,
-			sizeof(Vertex2D)
-		);
+		GCGraphicsRender->drawPoint2D(position.x, position.y, color);
 	}
-
-	Vector2 Point::getPos() const
-	{
-		return position;
-	}
-
-
 }
