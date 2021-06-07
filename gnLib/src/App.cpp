@@ -1,12 +1,12 @@
-#include "../include/App.h"
-#include "../include/Window/Window.h"
-#include "../include/Graphics/Graphics.h"
-#include "../include/Render/Render.h"
-#include "../include/Input/Input.h"
-#include "../include/SpriteRender/SpriteRender.h"
-#include "../include/Common/SmartPtr.h"
-#include "../include/GameCore/GameCore.h"
-#include "../include/Time/GameTime.h"
+#include <App.h>
+#include <Window/Window.h>
+#include <Graphics/Graphics.h>
+#include <Render/Render.h>
+#include <Input/Input.h>
+#include <SpriteRender/SpriteRender.h>
+#include <Common/SmartPtr.h>
+#include <GameCore/GameCore.h>
+#include <Time/GameTime.h>
 
 #include <assert.h>
 

@@ -1,7 +1,7 @@
 #ifndef MATH_H
 #define MATH_H
 
-#include "../Vector/Vector2.h"
+#include <Vector/Vector2.h>
 #include <cmath>
 
 namespace gnLib {

@@ -1,9 +1,8 @@
 #ifndef RECT_H
 #define RECT_H
 
-#include "../Object/Object.h"
-#include "../Vector/Vector2.h"
-#include "../Color/Color.h"
+#include <Vector/Vector2.h>
+#include <Color/Color.h>
 
 namespace gnLib {
 

@@ -1,7 +1,7 @@
 #ifndef ICOLLIDER_H
 #define ICOLLIDER_H
 
-#include "Collision2D.h"
+#include <Collider/Collision2D.h>
 
 namespace gnLib {
 

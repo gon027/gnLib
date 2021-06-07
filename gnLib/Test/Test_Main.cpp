@@ -1,4 +1,4 @@
-#include "../gnLib.h"
+//#include "../gnLib.h"
 
 // 1 : ウインドウ自体の表示
 // 2 : マウスの入力テスト

@@ -3,9 +3,9 @@
 
 #include <string>
 #include <vector>
-#include "../Common/Lib.h"
-#include "../Common/SmartPtr.h"
-#include "../Size/Size.h"
+#include <Common/Lib.h>
+#include <Common/SmartPtr.h>
+#include <Size/Size.h>
 
 using std::string;
 using std::vector;

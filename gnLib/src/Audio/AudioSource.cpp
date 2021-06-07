@@ -1,13 +1,14 @@
-#include "../../include/Audio/AudioSource.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/Audio/AudioListener.h"
-#include "../../include/GameCore/GameCore.h"
-#include "../../include/Common/Math.h"
+#include <Audio/AudioSource.h>
+#include <Common/Macro.h>
+#include <Audio/AudioListener.h>
+#include <GameCore/GameCore.h>
+#include <Common/Math.h>
 
 namespace gnLib {
 
     AudioSource::AudioSource()
         : soundBuffer(nullptr)
+		, volume(0)
     {
     }
 

@@ -1,6 +1,6 @@
-#include "../../include/Circle/Circle.h"
-#include "../../include/GameCore/GameCore.h"
-#include "../../gnLibCore/include/GraphicsRender.h"
+#include <Circle/Circle.h>
+#include <GameCore/GameCore.h>
+#include <GraphicsRender.h>
 
 namespace gnLib {
 

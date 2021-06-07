@@ -1,11 +1,11 @@
-#include "../../include/Sprite/Sprite.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/Render/Render.h"
-#include "../../include/GameCore/GameCore.h"
-#include "../../include/SpriteRender/SpriteRender.h"
-#include "../../include/Time/Time.h"
-#include "../../include/Vertex/Vertex2D.h"
+#include <Sprite/Sprite.h>
+#include <Common/Macro.h>
+#include <Graphics/Graphics.h>
+#include <Render/Render.h>
+#include <GameCore/GameCore.h>
+#include <SpriteRender/SpriteRender.h>
+#include <Time/Time.h>
+#include <Vertex/Vertex2D.h>
 
 #include <winerror.h>
 

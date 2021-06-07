@@ -1,8 +1,8 @@
 #ifndef APP_H
 #define APP_H
 
+#include <Vector/Vector2.h>
 #include <string>
-#include "../include/Vector/Vector2.h"
 
 namespace gnLib {
 

@@ -1,4 +1,4 @@
-#include "../gnLib.h"
+#include <gnLib.h>
 
 void gnMain() {
 	App::init("Window", 640, 480);

@@ -1,8 +1,8 @@
-#include "../../include/Font/Font.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/GameCore/GameCore.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/SpriteRender/SpriteRender.h"
+#include <Font/Font.h>
+#include <Common/Macro.h>
+#include <GameCore/GameCore.h>
+#include <Graphics/Graphics.h>
+#include <SpriteRender/SpriteRender.h>
 
 #include <stdio.h>
 #include <stdarg.h>

@@ -1,12 +1,12 @@
-#include "../include/GraphicsRender.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/GameCore/GameCore.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/Vertex/Vertex2D.h"
-#include "../../include/Vector/Vector2.h"
-#include "../../include/Color/Color.h"
-#include "../../include/Common/Math.h"
-#include "../../include/Render/Render.h"
+#include <GraphicsRender.h>
+#include <Common/Macro.h>
+#include <GameCore/GameCore.h>
+#include <Graphics/Graphics.h>
+#include <Vertex/Vertex2D.h>
+#include <Vector/Vector2.h>
+#include <Color/Color.h>
+#include <Common/Math.h>
+#include <Render/Render.h>
 #include <vector>
 
 namespace gnLib {

@@ -1,7 +1,7 @@
-#include "../../include/Collider/BoxCollider.h"
-#include "../../include/Collider/CircleCollider.h"
-#include "../../include/Common/Math.h"
-#include "../../include/Collider/Collision2D.h"
+#include <Collider/BoxCollider.h>
+#include <Collider/Collision2D.h>
+#include <Collider/CircleCollider.h>
+#include <Common/Math.h>
 
 namespace gnLib {
 

@@ -2,12 +2,12 @@
 #define COLLIDER2D_H
 
 // 矩形のコライダー
-#include "BoxCollider.h"
+#include <Collider/BoxCollider.h>
 
 // 円のコライダー
-#include "CircleCollider.h"
+#include <Collider/CircleCollider.h>
 
 // 当たり判定
-#include "Collision2D.h"
+#include <Collider/Collision2D.h>
 
 #endif // !COLLIDER2D_H

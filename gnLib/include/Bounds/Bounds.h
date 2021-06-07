@@ -1,7 +1,7 @@
 #ifndef BOUNDS_H
 #define BOUNDS_H
 
-#include "../Vector/Vector2.h"
+#include <Vector/Vector2.h>
 
 namespace gnLib {
 

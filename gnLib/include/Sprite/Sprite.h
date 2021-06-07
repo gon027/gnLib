@@ -2,9 +2,9 @@
 #define SPRITE_H
 
 #include <vector>
-#include "../Vector/Vector2.h"
-#include "../Common/SmartPtr.h"
-#include "../Texture/Texture.h"
+#include <Vector/Vector2.h>
+#include <Common/SmartPtr.h>
+#include <Texture/Texture.h>
 
 using std::vector;
 

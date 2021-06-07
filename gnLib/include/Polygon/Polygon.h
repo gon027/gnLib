@@ -3,14 +3,13 @@
 
 #include <initializer_list>
 #include <vector>
-#include "../Object/Object.h"
-#include "../Vertex/Vertex2D.h"
-#include "../Vector/Vector2.h"
-#include "../Color/Color.h"
+#include <Vertex/Vertex2D.h>
+#include <Vector/Vector2.h>
+#include <Color/Color.h>
 
 namespace gnLib {
 
-	class Polygon : public Object{
+	class Polygon {
 	public:
 		Polygon(std::initializer_list<Vertex2D> _vertex);
 		Polygon(std::vector<Vertex2D> _vertex);

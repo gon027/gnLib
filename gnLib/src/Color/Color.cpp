@@ -1,4 +1,4 @@
-#include "../../include/Color/Color.h"
+#include <Color/Color.h>
 
 namespace gnLib {
 

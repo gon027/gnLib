@@ -1,8 +1,8 @@
-#include "../../include/Texture/Texture.h"
-#include "../../include/Common/Macro.h"
-#include "../../include/Graphics/Graphics.h"
-#include "../../include/Render/Render.h"
-#include "../../include/GameCore/GameCore.h"
+#include <Texture/Texture.h>
+#include <Common/Macro.h>
+#include <Graphics/Graphics.h>
+#include <Render/Render.h>
+#include <GameCore/GameCore.h>
 
 namespace gnLib {
 

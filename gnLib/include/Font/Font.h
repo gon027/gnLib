@@ -2,9 +2,9 @@
 #define FONT_H
 
 #include <string>
-#include "../Common/Lib.h"
-#include "../Vector/Vector2.h"
-#include "../Color/Color.h"
+#include <Common/Lib.h>
+#include <Vector/Vector2.h>
+#include <Color/Color.h>
 
 namespace gnLib {
 

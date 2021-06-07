@@ -1,6 +1,6 @@
-#include "../../include/Point/Point.h"
-#include "../../include/GameCore/GameCore.h"
-#include "../../gnLibCore/include/GraphicsRender.h"
+#include <Point/Point.h>
+#include <GameCore/GameCore.h>
+#include <GraphicsRender.h>
 
 namespace gnLib {
 

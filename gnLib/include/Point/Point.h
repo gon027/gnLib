@@ -1,8 +1,8 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include "../Vector/Vector2.h"
-#include "../Color/Color.h"
+#include <Vector/Vector2.h>
+#include <Color/Color.h>
 
 namespace gnLib {
 

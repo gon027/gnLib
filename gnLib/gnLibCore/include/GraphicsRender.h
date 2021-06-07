@@ -1,7 +1,7 @@
 #ifndef GRAPHICSRENDER_H
 #define GRAPHICSRENDER_H
 
-#include "../interface/IGraphicsRender.h"
+#include <IGraphicsRender.h>
 
 namespace gnLib {
 

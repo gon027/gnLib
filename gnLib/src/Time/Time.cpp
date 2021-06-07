@@ -1,6 +1,6 @@
-#include "../../include/Time/Time.h"
-#include "../../include/Time/GameTime.h"
-#include "../../include/GameCore/GameCore.h"
+#include <Time/Time.h>
+#include <Time/GameTime.h>
+#include <GameCore/GameCore.h>
 
 namespace gnLib {
 

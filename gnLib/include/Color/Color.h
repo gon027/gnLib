@@ -1,7 +1,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#include "../Common/Lib.h"
+#include <Common/Lib.h>
 
 namespace gnLib {
 

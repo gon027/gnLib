@@ -1,9 +1,9 @@
 #ifndef BOXCOLLIDER_H
 #define BOXCOLLIDER_H
 
-#include "ICollider.h"
-#include "../Vector/Vector2.h"
-#include "../Bounds/Bounds.h"
+#include <Collider/ICollider.h>
+#include <Vector/Vector2.h>
+#include <Bounds/Bounds.h>
 
 namespace gnLib {
 

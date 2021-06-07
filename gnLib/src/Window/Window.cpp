@@ -1,5 +1,6 @@
-#include "../../include/Window/Window.h"
-#include "../../include/Window/WinProc.h"
+#include <Window/Window.h>
+#include <Window/WinProc.h>
+#include <App.h>
 
 namespace gnLib {
 

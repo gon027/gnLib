@@ -1,9 +1,8 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include "../../include/Object/Object.h"
-#include "../../include/Vector/Vector2.h"
-#include "../../include/Color/Color.h"
+#include <Vector/Vector2.h>
+#include <Color/Color.h>
 
 namespace gnLib {
 
