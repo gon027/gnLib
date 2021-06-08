@@ -7,7 +7,7 @@
 #include "../../include/Render/Render.h"
 #include "../../include/Time/GameTime.h"
 #include "../../include/Audio/AudioListener.h"
-#include "../../gnLibCore/include/GraphicsRender.h"
+#include <GraphicsRender/GraphicsRender.h>
 
 namespace gnLib {
 

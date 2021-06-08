@@ -2,7 +2,7 @@
 #define GAMECORE_H
 
 #include <string>
-#include "../../include/Common/SmartPtr.h"
+#include <Common/SmartPtr.h>
 
 using std::string;
 
@@ -11,13 +11,14 @@ using std::string;
 #define GCGraphics      GameCore::get()->getGraphic()->getDevice()
 #define GCInputMouse    GameCore::get()->getMouse()
 #define GCInputKeyBoard GameCore::get()->getKeyBoard()
+#define GCGraphicsRender GameCore::get()->getGraphicsRender()
+#define GCAudio         GameCore::get()->getAudioListener()
+#define GCGameTime      GameCore::get()->getGameTime()
+
 #define GCSprite        GameCore::get()->getSprite()
 #define GCRenderDevice  GameCore::get()->getRenderDevice()
 #define GCLineDevice    GameCore::get()->getRenderDevice()->getLineDevice()
 #define GCStrDevice     GameCore::get()->getRenderDevice()->getFontDevice()
-#define GCGameTime      GameCore::get()->getGameTime()
-#define GCAudio         GameCore::get()->getAudioListener()
-#define GCGraphicsRender GameCore::get()->getGraphicsRender()
 
 namespace gnLib {
 

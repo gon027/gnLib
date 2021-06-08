@@ -37,7 +37,8 @@ namespace gnLib {
 
 		void initWindow(const string& _title, int _width, int _height);
 
-		bool init();	//ウインドウの設定
+		//ウインドウの設定
+		bool init();	
 
 		// ウインドウのタイトルを設定
 		void setTitle(const string& _title);

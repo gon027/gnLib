@@ -1,6 +1,6 @@
 #include <Line/Line.h>
 #include <GameCore/GameCore.h>
-#include <GraphicsRender.h>
+#include <GraphicsRender/GraphicsRender.h>
 
 namespace gnLib {
 	

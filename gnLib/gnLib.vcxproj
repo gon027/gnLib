@@ -165,7 +165,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="gnLib.h" />
-    <ClInclude Include="gnLibCore\include\GraphicsRender.h" />
     <ClInclude Include="gnLibCore\interface\IGameTime.h" />
     <ClInclude Include="gnLibCore\interface\IGraphics.h" />
     <ClInclude Include="gnLibCore\interface\IGraphicsRender.h" />
@@ -192,6 +191,7 @@
     <ClInclude Include="include\Font\Font.h" />
     <ClInclude Include="include\GameCore\GameCore.h" />
     <ClInclude Include="include\gnLibMain.h" />
+    <ClInclude Include="include\GraphicsRender\GraphicsRender.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
     <ClInclude Include="include\Input\Key.h" />
@@ -218,11 +218,11 @@
     <ClInclude Include="include\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gnLibCore\src\GraphicsRender.cpp" />
     <ClCompile Include="src\Audio\AudioSource.cpp" />
     <ClCompile Include="src\Audio\AudioListener.cpp" />
     <ClCompile Include="src\Collider\Collision2D.cpp" />
     <ClCompile Include="src\Font\Font.cpp" />
+    <ClCompile Include="src\GraphicsRender\GraphicsRender.cpp" />
     <ClCompile Include="Test\Test_Audio.cpp" />
     <ClCompile Include="Test\Test_Font.cpp" />
     <ClCompile Include="Test\Test_NewMain.cpp" />

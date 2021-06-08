@@ -1,4 +1,4 @@
-#include <GraphicsRender.h>
+#include <GraphicsRender/GraphicsRender.h>
 #include <Common/Macro.h>
 #include <GameCore/GameCore.h>
 #include <Graphics/Graphics.h>
@@ -66,10 +66,28 @@ namespace gnLib {
 
 		void GraphicsRender::drawLine2D(float _sx, float _sy, float _gx, float _gy, float _weight, float _r, const Color& _color)
 		{
+			
+			/*
+			float weight = _weight / 2.0f;
+
+			auto dist = (Vector2{ _gx, _gy } - Vector2{ _sx, _sy }).normalized();
+			//auto a = {}
+
+			std::vector<Vertex2D> vertex {
+				{ _sx + (-dist.y) * weight, _sy - dist.x * weight, 0.0f, 1.0f, _color.getColor(), 0.0f, 0.0f},
+				{ _sx - (-dist.y) * weight, _sy + dist.x * weight, 0.0f, 1.0f, _color.getColor(), 0.0f, 0.0f},
+				{ _gx + (-dist.y) * weight, _gy - dist.x * weight, 0.0f, 1.0f, _color.getColor(), 0.0f, 0.0f},
+				{ _gx - (-dist.y) * weight, _gy + dist.x * weight, 0.0f, 1.0f, _color.getColor(), 0.0f, 0.0f},
+			};
+
+			GCGraphics->SetFVF(FVF_CUSTOM2D);
+			GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex.data(), sizeof(Vertex2D));
+			*/
+
 			D3DXVECTOR2 vLise[] = {
 				{_sx, _sy}, {_gx, _gy}
 			};
-
+			
 			GCLineDevice->SetAntialias(true);
 			GCLineDevice->SetWidth(_weight);
 			GCLineDevice->Begin();
@@ -78,7 +96,7 @@ namespace gnLib {
 					vLise, 2, _color.getColor()
 				);
 			}
-			GCLineDevice->End();
+			GCLineDevice->End();			
 		}
 
 		void GraphicsRender::drawPoint2D(float _x, float _y, const Color& _color)

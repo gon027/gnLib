@@ -141,7 +141,6 @@ namespace gnLib {
 		: lpTexture(helper::createTexture(_filePath))
 		, size(helper::getTextureSize(lpTexture))
 	{
-		//loadTexture(_filePath);
 	}
 
 	Texture::~Texture()

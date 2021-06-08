@@ -28,9 +28,6 @@
     <ClCompile Include="Test\Test_Timer.cpp">
       <Filter>Test</Filter>
     </ClCompile>
-    <ClCompile Include="gnLibCore\src\GraphicsRender.cpp">
-      <Filter>core\src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Window\Window.cpp">
       <Filter>core\Window</Filter>
     </ClCompile>
@@ -124,13 +121,13 @@
     <ClCompile Include="include\Object\Transform.cpp">
       <Filter>Object</Filter>
     </ClCompile>
+    <ClCompile Include="src\GraphicsRender\GraphicsRender.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gnLib.h">
       <Filter>gnLib</Filter>
-    </ClInclude>
-    <ClInclude Include="gnLibCore\include\GraphicsRender.h">
-      <Filter>core\include</Filter>
     </ClInclude>
     <ClInclude Include="gnLibCore\interface\IGraphicsRender.h">
       <Filter>core\interface</Filter>
@@ -280,6 +277,9 @@
       <Filter>core\interface</Filter>
     </ClInclude>
     <ClInclude Include="include\gnLibMain.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GraphicsRender\GraphicsRender.h">
       <Filter>core</Filter>
     </ClInclude>
   </ItemGroup>
