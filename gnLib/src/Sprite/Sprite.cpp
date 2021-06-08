@@ -28,7 +28,39 @@ namespace gnLib {
 		if (!texturePtr) {
 			return;
 		}
+		
+		auto width = texturePtr->getWidth() * _scale.x;
+		auto height = texturePtr->getHeight() * _scale.y;
 
+		auto center = _pos + Vector2{ width / 2, height / 2 };
+
+		auto leftTop     =  rotation(Vector2{ _pos.x, _pos.y }, center, _angle);
+		auto leftBottom  =  rotation(Vector2{ _pos.x, _pos.y + height }, center, _angle);
+		auto rightTop    =  rotation(Vector2{ _pos.x + width, _pos.y }, center, _angle);
+		auto rightBottom =  rotation(Vector2{ _pos.x + width, _pos.y + height }, center, _angle);
+
+		auto uv1 = Vector2{ 0.0f, 0.0f };
+		auto uv2 = Vector2{ 1.0f, 1.0f };
+
+		if (_isFlip) {
+			std::swap(uv1, uv2);
+			std::swap(uv1.y, uv2.y);
+		}
+
+		Color color{ Color::White };
+		
+		std::vector<Vertex2D> vertex = {
+			{leftBottom.x,  leftBottom.y,  0.0f, 1.0f, color.getColor(), uv1.x, uv2.y},  // 左下
+			{leftTop.x,     leftTop.y,     0.0f, 1.0f, color.getColor(), uv1.x, uv1.y},  // 左上
+			{rightBottom.x, rightBottom.y, 0.0f, 1.0f, color.getColor(), uv2.x, uv2.y},  // 右下
+			{rightTop.x,    rightTop.y,    0.0f, 1.0f, color.getColor(), uv2.x, uv1.y},  // 右上
+		};
+
+		GCGraphics->SetTexture(0, texturePtr->getTexture());
+		GCGraphics->SetFVF(FVF_CUSTOM2D);
+		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex.data(), sizeof(Vertex2D));
+		
+		/*
 		D3DXMATRIX mat;
 		D3DXMatrixIdentity(&mat);
 
@@ -61,30 +93,6 @@ namespace gnLib {
 			NULL,
 			0xFFFFFFFF
 		);
-
-		/*
-		auto width = texturePtr->getWidth() * _scale.x;
-		auto height = texturePtr->getHeight() * _scale.y;
-
-		auto center = _pos + Vector2{ width / 2, height / 2 };
-
-		auto leftTop     =  rotation(Vector2{ _pos.x, _pos.y }, center, _angle);
-		auto leftBottom  =  rotation(Vector2{ _pos.x, _pos.y + height }, center, _angle);
-		auto rightTop    =  rotation(Vector2{ _pos.x + width, _pos.y }, center, _angle);
-		auto rightBottom =  rotation(Vector2{ _pos.x + width, _pos.y + height }, center, _angle);
-
-		Color color{ Color::White };
-
-		std::vector<Vertex2D> vertex = {
-			{leftBottom.x,  leftBottom.y,  0.0f, 1.0f, color.getColor(), 0.0f, 1.0f},  // 右下
-			{leftTop.x,     leftTop.y,     0.0f, 1.0f, color.getColor(), 0.0f, 0.0f},  // 左上
-			{rightBottom.x, rightBottom.y, 0.0f, 1.0f, color.getColor(), 1.0f, 1.0f},  // 右下
-			{rightTop.x,    rightTop.y,    0.0f, 1.0f, color.getColor(), 1.0f, 0.0f},  // 右上
-		};
-
-		GCGraphics->SetTexture(0, texturePtr->getTexture());
-		GCGraphics->SetFVF(FVF_CUSTOM2D);
-		GCGraphics->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, vertex.data(), sizeof(Vertex2D));
 		*/
 	}
 

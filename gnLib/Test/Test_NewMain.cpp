@@ -5,6 +5,7 @@ void gnMain() {
 
 	TextureSPtr t{ new Texture("Assets/img/char.png") };
 
+	App::setWindowPosition(600, 300);
 
 	while (App::update()) {
 		App::begin();
@@ -25,19 +26,29 @@ void gnMain() {
 		Sprite s;
 		s.setTexture(t);
 		static float a = 0.0f;
-		a += Time::deltaTime();
-		s.draw({0, 0}, Vector2::One, 0, false, true);
+		//a += Time::deltaTime();
+		s.draw({ 0, 0 }, Vector2::One, a, false);
+		s.draw({300, 0}, Vector2::One, a, false, true);
 		*/
 
 
 		Line l;
-		l.setColor(Color::Blue);
-		l.setWeight(10.0f);
-		l.setPos(Input::getPos(), { 300, 300 });
-		//l.setPos({ 100, 100 }, { 300, 300 });
-		l.draw();
-
 		
+
+		for (int i = 0; i < 10; ++i) {
+			l.setColor(Color::Red);
+			l.setWeight(10.0f);
+			l.setPos({ float(i * 50), 0.0f}, { float(i * 50), 500 });
+			l.draw();
+		}
+
+		for (int j = 0; j < 10; ++j) {
+			l.setColor(Color::Blue);
+			l.setWeight(10.0f);
+			l.setPos({ 0, float(j * 50) }, { 500, float(j * 50) });
+			//l.setPos({ 100, 100 }, { 300, 300 });
+			l.draw();
+		}
 		
 
 		/*
