@@ -3,9 +3,9 @@
 void gnMain() {
 	App::init("Window", 640, 480);
 
-	TextureSPtr t{ new Texture("Assets/img/char.png") };
+	//TextureSPtr t{ new Texture("Assets/img/char.png") };
 
-	App::setWindowPosition(600, 300);
+	//App::setWindowPosition(600, 300);
 
 	while (App::update()) {
 		App::begin();
@@ -22,19 +22,18 @@ void gnMain() {
 			App::setTitle("OSOIIII!!!!");
 		}
 
+		
+		static float a = 0.0f;
+		a += Time::deltaTime();
 		/*
 		Sprite s;
 		s.setTexture(t);
-		static float a = 0.0f;
-		//a += Time::deltaTime();
 		s.draw({ 0, 0 }, Vector2::One, a, false);
 		s.draw({300, 0}, Vector2::One, a, false, true);
 		*/
 
-
+		/*
 		Line l;
-		
-
 		for (int i = 0; i < 10; ++i) {
 			l.setColor(Color::Red);
 			l.setWeight(10.0f);
@@ -46,10 +45,17 @@ void gnMain() {
 			l.setColor(Color::Blue);
 			l.setWeight(10.0f);
 			l.setPos({ 0, float(j * 50) }, { 500, float(j * 50) });
-			//l.setPos({ 100, 100 }, { 300, 300 });
 			l.draw();
 		}
+		*/
 		
+		std::vector<Vertex2D> ab{ {100, 100}, { 300, 100 }, { 150, 200 }, { 350, 200 }, { 200, 400 }, { 400, 400 }};
+		gnLib::Polygon p{ ab };
+		p.setColor(Color::Blue);
+		//p.translate({ a, 0.0f });
+		p.scale({2.0f, 1.0f});
+		//p.rotate(a);
+		p.draw();
 
 		/*
 		Rect r;

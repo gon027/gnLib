@@ -12,16 +12,37 @@ namespace gnLib {
 	class Polygon {
 	public:
 		Polygon(std::initializer_list<Vertex2D> _vertex);
-		Polygon(std::vector<Vertex2D> _vertex);
+		Polygon(const std::vector<Vertex2D>& _vertex);
 		~Polygon() = default;
 
-		void setPos(Vector2 _v);
-
+		/// <summary>
+		/// ポリゴンの色を設定
+		/// </summary>
+		/// <param name="_color"></param>
 		void setColor(Color _color);
 
-		void draw();
+		/// <summary>
+		/// ポリゴンを移動させる
+		/// </summary>
+		/// <param name="_delta"></param>
+		void translate(const Vector2& _delta);
 
-		void setVertex(std::vector<Vertex2D> _vertex);
+		/// <summary>
+		/// ポリゴンのスケールを変更する
+		/// </summary>
+		/// <param name="_scale"></param>
+		void scale(const Vector2& _scale = Vector2::One);
+
+		/// <summary>
+		/// 最初に追加した座標を中心に回転する
+		/// </summary>
+		/// <param name="_angle"> 回転角度 </param>
+		void rotate(float _angle);
+
+		/// <summary>
+		/// 描画
+		/// </summary>
+		void draw();
 
 	private:
 		std::vector<Vertex2D> vertex;
