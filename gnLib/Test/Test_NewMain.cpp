@@ -49,6 +49,7 @@ void gnMain() {
 		}
 		*/
 		
+
 		std::vector<Vertex2D> ab{ {100, 100}, { 300, 100 }, { 150, 200 }, { 350, 200 }, { 200, 400 }, { 400, 400 }};
 		gnLib::Polygon p{ ab };
 		p.setColor(Color::Blue);
@@ -65,6 +66,11 @@ void gnMain() {
 		r.draw();
 		*/
 
+		Rect r{
+		};
+		r.setPos(Input::getPos())
+		 .setColor(Color::Blue)
+		 .draw();
 
 		App::end();
 	}

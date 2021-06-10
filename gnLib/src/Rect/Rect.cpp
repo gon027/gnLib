@@ -31,35 +31,47 @@ namespace gnLib {
 	{
 	}
 
-	void Rect::setPos(float _x, float _y)
+	Rect& Rect::setPos(float _x, float _y)
 	{
 		position.setPos(_x, _y);
+
+		return *this;
 	}
 
-	void Rect::setPos(const Vector2 & _v)
+	Rect& Rect::setPos(const Vector2 & _v)
 	{
 		position.setPos(_v);
+
+		return *this;
 	}
 
-	void Rect::setSize(float _width, float _height)
+	Rect& Rect::setSize(float _width, float _height)
 	{
 		width = _width;
 		height = _height;
+
+		return *this;
 	}
 
-	void Rect::setSize(float _wh)
+	Rect& Rect::setSize(float _wh)
 	{
 		setSize(_wh, _wh);
+
+		return *this;
 	}
 
-	void Rect::setRotate(float _rot)
+	Rect& Rect::setRotate(float _rot)
 	{
 		radian = D3DXToRadian(_rot);
+
+		return *this;
 	}
 
-	void Rect::setColor(const Color & _color)
+	Rect& Rect::setColor(const Color & _color)
 	{
 		color = _color;
+
+		return *this;
 	}
 
 	void Rect::draw()

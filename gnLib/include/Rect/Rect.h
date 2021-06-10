@@ -14,18 +14,18 @@ namespace gnLib {
 		~Rect() = default;
 
 		// À•W‚ğİ’è
-		void setPos(float _x, float _y);
-		void setPos(const Vector2& _v);
+		Rect& setPos(float _x, float _y);
+		Rect& setPos(const Vector2& _v);
 
 		// ‘å‚«‚³‚ğİ’è
-		void setSize(float _width, float _height);
-		void setSize(float _wh);
+		Rect& setSize(float _width, float _height);
+		Rect& setSize(float _wh);
 
 		// ‰ñ“]‚³‚¹‚é
-		void setRotate(float _rot);
+		Rect& setRotate(float _rot);
 
 		// F‚ğİ’è
-		void setColor(const Color& _color);
+		Rect& setColor(const Color& _color);
 
 		// •`‰æ
 		void draw();
