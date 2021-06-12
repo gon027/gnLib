@@ -10,7 +10,6 @@ namespace gnLib {
 
 	Polygon::Polygon(std::initializer_list<Vertex2D> _vertex)
 		: vertex(_vertex.begin(), _vertex.end())
-		, position(Vector2::Zero)
 		, color(Color::White)
 	{
 		for (int i{ 0 }; i < vertex.size(); ++i) {
@@ -21,7 +20,6 @@ namespace gnLib {
 
 	Polygon::Polygon(const std::vector<Vertex2D>& _vertex)
 		: vertex(_vertex)
-		, position(Vector2::Zero)
 		, color(Color::White)
 	{
 		for (int i{ 0 }; i < vertex.size(); ++i) {
@@ -30,31 +28,37 @@ namespace gnLib {
 		}
 	}
 
-	void Polygon::setColor(Color _color)
+	Polygon& Polygon::setColor(Color _color)
 	{
 		color = _color;
 		for (int i{ 0 }; i < vertex.size(); ++i) {
 			vertex[i].color = color.getColor();
 		}
+
+		return *this;
 	}
 
-	void Polygon::translate(const Vector2& _delta)
+	Polygon& Polygon::translate(const Vector2& _delta)
 	{
 		for (int i{ 0 }; i < vertex.size(); ++i) {
 			vertex[i].x += _delta.x;
 			vertex[i].y += _delta.y;
 		}
+
+		return *this;
 	}
 
-	void Polygon::scale(const Vector2& _scale)
+	Polygon& Polygon::scale(const Vector2& _scale)
 	{
 		for (int i{ 0 }; i < vertex.size(); ++i) {
 			vertex[i].x *= _scale.x;
 			vertex[i].y *= _scale.y;
 		}
+
+		return *this;
 	}
 
-	void Polygon::rotate(float _angle)
+	Polygon& Polygon::rotate(float _angle)
 	{
 		auto begin = Vector2{ vertex[0].x, vertex[0].y };
 		for (int i{ 0 }; i < vertex.size(); ++i) {
@@ -62,6 +66,8 @@ namespace gnLib {
 			vertex[i].x = v.x;
 			vertex[i].y = v.y;
 		}
+
+		return *this;
 	}
 
 	void Polygon::draw()

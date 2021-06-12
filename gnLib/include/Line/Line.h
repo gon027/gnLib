@@ -14,14 +14,14 @@ namespace gnLib {
 		~Line() = default;
 
 		// À•W‚ğİ’è
-		void setPos(float _sx, float _sy, float _gx, float _gy);
-		void setPos(const Vector2& _v1, const Vector2& _v2);
+		Line& setPos(float _sx, float _sy, float _gx, float _gy);
+		Line& setPos(const Vector2& _v1, const Vector2& _v2);
 		
 		// ‘¾‚³‚ğİ’è
-		void setWeight(float _weight);
+		Line& setWeight(float _weight);
 
 		// F‚ğİ’è
-		void setColor(Color _color);
+		Line& setColor(Color _color);
 
 		// •`‰æ
 		void draw();

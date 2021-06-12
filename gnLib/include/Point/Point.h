@@ -13,10 +13,10 @@ namespace gnLib {
 		~Point() = default;
 
 		// À•W‚ğİ’è
-		void setPos(const Vector2& _pos);
+		Point& setPos(const Vector2& _pos);
 
 		// F‚ğİ’è
-		void setColor(const Color& _color);
+		Point& setColor(const Color& _color);
 
 		// •`‰æ
 		void draw();

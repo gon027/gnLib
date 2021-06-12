@@ -19,25 +19,25 @@ namespace gnLib {
 		/// ポリゴンの色を設定
 		/// </summary>
 		/// <param name="_color"></param>
-		void setColor(Color _color);
+		Polygon& setColor(Color _color);
 
 		/// <summary>
 		/// ポリゴンを移動させる
 		/// </summary>
 		/// <param name="_delta"></param>
-		void translate(const Vector2& _delta);
+		Polygon& translate(const Vector2& _delta);
 
 		/// <summary>
 		/// ポリゴンのスケールを変更する
 		/// </summary>
 		/// <param name="_scale"></param>
-		void scale(const Vector2& _scale = Vector2::One);
+		Polygon& scale(const Vector2& _scale = Vector2::One);
 
 		/// <summary>
 		/// 最初に追加した座標を中心に回転する
 		/// </summary>
 		/// <param name="_angle"> 回転角度 </param>
-		void rotate(float _angle);
+		Polygon& rotate(float _angle);
 
 		/// <summary>
 		/// 描画
@@ -46,8 +46,6 @@ namespace gnLib {
 
 	private:
 		std::vector<Vertex2D> vertex;
-
-		Vector2 position;
 		Color color;
 	};
 

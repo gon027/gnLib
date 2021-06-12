@@ -3,6 +3,7 @@
 
 #include <Vector/Vector2.h>
 #include <Color/Color.h>
+#include <Bounds/Bounds.h>
 
 namespace gnLib {
 
@@ -32,6 +33,9 @@ namespace gnLib {
 
 	private:
 		Vector2 position;
+		
+
+
 		float width;         // ‰¡•
 		float height;        // ‰¡•
 		float radian;        // ‰ñ“]Šp

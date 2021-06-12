@@ -28,26 +28,34 @@ namespace gnLib {
 	{
 	}
 	
-	void Line::setPos(float _sx, float _sy, float _gx, float _gy)
+	Line& Line::setPos(float _sx, float _sy, float _gx, float _gy)
 	{
 		start.setPos(_sx, _sy);
 		end.setPos(_gx, _gy);
+
+		return *this;
 	}
 
-	void Line::setPos(const Vector2 & _v1, const Vector2 & _v2)
+	Line& Line::setPos(const Vector2 & _v1, const Vector2 & _v2)
 	{
 		start.setPos(_v1);
 		end.setPos(_v2);
+
+		return *this;
 	}
 
-	void Line::setWeight(float _weight)
+	Line& Line::setWeight(float _weight)
 	{
 		weight = _weight;
+
+		return *this;
 	}
 
-	void Line::setColor(Color _color)
+	Line& Line::setColor(Color _color)
 	{
 		color = _color;
+
+		return *this;
 	}
 
 	void Line::draw()

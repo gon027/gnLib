@@ -18,14 +18,18 @@ namespace gnLib {
 
 	}
 
-	void Point::setPos(const Vector2& _pos)
+	Point& Point::setPos(const Vector2& _pos)
 	{
 		position = _pos;
+
+		return *this;
 	}
 
-	void Point::setColor(const Color& _color)
+	Point& Point::setColor(const Color& _color)
 	{
 		color = _color;
+
+		return *this;
 	}
 
 	void Point::draw()

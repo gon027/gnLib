@@ -28,10 +28,11 @@ namespace gnLib {
 		void GraphicsRender::drawRect2D(float _x, float _y, float _width, float _height, float _r, const Color& _color)
 		{
 			float r = _r;
-			auto leftTop = Vector2{ _x, _y };
-			auto leftBottom = Vector2{ _x, _y + _height };
-			auto rightTop = Vector2{ _x + _width,  _y };
-			auto rightBottom = Vector2{ _x + _width, _y + _height };
+			auto rotatePoint = Vector2{ _x, _y };
+			auto leftTop     = rotation(Vector2{ _x, _y }, rotatePoint, _r);
+			auto leftBottom  = rotation(Vector2{ _x, _y + _height }, rotatePoint, _r);
+			auto rightTop    = rotation(Vector2{ _x + _width,  _y }, rotatePoint, _r);
+			auto rightBottom = rotation(Vector2{ _x + _width, _y + _height }, rotatePoint, _r);
 
 			std::vector<Vertex2D> vertex = {
 				{leftBottom.x,  leftBottom.y,  0.0f, 1.0f, _color.getColor(), 0.0f, 0.0f},

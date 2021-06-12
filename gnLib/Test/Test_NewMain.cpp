@@ -3,10 +3,6 @@
 void gnMain() {
 	App::init("Window", 640, 480);
 
-	//TextureSPtr t{ new Texture("Assets/img/char.png") };
-
-	//App::setWindowPosition(600, 300);
-
 	while (App::update()) {
 		App::begin();
 
@@ -19,58 +15,59 @@ void gnMain() {
 		}
 
 		if (Input::getKeyDown(Key::D)) {
-			App::setTitle("OSOIIII!!!!");
+			App::setTitle("CaptionïœçX");
 		}
 
+		static float timer = 0.0f;
+		timer += Time::deltaTime();
 		
-		static float a = 0.0f;
-		a += Time::deltaTime();
-		/*
-		Sprite s;
-		s.setTexture(t);
-		s.draw({ 0, 0 }, Vector2::One, a, false);
-		s.draw({300, 0}, Vector2::One, a, false, true);
-		*/
-
-		/*
-		Line l;
-		for (int i = 0; i < 10; ++i) {
-			l.setColor(Color::Red);
-			l.setWeight(10.0f);
-			l.setPos({ float(i * 50), 0.0f}, { float(i * 50), 500 });
-			l.draw();
-		}
-
-		for (int j = 0; j < 10; ++j) {
-			l.setColor(Color::Blue);
-			l.setWeight(10.0f);
-			l.setPos({ 0, float(j * 50) }, { 500, float(j * 50) });
-			l.draw();
-		}
-		*/
-		
-
-		std::vector<Vertex2D> ab{ {100, 100}, { 300, 100 }, { 150, 200 }, { 350, 200 }, { 200, 400 }, { 400, 400 }};
-		gnLib::Polygon p{ ab };
-		p.setColor(Color::Blue);
-		//p.translate({ a, 0.0f });
-		p.scale({2.0f, 1.0f});
-		//p.rotate(a);
-		p.draw();
-
-		/*
-		Rect r;
-		r.setColor(Color::Red);
-		r.setSize(200.0);
-		r.setPos({ 300, 300 });
-		r.draw();
-		*/
-
-		Rect r{
+		/* ãå
+		std::vector<Vertex2D> vertex{
+			{ 100, 100 }, { 300, 100 }, { 150, 200 },
+			{ 350, 200 }, { 200, 400 }, { 400, 400 }
 		};
+		gnLib::Polygon p{ vertex };
+		p.setColor(Color::Blue)
+			.scale({2.0f, 1.0f})
+			.rotate(timer * 10.0)
+			.draw();
+		
+		*/
+
+		// êV
+		std::vector<Vertex2D> vertex{
+			{ 100, 100 }, { 300, 100 }, { 150, 200 },
+			{ 350, 200 }, { 200, 400 }, { 400, 400 }
+		};
+		gnLib::Polygon p{ vertex };
+		p.setColor(Color::Blue)
+			.scale({2.0f, 1.0f})
+			.rotate(timer * 5.0f)
+			.draw();
+		
+		Rect r{};
 		r.setPos(Input::getPos())
-		 .setColor(Color::Blue)
-		 .draw();
+			.setSize(100, 100)
+			.setRotate(timer * 20.0f)
+			.setColor(Color::Blue)
+			.draw();
+			
+		Circle c{};
+		c.setPos({ 300, 300 })
+			.setColor(Color::Red)
+			.setRadius(100)
+			.draw();
+
+		auto size = App::getWindowSize();
+		Line line{ {0, 0}, {size.x, size.y } };
+		line.setWeight(5.0f)
+			.setColor(Color::White)
+			.draw();
+
+		for (float i{ 0 }; i < 100; ++i) {
+			Point p{ {i, 240} };
+			p.setColor(Color::Green).draw();
+		}
 
 		App::end();
 	}
