@@ -211,6 +211,7 @@
     <ClInclude Include="include\Sprite\Sprite.h" />
     <ClInclude Include="include\StringRender\StringRender.h" />
     <ClInclude Include="include\Texture\Texture.h" />
+    <ClInclude Include="include\Timer.h" />
     <ClInclude Include="include\Time\GameTime.h" />
     <ClInclude Include="include\Time\Time.h" />
     <ClInclude Include="include\Vector\Vector2.h" />
@@ -225,6 +226,7 @@
     <ClCompile Include="src\Collider\Collision2D.cpp" />
     <ClCompile Include="src\Font\Font.cpp" />
     <ClCompile Include="src\GraphicsRender\GraphicsRender.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
     <ClCompile Include="Test\Test_Audio.cpp" />
     <ClCompile Include="Test\Test_Font.cpp" />
     <ClCompile Include="Test\Test_NewMain.cpp" />

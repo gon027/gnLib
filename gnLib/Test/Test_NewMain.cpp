@@ -1,18 +1,19 @@
 #include <gnLib.h>
 
+#include <include/Timer.h>
+
 void gnMain() {
 	App::init("Window", 640, 480);
 
+	Timer time{ 5.0f };
+
+	std::vector<Color> colors{
+		{Color{0, 255, 255}},
+		{Color::Blue},
+	};
+
 	while (App::update()) {
 		App::begin();
-
-		if (Input::getKeyDown(Key::A)) {
-			App::setColor(Color{ 0, 255, 0 });
-		}
-
-		if (Input::getKeyDown(Key::S)) {
-			App::setColor(Color{ 255, 0, 255 });
-		}
 
 		if (Input::getKeyDown(Key::D)) {
 			App::setTitle("CaptionïœçX");
@@ -28,9 +29,9 @@ void gnMain() {
 		};
 		gnLib::Polygon p{ vertex };
 		p.setColor(Color::Blue)
-			.scale({2.0f, 1.0f})
-			.rotate(timer * 10.0)
-			.draw();
+		p.scale({2.0f, 1.0f})
+		p.rotate(timer * 10.0)
+		p.draw();
 		
 		*/
 
@@ -40,16 +41,15 @@ void gnMain() {
 			{ 350, 200 }, { 200, 400 }, { 400, 400 }
 		};
 		gnLib::Polygon p{ vertex };
-		p.setColor(Color::Blue)
-			.scale({2.0f, 1.0f})
-			.rotate(timer * 5.0f)
+		p.setColor(Color::Green)
+			.rotate(timer)
 			.draw();
 		
 		Rect r{};
 		r.setPos(Input::getPos())
 			.setSize(100, 100)
 			.setRotate(timer * 20.0f)
-			.setColor(Color::Blue)
+			.setColor(Color{255, 0, 255})
 			.draw();
 			
 		Circle c{};
@@ -64,10 +64,14 @@ void gnMain() {
 			.setColor(Color::White)
 			.draw();
 
-		for (float i{ 0 }; i < 100; ++i) {
-			Point p{ {i, 240} };
-			p.setColor(Color::Green).draw();
+		static int index = 0;
+		time.countDown();
+		if (time.isTimeUp(5.0f)) {
+			time.reset();
+			App::setColor(colors[((++index) % 2)]);
 		}
+
+		Debug::drawFormatText(0, 00, Color::Black, "Time = %.5lf", time.nowTime());
 
 		App::end();
 	}

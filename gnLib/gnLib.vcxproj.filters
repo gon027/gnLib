@@ -124,6 +124,9 @@
     <ClCompile Include="src\GraphicsRender\GraphicsRender.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Timer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gnLib.h">
@@ -282,6 +285,9 @@
     <ClInclude Include="include\GraphicsRender\GraphicsRender.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="include\Timer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Test">
@@ -343,6 +349,9 @@
     </Filter>
     <Filter Include="core\Texture">
       <UniqueIdentifier>{8c32b8ec-6073-4086-a42f-bbf8f3e16cd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{2189c471-89d5-45f5-8ef7-4bbe0749a3d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
